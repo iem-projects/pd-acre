@@ -1,0 +1,7 @@
+#N canvas 244 225 450 300 10;
+#X obj 45 67 loadbang;
+#X obj 48 150 outlet;
+#X obj 71 98 r /acre/init;
+#X text 46 36 abstraction to init \, reinit a application;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;

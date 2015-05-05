@@ -1,0 +1,23 @@
+#N canvas 705 139 565 296 10;
+#X obj 72 187 list;
+#X obj 24 37 r par_get;
+#X obj 72 217 s par_stored;
+#X obj 66 143 route \$1 bang;
+#X obj 100 111 list prepend \$1 \$1\$2;
+#X text 172 216 (c)algorythmics \, winfried ritsch;
+#X text 52 0 ds/register_nmap <domain> <subname>;
+#X text 153 80 second arg: name of parameter (within the storage domain)
+;
+#X obj 100 82 r \$1\$2;
+#X obj 336 115 # osc/osc_bi \$1\$2 \$1\$2;
+#X text 335 131 to be refined;
+#X text 127 176 same as register_map \, but prepending the domain to
+form the variable name to be stored.;
+#X text 154 33 first argument is the domain which is prepended to the
+second argument to form the variable name (send/receice name);
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 0;
+#X connect 4 0 0 1;
+#X connect 8 0 4 0;

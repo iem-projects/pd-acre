@@ -1,0 +1,13 @@
+#N canvas 412 236 450 300 10;
+#X obj 39 100 inlet;
+#X obj 39 146 outlet;
+#X text 35 42 to used as a mapping of fader instead linear dbtorms
+;
+#X text 33 59 can be overwritten with own function;
+#X text 41 193 Note: Likely to redone with own mapping to choose from
+;
+#X text 44 219 acre lib \, (c) atelier algorythmics;
+#X obj 39 122 rmstofad;
+#X text 34 17 acre/rms2fader;
+#X connect 0 0 6 0;
+#X connect 6 0 1 0;
