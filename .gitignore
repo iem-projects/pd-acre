@@ -19,6 +19,7 @@
 *.so
 *.so.*
 *.dylib
+*.pd_linux
 
 # Executables
 *.exe
