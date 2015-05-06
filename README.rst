@@ -54,8 +54,9 @@ instruments.
 Documentation
 -------------
 
-is in docu directory and every module directory starting with acre_<module>.rst
+is in docu_ directory and every module directory starting with acre_<module>.rst
 
+.. _docu: docu/
 
 Notes
 -----
