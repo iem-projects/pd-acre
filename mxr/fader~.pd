@@ -1,4 +1,4 @@
-#N canvas 582 388 450 300 10;
+#N canvas 584 386 450 300 10;
 #X obj 67 53 inlet~;
 #X obj 66 157 outlet~;
 #X obj 142 53 r \$1/vol;
@@ -12,6 +12,8 @@
 #X msg 266 173 50;
 #X text 268 85 if not used default;
 #X text 67 14 fader~ <prefix> [fadetime];
+#X text 65 229 fader~ is dsp part of the fader with variable space
+set using fadergain;
 #X connect 0 0 6 0;
 #X connect 2 0 6 1;
 #X connect 3 0 6 2;
