@@ -1,0 +1,32 @@
+#N canvas 1214 524 725 433 10;
+#X declare -path ../ -lib zexy -lib iemlib1;
+#X text 30 31 In DSP Patch;
+#X text 302 40 GUI;
+#X obj 33 129 r volume;
+#X obj 33 105 s volume;
+#X floatatom 33 85 5 0 0 0 - - -, f 5;
+#X floatatom 33 151 5 0 0 0 - - -, f 5;
+#X obj 33 197 ds/storage_logic /example;
+#X obj 34 234 register /example volume;
+#X obj 29 278 register /example /chan/1/vol;
+#X obj 30 303 register /example /chan/2/vol;
+#X obj 296 73 ds/ctl /example;
+#X obj 304 304 nbx 5 14 -1e+37 1e+37 0 0 /example/chan/1/vol /example/chan/1/vol
+/example/chan/1/vol 0 -8 0 10 -204786 -1 -1 0 256;
+#X obj 302 395 nbx 5 14 -1e+37 1e+37 0 0 fadetime fadetime fadetime
+0 -8 0 10 -204786 -1 -1 0 256;
+#X obj 303 335 nbx 5 14 -1e+37 1e+37 0 0 /example/chan/2/vol /example/chan/2/vol
+/example/chan/2/vol 0 -8 0 10 -204786 -1 -1 0 256;
+#X obj 31 370 register_raw /example fadetime;
+#X obj 303 365 nbx 5 14 -1e+37 1e+37 0 0 mastervol mastervol mastervol
+0 -8 0 10 -261234 -1 -1 0 256;
+#X obj 30 333 register_map /example mastervol;
+#X msg 431 72 \; /example/program/nr 0 \; /example/program/recall bang
+;
+#X msg 431 128 \; /example/program/recall 1;
+#X obj 430 5 loadbang;
+#X msg 429 27 \; /example/program/load symbol ./example.txt;
+#X obj 32 4 declare -path ../ -lib zexy -lib iemlib1;
+#X connect 2 0 5 0;
+#X connect 4 0 3 0;
+#X connect 19 0 20 0;

@@ -3,7 +3,7 @@ ds - Data Storage
 
 :Author: Winfried Ritsch
 :Contact: ritsch@algo.mur.at
-:Revision: $Revision: 0.3 Scan 2014 $
+:Revision: $Revision: 0.31 2015 $
 :Copyright: GPL: IEM/algorythmics, 2012+
 
 A simple data storage library to store different sets of parameters as messages 
@@ -15,53 +15,59 @@ Note: to be enhanced with OSC functionality,
 Dependencies
 ------------
 
-zexy lib is needed for the indexed storage of data storage and in text-files.
+zexy 
+ puredata library, needed for the indexed data storage in text-files.
 
 Concept
 -------
 
-Variables, represented as send/receives names, are stored in sets as an indexed 
-list in RAM and can be saved as and loaded from text files.
+Data to be stored are `variables`, represented as names in send/receive objects
+and called parameter in the objects.
+Parameter data is stored in indexed sets of lists  in Pd memory 
+which can be saved in and loaded from text files.
 A *index number* is used to switch between different sets of messages. 
+You can think of it like a storage of sound programms in synthesizer.
 
-For each domain a $ds/storage_logic$ object is needed. For controlling this a 
-corresponding
-GUI object ds/ctl is provided.
+Each  indexed list of parameter can be associated with a `domain` name.
+With this concept, different indexed parameter spaces can be handled in
+memory and different files.
 
-Each parameter to be stored hast to be registered for a data storage domain with 
-either
-register <domain> <parameter>  where domain is perpended to the parameter name
-or register_map <domain> <parameter> where the domain is not perpended on 
-recall.
+For each domain a ``[ds/storage_logic]`` object is needed. 
+For controlling this a corresponding GUI object ds/ctl is provided.
 
-If the parameters should be exchangeable between domains, the second form can be 
-used. However this also can be achieved by manual renaming the domain in there. 
+Each parameter to be stored has to be registered for a data storage domain with 
+either ``[register <domain> <parameter>]``,  where domain is prepended 
+to the parameter name, 
+or ``[register_map <domain> <parameter>]`` where the domain is not prepended.
+
+To make the parameters exchangeable between domains without edit, 
+the second form can be used. If Parameter files should be merged, the first
+form is handy to distinguish between domains.
 Anyhow this should not be needed in normal operation and should be avoided to 
-keep naming in files tight to domains so they cannot be confused.
+keep naming in files tight to domains to prevent confusion.
 
-The "store" message stores the current parameter set to an internal buffer on 
-the
-current index "nr". "recall" recalls the stored parameter set. The "stored" 
-parameter sets can saved in an easy readable text file, with slot numbers and a 
-message per line, to be loaded from this.
+The ``store;`` message stores the current parameter set to an internal buffer
+to the current storage slot set with the ``index``. 
+``recall;`` recalls the stored parameter set from slot ``index``.
+The stored parameter sets can saved in an human readable text file.
+Each slot index seperates  a set, one message per line,prepended by the domain.
 
-"load" loads a filename with a file dialog, "reload" loads the last filename 
-again. 
-"save" saves the indexed parameter sets to a file with a file dialog and 
-"resave"
-saves it again to the same file.
+``load <filname>;`` loads a filename with a file dialog, ``reload;`` reloads the
+last used file.
+``save;`` saves the indexed parameter sets to a file popping up a file dialog
+and ``resave;`` saves on the file with the last used filename.
 
-A default filename is the domain name (without preceding /).
+The default filename is the domain name (without preceding /).
 
 Note: send/receive names should not contain special characters, except the "/" 
-for
-forming a OSC like name.
+for forming a OSC associated name, legal in for OSC address, 
+for future extension.
 
 objects:
 --------
 
-objects of library:
-...................
+main functions
+..............
 
 storage_logic.pd <domain>
  the main heart doing storing, loading and holding the parameter  indexed.
@@ -72,13 +78,17 @@ ctl.pd <domain>
  The controls as GUI of the storage_logic 
 
 register.pd <domain> <parameter>
-  registers a parameter for a domain, with domain prepended in the storage-file.
-
+  registers a parameter for a domain, with domain prepended in the variable name
+  and data storage.
 
 register_map.pd <domain> <parameter>
+  registers a parameter for a domain, without prepending the domain in the
+  variable name, only in the data storage.
 
+register_raw.pd <domain> <parameter>
   registers a parameter for a domain, without prepending the domain in the 
-variable name, only in the storage and storage files.
+  variable name and in the data storage.
+
 
 internal helper functions
 .........................
@@ -86,12 +96,8 @@ internal helper functions
 msg_pbank.pd
    the indexed msgfile object
 
-acre_ds.rst
-   this file
-
 #.pd
-   trick object, object can be commented out without losing parameters (for 
-developing)
-   copy to a path to be found without a prefix path to use more easily
+   comment object: other object can be commented out without losing parameters 
+   ( mainly for development, best copied to a path to be used without a prefix)
 
-(c) GPL, algorythmics,  winfried ritsch
+(c) GPL, algorythmics, IEM, winfried ritsch
