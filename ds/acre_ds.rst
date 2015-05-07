@@ -6,11 +6,11 @@ ds - Data Storage
 :Revision: $Revision: 0.31 2015 $
 :Copyright: GPL: IEM/algorythmics, 2012+
 
-A simple data storage library to store different sets of parameters as messages 
-for a project in different files defined as domain.
 
-Note: to be enhanced with OSC functionality, 
- (done in some projects but not stable to release now.)
+A simple data storage library to store different sets of parameters as messages 
+for a project in different files defined as domain. A simple usage is session
+management within a puredata project.
+
 
 Dependencies
 ------------
@@ -99,5 +99,16 @@ msg_pbank.pd
 #.pd
    comment object: other object can be commented out without losing parameters 
    ( mainly for development, best copied to a path to be used without a prefix)
+
+Notes 
+-----
+
+- Will be enhanced with OSC functionality, where registered parameter
+  are also send and received over OSC to symchronize Pd Patches in different
+  Pd instances. (already done in some projects but interface is not stable enough
+  to released now.)
+
+- This module is quite stable and used since several years in different projects
+
 
 (c) GPL, algorythmics, IEM, winfried ritsch

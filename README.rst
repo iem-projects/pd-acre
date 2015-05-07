@@ -6,19 +6,20 @@ Algorithmic Composition Realtime Environment
 
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
-:Revision: $Revision: 0.31 2015 $
-:Copyright: Winfried Ritscg - IEM / algorythmics 2012+
+:Revision: 0.31 "development"
+:Copyright: Winfried Ritsch - IEM / algorythmics 2012+
 
-Note: Structure and namespaces will be changed if necessary ignoring backwards 
-compatibility unless Version "1.x"  is reached. 
-Until then modules will be added used  and tested in different projects, so it 
-can grow in next month in leaps.
-
+ 
+"development version" means in this context:
+    Structure and namespaces of this library will change if necessary,
+    ignoring backwards compatibility unless Version "1.x"  is reached.
+    Until the "stable" version 1.0 is reached, modules already used  and tested in 
+    various projects will be added, so this lib can grow in next month often.
 
 Introduction
 ............
 
-ACRE is collection of Patches Externals for Puredata and helping applications 
+ACRE is collection of Patches Externals for Puredata_ and helping applications 
 targeting algorithmic composition in an realtime computermusic environment. 
 It was dedicated to be integrated in open source projects at Atelier 
 Algorythmics AA_ or IEM_ and now also to published to be used by others.
@@ -68,17 +69,21 @@ Echtzeit WS14/15" and now for Waveguide and Tetraspeaker project.
 References and Footnotes
 ------------------------
 
-.. [PureData] graphical computermusic programming language by Miller Puckette 
-(http://puredata.info/)
+.. [Puredata] graphical computermusic programming language by Miller Puckette 
+   see http://puredata.info/
 
 .. [OSC] Open Sound Control protocoll see (http://opensoundcontrol.org/)
 
 .. [MH] Maschinehalle performance at Steirischer Herbst 2010 
-http://maschinenhalle.at/
+   see http://maschinenhalle.at/
 
-.. [Autopiano] Pieces with robot piano players see 
-http://algo.mur.at/projects/autoklavierspieler/performances/heptapiano
+.. [Autopiano] Pieces with robot piano players 
+   see http://algo.mur.at/projects/autoklavierspieler/performances/heptapiano
 
 .. [AA] Atelier Algorythmics http://algo.mur.at/
 
-.. _Scan: http://iaem.at/kurse/projekte/scan/
+.. [Scan] http://iaem.at/kurse/projekte/scan/
+
+
+.. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
+         see http://iem.at/

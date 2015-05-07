@@ -80,20 +80,20 @@ gui objects
   e.g.: `out/master_ctl` which is implemented in the file `out/master_ctl.pd` 
   
   gui also should follow the raster with "graph on parents" of "50x50" pixels, 
-like "150x100". 
+  like "150x100". 
   
 data storages
   should be named with an additional `_ds` 
   
   e.g: filename: out/master_ds.ctl
 
-  Hint: variables in `ds` name-space is also the send/receive name-space which can 
-be activated as OSC-send [OSC] receive parameter within the ds module (see docu 
-there).
+  Hint: variables in `ds` name-space is also the send/receive name-space which 
+  can be activated as OSC-send [OSC] receive parameter within the ds module 
+  (see docu there).
 
 documentation
   In each module an extra documentation file should be placed as 
-"acre_<modulename>.rst" and an example and test patch to test the module.
+  "acre_<modulename>.rst" and an example and test patch to test the module.
 
 
 Initialization
@@ -263,17 +263,20 @@ Echtzeit WS14/15"
 References and Footnotes
 ------------------------
 
-.. [PureData] graphical computermusic programming language by Miller Puckette 
-(http://puredata.info/)
+.. [PureData] graphical computermusic programming language by Miller Puckette,
+              see http://puredata.info/
 
-.. [OSC] Open Sound Control protocoll see (http://opensoundcontrol.org/)
+.. [OSC] Open Sound Control protocol, see http://opensoundcontrol.org/
 
 .. [MH] Maschinehalle performance at Steirischer Herbst 2010 
-http://maschinenhalle.at/
+        see http://maschinenhalle.at/
 
-.. [Autopiano] Pieces with robot piano players see 
-http://algo.mur.at/projects/autoklavierspieler/performances/heptapiano
+.. [Autopiano] Pieces with robot piano players 
+   see http://algo.mur.at/projects/autoklavierspieler/performances/heptapiano
 
 .. [AA] Atelier Algorythmics http://algo.mur.at/
 
-.. _Scan: http://iaem.at/kurse/projekte/scan/
+.. [Scan] Project "Scan" see http://iaem.at/kurse/projekte/scan/
+
+.. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
+         see http://iem.at/
