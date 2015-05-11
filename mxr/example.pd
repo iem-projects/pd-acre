@@ -1,0 +1,146 @@
+#N canvas 333 52 786 556 10;
+#X declare -path ../;
+#X declare -lib iemlib1;
+#X declare -lib iemlib2;
+#X declare -lib zexy;
+#X declare -stdpath iemlib;
+#N canvas 1127 52 824 637 GUI 1;
+#X obj 60 172 bng 15 250 50 0 /out/reset_vu /out/reset_vu reset_vu
+0 -5 0 10 -262144 -1 -1;
+#X obj 10 308 mxr/out_sub_ctl 1 1;
+#X obj 210 58 mxr/monitor_ctl;
+#X obj 410 58 ds/ctl /test;
+#X obj 10 58 mxr/master_ctl;
+#X obj 10 258 mxr/out_ctl 1;
+#X text 23 11 test main patches for out Mixer with 1 sub and 4 outs
+;
+#X obj 110 359 tgl 15 0 /out/2/monitor/pre /out/2/monitor/pre pre 1
+7 1 10 -257985 -1 -1 0 1;
+#X obj 130 359 tgl 15 0 /out/2//monitor/post /out/2//monitor/post pst
+1 7 1 10 -257985 -1 -1 0 1;
+#X obj 210 359 tgl 15 0 /out/3/monitor/pre /out/3/monitor/pre pre 1
+7 1 10 -257985 -1 -1 0 1;
+#X obj 230 359 tgl 15 0 /out/3//monitor/post /out/3//monitor/post pst
+1 7 1 10 -257985 -1 -1 0 1;
+#X obj 310 359 tgl 15 0 /out/4/monitor/pre /out/4/monitor/pre pre 1
+7 1 10 -257985 -1 -1 0 1;
+#X obj 329 359 tgl 15 0 /out/4//monitor/post /out/4//monitor/post pst
+1 7 1 10 -257985 -1 -1 0 1;
+#X obj 310 58 mxr/testtones_ctl 1;
+#X obj 663 196 vu 8 120 A/vu A -1 -8 0 8 -66577 -1 1 0;
+#X text 607 48 --- fader-guis ---;
+#X obj 110 58 mxr/sub_ctl 1;
+#X text 698 143 fader-vu_ctl;
+#X obj 10 359 tgl 15 0 /out/1/monitor/pre /out/1/monitor/pre pre 1
+7 1 10 -257985 -1 -1 0 1;
+#X obj 28 359 tgl 15 0 /out/1//monitor/post /out/1//monitor/post pst
+1 7 1 10 -257985 -1 -1 0 1;
+#X obj 110 42 tgl 15 0 /out/sub/1/monitor/send /out/sub/1/monitor/send
+m 4 7 1 10 -257985 -1 -1 0 1;
+#X obj 110 258 mxr/out_ctl 2;
+#X obj 210 258 mxr/out_ctl 3;
+#X obj 310 258 mxr/out_ctl 4;
+#X text 173 30 Mixer Main Section with Ctls;
+#X text 605 140 fader_ctrl;
+#X text 12 390 alternativ out channel;
+#X obj 110 308 mxr/out_sub_ctl 2 1;
+#X obj 210 308 mxr/out_sub_ctl 3 1;
+#X obj 310 308 mxr/out_sub_ctl 4 1;
+#X obj 591 164 mxr/fader_ctl A CH_A;
+#X obj 632 83 fader_vol_vu_ctl A out_A;
+#X obj 724 160 mxr/fader_vu_ctl A OUT_A;
+#X obj 15 426 fader_vu_ctl /out/1 OUT-1;
+#X restore 90 23 pd GUI;
+#X obj 21 73 declare -path ../;
+#X obj 21 96 declare -lib iemlib1;
+#X obj 21 115 declare -lib iemlib2;
+#X obj 21 149 declare -lib zexy;
+#X obj 21 132 declare -stdpath iemlib;
+#X text 22 53 inlcudes and libs needed;
+#X text 98 373 use the dac~ ensures you the routing on different setups
+;
+#N canvas 180 614 599 300 init 0;
+#X obj 45 32 loadbang;
+#X msg 45 54 \; /mxr/dsp 1 \; /mxr/fadetime 30 \;;
+#X msg 215 60 \; /test/program/load symbol ../mxr/mxr.txt \; /test/program/nr
+0 \; /test/program/recall bang;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X restore 23 22 pd init;
+#X obj 234 65 ds/storage_logic /test;
+#X obj 84 288 throw~ /out/1;
+#X obj 72 309 throw~ /out/2;
+#X obj 55 326 throw~ /out/3;
+#X obj 33 347 throw~ /out/4;
+#X obj 234 106 mxr/out_ds /test;
+#X obj 234 85 mxr/master_ds /test;
+#X obj 234 126 mxr/sub_ds /test 1;
+#X obj 539 64 mxr/out_sub_ds /test 1 1;
+#X obj 399 64 mxr/out_ds /test 1;
+#X obj 398 85 mxr/out_ds /test 2;
+#X obj 397 108 mxr/out_ds /test 3;
+#X obj 396 130 mxr/out_ds /test 4;
+#X text 341 39 --- data storage for example ---;
+#X text 225 12 example/test patch for out with master \, one sub and
+4 outs;
+#X obj 33 254 mxr/testtones~ 1;
+#X obj 448 235 noise~;
+#X obj 447 281 prvu~;
+#X obj 447 304 s A/vu;
+#X obj 522 284 env~;
+#X floatatom 522 306 5 0 0 0 - - -, f 5;
+#X obj 447 259 mxr/fader~ A 50;
+#N canvas 105 261 652 308 out_mixer 0;
+#X obj 10 54 mxr/out~ 1;
+#X obj 418 176 mxr/sub~ 1;
+#X obj 9 172 mxr/monitor~;
+#X obj 211 216 dac~ 1 2 3 4 5 6;
+#X obj 11 147 mxr/master~;
+#X obj 9 84 mxr/monitor_prepost~ /out/1;
+#X obj 159 144 mxr/monitor_prepost~ /out/2;
+#X obj 268 79 mxr/monitor_prepost~ /out/1;
+#X obj 364 146 mxr/monitor_prepost~ /out/2;
+#X obj 417 210 mxr/monitor_send~ /out/sub/1;
+#X obj 85 54 mxr/out_sub~ 1 1;
+#X text 189 25 --- signal routing 4 outs \, 1 sub \, master ---;
+#X obj 160 116 mxr/out~ 2;
+#X obj 269 52 mxr/out~ 3;
+#X obj 365 115 mxr/out~ 4;
+#X obj 443 115 mxr/out_sub~ 4 1;
+#X obj 236 116 mxr/out_sub~ 2 1;
+#X obj 345 52 mxr/out_sub~ 3 1;
+#X connect 0 0 5 0;
+#X connect 1 0 3 4;
+#X connect 1 0 3 5;
+#X connect 1 0 9 0;
+#X connect 2 0 3 0;
+#X connect 10 0 3 0;
+#X connect 10 0 5 1;
+#X connect 12 0 6 0;
+#X connect 13 0 7 0;
+#X connect 14 0 8 0;
+#X connect 15 0 3 3;
+#X connect 15 0 8 1;
+#X connect 16 0 3 1;
+#X connect 16 0 6 1;
+#X connect 17 0 3 2;
+#X connect 17 0 7 1;
+#X restore 76 210 pd out_mixer;
+#X text 28 188 --- MIXER Main Section with out channels ...;
+#X text 445 217 --- general fader unit ...;
+#X obj 538 85 mxr/out_sub_ds /test 2 1;
+#X obj 537 108 mxr/out_sub_ds /test 3 1;
+#X obj 537 129 mxr/out_sub_ds /test 4 1;
+#N canvas 4 52 450 300 experimental 0;
+#X obj 67 60 mxr/recorder~;
+#X restore 564 386 pd experimental;
+#X text 29 231 --- testone to out buses ---;
+#X connect 24 0 10 0;
+#X connect 24 0 11 0;
+#X connect 24 0 12 0;
+#X connect 24 0 13 0;
+#X connect 25 0 30 0;
+#X connect 26 0 27 0;
+#X connect 28 0 29 0;
+#X connect 30 0 26 0;
+#X connect 30 0 28 0;

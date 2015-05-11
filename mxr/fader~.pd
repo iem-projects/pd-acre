@@ -5,7 +5,7 @@
 #X obj 157 81 r \$1/mute;
 #X obj 263 53 inlet;
 #X text 269 30 fadetime;
-#X obj 69 123 acre/fader_gain~ \$2;
+#X obj 69 123 mxr/fader_gain~ \$2;
 #X obj 266 107 loadbang;
 #X obj 266 129 \$2;
 #X obj 266 151 sel 0;

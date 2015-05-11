@@ -1,0 +1,14 @@
+#N canvas 796 792 438 257 10;
+#X obj 252 56 mxr/master~;
+#X obj 23 58 mxr/out~ 1;
+#X obj 108 58 mxr/out~ 2;
+#X obj 18 146 outlet~;
+#X obj 82 145 outlet~;
+#X obj 43 92 mxr/monitor_send~ /out/1;
+#X obj 112 116 mxr/monitor_send~ /out/2;
+#X text 19 33 simple stereo out without sub;
+#X text 24 10 master_stereo~;
+#X connect 1 0 5 0;
+#X connect 1 0 3 0;
+#X connect 2 0 6 0;
+#X connect 2 0 4 0;

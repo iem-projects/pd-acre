@@ -8,6 +8,6 @@
 ;
 #X text 44 219 acre lib \, (c) atelier algorythmics;
 #X obj 39 122 dbtofad;
-#X text 34 17 acre/db2fader;
+#X text 34 17 mxr/db2fader;
 #X connect 0 0 6 0;
 #X connect 6 0 1 0;

@@ -1,0 +1,18 @@
+#N canvas 782 307 323 382 10;
+#X obj 110 10 mxr/sub_ctl 1;
+#X obj 10 10 master_ctl;
+#N canvas 110 471 464 154 master-par 0;
+#X obj 10 68 mxr/out_sub_ctl 1 1;
+#X obj 110 68 mxr/out_sub_ctl 2 1;
+#X obj 210 68 mxr/out_sub_ctl 3 1;
+#X obj 310 68 mxr/out_sub_ctl 4 1;
+#X obj 10 18 mxr/out_ctl 1;
+#X obj 110 18 mxr/out_ctl 2;
+#X obj 210 18 mxr/out_ctl 3;
+#X obj 310 18 mxr/out_ctl 4;
+#X restore 119 268 pd master-par;
+#X obj 152 36 tgl 15 0 empty empty subout 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 119 235 \; pd-master-par vis \$1;
+#X connect 3 0 4 0;
+#X coords 0 -1 1 1 200 200 1 10 10;

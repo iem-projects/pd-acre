@@ -1,0 +1,28 @@
+#N canvas 1275 615 323 382 10;
+#X obj 10 10 master_ctl;
+#X obj 29 266 tgl 15 0 empty empty outs 17 7 0 10 -262144 -1 -1 0 1
+;
+#N canvas 1225 545 250 105 out-par-\$0 0;
+#X text 40 5 extra pars if needed;
+#X restore 74 324 pd out-par-\$0;
+#X obj 85 255 pack 0 \$0;
+#X msg 74 281 \; pd-out-par-\$2 vis \$1;
+#X obj 110 11 cnv 15 99 198 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 136 46 vu 15 120 /out/2/vu R_2 -1 -8 0 8 -66577 -1 1 0;
+#X obj 178 39 tgl 15 0 /out/1/monitor/send /out/1/monitor/send 1 4
+8 0 12 -257985 -1 -1 0 1;
+#X obj 118 46 vu 15 120 /out/1/vu L_1 -1 -8 0 8 -66577 -1 0 0;
+#X obj 177 61 tgl 15 0 /out/2/monitor/send /out/2/monitor/send 2 4
+8 0 12 -257985 -1 -1 0 1;
+#X obj 117 15 tgl 15 0 /out/1/mute /out/1/mute M 5 8 0 10 -258113 -1
+-1 0 1;
+#X obj 137 15 tgl 15 0 /out/2/mute /out/2/mute M 5 8 0 10 -258113 -1
+-1 0 1;
+#X obj 117 172 nbx 3 14 -1e+37 1e+37 0 0 /out/1/vol /out/1/vol vol_1
+40 8 0 10 -4034 -1 -1 100 256;
+#X obj 118 190 nbx 3 14 -1e+37 1e+37 0 0 /out/2/vol /out/2/vol vol_2
+40 8 0 10 -4034 -1 -1 100 256;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X coords 0 -1 1 1 200 200 1 10 10;

@@ -1,0 +1,8 @@
+#N canvas 4 131 331 245 10;
+#X text 27 25 mxr/master_ds <domain>;
+#X text 43 49 Storage for the master section;
+#X obj 27 92 # ds/register \$1 /out/master;
+#X obj 21 175 ds/register_map \$1 /mxr/fadetime;
+#X obj 22 130 ds/register_map \$1 /out/mute;
+#X obj 21 196 ds/register_map \$1 /mxr/dsp;
+#X text 10 114 NEVER STORE MAIN (until you know what you do) !;

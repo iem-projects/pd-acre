@@ -1,0 +1,46 @@
+#N canvas 335 52 786 342 10;
+#X declare -path ../;
+#X declare -lib iemlib1;
+#X declare -lib iemlib2;
+#X declare -lib zexy;
+#X declare -stdpath iemlib;
+#N canvas 1129 52 596 342 GUI 1;
+#X obj 210 58 mxr/monitor_ctl;
+#X text 23 11 test main patches for out Mixer with 1 sub and 4 outs
+;
+#X obj 310 58 mxr/testtones_ctl 1;
+#X obj 6 60 master_stereo_ctl;
+#X obj 410 58 ds/ctl /test;
+#X restore 90 23 pd GUI;
+#X obj 21 73 declare -path ../;
+#X obj 21 96 declare -lib iemlib1;
+#X obj 21 115 declare -lib iemlib2;
+#X obj 21 149 declare -lib zexy;
+#X obj 21 132 declare -stdpath iemlib;
+#X text 22 53 inlcudes and libs needed;
+#N canvas 68 434 450 300 init 0;
+#X obj 45 32 loadbang;
+#X msg 45 54 \; /mxr/dsp 1 \; /mxr/fadetime 30 \;;
+#X msg 215 60 \; /test/program/load symbol test.txt \; /test/program/nr
+0 \; /test/program/recall bang;
+#X connect 0 0 1 0;
+#X restore 23 22 pd init;
+#X obj 234 65 ds/storage_logic /test;
+#X obj 84 288 throw~ /out/1;
+#X obj 72 309 throw~ /out/2;
+#X obj 234 85 mxr/master_ds /test;
+#X obj 237 111 mxr/out_ds /test 1;
+#X obj 236 132 mxr/out_ds /test 2;
+#X text 341 39 --- data storage for example ---;
+#X text 225 12 example/test patch for out with master \, one sub and
+4 outs;
+#X obj 33 254 mxr/testtones~ 1;
+#X text 28 188 --- MIXER Main Section with out channels ...;
+#X obj 254 258 master_stereo~;
+#X obj 254 280 dac~ 1 2;
+#X obj 390 269 master_stereo_ds /test;
+#X obj 253 232 mxr/monitor~;
+#X connect 16 0 9 0;
+#X connect 16 0 10 0;
+#X connect 18 0 19 0;
+#X connect 18 1 19 1;

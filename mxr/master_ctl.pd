@@ -1,0 +1,57 @@
+#N canvas 964 487 380 350 10;
+#X obj 11 11 cnv 30 98 198 empty empty MASTER 2 8 0 10 -191407 -66577
+0;
+#X obj 18 193 nbx 3 14 -1e+37 1e+37 0 0 empty empty avg 0 -8 0 10 -228856
+-1 -1 0.93 256;
+#X obj 64 193 nbx 3 14 -1e+37 1e+37 0 0 empty empty peak 0 -8 0 10
+-228856 -1 -1 2 256;
+#X obj 13 32 vsl 15 128 0 127 0 0 /out/master/fad /out/master/fad empty
+0 -9 0 10 -258113 -1 -1 8600 1;
+#X obj 13 164 nbx 3 14 -1e+37 1e+37 0 0 /out/master /out/master empty
+0 -8 0 10 -258113 -1 -1 100.333 256;
+#X obj 62 23 tgl 45 0 /out/mute /out/mute MUTE 1 23 0 18 -258113 -1
+-1 0 1;
+#X obj 62 132 tgl 45 0 /mxr/dsp /mxr/dsp DSP 7 23 0 18 -4034 -1 -1
+1 1;
+#X obj 18 226 r /mxr/load;
+#X obj 18 253 unpack 0 0;
+#X obj 123 55 pack 0 \$0;
+#N canvas 57 183 192 222 \$0-master-par 0;
+#X obj 19 8 cnv 30 98 198 empty empty master_parameter 0 8 0 10 -191407
+-66577 0;
+#X obj 27 128 nbx 4 14 -1e+37 1e+37 0 0 /mxr/fadetime /mxr/fadetime
+fadetime 0 -8 0 10 -262144 -1 -1 30 256;
+#X obj 28 87 bng 15 250 50 0 /out/reset_vu /out/reset_vu rst_vu 16
+7 0 10 -262144 -1 -1;
+#X obj 25 27 acre/init_ctl;
+#X restore 123 113 pd \$0-master-par;
+#X msg 123 78 \; pd-\$2-master-par vis \$1;
+#X obj 62 79 tgl 15 0 empty empty extra 17 7 0 10 -262144 -1 -1 1 1
+;
+#X msg 173 223 set \$1;
+#X obj 173 201 mxr/db2fader;
+#X obj 172 300 mxr/fader2db;
+#X obj 173 253 s /out/master/fad;
+#X obj 173 180 r /out/master;
+#X text 25 66 -0dB;
+#X text 29 132 -40;
+#X text 29 87 - 5;
+#X text 29 44 + 5;
+#X text 29 34 +12;
+#X text 29 21 +22;
+#X text 29 102 -12;
+#X text 29 119 -24;
+#X text 29 150 0;
+#X obj 172 275 r /out/master/fad;
+#X obj 172 323 s /out/master;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X connect 8 1 2 0;
+#X connect 9 0 11 0;
+#X connect 12 0 9 0;
+#X connect 13 0 16 0;
+#X connect 14 0 13 0;
+#X connect 15 0 28 0;
+#X connect 17 0 14 0;
+#X connect 27 0 15 0;
+#X coords 0 -1 1 1 100 200 2 10 10;

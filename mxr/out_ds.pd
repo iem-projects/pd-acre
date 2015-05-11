@@ -1,0 +1,5 @@
+#N canvas 121 265 324 195 10;
+#X text 43 49 Storage for the master section;
+#X text 27 25 mxr/out_sub_ds <domain> <out_id>;
+#X obj 21 85 ds/register_map \$1 /out/\$2/vol;
+#X obj 21 105 ds/register_map \$1 /out/\$2/mute;

@@ -1,0 +1,8 @@
+#N canvas 118 369 302 251 10;
+#X text 43 49 Storage for the master section;
+#X obj 30 75 mxr/master_ds \$1;
+#X obj 29 96 mxr/out_ds \$1;
+#X obj 28 118 mxr/sub_ds \$1 1;
+#X obj 30 148 mxr/out_ds \$1 1;
+#X obj 29 172 mxr/out_ds \$1 2;
+#X text 27 25 mxr/master_stereo_ds <domain>;

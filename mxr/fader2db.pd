@@ -1,4 +1,4 @@
-#N canvas 686 319 450 300 10;
+#N canvas 687 318 450 300 10;
 #X obj 38 214 outlet;
 #X text 35 42 to used as a mapping of fader instead linear dbtorms
 ;
@@ -7,7 +7,7 @@
 ;
 #X text 44 259 acre lib \, (c) atelier algorythmics;
 #X obj 38 190 fadtodb;
-#X text 34 17 acre/fader2db;
+#X text 34 17 mxr/fader2db;
 #X msg 99 163 0;
 #X obj 38 163 f 0;
 #X obj 138 163 t b;
@@ -21,7 +21,8 @@
 #X connect 9 0 8 0;
 #X connect 10 0 7 0;
 #X connect 10 1 9 0;
-#X connect 11 0 8 0;
+#X connect 11 0 8 1;
+#X connect 11 1 8 0;
 #X connect 11 2 7 0;
 #X connect 11 3 9 0;
 #X connect 12 0 10 0;

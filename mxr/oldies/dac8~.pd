@@ -1,0 +1,35 @@
+#N canvas 2 633 618 235 10;
+#X obj 26 102 inlet~;
+#X obj 90 104 inlet~;
+#X obj 161 106 inlet~;
+#X obj 236 104 inlet~;
+#X text 23 151 links vorne;
+#X text 55 166 rechts vorne;
+#X text 156 160 rechts hinten;
+#X text 186 176 links hinten;
+#X text 69 181 edit or overload for the setup (winfried);
+#X obj 287 109 inlet~;
+#X obj 365 107 inlet~;
+#X obj 289 134 dac~ \$5 \$6;
+#X obj 25 131 dac~ \$1 \$2;
+#X obj 160 131 dac~ \$3 \$4;
+#X text 286 157 sub;
+#X text 421 156 monitoring;
+#X text 19 0 mxr/dac6~ <front left DAC> <front right DAC> <back right
+DAC> <back left DAC> <sub1 DAC> <sub2 DAC> <monitor1 DAC1> <monitor2
+DAC1>;
+#X text 22 39 eg stereo: 1 2 1 2 1 2 1 2;
+#X text 22 54 eg quadro 1 2 3 4 1 2 1 2;
+#X text 22 68 eg quadro+sub+mon: 1 2 3 4 5 5 6 6;
+#X obj 418 110 inlet~;
+#X obj 496 108 inlet~;
+#X obj 420 135 dac~ \$7 \$8;
+#X text 252 -33 (c)algorythmics \, winfried ritsch;
+#X connect 0 0 12 0;
+#X connect 1 0 12 1;
+#X connect 2 0 13 0;
+#X connect 3 0 13 1;
+#X connect 9 0 11 0;
+#X connect 10 0 11 1;
+#X connect 20 0 22 0;
+#X connect 21 0 22 1;
