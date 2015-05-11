@@ -1,11 +1,11 @@
-#N canvas 621 663 450 300 10;
-#X obj 101 101 cnv 15 98 48 empty empty out\$1_sub\$2 1 7 1 10 -191407
--66577 0;
-#X obj 105 131 nbx 4 14 -1e+37 1e+37 0 0 /out/\$1/sub/\$2/hp /out/\$1/sub/\$2/hp
-hp_Hz 48 8 0 10 -262144 -1 -1 90 256;
-#X obj 105 114 nbx 3 14 0 130 0 0 /out/\$1/sub/\$2/vol /out/\$1/sub/\$2/vol
-vol 40 8 0 10 -4034 -1 -1 80 256;
+#N canvas 624 660 450 300 10;
+#X obj 101 101 cnv 15 98 48 empty empty \$1\$2 1 7 1 10 -191407 -66577
+0;
+#X obj 105 131 nbx 4 14 -1e+37 1e+37 0 0 \$1\$2/hp \$1\$2/hp hp_Hz
+48 8 0 10 -262144 -1 -1 0 256;
+#X obj 105 114 nbx 3 14 0 130 0 0 \$1\$2/vol \$1\$2/vol vol 40 8 0
+10 -4034 -1 -1 0 256;
 #X text 104 58 out_sub_ctl <out id> <sub id>;
-#X obj 177 113 tgl 15 0 /out/\$1/sub/\$2/mute /out/\$1/sub/\$2/mute
-M 5 8 0 10 -258113 -1 -1 0 1;
+#X obj 177 113 tgl 15 0 \$1\$2/mute \$1\$2/mute M 5 8 0 10 -258113
+-1 -1 0 1;
 #X coords 0 -1 1 1 100 50 2 100 100;

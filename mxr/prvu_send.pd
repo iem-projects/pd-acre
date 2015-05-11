@@ -1,4 +1,4 @@
-#N canvas 609 419 338 165 10;
+#N canvas 610 445 338 165 10;
 #X obj 69 106 prvu~;
 #X msg 128 101 reset;
 #X obj 128 81 bang;

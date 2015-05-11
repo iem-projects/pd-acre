@@ -1,14 +1,14 @@
-#N canvas 974 666 450 300 10;
-#X obj 101 101 cnv 15 98 48 empty empty out\$1 1 7 1 10 -191407 -66577
+#N canvas 976 664 450 300 10;
+#X obj 101 101 cnv 15 98 48 empty empty \$1 1 7 1 10 -191407 -66577
 0;
-#X obj 105 114 nbx 3 14 -1e+37 1e+37 0 0 /out/\$1/vol /out/\$1/vol
-vol 40 8 0 10 -4034 -1 -1 95.3333 256;
+#X obj 105 114 nbx 3 14 -1e+37 1e+37 0 0 \$1/vol \$1/vol vol 40 8 0
+10 -4034 -1 -1 0 256;
 #X text 104 58 out_ctl <out id>;
 #X floatatom 105 133 5 0 0 1 dB - -, f 5;
 #X obj 232 134 unpack 0 0;
-#X obj 177 113 tgl 15 0 /out/\$1/mute /out/\$1/mute M 5 8 0 10 -258113
--1 -1 0 1;
-#X obj 232 112 r /out/\$1/vu;
+#X obj 177 113 tgl 15 0 \$1/mute \$1/mute M 5 8 0 10 -258113 -1 -1
+0 1;
+#X obj 232 112 r \$1/vu;
 #X connect 4 0 3 0;
 #X connect 6 0 4 0;
 #X coords 0 -1 1 1 100 50 2 100 100;

@@ -1,12 +1,12 @@
-#N canvas 1096 603 614 297 10;
+#N canvas 1097 602 614 297 10;
 #X obj 11 11 cnv 15 48 198 empty \$1/cnv \$2 2 8 0 12 -162280 -66577
 0;
 #X obj 11 185 nbx 3 12 -1e+37 1e+37 0 0 \$1/vol \$1/vol empty 0 -8
-0 8 -4034 -1 -1 96 256;
+0 8 -4034 -1 -1 0 256;
 #X obj 11 52 vsl 15 128 0 127 0 0 \$1/vol/fad \$1/vol/fad empty 0 -9
-0 10 -4034 -1 -1 6600 1;
+0 10 -4034 -1 -1 0 1;
 #X obj 11 30 tgl 15 0 \$1/mute \$1/mute mute 18 7 0 10 -258113 -1 -1
-1 1;
+0 1;
 #X msg 81 97 set \$1;
 #X text 102 12 mxr/fader_ctl <prefix>;
 #X obj 81 54 r \$1/vol;
