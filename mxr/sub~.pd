@@ -1,4 +1,4 @@
-#N canvas 1183 191 435 464 10;
+#N canvas 1184 190 435 464 10;
 #X obj 49 390 outlet~;
 #X obj 47 201 *~;
 #X obj 47 224 lp1~ 90;
@@ -18,7 +18,7 @@
 #X obj 95 114 r \$1/vol;
 #X obj 96 204 r \$1/lp;
 #X obj 71 288 r \$1/hp;
-#X obj 67 341 prvu_send \$1/vu;
+#X obj 67 341 prvu/send \$1/vu;
 #X connect 1 0 2 0;
 #X connect 2 0 10 0;
 #X connect 6 0 1 1;
