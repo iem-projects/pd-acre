@@ -1,0 +1,5 @@
+#N canvas 610 414 403 233 10;
+#X text 32 31 in/eq_ds <domain> <ch|eq id>;
+#X obj 30 63 ds/register_map \$1 \$2/eq/bypass;
+#X obj 27 91 hilo_ds \$1 \$2;
+#X obj 31 121 para_ds \$1 \$2;

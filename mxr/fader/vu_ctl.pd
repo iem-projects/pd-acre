@@ -1,11 +1,11 @@
-#N canvas 1098 601 614 297 10;
+#N canvas 1099 600 614 297 10;
 #X obj 11 11 cnv 15 48 198 empty \$1/cnv \$2 2 8 0 12 -162280 -66577
 0;
-#X obj 11 185 nbx 3 12 -1e+37 1e+37 0 0 \$1/vol \$1/vol empty 0 -8
+#X obj 11 181 nbx 3 12 -1e+37 1e+37 0 0 \$1/vol \$1/vol empty 0 -8
 0 8 -4034 -1 -1 0 256;
-#X obj 11 52 vsl 15 128 0 127 0 0 \$1/vol/fad \$1/vol/fad empty 0 -9
+#X obj 11 48 vsl 15 128 0 127 0 0 \$1/vol/fad \$1/vol/fad empty 0 -9
 0 10 -4034 -1 -1 0 1;
-#X obj 11 30 tgl 15 0 \$1/mute \$1/mute mute 18 7 0 10 -258113 -1 -1
+#X obj 11 27 tgl 15 0 \$1/mute \$1/mute mute 18 7 0 10 -258113 -1 -1
 0 1;
 #X msg 81 97 set \$1;
 #X text 102 12 mxr/fader/vu_ctl <prefix>;
@@ -19,7 +19,7 @@ with fader more like a real fader for fine control within 0dB;
 as parameter;
 #X obj 88 192 r \$1/vol/fad;
 #X obj 81 127 s \$1/vol/fad;
-#X obj 27 61 vu 8 120 \$1/vu empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 27 57 vu 8 120 \$1/vu empty -1 -8 0 8 -66577 -1 1 0;
 #X obj 81 75 db2;
 #X obj 88 217 db;
 #X connect 4 0 12 0;

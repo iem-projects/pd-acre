@@ -1,0 +1,39 @@
+#N canvas 337 251 450 300 10;
+#X obj 101 101 cnv 15 98 148 empty empty \$1/eq 2 8 0 12 -191407 -66577
+0;
+#X obj 124 122 cnv 15 33 114 empty \$1GUIinchannel_EQ_gain_cnv gain
+6 4 0 8 -212212 -1 0;
+#X obj 159 122 cnv 15 40 114 empty \$1GUIinchannel_EQ_freq_cnv freq
+10 4 0 8 -195568 -1 0;
+#X obj 131 149 nbx 3 14 -100 20 0 0 \$1/high/gain \$1/high/gain empty
+0 -6 0 8 -228992 -1 -1 0 256;
+#X obj 131 166 nbx 3 14 -100 20 0 0 \$1/mid1/gain \$1/mid1/gain empty
+0 -6 0 8 -228992 -1 -1 0 256;
+#X obj 130 183 nbx 3 14 -100 20 0 0 \$1/mid2/gain \$1/mid2/gain empty
+0 -6 0 8 -228992 -1 -1 0 256;
+#X obj 130 200 nbx 3 14 -100 20 0 0 \$1/low/gain \$1/low/gain empty
+0 -6 0 8 -228992 -1 -1 0 256;
+#X obj 159 134 nbx 4 12 20 9999 1 0 \$1/highcut/freq \$1/highcut/freq
+HiCut -58 7 0 8 -187584 -1 -1 20 256;
+#X obj 159 151 nbx 4 12 20 9999 1 0 \$1/high/freq \$1/high/freq High
+-58 7 0 8 -187584 -1 -1 20 256;
+#X obj 159 167 nbx 4 12 20 9999 1 0 \$1/mid1/freq \$1/mid1/freq empty
+0 7 0 8 -187584 -1 -1 20 256;
+#X obj 158 185 nbx 4 12 20 9999 1 0 \$1/mid2/freq \$1/mid2/freq empty
+0 7 0 8 -187584 -1 -1 20 256;
+#X obj 158 202 nbx 4 12 20 9999 1 0 \$1/low/freq \$1/low/freq Low -58
+7 0 8 -187584 -1 -1 20 256;
+#X obj 158 219 nbx 4 12 1 9999 1 0 \$1/lowcut/freq \$1/lowcut/freq
+LoCut -58 7 0 8 -187584 -1 -1 1 256;
+#X obj 100 168 nbx 3 12 0.1 10 1 0 \$1/mid1/q \$1/mid1/q empty 0 -6
+0 8 -162485 -1 -1 0.1 256;
+#X obj 100 185 nbx 3 12 0.1 10 1 0 \$1/mid2/q \$1/mid2/q empty 0 -6
+0 8 -162485 -1 -1 0.1 256;
+#X obj 140 131 tgl 14 0 \$1/highcut/on \$1/highcut/on empty 0 -6 0
+8 -262144 -1 -1 0 1;
+#X obj 141 217 tgl 14 0 \$1/lowcut/on \$1/lowcut/on empty 0 -6 0 8
+-262144 -1 -1 0 1;
+#X obj 104 232 tgl 15 0 \$1/bypass \$1/bypass bypass 17 7 0 10 -203904
+-1 -1 0 1;
+#X text 9 18 eq_ctl <ch|eq id>;
+#X coords 0 -1 1 1 100 150 2 100 100;

@@ -1,0 +1,26 @@
+#N canvas 389 52 613 252 10;
+#X obj 225 32 loadbang;
+#X msg 224 147 print;
+#X msg 225 54 CRACK \, limits 94 100 \, set 94 20 100 \, set2 100 1
+10;
+#X obj 53 153 *~;
+#X msg 224 102 limit \$1;
+#X obj 71 96 limiter~ 2;
+#X obj 52 32 inlet~;
+#X obj 52 181 outlet~;
+#X obj 224 78 r \$1/limiter/limit;
+#X obj 224 124 r \$1/limiter/print;
+#X text 66 9 in/limiter~ <ch|limiter id>;
+#X obj 51 55 delwrite~ \$0_limdelay 5;
+#X obj 53 126 delread~ \$0_limdelay 2;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 1;
+#X connect 6 0 11 0;
+#X connect 6 0 5 0;
+#X connect 8 0 4 0;
+#X connect 9 0 1 0;
+#X connect 12 0 3 0;

@@ -1,0 +1,7 @@
+#N canvas 635 421 348 258 10;
+#X text 32 27 in/channel_ds <domain> <bus id>;
+#X obj 28 69 ds/register_map \$1 \$2/mute;
+#X obj 28 88 ds/register_map \$1 \$2/vol;
+#X obj 28 113 mxr/in/in_ds \$1 \$2;
+#X obj 28 151 mxr/eq/ds \$1 \$2;
+#X obj 28 132 mxr/limiter/ds \$1 \$2;

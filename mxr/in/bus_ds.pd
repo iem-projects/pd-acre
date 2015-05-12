@@ -1,0 +1,4 @@
+#N canvas 510 217 348 202 10;
+#X obj 36 61 ds/register_map \$1 /bus/\$2/vol;
+#X obj 37 82 ds/register_map \$1 /bus/\$2/mute;
+#X text 32 27 in/buslive_ds <domain> <bus id>;

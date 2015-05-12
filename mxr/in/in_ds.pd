@@ -1,0 +1,5 @@
+#N canvas 564 431 401 146 10;
+#X text 61 22 in_ds <input id> <storage domain>;
+#X obj 66 45 ds/register_map \$1 \$2/in/hip;
+#X obj 67 66 ds/register_map \$1 \$2/in/gain;
+#X obj 67 86 ds/register_map \$1 \$2/in/inv;
