@@ -8,27 +8,28 @@ ds - Data Storage
 
 
 A simple data storage library to store different sets of parameters as messages 
-for a project in different files defined as domain. A simple usage is session
-management within a puredata project.
+in files for defined *domains*. 
+The main target is  a simple session management within a Puredata project.
 
 
 Dependencies
 ------------
 
 zexy 
- puredata library, needed for the indexed data storage in text-files.
+ Puredata library, needed for the indexed data storage in text-files.
 
 Concept
 -------
 
-Data to be stored are `variables`, represented as names in send/receive objects
-and called parameter in the objects.
-Parameter data is stored in indexed sets of lists  in Pd memory 
-which can be saved in and loaded from text files.
-A *index number* is used to switch between different sets of messages. 
-You can think of it like a storage of sound programms in synthesizer.
+Data of `variables`, represented as names in send/receive objects
+and called here *parameter* in the objects.
+Parameter data is stored in indexed sets of message lists in Pd memory and
+can be saved in and loaded from text files.
+An *index number* is used to switch between different sets of messages. 
+It works like most storage funtionality of sound programs in synthesizer,
+including the concept of edit buffer, storage slot and storage files.
 
-Each  indexed list of parameter can be associated with a `domain` name.
+Each  indexed list of parameters is associated with an `domain` name.
 With this concept, different indexed parameter spaces can be handled in
 memory and different files.
 
@@ -46,11 +47,11 @@ form is handy to distinguish between domains.
 Anyhow this should not be needed in normal operation and should be avoided to 
 keep naming in files tight to domains to prevent confusion.
 
-The ``store;`` message stores the current parameter set to an internal buffer
-to the current storage slot set with the ``index``. 
-``recall;`` recalls the stored parameter set from slot ``index``.
+The ``store`` message stores the current parameter set to an internal buffer
+to the current storage slot set with the *index*. 
+``recall`` recalls the stored parameter set from slot *index*.
 The stored parameter sets can saved in an human readable text file.
-Each slot index seperates  a set, one message per line,prepended by the domain.
+Each slot index separates  a set, one message per line, prepended by the domain.
 
 ``load <filname>;`` loads a filename with a file dialog, ``reload;`` reloads the
 last used file.
@@ -104,11 +105,13 @@ Notes
 -----
 
 - Will be enhanced with OSC functionality, where registered parameter
-  are also send and received over OSC to symchronize Pd Patches in different
+  are also send and received over OSC to synchronize Pd Patches in different
   Pd instances. (already done in some projects but interface is not stable enough
   to released now.)
 
 - This module is quite stable and used since several years in different projects
 
+- It will make me happy, of some native English speaker will edit this 
+  documentation  and englishfy it.
 
 (c) GPL, algorythmics, IEM, winfried ritsch
