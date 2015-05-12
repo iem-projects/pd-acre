@@ -1,0 +1,6 @@
+#N canvas 355 389 450 300 10;
+#X obj 101 101 cnv 15 48 48 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 118 123 bng 15 250 50 0 /mxr/reset_vu /mxr/reset_vu reset_vu
+-16 -7 0 10 -262144 -1 -1;
+#X coords 0 -1 1 1 50 50 2 100 100;

@@ -2,7 +2,7 @@
 #X obj 11 11 cnv 30 98 198 empty empty MASTER 2 8 0 10 -191407 -66577
 0;
 #X obj 18 193 nbx 3 14 -1e+37 1e+37 0 0 empty empty avg 0 -8 0 10 -228856
--1 -1 0.77 256;
+-1 -1 0.99 256;
 #X obj 64 193 nbx 3 14 -1e+37 1e+37 0 0 empty empty peak 0 -8 0 10
 -228856 -1 -1 2 256;
 #X obj 13 32 vsl 15 128 0 127 0 0 \$1/master/fad \$1/master/fad empty
@@ -16,17 +16,16 @@
 #X obj 18 226 r /mxr/load;
 #X obj 18 253 unpack 0 0;
 #X obj 123 55 pack 0 \$0;
-#N canvas 58 209 192 222 \$0-master-par 0;
+#N canvas 592 673 192 218 \$0-master-par 1;
 #X obj 19 8 cnv 30 98 198 empty empty master_parameter 0 8 0 10 -191407
 -66577 0;
-#X obj 27 128 nbx 4 14 -1e+37 1e+37 0 0 /mxr/fadetime /mxr/fadetime
-fadetime 0 -8 0 10 -262144 -1 -1 50 256;
-#X obj 28 87 bng 15 250 50 0 /mxr/reset_vu /mxr/reset_vu rst_vu 16
-7 0 10 -262144 -1 -1;
-#X obj 25 27 acre/init_ctl;
+#X obj 22 99 nbx 4 14 -1e+37 1e+37 0 0 /mxr/fadetime /mxr/fadetime
+fadetime 0 -8 0 10 -262144 -1 -1 100 256;
+#X obj 19 27 acre/init_ctl;
+#X obj 68 27 prvu/ctl;
 #X restore 123 113 pd \$0-master-par;
 #X msg 123 78 \; pd-\$2-master-par vis \$1;
-#X obj 62 79 tgl 15 0 empty empty extra 17 7 0 10 -262144 -1 -1 0 1
+#X obj 62 79 tgl 15 0 empty empty extra 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X msg 173 223 set \$1;
 #X obj 173 201 mxr/db2fader;
