@@ -1,5 +1,4 @@
-#N canvas 800 781 417 181 10;
-#X obj 21 63 mxr/master~;
+#N canvas 801 780 417 181 10;
 #X obj 33 114 outlet~;
 #X obj 201 114 outlet~;
 #X text 24 32 simple stereo out without sub;
@@ -8,7 +7,8 @@
 #X obj 191 89 mxr/out/ch~ /out/2;
 #X obj 191 139 mxr/mo/send~ /out/2;
 #X obj 23 139 mxr/mo/send~ /out/1;
+#X obj 21 63 mxr/master/fade~;
+#X connect 4 0 0 0;
+#X connect 4 0 7 0;
 #X connect 5 0 1 0;
-#X connect 5 0 8 0;
-#X connect 6 0 2 0;
-#X connect 6 0 7 0;
+#X connect 5 0 6 0;

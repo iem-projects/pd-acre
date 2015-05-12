@@ -1,4 +1,4 @@
-#N canvas 501 185 531 336 10;
+#N canvas 503 183 531 336 10;
 #X obj 235 86 r /mxr/fadetime;
 #X text 67 44 Note a sub~ master and the out is needed !;
 #X obj 194 257 r /mxr/fadetime;
@@ -9,7 +9,7 @@
 #X obj 67 75 r~ \$1~;
 #X obj 87 182 throw~ \$2~;
 #X obj 90 237 r \$1\$2/hp;
-#X obj 86 156 mxr/fader~ \$1\$2;
+#X obj 86 156 mxr/fader/fader~ \$1\$2;
 #X connect 0 0 10 1;
 #X connect 2 0 6 2;
 #X connect 6 0 3 0;

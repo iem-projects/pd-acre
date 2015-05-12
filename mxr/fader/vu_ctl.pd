@@ -1,25 +1,15 @@
-#N canvas 1077 480 614 297 10;
+#N canvas 1098 601 614 297 10;
 #X obj 11 11 cnv 15 48 198 empty \$1/cnv \$2 2 8 0 12 -162280 -66577
 0;
-#X obj 14 185 nbx 3 12 -1e+37 1e+37 0 0 \$1/vol \$1/vol empty 0 -8
+#X obj 11 185 nbx 3 12 -1e+37 1e+37 0 0 \$1/vol \$1/vol empty 0 -8
 0 8 -4034 -1 -1 0 256;
-#X obj 14 52 vsl 15 128 0 127 0 0 \$1/vol/fad \$1/vol/fad empty 0 -9
+#X obj 11 52 vsl 15 128 0 127 0 0 \$1/vol/fad \$1/vol/fad empty 0 -9
 0 10 -4034 -1 -1 0 1;
-#X obj 14 27 tgl 15 0 \$1/mute \$1/mute mute 17 7 0 8 -258113 -1 -1
+#X obj 11 30 tgl 15 0 \$1/mute \$1/mute mute 18 7 0 10 -258113 -1 -1
 0 1;
-#X text 26 88 -0dB;
 #X msg 81 97 set \$1;
-#X text 30 154 -40;
-#X text 30 109 - 5;
-#X text 30 66 + 5;
+#X text 102 12 mxr/fader/vu_ctl <prefix>;
 #X obj 81 54 r \$1/vol;
-#X obj 81 75 mxr/db2fader;
-#X obj 88 217 mxr/fader2db;
-#X text 30 56 +12;
-#X text 30 43 +22;
-#X text 30 124 -12;
-#X text 30 141 -24;
-#X text 30 172 0;
 #X obj 88 240 s \$1/vol;
 #X text 187 120 Note: feedback control could be more enhanced;
 #X text 187 43 Idea: volumes are stored in MIDI-dB so they can be edited
@@ -29,10 +19,12 @@ with fader more like a real fader for fine control within 0dB;
 as parameter;
 #X obj 88 192 r \$1/vol/fad;
 #X obj 81 127 s \$1/vol/fad;
-#X text 102 12 mxr/fader_ctl <prefix> <name>;
-#X connect 5 0 22 0;
-#X connect 9 0 10 0;
-#X connect 10 0 5 0;
-#X connect 11 0 17 0;
-#X connect 21 0 11 0;
+#X obj 27 61 vu 8 120 \$1/vu empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 81 75 db2;
+#X obj 88 217 db;
+#X connect 4 0 12 0;
+#X connect 6 0 14 0;
+#X connect 11 0 15 0;
+#X connect 14 0 4 0;
+#X connect 15 0 7 0;
 #X coords 0 -1 1 1 50 200 2 10 10;
