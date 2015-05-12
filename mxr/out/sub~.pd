@@ -4,7 +4,7 @@
 #X obj 194 257 r /mxr/fadetime;
 #X obj 65 304 outlet~;
 #X text 121 304 hipghpassed output for use with subwoofer;
-#X text 70 19 out_sub~ <out id> <sub_id>;
+#X text 70 19 mxr/out/sub~ <out id> <sub_id>;
 #X obj 66 276 hp1~ 10 50;
 #X obj 67 75 r~ \$1~;
 #X obj 87 182 throw~ \$2~;

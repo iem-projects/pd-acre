@@ -1,13 +1,12 @@
-#N canvas 610 445 338 165 10;
+#N canvas 611 471 338 165 10;
 #X obj 69 106 prvu~;
 #X msg 128 101 reset;
 #X obj 128 81 bang;
 #X obj 129 58 r /out/reset_vu;
 #X obj 71 54 inlet~;
-#X text 74 2 helper for module out;
-#X text 78 29 prvu_level <send name>;
 #X obj 69 125 s \$1;
-#X connect 0 0 7 0;
+#X text 78 29 mxr/prvu/send <send name>;
+#X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;

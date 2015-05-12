@@ -1,4 +1,4 @@
-#N canvas 10 260 503 272 10;
+#N canvas 11 259 503 272 10;
 #X text 27 25 mxr/master_ds <domain>;
 #X text 43 49 Storage for the master section;
 #X obj 21 175 ds/register_map \$1 /mxr/fadetime;

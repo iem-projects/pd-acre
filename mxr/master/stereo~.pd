@@ -1,4 +1,4 @@
-#N canvas 799 782 417 181 10;
+#N canvas 800 781 417 181 10;
 #X obj 21 63 mxr/master~;
 #X obj 33 114 outlet~;
 #X obj 201 114 outlet~;

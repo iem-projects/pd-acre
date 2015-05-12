@@ -1,4 +1,4 @@
-#N canvas 31 157 331 245 10;
+#N canvas 32 183 331 245 10;
 #X text 43 49 Storage for the master section;
 #X text 27 25 mxr/sub_ds <domain> <sub id>;
 #X obj 21 84 ds/register_map \$1 \$2/vol;
