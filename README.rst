@@ -1,14 +1,16 @@
-====
-ACRE
-====
-Algorithmic Composition Realtime Environment
---------------------------------------------
+.. include:: docu/acre_title.rst
 
-:Author: Winfried Ritsch
-:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
-:Revision: 0.31 "development"
-:Copyright: Winfried Ritsch - IEM / algorythmics 2012+
-
+.. ====
+.. ACRE
+.. ====
+.. Algorithmic Composition Realtime Environment
+.. --------------------------------------------
+.. 
+.. :Author: Winfried Ritsch
+.. :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
+.. :Revision: 0.31 "development"
+.. :Copyright: Winfried Ritsch - IEM / algorythmics 2012+
+.. 
  
 "development version" means in this context:
     Structure and namespaces of this library will change if necessary,
@@ -80,10 +82,10 @@ References and Footnotes
 .. [Autopiano] Pieces with robot piano players 
    see http://algo.mur.at/projects/autoklavierspieler/performances/heptapiano
 
-.. [AA] Atelier Algorythmics http://algo.mur.at/
-
 .. [Scan] http://iaem.at/kurse/projekte/scan/
 
 
-.. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
-         see http://iem.at/
+.. .. [AA] Atelier Algorythmics http://algo.mur.at/
+.. .. 
+.. .. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
+.. ..          see http://iem.at/

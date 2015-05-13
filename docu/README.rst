@@ -1,37 +1,37 @@
-====
-ACRE
-====
-Algorithmic Composition Realtime Environment
---------------------------------------------
+.. include:: acre_title.rst
 
-:Author: Winfried Ritsch
-:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
-:Revision: $Revision: 0.3  2015 $
-:Copyright: Winfried Ritscg - IEM / algorythmics 2012+
-
-Introduction
-............
-
-ACRE is collection of PD-Patches, Externals and helping applications for 
-algorithmic composition in an realtime computermusic environment. 
-It was dedicated to be integrated in open source projects at Atelier 
-Algorythmics AA_ or IEM_ und now is published to be used by others.
-
-
-Install
-.......
+Installation
+============
 
 Nothing to compile at the moment.
 
-copy the folders in ACRE to one of the PD search pathes either global
-or local in your project.
+Copy the module folders in ACRE to one of the PD search paths either global
+or local in your project or add a path to this directory with 
+``[declare -path acre]`` (or deprecated in the settings).
+
+
+:main document: acre.rst_
+
+
+.. include:: acre_intro.rst 
+
 
 Documentation
-.............
+=============
 
+can be compiled within the docu folder searching for sub-Documents
+in the module folders for files matching ``acre_<module id>.rst``
+with ``docutils`` see RestructuredText_ .
 
-Is compiled within the docu folder searching for sub-Documents
-in the module folders for files matching acre_ ``<module id>.rst``
+Following sectioning is recommended::
 
-.. include acre.rst 
+    # with overline, for parts
+    * with overline, for chapters
+    =, for sections
+    -, for subsections
+    ^, for subsubsections
+    ", for paragraphs
 
+.. _acre.rst: acre.rst
+
+.. _RestructuredText:  http://docutils.sourceforge.net/rst.html
