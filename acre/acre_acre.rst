@@ -3,12 +3,6 @@ acre - base abstractions and helpers
 common module objects used in the different modules of ACRE
 -----------------------------------------------------------
 
-:Author: Winfried Ritsch
-:Contact: ritsch@iem.at
-:Revision: $Revision: 0.3 for IEM 2014 $
-:Copyright: GPL: Winfried Ritsch - IEM/algorythmics, 2012+
-
-
 Functions
 ---------
 

@@ -9,16 +9,13 @@ Algorithmic Composition Realtime Environment
 
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
-:Revision: see `../docu/acre_header.rst`_
+:Revision: see `../docu/acre_title.rst`_
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
 
 acre - base module
 ==================
 
 base abstractions and helpers
-
-.. _`../docu/acre_header.rst`: ../docu/acre_header.rst
-
 
 See documentation in files the docu_ and acre_acre.rst_
 
