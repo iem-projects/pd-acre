@@ -10,7 +10,7 @@ Algorithmic Composition Realtime Environment
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Revision: 0.31 "development"
-:Copyright: Winfried Ritsch - IEM / algorythmics 2012+
+:Copyright: winfried ritsch - IEM / algorythmics 2012+
 
  
 "development version" means in this context:
@@ -86,7 +86,7 @@ References and Footnotes
 .. [Scan] http://iaem.at/kurse/projekte/scan/
 
 
-.. .. [AA] Atelier Algorythmics http://algo.mur.at/
-.. .. 
-.. .. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
-.. ..          see http://iem.at/
+.. [AA] Atelier Algorythmics http://algo.mur.at/
+.. 
+.. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
+..          see http://iem.at/

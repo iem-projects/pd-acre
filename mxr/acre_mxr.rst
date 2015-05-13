@@ -1,14 +1,5 @@
-mxr
-===
-module of puredata library ACRE
--------------------------------
-
-:Author: Winfried Ritsch
-:Contact: ritsch@algo.mur.at
-:Revision: $Revision: 0.31 development 2014 $
-:Copyright: algorythmics, 2012+
-
-Note: in development means: names and structure can change ...
+mxr - Mixer module
+==================
 
 Within this library basic audio mixer functionality is provided, including
 the "traditional" master section with DSP control, out buses and sub-channels, 
@@ -20,7 +11,7 @@ in other modules of ACRE.
 
 Most functions are documented and explained in their patch.
 
-structure
+Structure
 ---------
 
 The master sections also provides the DSP functionality for the patch, like
@@ -33,7 +24,7 @@ For grouping the functions, they are separated in sub-folders, which will part
 of the object name, so they should not be declared as search paths, since
 same names are in different folder.
 
-out functions
+Out functions
 -------------
 
 
@@ -44,16 +35,13 @@ Also for DSP functionality  and global parameter like  fadetime,...
 for each out channel ``[mxr/out/ch~ <out id>]`` for implementing simple 
 crossovers and needs a ``[mxr/sub/master~ <sub id>]``
 
-out objects
-...........
-
 (prefix ``mxr/`` is ommitted in favour for shorter names in documentation only)
 
 master/fade~ master/ctl master/ds master/gain~
   Master controls Master volumes, mutes, DSP  and global settings: fadetime, ...
 
 master/stereo~ master/stereo_ctl master/stereo_ds
-  a sample stereo config without subs
+  a sample stereo configuration without subs
 
 out/ch~ out/ctl out/ds
   out channel which sums up the signal with $catch~ <out-id>~ 
@@ -65,22 +53,22 @@ out/sub~ out/sub_ctl out/sub_ds
   As an extensions, it adds sub-woofer functionality to out channels.   
   Each instance adds a output of one out channel to one sub.
 
-  :provides: vol, highpass for out channel
-  :needs: matching sub~ master sections
-
-mo/master~ mo/ctl mo/prepost~ mo/send~
-  monitoring functionality, with a master monitor 
-
-  :Note: Monitoring has no storage module by default
-
+  :provides: vol, high-pass for out channel
+  :needs: matching sub/master~ and out/ch~
 
 sub/master~ sub/ctl sub/ds
-  a sub-woofer master-section
+  a sub-woofer management system for out buses and a master-section
 
-  :provides: volume and filters
-  :needs: master~ section
+  :provides: sub-volumes and filters
+  :needs: master section
 
-in functions
+mo/master~ mo/ctl mo/prepost~ mo/send~
+  audio signal monitoring with sends and a master monitor section
+
+  :provides: monitoring functionality
+  :needs:
+
+In functions
 ------------
 
 In functions simplifies channel strip building, with small units.
@@ -97,86 +85,83 @@ Distribution of ins with panorama functions or other spatial encoding
 can be added in later versions, but complex spatialization 
 is outsourced in separate modules.
 
-Functions
----------
-
-in/bus~ in/bus_ctl in/bus_ds in/buslive~ in/buslive_ctl in/buslive_ds
-
-  collects in thrown from anywhere and distributes the signal.
-
-  provides: fading
-
-  
 in/ch~  in/ch_ctl in/ch_ds
-
   a default channel strip which puts most of functionality of the lib.
 
-  provides: in, limiter, eq, fader
+  :provides: in, limiter, eq, fader in an channel strip
+  :needs: master section
+
+in/bus~ in/bus_ctl in/bus_ds in/buslive~ in/buslive_ctl in/buslive_ds
+  collects in thrown from anywhere and distributes the signal.
+
+  :provides: Bus channels and distribution
+  :needs: master section
 
 
 Helpers
 -------
 
-general functions for signal path
+General functions used in for signal path
 
 amplifying
-..........
-
-fader/fader~ fader/gain~ fader/volvu_ctl fader/ctl fader/vol_ctlfader/vu_ctl
-   provides fader functionality unlike linear dB scaling they are more like
-   faders on a mixer.
+^^^^^^^^^^
 
 fader/db fader/rms fader/db2 fader/rms2
-   fader curve conversions
+   unlike linear dB scaling (dbtorms), they behave more like
+   faders on a mixer.
 
+   :provides: fader curve conversions
+
+
+fader/fader~ fader/gain~ fader/volvu_ctl fader/ctl fader/vol_ctlfader/vu_ctl
+   fader using fader/db mapping.
+
+   :provides: fader~ functionality 
+   :needs: conversion functions
 
 test functions
-..............
+^^^^^^^^^^^^^^
 
 test/tones_ctl test/tones~
    a test-tones generator with pulse function
 
-signal view
-...........
+   :provides: a testtone signal generator with GUI
 
 prvu/send prvu/ctl
   used for all VU outs to be able to reset them, enhance in future ...
 
+  :provides: conversion of signal to vu-meters with additional reset
+  :needs:
+
 signal conditioning
-....................
+^^^^^^^^^^^^^^^^^^^
 
 eq/dsp~ eq/ctl eq/ds  eq/hilo, eq/para eq/para~ eq/para_ds eq/hilo~ eq/hilo_ds
-
   a filter section with high low cut filter and parametric eq, 
-  (token from the CUBEMixer)
+  (original implemented for CUBEMixer by thomas musil)
 
-  provides a lowcut and highcut filter, paramtric filter, low and high shelf
-
+  :provides: a low-cut and high-cut filter, parametric filter, low and high shelf
+  :needs:
 
 limiter/dsp~ limiter/ctl limiter/ds
-
   a limiter in a channel strip 
 
+  :provides: a simple limiter to prevent digital clipping (CRACKLE)
+  :needs:
 
 Examples
 --------
 
-for testing and as an example
+Example patches also for testing the  module.
 
 example.pd example_stereo.pd
-  test and example patch of the out library
+  test and example patch of the mixer library
 
 
-obsolete will be removed or revised
------------------------------------
+Obsoletes
+---------
 
-(and some, especially MIDI moved to other lib)
+will be removed or revised (and some moved to other modules).
 
 test/recorder~.pd
-
-2ins_ctl.pd
-2ins_ds.pd
-2ins~.pd
-plate_2ins_ds.pd
-plate_2ins~.pd
-plate_ctl.pd
+   a session driven audio recorder

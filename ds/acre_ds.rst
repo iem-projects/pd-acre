@@ -1,16 +1,9 @@
 ds - Data Storage
 =================
 
-:Author: Winfried Ritsch
-:Contact: ritsch@algo.mur.at
-:Revision: $Revision: 0.31 2015 $
-:Copyright: GPL: IEM/algorythmics, 2012+
-
-
 A simple data storage library to store different sets of parameters as messages 
 in files for defined *domains*. 
 The main target is  a simple session management within a Puredata project.
-
 
 Dependencies
 ------------

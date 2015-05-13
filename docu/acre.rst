@@ -4,5 +4,5 @@
 
 .. include:: acre_intro.rst
 
-.. .. include:: ../ds/acre_ds.rst
-.. .. include:: ../mxr/acre_mxr.rst
+.. include:: ../ds/acre_ds.rst
+.. include:: ../mxr/acre_mxr.rst
