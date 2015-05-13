@@ -1,16 +1,17 @@
-.. include:: docu/acre_title.rst
+.. .. include:: docu/acre_title.rst
+.. .. Note: synchronise head with docu/acre_title.rst by hand
 
-.. ====
-.. ACRE
-.. ====
-.. Algorithmic Composition Realtime Environment
-.. --------------------------------------------
-.. 
-.. :Author: Winfried Ritsch
-.. :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
-.. :Revision: 0.31 "development"
-.. :Copyright: Winfried Ritsch - IEM / algorythmics 2012+
-.. 
+====
+ACRE
+====
+Algorithmic Composition Realtime Environment
+--------------------------------------------
+
+:Author: Winfried Ritsch
+:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
+:Revision: 0.31 "development"
+:Copyright: Winfried Ritsch - IEM / algorythmics 2012+
+
  
 "development version" means in this context:
     Structure and namespaces of this library will change if necessary,
