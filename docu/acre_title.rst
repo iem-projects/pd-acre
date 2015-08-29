@@ -18,9 +18,18 @@ Algorythmics AA_ or IEM_ und now is published to be used by others.
 
 "development version" means in this context:
     Structure and namespaces of this library will change if necessary,
-    ignoring backwards compatibility unless Version "1.x"  is reached.
-    Until the "stable" version 1.0 is reached, modules already used  and tested in 
-    various projects will be added, so this lib can grow in next month often.
+    ignoring backwards compatibility unless Version "1.x"  of the library and/or 
+    module is reached.
+    Modules already used and tested in various previous projects will be added, 
+    so this lib may grow.
+
+Already integrated modules:
+   acre ds mxr
+
+Pending modules:
+   midi an fx np lg ca gen rep vi
+
+more on these names in ./acre_intro.rst
 
 .. [AA] Atelier Algorythmics http://algo.mur.at/
 
