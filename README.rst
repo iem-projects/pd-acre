@@ -67,7 +67,7 @@ References and Footnotes
 .. [ACRE] Algorithmic Composition Realtime Environment 
 
 .. [Puredata] graphical computermusic programming language by Miller Puckette 
-   see http://puredata.info/ , http://msp.ucsd.edu/
+   see http://puredata.info/, http://msp.ucsd.edu/
 
 .. [OSC] Open Sound Control protocoll see (http://opensoundcontrol.org/)
 
@@ -82,4 +82,4 @@ References and Footnotes
 .. [AA] Atelier Algorythmics http://algo.mur.at/
 
 .. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
-         see httpq://iem.at/
+         see http://iem.at/
