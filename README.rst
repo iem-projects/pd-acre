@@ -1,5 +1,5 @@
 .. .. include:: docu/acre_title.rst
-.. .. Note: synchronise head with docu/acre_title.rst by hand
+   .. Note: synchronise head with docu/acre_title.rst by hand instead of include
 
 ====
 ACRE
@@ -11,51 +11,37 @@ Algorithmic Composition Realtime Environment
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
 :Revision: see `docu/acre_title.rst`_
+:Master: https://git.iem.at:/pd/acre
 
 .. _`docu/acre_title.rst`:  ../docu/acre_title.rst
 
- 
 "development version" means in this context:
-    Structure and namespaces of this library will change if necessary,
-    ignoring backwards compatibility unless Version "1.x"  is reached.
-    Until the "stable" version 1.0 is reached, modules already used  and tested in 
-    various projects will be added, so this lib can grow in next month often.
+  Structure and namespaces of this library will change if necessary, ignoring backwards compatibility unless Version "1.x"  is reached. Until the "stable" version 1 is reached, modules can change.
+  
+  Modules already used and tested in various projects and lectures will be added, so this lib can grow quite often in steps.
 
 Introduction
 ............
 
-ACRE is collection of Patches Externals for Puredata_ and helping applications 
-targeting algorithmic composition in an realtime computermusic environment. 
-It was dedicated to be integrated in open source projects at Atelier 
-Algorythmics AA_ or IEM_ and now also to published to be used by others.
+ACRE is collection of Puredata_ Patches, Externals and example applications targeting algorithmic composition in an realtime computermusic environment. 
+It was dedicated to be integrated in open source projects at Atelier Algorythmics AA_ and IEM_ first hand and now is public to be useful for others.
 
 Modules of this library can and should be used as submodules in projects.
 
 Mission
 ~~~~~~~
 
-An Algorithmic Composition Real-time Environment (ACRE) should be assembled to 
-enable composers to generate compositions,  computermusic ensembles to share 
-instruments, musicians build their tools on this basis and media artists to 
-construct projects in the area of computermusic. This artistic research 
-environment should evolve from within projects done at the IEM or other place, 
-especially from lectures and therefore academic development strategy is used - 
-develop during project phase and sharing valuable changes afterwards ;-).
+An Algorithmic Composition Real-time Environment (ACRE) should be assembled to enable composers to generate compositions,  computermusic ensembles to share instruments, musicians build and extend their tools and media artists to include realtime computermusic projects in their projects.
+As artistic research environment this should evolve from within projects done at the IEM or elsewhere, especially within courses. 
+Therefore as an academic development strategy is used: 
+"develop during project phase and sharing valuable changes afterwards" ;-) 
 
-The "Algorithmic Composition Realtime Environment" aka ACRE is  a library, 
-assembling and extending modules to implement pieces for robotic instruments 
-and musicians in computer music realtime environments.
-This artistic research environment will also integrate algorithms for generation
-and analysis for  parameter data-streams for the robotic machinery and other 
-compositions. 
-Also it is  an documentation of the accumulation on the ideas and algorithms 
-used in compositions and realizations of art installations at IEM 
-and Atelier Algorythmics [AA]_ .
+The "Algorithmic Composition Realtime Environment" aka ACRE is a library, 
+assembling and extending modules to implement pieces for robotic instruments and musicians in computer music realtime environments.
+This artistic research environment will also integrate algorithms for generation and analysis for  parameter data-streams for the robotic machinery and other compositions. 
+Also it is an documentation of the accumulation on the ideas and algorithms used in compositions and realizations of art installations at IEM and Atelier Algorythmics [AA]_ .
 
-The ACRE tools, as a framework should guarantee a modularized usage of 
-algorithms, enabling parts of algorithms to be moved to realtime operating 
-systems on small computers like modern micro-controllers and used as electronic 
-instruments.
+The ACRE tools, as a framework should guarantee a modularized usage of algorithms, enabling parts of algorithms to be moved to realtime operating systems on small computers like embedded devices with modern micro-controllers and used as electronic instruments.
 
 Documentation
 -------------
@@ -64,15 +50,21 @@ is in docu_ directory and every module directory starting with acre_<module>.rst
 
 .. _docu: docu/
 
-Notes
------
+History
+-------
 
-Updated for Scan_ Project at IEM 2014 used in the lecture "Klangsynthese in 
-Echtzeit WS14/15" and now for Waveguide and Tetraspeaker project.
-
+- initiated by Winfried 2007
+- extended for Autoklavier Konzerts, Metalspace and others
+- extended for performance Maschinenhalle 2010 
+- extended for lecture "Klangsynthese in Echtzeit" since 2012
+- Cleaned and shrinked for Opensource within the Scan_ Project at IEM 2014
+- Extended in the courses using Waveguide- and Tetraspeaker project.
+- pusblished for Ambisonics Mixer Tools for Studios at IEM. 2015
 
 References and Footnotes
 ------------------------
+
+.. [ACRE] Algorithmic Composition Realtime Environment 
 
 .. [Puredata] graphical computermusic programming language by Miller Puckette 
    see http://puredata.info/
@@ -87,8 +79,7 @@ References and Footnotes
 
 .. [Scan] http://iaem.at/kurse/projekte/scan/
 
-
 .. [AA] Atelier Algorythmics http://algo.mur.at/
-.. 
+
 .. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
-..          see http://iem.at/
+         see httpq://iem.at/
