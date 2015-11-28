@@ -1,4 +1,4 @@
-.. .. include:: docu/acre_title.rst
+.. include:: docu/acre_title.rst
    .. Note: synchronise head with docu/acre_title.rst by hand instead of include
 
 ====
