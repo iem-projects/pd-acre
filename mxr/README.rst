@@ -14,7 +14,7 @@ Algorithmic Composition Realtime Environment
 
 .. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
 
-Mixer module with basic functions for audio routing and distribution.
+Mixer module with basic functions for audio routing and distribution to condtruct arbitrary digital mixer.
 
 See documentation in files the docu_ and acre_mxr.rst_
 

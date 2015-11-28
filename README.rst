@@ -1,5 +1,5 @@
 .. include:: docu/acre_title.rst
-   .. Note: synchronise head with docu/acre_title.rst by hand instead of include
+.. .. Note: synchronise head with docu/acre_title.rst by hand instead of include
 
 ====
 ACRE
@@ -59,6 +59,7 @@ History
 - extended for lecture "Klangsynthese in Echtzeit" since 2012
 - Cleaned and shrinked for Opensource within the Scan_ Project at IEM 2014
 - Extended in the courses using Waveguide- and Tetraspeaker project.
+- Integrated parts of it into the [ICE] development 2010-
 - pusblished for Ambisonics Mixer Tools for Studios at IEM. 2015
 
 References and Footnotes
@@ -83,3 +84,5 @@ References and Footnotes
 
 .. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
          see http://iem.at/
+         
+.. [ICE] ICE - IEM Computermusic Ensemble:  http://iaem.at/projekte/ice

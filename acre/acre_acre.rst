@@ -3,6 +3,8 @@ acre - base abstractions and helpers
 common module objects used in the different modules of ACRE
 -----------------------------------------------------------
 
+For more documentation see ../docu/acre_title.rst
+
 Functions
 ---------
 
