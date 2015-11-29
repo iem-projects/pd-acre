@@ -1,4 +1,4 @@
-#N canvas 740 487 560 392 10;
+#N canvas 739 345 560 392 10;
 #N canvas 671 78 569 444 read 0;
 #X obj 15 21 inlet;
 #X obj 59 201 msgfile;
@@ -76,10 +76,9 @@
 #X msg 123 162 read symbol \$1;
 #X obj 161 234 r /ts/\$1/vol;
 #X obj 323 184 r /ts/\$1/loop;
-#X text 172 46 (c)algorythmics \, winfried ritsch;
 #X text 128 74 float load reload next prev print this step;
 #X text 261 281 NOTE: generate a testsamples.txt in data;
-#N canvas 4 52 604 367 sampleplay 1;
+#N canvas 3 52 604 367 sampleplay 0;
 #X obj 66 53 inlet;
 #X obj 236 55 table \$0-sample;
 #X obj 64 302 outlet~;
@@ -122,9 +121,11 @@
 #X connect 22 0 10 0;
 #X restore 150 188 pd sampleplay;
 #X obj 284 227 del 0;
+#X text 170 5 (c) GPL \, acre winfried ritsch;
+#X text 173 40 acre/ts <id>;
 #X connect 0 0 13 0;
-#X connect 2 0 20 0;
-#X connect 3 0 19 0;
+#X connect 2 0 19 0;
+#X connect 3 0 18 0;
 #X connect 3 1 0 0;
 #X connect 4 0 1 0;
 #X connect 5 0 7 0;
@@ -133,10 +134,10 @@
 #X connect 8 0 3 0;
 #X connect 10 0 11 0;
 #X connect 12 0 9 0;
-#X connect 13 0 19 0;
+#X connect 13 0 18 0;
 #X connect 14 0 5 0;
 #X connect 15 0 2 1;
-#X connect 19 0 10 0;
-#X connect 19 0 4 0;
-#X connect 19 2 2 0;
-#X connect 20 0 19 0;
+#X connect 18 0 10 0;
+#X connect 18 0 4 0;
+#X connect 18 2 2 0;
+#X connect 19 0 18 0;

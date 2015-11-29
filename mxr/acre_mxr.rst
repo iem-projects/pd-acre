@@ -159,8 +159,7 @@ will be removed or revised (and some moved to other modules).
 
 test/recorder~.pd
    a session driven audio recorder
-   
-   
+
 Notes
 -----
 

@@ -1,7 +1,10 @@
 acre - base abstractions and helpers
 ====================================
-common module objects used in the different modules of ACRE
------------------------------------------------------------
+common module objects of ACRE
+-----------------------------
+
+This is library of common function as objects used in the different ACRE-modules and will be extended.
+Special care is taken not altering the functions in here already used in other modules. 
 
 For more documentation see ../docu/acre_title.rst
 

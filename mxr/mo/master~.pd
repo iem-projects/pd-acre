@@ -1,4 +1,4 @@
-#N canvas 216 543 384 295 10;
+#N canvas 166 267 384 295 10;
 #X obj 9 240 *~;
 #X obj 162 251 line~;
 #X obj 162 128 r /mo/vol;
@@ -18,6 +18,7 @@
 #X text 12 11 mxr/monitor~;
 #X obj 225 207 r /mxr/fadetime;
 #X obj 17 190 mxr/prvu/send /mo/level;
+#X text 184 271 (c) GPL - acre \, ritsch;
 #X connect 0 0 3 0;
 #X connect 1 0 0 1;
 #X connect 2 0 4 0;

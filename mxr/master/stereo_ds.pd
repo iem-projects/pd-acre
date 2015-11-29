@@ -1,6 +1,7 @@
-#N canvas 122 473 302 251 10;
+#N canvas 131 338 302 251 10;
 #X text 43 49 Storage for the master section;
 #X text 27 25 mxr/master_stereo_ds <domain>;
-#X obj 30 148 mxr/out/ds \$1 /out/1;
-#X obj 29 172 mxr/out/ds \$1 /out/2;
-#X obj 30 75 mxr/master/ds \$1;
+#X obj 29 101 mxr/out/ds \$1 /out/1;
+#X obj 30 75 mxr/master/ds \$1 /out;
+#X obj 28 125 mxr/out/ds \$1 /out/2;
+#X text 44 180 (c) GPL - acre \, ritsch;

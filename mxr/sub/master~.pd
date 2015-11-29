@@ -1,10 +1,10 @@
-#N canvas 1187 187 435 464 10;
+#N canvas 929 186 435 464 10;
 #X obj 49 390 outlet~;
 #X obj 47 201 *~;
 #X obj 47 224 lp1~ 90;
 #X text 101 228 Crossover can be set also here;
 #X text 101 248 Note: many poeple think the must be sharp;
-#X text 101 268 I think they should be smooth so 1st order;
+#X text 101 262 I think they should be smooth so 1st order;
 #X obj 95 183 line~;
 #X obj 95 137 fadtorms;
 #X obj 95 160 pack 0 50;

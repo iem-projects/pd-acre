@@ -1,5 +1,6 @@
-#N canvas 122 291 324 195 10;
+#N canvas 144 191 324 195 10;
 #X text 43 49 Storage for the master section;
-#X text 27 25 mxr/out/ds <domain> <out_id>;
 #X obj 21 85 ds/register_map \$1 \$2/vol;
 #X obj 21 105 ds/register_map \$1 \$2/mute;
+#X text 27 25 mxr/out/ds <domain> <out-id>;
+#X text 134 130 (c) GPL - acre \, ritsch;

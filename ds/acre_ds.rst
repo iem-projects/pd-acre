@@ -3,7 +3,7 @@ ds - Data Storage
 
 A simple data storage library to store different sets of parameters as messages 
 in files for defined *domains*. 
-The main target is  a simple session management within a Puredata project.
+The main target is a simple session management as data storage, within a Puredata project.
 
 Dependencies
 ------------
@@ -14,13 +14,18 @@ zexy
 Concept
 -------
 
-Data of `variables`, represented as names in send/receive objects and called here *parameter* in the objects.
-Parameter data is stored in indexed sets of message lists in Pd memory and can be saved in and loaded from text files.
-An *index number* is used to switch between different sets of messages. 
-It should work like most storage functionality like program storage in synthesizers, including the concept of edit buffer, storage slot and storage files.
+We look on send/receive names as `variables` names aka variable within Pd.
+Data of `variables` are messages. We use variables here for storable *parameter* or *settings* of the state of an function represented by an object.
+Parameter data are stored in indexed sets of messages in Pd memory and can be saved in and loaded from text files.
+An *index number* is used to switch between different sets of messages, also known as *scenes* and separated in the text file with ``#scene <nr>`` (see the listobject object of zexy for more information).
 
-Each  indexed list of parameters is associated with an `domain` name.
-With this concept, different indexed parameter spaces can be handled in memory and handled within separated files.
+It should work as storage functionality like the program storage in synthesizers, including the concept of edit buffer, program numbers and store to files or *scenes storage* in consoles e.g. for lighting with *next* and *previous* functionality.
+
+Each storage is associated with an *domain-name*, to operate parallel data storages within a Pd applications.
+With the concept of domains and domain-names different indexed parameter name-spaces can be handled in memory and within separate files.
+
+As a naming convention, the address naming used in Open Sound Control (OSC) or in unix file systems, is associated and also used all over the ACRE libraries: 
+The domain-name should be used as prefix for variable names in storage and files, (see also register-functions).
 
 For each domain a ``[ds/storage_logic]`` object is needed. 
 For controlling this a corresponding GUI object ds/ctl is provided.
@@ -41,7 +46,7 @@ Each slot index separates  a set, one message per line, prepended by the domain.
 
 The default filename is the domain name (without preceding /).
 
-Note: send/receive names should not contain special characters, except the "/" for forming a OSC associated name, legal in for OSC address, for future extension.
+Note: send/receive names should not contain special characters and the "/" as separator for forming a OSC associated name and should be also legal in  OSC address names, needed for future extension as OSC connection.
 
 objects:
 --------
@@ -60,7 +65,7 @@ register.pd <domain> <parameter>
   registers a parameter for a domain, with domain prepended in the variable name and data storage.
 
 register_map.pd <domain> <parameter>
-  registers a parameter for a domain, without prepending the domain in the variable name, only in the data storage.
+  registers a parameter for a domain, without prepending the domain in the variable name, only in the data storage, separating the variable from domain-name with `::`.
 
 register_raw.pd <domain> <parameter>
   registers a parameter for a domain, without prepending the domain in the variable name and in the data storage.
@@ -77,13 +82,18 @@ msg_pbank.pd
 Notes 
 -----
 
-- This module is quite stable and used since several years in different projects
+- 
+    This module is quite stable and used since several years in different projects
 
-- Will be enhanced with OSC functionality, where registered parameter are also send and received over OSC to synchronise Pd Patches in different Pd instances. 
-This was already implemented in some projects, but interface was not stable enough to released now, especially for backwards compatibility and should be implemented with a overloading ds_osc module.
+- 
+    Will be enhanced with OSC functionality, where registered parameter are also send and received over OSC to synchronize Pd Patches in different Pd instances. 
+    This was already implemented in some projects, but interface was not stable enough to released now, especially for backwards compatibility and should be implemented with a overloading ds_osc module.
 
-- This module was derivated from the setting storage done in the CUBEMIXER (2001) project of the IEM and rewritten simplified as a module for later projects at Atelier Algorythmics, Maschinenhalle and courses at the IEM and later used for the ICE-Ensemble project as a base at the IEM. Some forks has been made and out of control, so be carefully with compatibility. 
+- 
+    This module was derivated from the setting storage done in the CUBEMIXER (2001) project of the IEM and rewritten simplified as a module for later projects at Atelier Algorythmics, Maschinenhalle and courses at the IEM and later used for the ICE-Ensemble project as a base at the IEM. Some forks has been made and out of control, so be carefully with compatibility. 
 
-- It would make me happy, if some native English speaker will edit this documentation and englishfy it.
+- 
+    It would make me happy, if some native English speaker will edit this documentation and englishfy it.
 
+    
 (c) GPL, algorythmics, IEM, winfried ritsch

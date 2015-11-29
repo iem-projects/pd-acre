@@ -1,4 +1,4 @@
-#N canvas 1435 492 566 476 10;
+#N canvas 199 52 566 476 10;
 #X obj 57 261 mux~ . . .;
 #X obj 52 226 noise~;
 #X obj 31 98 osc~ 220;
@@ -27,7 +27,7 @@
 #X obj 173 326 r /mxr/fadetime;
 #X msg 314 362 0 3;
 #X obj 290 339 sel 0 1;
-#X obj 59 393 outlet~;
+#X obj 56 423 outlet~;
 #X obj 112 98 phasor~;
 #X obj 112 120 -~ 0.5;
 #X obj 112 142 *~ 2;
@@ -42,8 +42,9 @@
 #X obj 105 327 dbtorms;
 #X obj 244 241 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 154 405 mxr/prvu/send /out/testtones/\$1/level;
+#X obj 73 395 mxr/prvu/send /out/testtones/\$1/level;
 #X text 36 7 mxr/test/tones~ <id>;
+#X text 237 427 comment;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 1;

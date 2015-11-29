@@ -1,21 +1,19 @@
-#N canvas 896 335 601 479 10;
-#X obj 71 266 list;
-#X obj 58 88 r par_get;
-#X obj 69 330 s par_stored;
-#X obj 67 210 route \$1 bang;
-#X obj 101 149 r \$2;
-#X text 201 278 (c)algorythmics \, winfried ritsch;
+#N canvas 470 159 523 349 10;
+#X obj 67 243 list;
+#X obj 67 99 r par_get;
+#X obj 67 276 s par_stored;
+#X obj 67 123 route \$1 bang;
+#X obj 91 193 r \$2;
 #X text 75 67 second arg: name of parameter (within the storage domain)
 ;
-#X obj 286 183 # osc/osc_bi \$2 \$2;
-#X text 283 162 to be refined;
 #X text 74 3 ds/register_raw <domain> <subname>;
-#X text 74 25 first arg is not prepended \, raw \, in the file. The
+#X obj 92 216 list prepend \$1 \$2;
+#X text 74 33 first arg is not prepended e.g. raw \, in the file. The
 domain is used to separete to different storages;
-#X obj 101 188 list prepend \$1 \$2;
+#X text 171 241 (c) GPL \, acre winfried ritsch;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;
 #X connect 3 1 0 0;
-#X connect 4 0 11 0;
-#X connect 11 0 0 1;
+#X connect 4 0 7 0;
+#X connect 7 0 0 1;

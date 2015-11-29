@@ -1,4 +1,4 @@
-#N canvas 782 686 450 300 10;
+#N canvas 780 436 450 300 10;
 #X obj 25 52 inlet;
 #X obj 25 144 outlet;
 #X obj 25 77 * 440;
@@ -7,6 +7,7 @@
 #X text 19 9 fakt2m;
 #X text 19 30 calculates a transpose factor to a midinote offset;
 #X text 71 79 asume fakt 1 is a=69;
+#X text 170 5 (c) GPL \, acre winfried ritsch;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

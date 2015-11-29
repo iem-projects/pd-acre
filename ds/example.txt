@@ -1,10 +1,12 @@
 #scene 0
-/example-mastervol 73
+volume 17
+/example::mastervol 99
 fadetime 114
 /example/chan/2/vol 20
 /example/chan/1/vol 10
 #scene 1
-/example-mastervol 75
+volume 17
+/example::mastervol 80
 fadetime 100
 /example/chan/2/vol 32
 /example/chan/1/vol 16

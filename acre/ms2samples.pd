@@ -1,4 +1,4 @@
-#N canvas 456 383 468 279 10;
+#N canvas 455 382 468 279 10;
 #X obj 83 106 inlet;
 #X obj 133 134 samplerate~;
 #X obj 133 156 * 0.001;
@@ -9,6 +9,7 @@ respected after a init bang;
 #X obj 133 106 initbang;
 #X text 80 23 ms2samples;
 #X text 78 44 calculates number of samples from time in ms;
+#X text 170 5 (c) GPL \, acre winfried ritsch;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;
