@@ -1,3 +1,5 @@
+.. .. include:: ../docu/acre_title.rst
+ 
 ds - Data Storage
 =================
 
@@ -96,4 +98,4 @@ Notes
     It would make me happy, if some native English speaker will edit this documentation and englishfy it.
 
     
-(c) GPL, algorythmics, IEM, winfried ritsch
+(c) GPL, acre - algorythmics, IEM, winfried ritsch

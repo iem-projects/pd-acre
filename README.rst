@@ -1,4 +1,4 @@
-.. include:: docu/acre_title.rst
+.. .. include:: docu/acre_title.rst
 .. .. Note: synchronise head with docu/acre_title.rst by hand instead of include
 
 ====
@@ -53,14 +53,15 @@ is in docu_ directory and every module directory starting with acre_<module>.rst
 History
 -------
 
-- initiated by Winfried 2007
+- initiated by Winfried 2007 derived from previous pd-works
 - extended for Autoklavier Konzerts, Metalspace and others
 - extended for performance Maschinenhalle 2010 
 - extended for lecture "Klangsynthese in Echtzeit" since 2012
-- Cleaned and shrinked for Opensource within the Scan_ Project at IEM 2014
+- cleaned and shrinked for open-source publish of documented parts
+- enhanced within the [scan] Project at IEM 2014
 - Extended in the courses using Waveguide- and Tetraspeaker project.
 - Integrated parts of it into the [ICE] development 2010-
-- pusblished for Ambisonics Mixer Tools for Studios at IEM. 2015
+- published for Ambisonics Mixer Tools development for Studios at IEM. 2015
 
 References and Footnotes
 ------------------------
@@ -78,7 +79,7 @@ References and Footnotes
 .. [Autopiano] Pieces with robot piano players 
    see http://algo.mur.at/projects/autoklavierspieler/performances/heptapiano
 
-.. [Scan] http://iaem.at/kurse/projekte/scan/
+.. [scan] http://iaem.at/kurse/projekte/scan/
 
 .. [AA] Atelier Algorythmics http://algo.mur.at/
 

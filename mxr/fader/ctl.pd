@@ -1,4 +1,4 @@
-#N canvas 1078 479 614 297 10;
+#N canvas 592 393 614 297 10;
 #X obj 11 11 cnv 15 48 198 empty \$1/cnv \$2 2 8 0 12 -162280 -66577
 0;
 #X obj 14 185 nbx 3 12 -1e+37 1e+37 0 0 \$1/vol \$1/vol empty 0 -8
@@ -30,6 +30,8 @@ as parameter;
 #X text 102 12 mxr/fader_ctl <prefix> <name>;
 #X obj 81 75 mxr/fader/db2;
 #X obj 88 217 mxr/fader/db;
+#X text 220 242 (c) GPL \, acre winfried ritsch;
+#X text 103 165 (c) GPL \, acre - winfried ritsch;
 #X connect 5 0 20 0;
 #X connect 9 0 22 0;
 #X connect 19 0 23 0;

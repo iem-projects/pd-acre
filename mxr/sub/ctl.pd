@@ -1,4 +1,4 @@
-#N canvas 880 286 475 270 10;
+#N canvas 879 285 475 270 10;
 #X obj 11 11 cnv 30 98 198 empty empty \$1 2 8 0 12 -191407 -66577
 0;
 #X obj 41 62 vu 10 120 \$1/level empty -1 -8 0 10 -66577 -1 1 0;
@@ -19,6 +19,7 @@
 -262144 -1 -1 0 256;
 #X text 25 41 1storder cut;
 #X restore 125 136 pd \$0-sub-par;
+#X text 5 219 (c) GPL \, acre - winfried ritsch;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X coords 0 -1 1 1 100 200 2 10 10;

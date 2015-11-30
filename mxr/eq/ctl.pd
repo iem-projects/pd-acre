@@ -1,4 +1,4 @@
-#N canvas 337 251 450 300 10;
+#N canvas 334 248 409 272 10;
 #X obj 101 101 cnv 15 98 148 empty empty \$1/eq 2 8 0 12 -191407 -66577
 0;
 #X obj 124 122 cnv 15 33 114 empty \$1GUIinchannel_EQ_gain_cnv gain
@@ -36,4 +36,5 @@ LoCut -58 7 0 8 -187584 -1 -1 1 256;
 #X obj 104 232 tgl 15 0 \$1/bypass \$1/bypass bypass 17 7 0 10 -203904
 -1 -1 0 1;
 #X text 9 18 eq_ctl <ch|eq id>;
+#X text 7 46 (c) GPL \, acre winfried ritsch;
 #X coords 0 -1 1 1 100 150 2 100 100;

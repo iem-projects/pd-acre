@@ -1,4 +1,4 @@
-#N canvas 982 425 299 136 10;
+#N canvas 981 451 299 136 10;
 #X obj 11 11 cnv 15 98 48 empty empty \$1 2 7 0 10 -191407 -66577 0
 ;
 #X obj 14 43 nbx 3 14 0 150 0 0 \$1/in/gain \$1/in/gain gain 0 -8 0
@@ -8,4 +8,5 @@
 -1 0 1;
 #X obj 71 24 nbx 3 14 0 150 0 0 \$1/in/hip \$1/in/hip hip 0 -8 0 10
 -24198 -1 -1 0 256;
+#X text 70 72 (c) GPL \, acre winfried ritsch;
 #X coords 0 -1 1 1 100 50 2 10 10;

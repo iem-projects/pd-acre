@@ -1,4 +1,4 @@
-#N canvas 266 89 444 421 10;
+#N canvas 265 88 444 421 10;
 #X obj 101 101 cnv 15 98 198 empty empty \$1 20 12 0 14 -233017 -66577
 0;
 #X obj 136 135 bng 15 250 50 0 \$1/program/store \$1/program/store
@@ -85,7 +85,7 @@ nr 0 -8 0 14 -261682 -1 -1 0 256;
 -25 7 0 10 -262144 -1 -1;
 #X obj 105 225 bng 15 250 50 0 \$1/program/prev \$1/program/prev prev
 17 7 0 10 -262144 -1 -1;
-#X text 233 95 (c) GPL \, acre winfried ritsch;
+#X text 85 394 (c) GPL \, acre winfried ritsch;
 #X connect 4 0 11 0;
 #X connect 5 0 12 0;
 #X connect 7 0 14 0;

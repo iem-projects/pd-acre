@@ -1,4 +1,4 @@
-#N canvas 530 235 351 287 10;
+#N canvas 527 313 351 287 10;
 #X obj 11 11 cnv 15 98 198 empty empty empty 2 8 0 10 -191407 -66577
 0;
 #X text 69 158 mon;
@@ -9,4 +9,5 @@
 #X obj 65 36 vu 10 120 \$1/vu empty -1 -8 0 10 -66577 -1 1 0;
 #X text 133 43 in/bus_ctl <bus id>;
 #X obj 10 10 mxr/fader/ctl \$1 \$1;
+#X text 118 63 (c) GPL \, acre - winfried ritsch;
 #X coords 0 -1 1 1 100 200 2 10 10;

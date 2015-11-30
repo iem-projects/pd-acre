@@ -1,4 +1,4 @@
-#N canvas 1099 600 614 297 10;
+#N canvas 750 440 614 297 10;
 #X obj 11 11 cnv 15 48 198 empty \$1/cnv \$2 2 8 0 12 -162280 -66577
 0;
 #X obj 11 181 nbx 3 12 -1e+37 1e+37 0 0 \$1/vol \$1/vol empty 0 -8
@@ -22,6 +22,7 @@ as parameter;
 #X obj 27 57 vu 8 120 \$1/vu empty -1 -8 0 8 -66577 -1 1 0;
 #X obj 81 75 db2;
 #X obj 88 217 db;
+#X text 103 165 (c) GPL \, acre - winfried ritsch;
 #X connect 4 0 12 0;
 #X connect 6 0 14 0;
 #X connect 11 0 15 0;

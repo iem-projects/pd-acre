@@ -1,3 +1,5 @@
+.. ../docu/acre_title.rst
+
 mxr - Mixer module
 ==================
 
@@ -121,7 +123,7 @@ test/tones_ctl test/tones~
 
    :provides: a testtone signal generator with GUI
 
-prvu/send prvu/ctl
+prvu/send~ prvu/ctl
   used for all VU outs to be able to reset them, enhance in future ...
 
   :provides: conversion of signal to vu-meters with additional reset

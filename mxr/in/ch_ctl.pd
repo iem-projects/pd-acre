@@ -1,5 +1,5 @@
-#N canvas 891 432 450 480 10;
-#X text 147 2 channel_ctl <ch id>;
+#N canvas 888 255 450 480 10;
+#X text 117 10 channel_ctl <ch id>;
 #X obj 11 11 cnv 15 98 448 empty empty empty 2 7 0 10 -191407 -66577
 0;
 #X obj 64 281 vu 15 120 \$1/meter vu_limit -1 -8 0 8 -66577 -1 1 0
@@ -14,4 +14,5 @@
 #X obj 10 60 mxr/limiter/ctl \$1;
 #X obj 10 110 mxr/eq/ctl \$1/eq;
 #X obj 10 260 mxr/fader/ctl \$1 \$1;
+#X text 118 63 (c) GPL \, acre - winfried ritsch;
 #X coords 0 -1 1 1 100 450 2 10 10;

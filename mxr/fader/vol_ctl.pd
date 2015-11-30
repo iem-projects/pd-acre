@@ -1,4 +1,4 @@
-#N canvas 979 661 450 300 10;
+#N canvas 751 225 402 191 10;
 #X obj 101 101 cnv 15 98 48 empty empty \$2 1 7 1 10 -191407 -66577
 0;
 #X obj 102 128 nbx 3 16 -1e+37 1e+37 0 0 \$1/vol \$1/vol vol 45 8 0
@@ -6,4 +6,5 @@
 #X text 104 58 out_ctl <out id>;
 #X obj 168 102 tgl 30 0 \$1/mute \$1/mute M 8 16 0 24 -258113 -1 -1
 0 1;
+#X text 103 165 (c) GPL \, acre - winfried ritsch;
 #X coords 0 -1 1 1 100 50 2 100 100;

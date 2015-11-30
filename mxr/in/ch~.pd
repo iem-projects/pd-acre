@@ -1,4 +1,4 @@
-#N canvas 1245 473 498 544 10;
+#N canvas 866 193 498 544 10;
 #X obj 13 57 inlet~;
 #X obj 34 414 outlet~;
 #X obj 305 420 pvu~;
@@ -22,7 +22,7 @@
 #X text 11 28 in/channel~ <ch id>;
 #X text 303 490 meter means no peak VU;
 #X text 303 507 view: peak is pre \, vu is post;
-#X obj 273 120 switch~;
+#X obj 306 129 switch~;
 #X obj 13 85 throw~ \$1~;
 #X obj 11 108 catch~ \$1~;
 #X obj 33 143 in~ \$1;
@@ -31,14 +31,16 @@
 #X obj 211 348 r /mxr/fadetime;
 #X obj 10 484 mxr/mo/prepost~ \$1;
 #X obj 314 470 s \$1/meter;
-#X obj 273 32 r \$1/mute;
+#X obj 306 41 r \$1/mute;
 #X obj 34 386 mxr/fader/fader~ \$1 50;
-#X obj 273 76 del 50;
-#X obj 325 77 r /mxr/fadetime;
-#X msg 273 98 0;
-#X obj 273 54 sel 1 0;
-#X msg 341 56 stop;
-#X msg 305 97 1;
+#X obj 306 85 del 50;
+#X obj 358 86 r /mxr/fadetime;
+#X msg 306 107 0;
+#X obj 306 63 sel 1 0;
+#X msg 374 65 stop;
+#X msg 338 106 1;
+#X text 96 108 optionaly receice by catch;
+#X text 306 19 Mute logic to switch;
 #X connect 0 0 18 0;
 #X connect 2 0 3 0;
 #X connect 3 0 25 0;
