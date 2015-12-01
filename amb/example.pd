@@ -1,4 +1,4 @@
-#N canvas 552 253 699 422 10;
+#N canvas 551 252 699 422 10;
 #X declare -path ../;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
@@ -43,7 +43,7 @@
 #X obj 32 306 throw~ /in/2~;
 #X text 236 88 --- data storage for testtones ---;
 #X text 504 388 (c) GPL - acre \, ritsch;
-#N canvas 310 52 777 558 GUI-EXAMPLE 0;
+#N canvas 309 52 777 558 GUI-EXAMPLE 0;
 #X obj 629 47 ds/ctl /test;
 #X text 261 -1 test main patches for out Mixer with 1 sub and 4 outs
 ;
@@ -109,7 +109,7 @@ m 4 7 1 10 -257985 -1 -1 0 1;
 #X obj 17 238 declare -lib iem_bin_ambi;
 #X restore 22 42 pd declares;
 #X text 6 73 patch should work in parent dir;
-#N canvas 108 154 600 389 AMBMIMIXER 0;
+#N canvas 578 96 600 389 AMBMIMIXER 1;
 #X obj 19 39 adc~ 1;
 #X obj 18 60 mxr/in/ch~ /in/1;
 #X obj 154 46 adc~ 2;
@@ -131,8 +131,8 @@ into a second BUS Y with livecontrol;
 ;
 #X obj 21 257 # amb/decoder d1 3D 4 AMB1 OUT1;
 #X obj 21 284 # amb/outs OUT1 DAC1 25 1;
-#X obj 21 307 # amb/dacs DAC1 26;
 #X text 227 312 USE MIXER for this ????;
+#X obj 21 307 # mxr/dacs DAC1 26;
 #X connect 0 0 1 0;
 #X connect 1 0 8 0;
 #X connect 2 0 9 0;
