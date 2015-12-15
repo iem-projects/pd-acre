@@ -27,8 +27,6 @@ Buses
 
 Ambisonics buses are named used within the Ambisonics abstractions, defined by name ``<bus-id>`` and order ``<order>``.
 
-
-
 Notes
 -----
 

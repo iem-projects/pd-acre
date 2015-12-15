@@ -1,36 +1,44 @@
-#N canvas 905 561 498 300 10;
+#N canvas 779 388 498 300 10;
 #X obj 42 183 mtx;
 #X text 29 19 amb/decoder~ <dimen> <order> <ambibus ID> <out-id> <nr
 outs>;
-#N canvas 1391 427 631 265 get_matrix 0;
-#X obj 62 213 outlet;
-#X msg 62 191 read decoder.mtx;
+#N canvas 606 77 631 265 get_matrix 1;
+#X obj 60 263 outlet;
+#X msg 95 240 read decoder.mtx;
 #X text 48 16 example Decoder matrix calc;
 #X obj 61 47 r \$0-dc;
-#X obj 291 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 382 24 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 291 33 i \$0;
-#X msg 291 57 \; \$1-dc ambi_weight 1 1 1 1 1 1 \; \$1-dc real_ls 1
-0 0 \; \$1-dc real_ls 2 45 0 \; \$1-dc real_ls 3 90 0 \; \$1-dc real_ls
-4 135 0 \; \$1-dc real_ls 5 180 0 \; \$1-dc real_ls 6 225 0 \; \$1-dc
-real_ls 7 270 0 \; \$1-dc real_ls 8 315 0 \; \$1-dc begin_pseudo_inverse
-\; \$1-dc end_pseudo_inverse \;;
-#X obj 59 68 ambi_decode3 3 2 8 0;
-#X obj 59 90 mtx;
-#X msg 102 93 write decoder.mtx;
-#X obj 59 113 mtx_print maxtrix;
-#X obj 66 154 loadbang;
+#X obj 382 44 i \$0;
+#X obj 62 146 mtx;
+#X msg 105 149 write decoder.mtx;
+#X obj 61 171 mtx_print maxtrix;
+#X text 70 75 <order> <dimen> loudspeaker> <phantom ls>;
+#X obj 25 196 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 47 194 acre/initbang;
+#X obj 25 216 t b b;
+#X obj 63 123 round_zero 1e-06;
+#X obj 62 102 ambi_decode3 5 2 8 0;
+#X msg 382 68 \; \$1-dc ambi_weight 1 1 0.5 0 \; \$1-dc real_ls 1 0
+\; \$1-dc real_ls 2 45 \; \$1-dc real_ls 3 90 \; \$1-dc real_ls 4 135
+\; \$1-dc real_ls 5 180 \; \$1-dc real_ls 6 225 \; \$1-dc real_ls 7
+270 \; \$1-dc real_ls 8 315 \; \$1-dc begin_pseudo_inverse \; \$1-dc
+end_pseudo_inverse \;;
 #X connect 1 0 0 0;
-#X connect 3 0 7 0;
+#X connect 3 0 14 0;
 #X connect 4 0 5 0;
-#X connect 5 0 6 0;
-#X connect 7 0 8 0;
-#X connect 8 0 10 0;
-#X connect 9 0 8 0;
-#X connect 11 0 1 0;
-#X restore 80 180 pd get_matrix;
-#X obj 42 94 order2chls \$1 \$2;
-#N canvas 210 527 491 402 \$0-decoder 0;
+#X connect 5 0 15 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 10 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X connect 12 1 1 0;
+#X connect 13 0 6 0;
+#X connect 14 0 13 0;
+#X restore 87 177 pd get_matrix;
+#N canvas 208 286 491 402 \$0-decoder 0;
 #X obj 10 180 r 1110-decoder;
 #X obj 10 200 mtx_*~ 8 11 50 _________________________________;
 #X obj 40 10 r~ AMB1-1~;
@@ -73,7 +81,7 @@ real_ls 7 270 0 \; \$1-dc real_ls 8 315 0 \; \$1-dc begin_pseudo_inverse
 #X connect 11 0 1 10;
 #X connect 12 0 1 11;
 #X restore 32 56 pd \$0-decoder;
-#N canvas 669 55 893 552 contruct-decoder 0;
+#N canvas 384 53 893 552 contruct-decoder 0;
 #X msg 151 20 clear;
 #X obj 41 15 inlet;
 #X obj 467 37 f \$0;
@@ -206,9 +214,11 @@ real_ls 7 270 0 \; \$1-dc real_ls 8 315 0 \; \$1-dc begin_pseudo_inverse
 #X obj 42 205 s \$0-decoder;
 #X msg 42 152 zeros \$2 \$1;
 #X obj 26 233 mtx_print decoder_matrix_\$1_\$2_\$3;
-#X connect 0 0 7 0;
-#X connect 0 0 9 0;
-#X connect 3 0 6 0;
-#X connect 6 0 8 0;
-#X connect 6 0 5 0;
-#X connect 8 0 0 0;
+#X obj 42 94 order2chls \$1 \$2;
+#X connect 0 0 6 0;
+#X connect 0 0 8 0;
+#X connect 2 0 0 0;
+#X connect 5 0 7 0;
+#X connect 5 0 4 0;
+#X connect 7 0 0 0;
+#X connect 9 0 5 0;

@@ -1,6 +1,6 @@
-#N canvas 136 656 450 300 10;
+#N canvas 372 251 450 300 10;
 #X text 86 24 (c) GPL \, acre - winfried ritsch;
-#N canvas 81 444 725 228 \$0-gui 1;
+#N canvas 44 52 725 228 \$0-gui 1;
 #X obj 50 10 amb/out_ctl Out-1;
 #X obj 100 10 amb/out_ctl Out-2;
 #X obj 150 10 amb/out_ctl Out-3;
@@ -15,7 +15,7 @@
 #X obj 600 10 amb/out_ctl Out-12;
 #X obj 650 10 amb/out_ctl Out-13;
 #X restore 195 110 pd \$0-gui;
-#N canvas 867 420 442 291 contruct-outs 0;
+#N canvas 836 398 442 291 contruct-outs 0;
 #X msg 168 91 clear;
 #X obj 59 40 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;

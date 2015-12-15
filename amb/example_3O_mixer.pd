@@ -1,4 +1,4 @@
-#N canvas 513 120 450 300 10;
+#N canvas 274 79 594 334 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -8,12 +8,18 @@
 #X declare -lib iem_bin_ambi;
 #X declare -path ../;
 #X text 22 8 Example 3.Ordnung Ambisonics Mixer;
-#N canvas 177 388 599 300 init 0;
-#X obj 45 32 loadbang;
+#N canvas 383 362 599 297 init 0;
 #X msg 45 54 \; /mxr/dsp 1 \; /mxr/fadetime 30 \;;
 #X msg 215 60 \; /test/program/load symbol ../mxr/mxr.txt \; /test/program/nr
 0 \; /test/program/recall bang;
-#X connect 0 0 1 0;
+#X msg 51 169 \; pd-GUI vis 1;
+#X obj 45 32 acre/initbang;
+#X obj 217 8 acre/initbang;
+#X obj 219 31 s second_init;
+#X obj 51 140 r second_init;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 6 0 2 0;
 #X restore 23 22 pd init;
 #N canvas 680 160 303 273 declares 0;
 #X obj 18 58 declare -lib iemlib1;
@@ -29,17 +35,30 @@
 #X restore 22 42 pd declares;
 #X obj 18 86 declare -path ../;
 #X text 16 66 patch should work in parent dir;
-#N canvas 1195 163 450 300 GUI 0;
-#X obj 128 16 mxr/test/tones_ctl 1;
+#N canvas 2 319 450 300 GUI 1;
+#X obj 250 14 mxr/test/tones_ctl 1;
 #X obj 21 16 mxr/master/ctl;
 #X obj 71 219 amb/outs_ctl BOXEN 13 Out;
 #X obj 21 219 amb/bus_ctl~ 2D 5 AMB1;
+#X obj 121 16 mxr/mo/ctl;
+#X obj 143 244 tgl 15 0 /tt/monitor/send /tt/monitor/send TT 17 7 0
+10 -257985 -1 -1 0 1;
+#X obj 266 231 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/azimuth /amb/ch1/azimuth
+/amb/ch1/azimuth 0 -8 0 10 -262144 -1 -1 33.2601 256;
 #X restore 294 21 pd GUI;
-#X obj 23 125 mxr/test/tones~ 1;
-#X obj 21 252 mxr/master/master~;
-#X obj 21 226 amb/outs BOXEN 13 Out;
-#X obj 22 147 amb/encode~ ch1 2D 5 AMB1;
-#X obj 20 172 amb/bus~ 2D 5 AMB1;
-#X obj 22 198 amb/decoder~ 2D 5 AMB1 Out 8;
-#X obj 290 144 amb/encode3D;
-#X connect 6 0 9 0;
+#X obj 298 86 mxr/test/tones~ 1;
+#X obj 11 294 mxr/master/master~;
+#X obj 11 268 amb/outs BOXEN 13 Out;
+#X obj 18 135 amb/bus~ 2D 5 AMB1;
+#X obj 22 165 amb/decoder~ 2D 5 AMB1 Out 8;
+#X obj 171 270 mxr/mo/master~;
+#X obj 169 298 throw~ Out-3~;
+#X obj 323 123 mxr/mo/send~ /tt;
+#X text 153 136 1 Make a bus;
+#X text 7 250 --- Out Kanaele (DACs) und Monitor ---;
+#X text 18 114 --- Ambisonics Bus AMB1/Decoder ---;
+#X obj 295 158 amb/encode~ ch1 2D 5 AMB1;
+#X obj 299 57 calibrate BOXEN 8 Out;
+#X connect 6 0 13 0;
+#X connect 6 0 17 0;
+#X connect 11 0 12 0;

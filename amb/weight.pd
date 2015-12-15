@@ -1,0 +1,13 @@
+#N canvas 555 82 450 300 10;
+#X obj 45 36 inlet;
+#X obj 49 220 outlet;
+#X obj 45 58 min 1;
+#X obj 45 80 max 0;
+#X text 55 98 0..1;
+#X obj 51 196 pp ambi_weight;
+#X text 165 194 for encoder;
+#X text 65 8 amb/weight <ch.id> order;
+#X text 47 156 list of weights dependend on order from 0 to 1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 5 0 1 0;
