@@ -1,11 +1,11 @@
-#N canvas 361 276 450 300 10;
+#N canvas 359 274 450 300 10;
 #X obj 141 93 encode\$2 \$1 \$3;
 #X text 32 31 amb/encode~ <ch id> <dimen> <order> <ambisonic bus ID>
 ;
-#N canvas 76 238 491 298 \$0-encode 1;
-#X obj 200 5 r~ $\\\$0-encode~;
-#X obj 10 5 r $\\\$0-encode;
-#X obj 10 30 mtx_*~ 11 1 50 __________________________________;
+#N canvas 74 236 491 298 \$0-encode 0;
+#X obj 200 5 r~ 1059-encode~;
+#X obj 10 5 r 1059-encode;
+#X obj 10 30 mtx_*~ 7 1 50 __________________________________;
 #X obj 10 50 throw~ AMB1-1~;
 #X obj 20 70 throw~ AMB1-2~;
 #X obj 30 90 throw~ AMB1-3~;
@@ -13,10 +13,6 @@
 #X obj 50 130 throw~ AMB1-5~;
 #X obj 60 150 throw~ AMB1-6~;
 #X obj 70 170 throw~ AMB1-7~;
-#X obj 80 190 throw~ AMB1-8~;
-#X obj 90 210 throw~ AMB1-9~;
-#X obj 100 230 throw~ AMB1-10~;
-#X obj 110 250 throw~ AMB1-11~;
 #X connect 0 0 2 1;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -26,13 +22,9 @@
 #X connect 2 4 7 0;
 #X connect 2 5 8 0;
 #X connect 2 6 9 0;
-#X connect 2 7 10 0;
-#X connect 2 8 11 0;
-#X connect 2 9 12 0;
-#X connect 2 10 13 0;
 #X restore 31 185 pd \$0-encode;
 #X floatatom 280 113 5 0 0 0 - - -, f 5;
-#N canvas 442 167 835 463 contruct-ambibus 1;
+#N canvas 441 166 835 463 contruct-ambibus 0;
 #X msg 151 20 clear;
 #X obj 175 204 t f f b;
 #X obj 39 238 t f f;
@@ -66,6 +58,7 @@
 #X msg 356 101 obj 200 5 r~ \$1-encode~;
 #X msg 322 129 obj 10 5 r \$1-encode;
 #X obj 321 99 f \$0;
+#X obj 322 16 inlet;
 #X connect 0 0 6 0;
 #X connect 1 0 17 0;
 #X connect 1 1 13 2;
@@ -105,6 +98,7 @@
 #X connect 29 0 8 0;
 #X connect 30 0 8 0;
 #X connect 31 0 30 0;
+#X connect 32 0 0 0;
 #X restore 280 134 pd contruct-ambibus;
 #X obj 32 102 inlet~;
 #X msg 169 135 zeros \$1 1;
@@ -112,6 +106,9 @@
 #X obj 32 124 s~ \$0-encode~;
 #X obj 140 184 s \$0-encode;
 #X obj 280 91 order2chls \$2 \$3;
+#X obj 265 175 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X text 322 177 before save !;
 #X connect 0 0 7 0;
 #X connect 3 0 4 0;
 #X connect 3 0 6 0;
@@ -119,3 +116,4 @@
 #X connect 6 0 7 0;
 #X connect 7 0 9 0;
 #X connect 10 0 3 0;
+#X connect 11 0 4 1;

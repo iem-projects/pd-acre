@@ -1,5 +1,5 @@
-#N canvas 755 78 522 162 10;
-#N canvas 631 209 647 480 contruct-buses 1;
+#N canvas 752 75 522 162 10;
+#N canvas 629 207 647 480 contruct-buses 0;
 #X msg 154 70 clear;
 #X obj 41 15 inlet;
 #X obj 477 314 symbol \$3;
@@ -41,6 +41,7 @@
 #X obj 209 314 + 10;
 #X obj 250 286 * 40;
 #X obj 426 287 * 40;
+#X obj 285 27 inlet;
 #X connect 0 0 4 0;
 #X connect 1 0 7 0;
 #X connect 2 0 13 3;
@@ -88,8 +89,9 @@
 #X connect 38 0 24 0;
 #X connect 39 0 30 0;
 #X connect 40 0 16 0;
+#X connect 41 0 0 0;
 #X restore 202 88 pd contruct-buses;
-#N canvas 116 463 977 226 \$0-dsp-buses 0;
+#N canvas 114 461 977 226 \$0-dsp-buses 0;
 #X obj 10 10 catch~ AMB1-1~;
 #X obj 10 30 s~ AMB1-1~;
 #X obj 130 10 catch~ AMB1-2~;
@@ -104,14 +106,6 @@
 #X obj 610 30 s~ AMB1-6~;
 #X obj 730 10 catch~ AMB1-7~;
 #X obj 730 30 s~ AMB1-7~;
-#X obj 850 10 catch~ AMB1-8~;
-#X obj 850 30 s~ AMB1-8~;
-#X obj 10 50 catch~ AMB1-9~;
-#X obj 10 70 s~ AMB1-9~;
-#X obj 130 50 catch~ AMB1-10~;
-#X obj 130 70 s~ AMB1-10~;
-#X obj 250 50 catch~ AMB1-11~;
-#X obj 250 70 s~ AMB1-11~;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 4 0 5 0;
@@ -119,11 +113,11 @@
 #X connect 8 0 9 0;
 #X connect 10 0 11 0;
 #X connect 12 0 13 0;
-#X connect 14 0 15 0;
-#X connect 16 0 17 0;
-#X connect 18 0 19 0;
-#X connect 20 0 21 0;
 #X restore 40 89 pd \$0-dsp-buses;
 #X obj 202 59 amb/order2chls \$1 \$2;
 #X text 26 21 amb/outs <dimen> <order> <ID ambisonic bus>;
+#X obj 345 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 362 39 clear before save !;
 #X connect 2 0 0 0;
+#X connect 4 0 2 1;
