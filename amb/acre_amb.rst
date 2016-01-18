@@ -1,7 +1,7 @@
 Ambisonics Toolbox
 ==================
 
-Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or Effects.
+Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or Effects using iem_ambi.
 One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules.
 
 This module is based on the iem_ambi and some parts also on the iem_bin_ambi Pd-library, which is based on iemmatrix Pd-library.
@@ -14,10 +14,8 @@ In Ambisonics 3D- or 2D-audiosignal are handled as an Ambisonics signal, which i
 With higher orders , better spatial resolutions are provided and more channels are used.
 The channel count is calculated by the formulas ``n=(order+1)²`` for 3D and ``n=2*order+1`` for 2D. 
 Therefore Ambisonics buses has to be used which are for example on 5th order 3D 36 channels.
-Until there is a snake functionality standard in Pd[snake]_ , we handle Ambisonics Buses with abstraction and dynamic generated ``catch~/throw~`` and/or ``send~/receive~`` pairs to prevent excessive Pd cabling.
-The order of the Ambisonics channels is important and comply to to the ACN [ACN], N3D standard, which is used troughout the iem_ambi library.
-
-
+Until there is a snake functionality standard in Pd[snake]_ , we handle Ambisonics buses with abstraction and dynamic generated ``catch~/throw~`` and/or ``send~/receive~`` pairs to prevent excessive Pd cabling.
+The order of the Ambisonics channels is important and comply with the ACN [ACN], N3D standard, which is used troughout the iem_ambi library.
 
 Structure
 ---------
@@ -31,6 +29,11 @@ Notes
 -----
 
 - parts are from an Implementation of the CUBEmixer
+
+- since simple dynamic patching is used, r~/s~ and catch~/throw~ pairs can be created in a wrong order which drops an error warning on the console.
+Since [savebang] is not implemented in Pd until now, we have to clear these abstractions before saving on development to reduce them a little bit.
+To prevent this a little bit more the initialization order is important, see example.
+
 
 .. [snake] Pd-snake was an idea 2013 within a workshop with Miller Puckette at the IEM to extend Pd with multichannel signal connection, which is backwards compatible, but has not been implemented yet.
 
