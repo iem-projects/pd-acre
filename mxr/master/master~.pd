@@ -1,4 +1,4 @@
-#N canvas 815 332 561 341 10;
+#N canvas 818 349 561 341 10;
 #X obj 17 226 line~;
 #X obj 17 163 pack 0 50;
 #X obj 134 136 r /mxr/fadetime;
@@ -17,7 +17,6 @@
 #X obj 93 173 r \$1/mute;
 #X text 34 8 master/master~ <id>;
 #X text 161 255 (c) GPL - acre \, ritsch;
-#X obj 258 122 r /mxr/dsp;
 #X obj 258 191 s /mxr/load;
 #X obj 258 169 pack 0 0;
 #X obj 258 147 mxr/master/dsp;
@@ -27,7 +26,7 @@
 #X text 31 25 <id> .. master id;
 #X text 34 47 Note compatibility: if not used in master/gain~ then
 choose '0';
-#X connect 0 0 17 0;
+#X connect 0 0 16 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 1;
 #X connect 3 0 0 0;
@@ -36,7 +35,6 @@ choose '0';
 #X connect 7 0 1 0;
 #X connect 8 0 7 0;
 #X connect 9 0 4 0;
-#X connect 12 0 15 0;
+#X connect 13 0 12 0;
 #X connect 14 0 13 0;
-#X connect 15 0 14 0;
-#X connect 15 1 14 1;
+#X connect 14 1 13 1;

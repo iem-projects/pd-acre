@@ -1,4 +1,4 @@
-#N canvas 1240 462 450 432 10;
+#N canvas 1246 496 450 432 10;
 #X obj 54 223 cputime;
 #X obj 54 165 metro 1000;
 #X obj 54 194 t b b;
@@ -15,9 +15,9 @@
 #X obj 287 108 r pd;
 #X obj 287 137 route dsp;
 #X obj 287 166 route float;
-#X obj 287 224 i 0;
+#X obj 287 247 i 0;
 #X text 335 251 record dsp_state;
-#X obj 287 195 r /mxr/dsp/state/get;
+#X obj 287 218 r /mxr/dsp/state/get;
 #X obj 287 281 s /mxr/dsp/state;
 #X text 287 81 to retrieve dsp state;
 #X text 244 338 (c) GPL - acre \, ritsch;
