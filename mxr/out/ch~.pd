@@ -1,17 +1,15 @@
-#N canvas 269 355 417 264 10;
+#N canvas 275 389 417 264 10;
 #X obj 7 188 outlet~;
-#X text 14 7 out/ch~ <id>;
 #X obj 137 87 r /mxr/fadetime;
 #X obj 8 83 catch~ \$1~;
 #X obj 70 188 s~ \$1~;
-#N canvas 102 599 327 132 init 0;
+#N canvas 105 643 327 132 init 0;
 #X obj 59 29 loadbang;
 #X obj 60 72 s \$1/vol;
 #X msg 59 50 100;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
-#X restore 133 12 pd init;
-#X obj 8 144 mxr/master/gain~;
+#X restore 255 10 pd init;
 #X obj 7 111 mxr/fader/fader~ \$1;
 #X text 6 207 (c) GPL - acre \, ritsch;
 #X text 7 52 also distributes the postfader signal with the same name
@@ -19,9 +17,11 @@
 #X text 10 33 One Bus Channel \, eg used for outs \, but universal
 usable;
 #X obj 128 188 mxr/prvu/send~ \$1/vu;
-#X connect 2 0 7 1;
-#X connect 3 0 7 0;
-#X connect 6 0 0 0;
-#X connect 6 0 4 0;
-#X connect 6 0 11 0;
-#X connect 7 0 6 0;
+#X obj 8 144 mxr/master/gain~ \$2;
+#X text 14 7 out/ch~ <id> [master id];
+#X connect 1 0 5 1;
+#X connect 2 0 5 0;
+#X connect 5 0 10 0;
+#X connect 10 0 0 0;
+#X connect 10 0 3 0;
+#X connect 10 0 9 0;

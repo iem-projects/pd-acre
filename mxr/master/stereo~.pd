@@ -1,4 +1,4 @@
-#N canvas 801 780 417 181 10;
+#N canvas 804 797 417 181 10;
 #X obj 33 114 outlet~;
 #X obj 201 114 outlet~;
 #X text 24 32 simple stereo out without sub;
