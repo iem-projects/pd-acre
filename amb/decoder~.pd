@@ -1,36 +1,60 @@
-#N canvas 696 167 498 300 10;
+#N canvas 705 218 498 300 10;
 #X obj 45 212 mtx;
 #X text 29 19 amb/decoder~ <dimen> <order> <ambibus ID> <out-id> <nr
 outs>;
-#N canvas 199 106 631 389 get_matrix 1;
-#X obj 60 287 outlet;
-#X msg 81 258 read decoder.mtx;
+#N canvas 928 378 1013 430 get_matrix 0;
+#X obj 69 386 outlet;
+#X msg 90 357 read decoder.mtx;
 #X text 48 16 example Decoder matrix calc;
 #X obj 61 47 r \$0-dc;
-#X obj 382 24 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 398 20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 382 44 i \$0;
-#X obj 62 146 mtx;
-#X msg 105 149 write decoder.mtx;
-#X obj 61 171 mtx_print maxtrix;
+#X obj 398 40 i \$0;
+#X obj 62 254 mtx;
+#X msg 105 257 write decoder.mtx;
+#X obj 61 279 mtx_print maxtrix;
 #X text 70 75 <order> <dimen> loudspeaker> <phantom ls>;
-#X obj 59 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 68 312 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 81 211 acre/initbang;
-#X obj 59 233 t b b;
-#X obj 63 123 round_zero 1e-06;
-#X obj 23 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 90 310 acre/initbang;
+#X obj 68 332 t b b;
+#X obj 63 231 round_zero 1e-06;
+#X obj 23 272 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 62 102 ambi_decode3 \$2 2 8 0;
-#X msg 382 68 \; \$1-dc ambi_weight 1 1 1 1 \; \$1-dc real_ls 1 0 \;
+#X msg 398 64 \; \$1-dc ambi_weight 1 1 1 1 \; \$1-dc real_ls 1 0 \;
 \$1-dc real_ls 2 45 \; \$1-dc real_ls 3 90 \; \$1-dc real_ls 4 135
 \; \$1-dc real_ls 5 180 \; \$1-dc real_ls 6 225 \; \$1-dc real_ls 7
 270 \; \$1-dc real_ls 8 315 \; \$1-dc begin_pseudo_inverse \; \$1-dc
 end_pseudo_inverse \;;
-#X connect 1 0 0 0;
-#X connect 3 0 15 0;
+#N canvas 6 70 450 300 construct 1;
+#X restore 153 44 pd construct;
+#X obj 86 151 demux 0 1;
+#X obj 63 198 ambi_decode3 \$2 2 \$5 0;
+#X obj 226 198 ambi_decode3 \$2 3 \$5 0;
+#N canvas 9 87 450 300 2d|3D 0;
+#X obj 60 30 loadbang;
+#X obj 40 29 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 43 72 route 2D 3D;
+#X msg 39 93 0;
+#X msg 82 93 1;
+#X obj 45 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 43 50 any \$1;
+#X obj 46 158 outlet;
+#X connect 0 0 6 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 5 0;
 #X connect 4 0 5 0;
-#X connect 5 0 16 0;
+#X connect 5 0 7 0;
+#X connect 6 0 2 0;
+#X restore 146 105 pd 2d|3D;
+#X connect 1 0 0 0;
+#X connect 3 0 17 0;
+#X connect 4 0 5 0;
+#X connect 5 0 15 0;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
 #X connect 10 0 12 0;
@@ -39,11 +63,15 @@ end_pseudo_inverse \;;
 #X connect 12 1 1 0;
 #X connect 13 0 6 0;
 #X connect 14 0 6 0;
-#X connect 15 0 13 0;
+#X connect 17 0 18 0;
+#X connect 17 1 19 0;
+#X connect 18 0 13 0;
+#X connect 19 0 13 0;
+#X connect 20 0 17 1;
 #X restore 45 187 pd get_matrix;
-#N canvas 451 375 491 402 \$0-decoder 0;
+#N canvas 454 392 491 402 \$0-decoder 0;
 #X restore 32 40 pd \$0-decoder;
-#N canvas 381 52 893 552 contruct-decoder 0;
+#N canvas 1091 263 893 552 contruct-decoder 0;
 #X msg 266 54 clear;
 #X obj 41 15 inlet;
 #X obj 467 37 f \$0;
@@ -181,6 +209,7 @@ end_pseudo_inverse \;;
 #X text 303 94 clear before save !;
 #X obj 42 94 order2chls \$1 \$2;
 #X obj 44 68 r /acre/amb/decinit;
+#X text 273 262 (c) GPL - acre \, ritsch;
 #X connect 0 0 6 0;
 #X connect 0 0 8 0;
 #X connect 2 0 0 0;

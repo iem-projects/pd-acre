@@ -1,8 +1,8 @@
-#N canvas 722 96 558 240 10;
+#N canvas 728 130 665 320 10;
 #X text 33 11 amb/outs <ID> <nr channels> <ID out receives>;
-#N canvas 185 515 680 239 \$0-dsp 0;
+#N canvas 194 566 680 239 \$0-dsp 0;
 #X restore 45 103 pd \$0-dsp;
-#N canvas 765 415 516 291 contruct-outs 1;
+#N canvas 774 466 516 291 contruct-outs 0;
 #X msg 154 70 clear;
 #X obj 59 40 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -126,24 +126,24 @@
 #X connect 40 0 1 0;
 #X connect 41 0 0 0;
 #X restore 185 164 pd contruct-dacs;
-#N canvas 43 363 241 521 \$0-dsp-outs 0;
+#N canvas 55 526 241 521 \$0-dsp-outs 0;
 #X restore 42 65 pd \$0-dsp-outs;
 #X obj 251 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 334 107 clear;
-#X obj 351 136 s pd-\$0-dsp-outs;
-#X obj 335 155 s pd-\$0-dsp;
 #X obj 181 108 t b b b;
 #X obj 303 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 322 83 clear before save !;
 #X obj 183 60 r /acre/amb/encinit;
-#X connect 5 0 9 0;
-#X connect 6 0 7 0;
-#X connect 6 0 8 0;
-#X connect 9 0 3 0;
-#X connect 9 1 2 0;
-#X connect 9 2 6 0;
-#X connect 10 0 2 1;
-#X connect 10 0 3 1;
-#X connect 12 0 9 0;
+#X obj 117 197 acre/count_until;
+#X obj 117 175 i \$2;
+#X msg 115 221 \; /out-\$1/vol 100 \; /out-\$1/del 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 6 0 11 0;
+#X connect 6 1 2 0;
+#X connect 7 0 2 1;
+#X connect 7 0 3 1;
+#X connect 9 0 6 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;

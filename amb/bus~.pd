@@ -1,4 +1,4 @@
-#N canvas 758 109 522 162 10;
+#N canvas 764 143 522 162 10;
 #N canvas 629 207 647 480 contruct-buses 0;
 #X msg 154 70 clear;
 #X obj 41 15 inlet;
@@ -99,6 +99,7 @@
 -1 -1;
 #X text 366 116 clear before save !;
 #X obj 208 51 r /acre/amb/businit;
+#X text 21 125 (c) GPL - acre \, ritsch;
 #X connect 2 0 0 0;
 #X connect 4 0 0 1;
 #X connect 6 0 2 0;

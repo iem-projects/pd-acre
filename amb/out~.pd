@@ -1,14 +1,14 @@
-#N canvas 260 425 417 264 10;
+#N canvas 263 442 424 264 10;
 #X obj 6 228 outlet~;
 #X obj 137 87 r /mxr/fadetime;
 #X obj 8 83 catch~ \$1~;
 #X obj 69 228 s~ \$1~;
-#N canvas 101 556 327 132 init 1;
+#N canvas 392 809 327 132 init 1;
 #X obj 59 73 s \$1/vol;
 #X msg 59 50 100;
 #X obj 135 75 s \$1/del;
 #X msg 136 51 0;
-#X obj 59 29 acre/initbang;
+#X obj 59 29 loadbang;
 #X connect 1 0 0 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
