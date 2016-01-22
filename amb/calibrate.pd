@@ -1,4 +1,4 @@
-#N canvas 552 52 525 574 10;
+#N canvas 551 52 525 574 10;
 #X text 26 23 calibrate <Outsection> <nr chls> <out id>;
 #X text 29 44 Calibrate in Volume (and delay);
 #X obj 37 105 noise~;

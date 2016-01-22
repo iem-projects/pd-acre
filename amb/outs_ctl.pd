@@ -1,8 +1,9 @@
-#N canvas 1086 366 450 300 10;
+#N canvas 739 342 450 300 10;
 #X text 86 24 (c) GPL \, acre - winfried ritsch;
-#N canvas 50 87 725 228 \$0-gui 0;
+#N canvas 2 350 742 247 \$0-gui 0;
+#X coords 48 85 770 225 0 0 0;
 #X restore 195 110 pd \$0-gui;
-#N canvas 842 432 442 291 contruct-outs 0;
+#N canvas 377 362 442 291 contruct-outs 0;
 #X msg 168 91 clear;
 #X obj 59 40 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -11,11 +12,12 @@
 #X obj 40 187 pack 10 1 s;
 #X obj 111 158 symbol \$3;
 #X obj 36 242 s pd-\$0-gui;
-#X obj 38 152 * 50;
+#X obj 36 159 * 50;
 #X obj 36 114 t f f b;
 #X msg 38 215 obj \$1 10 amb/out_ctl \$3-\$2;
 #X obj 35 93 for++ 1 \$2 1;
 #X obj 158 24 inlet;
+#X obj 36 137 - 1;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 2 0 10 0;
@@ -24,12 +26,13 @@
 #X connect 4 0 9 0;
 #X connect 5 0 4 2;
 #X connect 7 0 4 0;
-#X connect 8 0 7 0;
+#X connect 8 0 12 0;
 #X connect 8 1 4 1;
 #X connect 8 2 5 0;
 #X connect 9 0 6 0;
 #X connect 10 0 8 0;
 #X connect 11 0 0 0;
+#X connect 12 0 7 0;
 #X restore 274 199 pd contruct-outs;
 #X obj 315 172 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -37,7 +40,7 @@
 0;
 #X msg 134 193 \; pd-\$2-gui vis \$1;
 #X obj 134 171 pack 0 \$0;
-#X obj 109 116 tgl 25 0 empty empty V 8 13 0 14 -262130 -1 -1 1 1;
+#X obj 109 116 tgl 25 0 empty empty V 8 13 0 14 -262130 -1 -1 0 1;
 #X text 93 58 amb/outs_ctl <ID> <nr of outs> <out-id>;
 #X obj 282 236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;

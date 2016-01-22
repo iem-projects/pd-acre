@@ -38,10 +38,9 @@ Hints
 
 - The microphone should be out of the reverberation radius of the speaker
 
-Rr ~ 0.057 * sqrt(V/T60) or Rr ~ 0.057 * sqrt(V/(T30*2)) or Rr ~ 0.057 * sqrt(V/(T20*3))
+Rr ~ 0.057 * sqrt(V/T60)
 
-
-T60,T30,T20 ... reverberation time for -60dB,-30dB,-20dB
+T60(T30,T20) ... reverberation time for -60dB,-30dB,-20dB measurement method
 V ... room volume
 
 - latency of computer has to be measured first but since only relative delay values are used. Thi is not important.
