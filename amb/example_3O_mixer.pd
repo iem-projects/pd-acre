@@ -1,4 +1,4 @@
-#N canvas 488 596 738 334 10;
+#N canvas 286 67 738 334 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -9,7 +9,7 @@
 #X declare -path iemlib;
 #X declare -path ..;
 #X text 22 8 Example 3.Ordnung Ambisonics Mixer;
-#N canvas 1471 279 842 400 init 0;
+#N canvas 382 100 634 244 init 1;
 #X msg 44 115 \; pd-GUI vis 1;
 #X obj 45 32 acre/initbang;
 #X obj 44 93 r second_init;
@@ -43,35 +43,53 @@
 #X obj 20 8 declare -path iemlib;
 #X restore 22 42 pd declares;
 #X text 16 66 patch should work in parent dir;
-#N canvas 882 181 1029 421 GUI 1;
+#N canvas 230 111 763 508 GUI 0;
 #X obj 250 14 mxr/test/tones_ctl 1;
 #X obj 21 16 mxr/master/ctl;
 #X obj 121 16 mxr/mo/ctl;
-#X obj 143 244 tgl 15 0 /tt/monitor/send /tt/monitor/send TT 17 7 0
+#X obj 512 137 tgl 15 0 /tt/monitor/send /tt/monitor/send TT 17 7 0
 10 -257985 -1 -1 0 1;
 #X obj 266 231 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/azimuth /amb/ch1/azimuth
-/amb/ch1/azimuth 0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 19 219 bus_ctl~ 2D 3 AMB1;
-#X obj 71 219 amb/outs_ctl BOXEN 13 /out;
+/amb/ch1/azimuth 0 -8 0 10 -262144 -1 -1 317 256;
 #X obj 383 21 ds/ctl /set;
+#X obj 514 177 amb/bus_ctl~ 3D 3 AMB1;
+#X obj 19 255 amb/out_ctl /out-1;
+#X obj 69 255 amb/out_ctl /out-2;
+#X obj 119 255 amb/out_ctl /out-3;
+#X obj 169 255 amb/out_ctl /out-4;
+#X obj 219 255 amb/out_ctl /out-5;
+#X obj 269 255 amb/out_ctl /out-6;
+#X obj 319 255 amb/out_ctl /out-7;
+#X obj 369 255 amb/out_ctl /out-8;
+#X obj 419 255 amb/out_ctl /out-9;
+#X obj 469 255 amb/out_ctl /out-10;
+#X obj 519 255 amb/out_ctl /out-11;
+#X obj 569 255 amb/out_ctl /out-12;
+#X obj 619 255 amb/out_ctl /out-13;
+#X obj 669 255 amb/out_ctl /out-14;
+#X obj 361 235 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/elevation /amb/ch1/elevation
+/amb/ch1/elevation 0 -8 0 10 -262144 -1 -1 28 256;
 #X restore 294 21 pd GUI;
 #X obj 298 86 mxr/test/tones~ 1;
 #X obj 11 287 mxr/master/master~;
 #X obj 172 269 mxr/mo/master~;
-#X obj 171 288 throw~ Out-3~;
 #X obj 323 113 mxr/mo/send~ /tt;
-#X text 165 166 1 Make a bus;
-#X text 7 250 --- Out Kanaele (DACs) und Monitor ---;
+#X text 162 142 1 Make a bus;
+#X text 10 225 --- Out Kanaele (DACs) und Monitor ---;
 #X text 18 114 --- Ambisonics Bus AMB1/Decoder ---;
-#X obj 299 57 calibrate BOXEN 8 Out;
-#X obj 13 165 amb/bus~ 2D 3 AMB1;
-#X obj 17 189 amb/decoder~ 2D 3 AMB1 Out 8;
-#X obj 297 135 amb/encode~ ch1 2D 3 AMB1;
 #X obj 18 86 declare -path ..;
-#X obj 11 268 amb/outs BOXEN 13 /out;
-#X obj 306 291 amb/outs_ds BOXEN 13 /out /set;
 #X obj 306 268 ds/storage_logic /set;
 #X obj 479 135 amb/encode_ds /set ch1;
-#X connect 5 0 9 0;
-#X connect 5 0 16 0;
-#X connect 7 0 8 0;
+#X obj 16 138 amb/bus~ 3D 3 AMB1;
+#X obj 499 13 bng 15 250 50 0 /acre/amb/initbang /acre/amb/initbang
+REINIT 17 7 0 10 -262144 -1 -1;
+#X obj 11 268 amb/outs BOXEN 14 /out;
+#X text 15 246 13 Boxen + SUB;
+#X obj 306 291 amb/outs_ds BOXEN 14 /out /set;
+#X obj 297 135 amb/encode~ ch1 3D 3 AMB1;
+#X obj 15 164 amb/decoder~ 3D 3 AMB1 /out 13;
+#X obj 172 288 throw~ /out-3~;
+#X obj 489 44 calibrate BOXEN 13 /out;
+#X connect 5 0 8 0;
+#X connect 5 0 20 0;
+#X connect 7 0 22 0;

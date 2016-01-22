@@ -1,0 +1,116 @@
+#N canvas 345 52 882 592 10;
+#X declare -lib iemlib1;
+#X declare -lib zexy;
+#X declare -stdpath iemlib;
+#X declare -lib iemlib2;
+#X declare -lib iemmatrix;
+#X declare -lib iem_ambi;
+#X declare -lib iem_bin_ambi;
+#X declare -path iemlib;
+#X declare -path ../../;
+#X text 30 73 example Decoder matrix calc;
+#X obj 30 101 r \$0-dc;
+#X obj 409 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 556 123 i \$0;
+#X obj 37 319 mtx;
+#X msg 80 322 write decoder.mtx;
+#X obj 36 344 mtx_print maxtrix;
+#X obj 38 296 round_zero 1e-06;
+#X obj 14 295 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 37 218 demux 0 1;
+#X obj 430 189 amb/maxre;
+#X obj 383 291 i \$0;
+#X msg 385 360 \; \$1-dc begin_pseudo_inverse \; \$1-dc end_pseudo_inverse
+\;;
+#X obj 431 237 s \$0-dc;
+#X obj 431 213 pp ambi_weight;
+#X obj 410 97 t b b b;
+#X text 614 115 list of loudspeaker;
+#X text 429 259 optimal weights;
+#N canvas 205 278 842 400 init 0;
+#X restore 23 22 pd init;
+#N canvas 566 197 303 290 declares 0;
+#X obj 18 78 declare -lib iemlib1;
+#X obj 18 131 declare -lib zexy;
+#X obj 18 114 declare -stdpath iemlib;
+#X text 33 50 for acre;
+#X text 38 161 for amb;
+#X obj 17 95 declare -lib iemlib2;
+#X obj 20 184 declare -lib iemmatrix;
+#X text 41 230 for binaural tools;
+#X obj 17 210 declare -lib iem_ambi;
+#X obj 17 258 declare -lib iem_bin_ambi;
+#X obj 20 28 declare -path iemlib;
+#X obj 22 7 declare -path ../../;
+#X restore 22 42 pd declares;
+#X obj 99 142 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 121 145 2 2D/3D selection;
+#X obj 97 120 nbx 3 14 -1e+37 1e+37 0 0 order order ORDER 0 -8 0 10
+-262144 -1 -1 3 256;
+#X text 142 119 1 Set Order;
+#X obj 254 202 amb/order2chls;
+#X msg 257 174 3D;
+#X floatatom 343 177 5 0 0 0 - - -, f 5;
+#X floatatom 254 224 5 0 0 0 - - -, f 5;
+#N canvas 2 52 450 300 LS 0;
+#X msg 61 75 \; \$1-dc real_ls 1 0 \; \$1-dc real_ls 2 45 \; \$1-dc
+real_ls 3 90 \; \$1-dc real_ls 4 135 \; \$1-dc real_ls 5 180 \; \$1-dc
+real_ls 6 225 \; \$1-dc real_ls 7 270 \; \$1-dc real_ls 8 315;
+#X restore 546 53 pd LS 2D;
+#X obj 457 137 r order;
+#X obj 431 168 i 3;
+#X obj 36 241 ambi_decode3 3 2 8 0;
+#X text 27 417 1.arg: <float> ambisonic order;
+#X text 42 435 (1 .. 5 in case of 3 dimensional);
+#X text 42 426 (1 .. 12 in case of 2 dimensional);
+#X text 27 445 2.arg: <float> dimension (2 or 3);
+#X text 27 457 3.arg: <float> number of real existing loudspeakers
+;
+#X text 27 469 4.arg: <float> number of virtual phantom_loudspeakers
+;
+#X text 38 395 decoder;
+#X msg 614 355 \; \$1-dc real_ls 13 0 90 \;;
+#X msg 604 455 \; \$1-dc pht_ls 2 45 -30 \; \$1-dc pht_ls 3 135 -30
+\; \$1-dc pht_ls 4 225 -30 \; \$1-dc pht_ls 5 315 -30;
+#X obj 95 267 ambi_decode3 3 3 13 5;
+#X msg 614 404 \; \$1-dc pht_ls 1 0 -85 \;;
+#X msg 603 277 \; \$1-dc real_ls 9 40 30 \; \$1-dc real_ls 10 140 30
+\; \$1-dc real_ls 11 220 30 \; \$1-dc real_ls 12 320 30;
+#X msg 603 153 \; \$1-dc real_ls 1 0 0 \; \$1-dc real_ls 2 47 0 \;
+\$1-dc real_ls 3 92 0 \; \$1-dc real_ls 4 133 0 \; \$1-dc real_ls 5
+180 0 \; \$1-dc real_ls 6 227 0 \; \$1-dc real_ls 7 268 0 \; \$1-dc
+real_ls 8 317 0 \;;
+#X msg 603 277 \; \$1-dc real_ls 9 45 30 \; \$1-dc real_ls 10 135 30
+\; \$1-dc real_ls 11 225 30 \; \$1-dc real_ls 12 315 30;
+#X text 34 512 https://bitbucket.org/ambidecodertoolbox/adt.git;
+#X text 27 495 for ALLRAD and better resulst consult:;
+#X connect 1 0 9 0;
+#X connect 2 0 15 0;
+#X connect 3 0 44 0;
+#X connect 3 0 43 0;
+#X connect 3 0 39 0;
+#X connect 3 0 42 0;
+#X connect 3 0 40 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 31 0;
+#X connect 9 1 41 0;
+#X connect 10 0 14 0;
+#X connect 11 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 11 0;
+#X connect 15 1 30 0;
+#X connect 15 2 3 0;
+#X connect 20 0 9 1;
+#X connect 24 0 27 0;
+#X connect 25 0 24 0;
+#X connect 26 0 24 1;
+#X connect 29 0 30 1;
+#X connect 30 0 10 0;
+#X connect 31 0 7 0;
+#X connect 41 0 7 0;

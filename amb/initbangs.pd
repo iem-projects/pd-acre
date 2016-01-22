@@ -1,4 +1,4 @@
-#N canvas 845 299 536 404 10;
+#N canvas 659 285 536 404 10;
 #X obj 188 236 s /acre/amb/businit;
 #X obj 128 311 s /acre/amb/guiinit;
 #X obj 168 258 s /acre/amb/encinit;
@@ -19,6 +19,7 @@
 #X text 133 49 try to init objects with DSP off so no r~/s~ and Throw~/catch~
 errors are thrown;
 #X obj 128 203 t b b b b;
+#X obj 131 3 r /acre/amb/initbang;
 #X connect 4 0 6 0;
 #X connect 7 0 6 0;
 #X connect 8 0 4 0;
@@ -32,3 +33,4 @@ errors are thrown;
 #X connect 17 1 3 0;
 #X connect 17 2 2 0;
 #X connect 17 3 0 0;
+#X connect 18 0 8 0;

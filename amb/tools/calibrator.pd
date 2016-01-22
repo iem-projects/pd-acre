@@ -1,4 +1,4 @@
-#N canvas 584 113 551 393 10;
+#N canvas 583 112 551 393 10;
 #X declare -lib zexy;
 #X declare -lib iemlib1;
 #X declare -lib iemlib2;
@@ -48,7 +48,7 @@ empty 0 -8 0 10 -258113 -1 -1 0 256;
 #X obj 17 174 nbx 3 14 -1e+37 1e+37 0 0 /amb/cal/in/vol /amb/cal/in/vol
 empty 0 -8 0 10 -204786 -1 -1 0 256;
 #X obj 50 42 vsl 8 100 -100 0 0 0 /amb/cal/in/lim /amb/cal/in/lim lim
--5 -9 0 10 -262144 -1 -1 0 1;
+-5 -9 0 10 -262144 -1 -1 9900 1;
 #X coords 0 -1 1 1 100 200 1 10 10;
 #X restore 178 55 pd signal_in;
 #N canvas 246 267 257 258 signal_gen 0;
@@ -71,7 +71,7 @@ empty 0 -8 0 10 -204786 -1 -1 0 256;
 -1 0 1;
 #X obj 265 292 nbx 3 14 -1e+37 1e+37 0 0 /corr/y /corr/y corr_y 0 -8
 0 10 -257985 -1 -1 90 256;
-#N canvas 723 518 450 300 DSP 0;
+#N canvas 769 52 450 568 DSP 0;
 #N canvas 435 243 302 273 noise 0;
 #X obj 21 240 outlet~;
 #X obj 22 161 *~;
@@ -142,7 +142,7 @@ empty 0 -8 0 10 -204786 -1 -1 0 256;
 #X connect 2 0 0 0;
 #X connect 2 0 1 0;
 #X restore 66 37 pd ADC;
-#N canvas 578 633 499 300 DACs 0;
+#N canvas 175 322 499 300 DACs 1;
 #X obj 108 35 amb/outs boxen 13 /out;
 #X obj 107 66 r /amb/cal/initbang;
 #X obj 106 120 acre/count_until;
@@ -152,12 +152,13 @@ empty 0 -8 0 10 -204786 -1 -1 0 256;
 #X msg 108 151 \; /out-\$1/vol 100 \; /out-\$1/del 0;
 #X obj 279 65 amb/outs_ds boxen 13 /out /set;
 #X obj 279 94 ds/storage_logic /set;
+#X obj 287 168 mxr/master/master~;
 #X connect 1 0 4 0;
 #X connect 2 0 5 0;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
 #X restore 141 37 pd DACs;
-#N canvas 1059 708 450 300 output 0;
+#N canvas 335 355 450 300 output 0;
 #X obj 102 77 dbtorms;
 #X obj 100 102 pack 0 50;
 #X obj 100 124 line~;
