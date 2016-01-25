@@ -1,6 +1,7 @@
- 
 Ambisonics Tools
 ================
+
+:author: winfried ritsch WDC3/WS2015
 
 Collection standalone application for supporting to set up an Ambisonics system.
 
@@ -36,29 +37,32 @@ enter the minimum expected latence (see audio buffer).
 Hints
 .....
 
-- The microphone should be out of the reverberation radius of the speaker
+Microphone position
+ The microphone should be out of the reverberation radius of the speaker::
 
-Rr ~ 0.057 * sqrt(V/T60)
+  Rr ~ 0.057 * sqrt(V/T60)
 
-T60(T30,T20) ... reverberation time for -60dB,-30dB,-20dB measurement method
-V ... room volume
+  T60(T30,T20) ... reverberation time for -60dB,-30dB,-20dB measurement method
+  V ... room volume
 
-- latency of computer has to be measured first but since only relative delay values are used. Thi is not important.
+latency 
+ of computer should be measured first, but since only relative delay values are used it is not really important.
 
-B Decoder Matrix calculator
----------------------------
+B Simple Decoder Matrix calculator
+----------------------------------
 
-The decoder matrix calculator is taken from the CUBEmixer, since it has not changed
-last years. For better decoder matrixes use tools provided by others like Ambisonics Decoder Toolbox by Aaron J. Heller ( https://bitbucket.org/ambidecodertoolbox/adt.git )
+The decoder matrix calculator is taken from the CUBEmixer and iemambi library.
+For better decoder matrixes use tools provided by other sources like Ambisonics Decoder Toolbox [ADT] by Aaron J. Heller 
+( https://bitbucket.org/ambidecodertoolbox/adt.git )
 
-
+The inverse of the speaker matrix is calculated, but this can be singular. Especially for hemisphere arragement of speakers,
+use phantom speakers to fill the sphere. This would give better results.
 
 
 References
 ----------
 
-[ADT] Ambisonics Decoder Toolbox paper LAC: http://lac.linuxaudio.org/2014/papers/17.pdf
+.. [ADT] Ambisonics Decoder Toolbox paper LAC: http://lac.linuxaudio.org/2014/papers/17.pdf
 
+.. [iem_ambi] https://git.iem.at/pd/iem_ambi
 
-
-:author: winfried ritsch WDC3/WS2015
