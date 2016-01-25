@@ -170,7 +170,7 @@
 #X text 298 184 rebuild;
 #X text 305 261 clear before save !;
 #X obj 276 212 amb/order2chls \$1 \$2;
-#X obj 374 181 r /acre/amb/guiinit;
+#X obj 374 181 r /amb/guiinit;
 #X text 93 58 amb/bus_ctl~ <type 2D|3D> <order> <Ambibus ID>;
 #X connect 3 0 13 0;
 #X connect 6 0 5 0;

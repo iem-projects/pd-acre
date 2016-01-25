@@ -44,7 +44,7 @@
 #X obj 35 310 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 28 287 throw~ \$3-1;
-#X msg 59 263 set /out-\$1~;
+#X msg 59 263 set /out/\$1~;
 #X obj 60 241 pack f s;
 #X obj 130 241 symbol \$3;
 #X obj 78 198 t f b;

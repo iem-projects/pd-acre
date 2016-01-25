@@ -1,0 +1,10 @@
+#N canvas 15 121 450 300 10;
+#X obj 101 101 cnv 15 98 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 103 118 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/azimuth /amb/ch1/azimuth
+/amb/ch1/azimuth 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 103 147 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/elevation /amb/ch1/elevation
+/amb/ch1/elevation 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 105 177 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/dist /amb/ch1/dist
+/amb/ch1/dist 0 -8 0 10 -262144 -1 -1 0 256;
+#X coords 0 -1 1 1 100 100 2 100 100;

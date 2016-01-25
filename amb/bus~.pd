@@ -1,5 +1,5 @@
-#N canvas 764 143 522 162 10;
-#N canvas 629 207 647 480 contruct-buses 0;
+#N canvas 773 194 522 162 10;
+#N canvas 632 224 647 480 contruct-buses 0;
 #X msg 154 70 clear;
 #X obj 41 15 inlet;
 #X obj 477 314 symbol \$3;
@@ -91,14 +91,14 @@
 #X connect 40 0 16 0;
 #X connect 41 0 0 0;
 #X restore 207 116 pd contruct-buses;
-#N canvas 120 495 977 226 \$0-dsp-buses 0;
+#N canvas 129 546 977 226 \$0-dsp-buses 0;
 #X restore 40 89 pd \$0-dsp-buses;
 #X obj 207 87 amb/order2chls \$1 \$2;
 #X text 26 21 amb/outs <dimen> <order> <ID ambisonic bus>;
 #X obj 349 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 366 116 clear before save !;
-#X obj 208 51 r /acre/amb/businit;
+#X obj 208 51 r /amb/businit;
 #X text 21 125 (c) GPL - acre \, ritsch;
 #X connect 2 0 0 0;
 #X connect 4 0 0 1;

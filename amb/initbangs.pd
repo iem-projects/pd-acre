@@ -1,8 +1,8 @@
 #N canvas 659 285 536 404 10;
-#X obj 188 236 s /acre/amb/businit;
-#X obj 128 311 s /acre/amb/guiinit;
-#X obj 168 258 s /acre/amb/encinit;
-#X obj 148 285 s /acre/amb/decinit;
+#X obj 188 236 s /amb/businit;
+#X obj 128 311 s /amb/guiinit;
+#X obj 168 258 s /amb/encinit;
+#X obj 148 285 s /amb/decinit;
 #X obj 35 144 i 0;
 #X text 71 141 old_state;
 #X obj 35 186 s /mxr/dsp;
@@ -19,7 +19,7 @@
 #X text 133 49 try to init objects with DSP off so no r~/s~ and Throw~/catch~
 errors are thrown;
 #X obj 128 203 t b b b b;
-#X obj 131 3 r /acre/amb/initbang;
+#X obj 131 3 r /amb/initbang;
 #X connect 4 0 6 0;
 #X connect 7 0 6 0;
 #X connect 8 0 4 0;

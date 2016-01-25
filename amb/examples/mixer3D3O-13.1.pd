@@ -1,4 +1,4 @@
-#N canvas 74 353 738 334 10;
+#N canvas 583 666 738 334 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -7,9 +7,9 @@
 #X declare -lib iem_ambi;
 #X declare -lib iem_bin_ambi;
 #X declare -path iemlib;
-#X declare -path ..;
+#X declare -path ../..;
 #X text 22 8 Example 3.Ordnung Ambisonics Mixer;
-#N canvas 493 52 634 338 init 0;
+#N canvas 1371 505 966 440 init 0;
 #X msg 44 115 \; pd-GUI vis 1;
 #X obj 45 32 acre/initbang;
 #X obj 44 93 r second_init;
@@ -19,22 +19,36 @@
 -1;
 #X obj 248 77 amb/initbangs;
 #X obj 217 45 t b b;
-#X msg 177 220 \; /set/program/load symbol ../amb/example.txt \; /set/program/nr
-0 \; /set/program/recall bang;
-#X msg 217 139 \; /cal/program/load symbol ../amb/cal.txt \; /cal/program/nr
-0 \; /cal/program/recall bang;
 #X text 355 78 inits for dynmic patching;
 #X text 233 117 load a default calibration;
-#X text 188 203 load settings for mixer and playback;
+#X text 481 116 (relative to ds/ lib );
+#X text 188 203 load settings for mixer and playback relativ to acre
+lib;
+#X msg 217 139 \; /cal/program/load symbol amb/examples/mixer3D3O-13.1_cal.txt
+\; /cal/program/nr 0 \; /cal/program/recall bang, f 76;
+#X msg 179 220 \; /set/program/load symbol amb/examples/mixer3D3O-13.1.txt
+/set/program/recall bang;
+#X obj 649 273 openpanel;
+#X obj 668 250 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 133 378 /amb/dec/load symbol /home/winfried/repos/acre_wdc3/amb/examples/mixer3D3O-13.1.mtx
+;
+#X msg 135 318 \; /amb/dec/load symbol examples/mixer3D3O-13.1.mtx
+\;;
+#X msg 647 294 set \, add \, add /amb/dec/load symbol \$1;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
 #X connect 3 0 7 0;
 #X connect 5 0 6 0;
-#X connect 7 0 8 0;
-#X connect 7 0 9 0;
+#X connect 7 0 13 0;
+#X connect 7 0 12 0;
+#X connect 7 0 17 0;
 #X connect 7 1 6 0;
+#X connect 14 0 18 0;
+#X connect 15 0 14 0;
+#X connect 18 0 17 0;
 #X restore 23 22 pd init;
-#N canvas 567 198 303 290 declares 0;
+#N canvas 570 242 303 290 declares 0;
 #X obj 18 58 declare -lib iemlib1;
 #X obj 18 111 declare -lib zexy;
 #X obj 18 94 declare -stdpath iemlib;
@@ -48,30 +62,25 @@
 #X obj 20 8 declare -path iemlib;
 #X restore 22 42 pd declares;
 #X text 16 66 patch should work in parent dir;
-#N canvas 235 52 737 362 GUI 1;
+#N canvas 1190 514 737 362 GUI 1;
 #X obj 219 55 mxr/test/tones_ctl 1;
 #X obj 19 55 mxr/master/ctl;
 #X obj 119 55 mxr/mo/ctl;
 #X obj 451 72 tgl 15 0 /tt/monitor/send /tt/monitor/send TT 17 7 0
 10 -257985 -1 -1 0 1;
-#X obj 335 79 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/azimuth /amb/ch1/azimuth
-/amb/ch1/azimuth 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 619 54 ds/ctl /set;
-#X obj 335 116 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/elevation /amb/ch1/elevation
-/amb/ch1/elevation 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 519 54 ds/ctl /cal;
 #X obj 342 204 tgl 15 0 /amb/player/A/play /amb/player/A/play play_A
 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 342 229 bng 15 250 50 0 /amb/player/A/open /amb/player/A/open
 open 17 7 0 10 -262144 -1 -1;
 #X obj 19 255 amb/bus_ctl~ 3D 3 AMB1;
-#X obj 22 34 bng 15 250 50 0 /acre/amb/initbang /acre/amb/initbang
-REINIT 17 7 0 10 -262144 -1 -1;
-#X obj 339 156 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/dist /amb/ch1/dist
-/amb/ch1/dist 0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 69 255 amb/outs_ctl BOXEN 14 /out;
+#X obj 22 34 bng 15 250 50 0 /amb/initbang /amb/initbang REINIT 17
+7 0 10 -262144 -1 -1;
 #X text 345 181 player;
 #X text 333 39 testchannel;
+#X obj 69 255 amb/outs_ctl BOXEN 14 out;
+#X obj 394 244 amb/spat_ctl ch1;
 #X restore 294 21 pd GUI;
 #X obj 297 79 mxr/test/tones~ 1;
 #X obj 11 287 mxr/master/master~;
@@ -80,25 +89,26 @@ REINIT 17 7 0 10 -262144 -1 -1;
 #X text 162 142 1 Make a bus;
 #X text 10 225 --- Out Kanaele (DACs) und Monitor ---;
 #X text 18 114 --- Ambisonics Bus AMB1/Decoder ---;
-#X obj 18 86 declare -path ..;
-#X obj 478 128 amb/encode_ds /set ch1;
 #X obj 16 138 amb/bus~ 3D 3 AMB1;
-#X obj 11 268 amb/outs BOXEN 14 /out;
 #X text 15 246 13 Boxen + SUB;
-#X obj 296 128 amb/encode~ ch1 3D 3 AMB1;
-#X obj 15 164 amb/decoder~ 3D 3 AMB1 /out 13;
-#X obj 172 288 throw~ /out-3~;
 #X obj 306 268 ds/storage_logic /cal;
-#X obj 306 291 amb/outs_ds BOXEN 14 /out /cal;
 #X obj 478 77 mxr/test/tones_ds /set 1;
 #X text 339 51 --- TEST Channel with encoder ---;
 #X text 348 157 --- Ambisonics Player ---;
 #X obj 315 222 amb/player A 16 AMB1;
 #X obj 112 39 ds/storage_logic /set;
 #X obj 315 199 amb/order2chls 3D 3;
-#X obj 315 176 r /acre/amb/encinit;
+#X obj 315 176 r /amb/encinit;
+#X obj 18 86 declare -path ../..;
+#X obj 11 268 amb/outs BOXEN 14 out;
+#X obj 306 291 amb/outs_ds BOXEN 14 out /cal;
+#X obj 171 297 throw~ /amb/out/3;
+#X text 233 166 13 outs;
+#X obj 14 164 amb/decoder~ 3D 3 AMB1 out 13;
+#X obj 296 128 amb/spat~ ch1 3D 3 AMB1;
+#X obj 478 128 amb/spat_ds /set ch1;
 #X connect 5 0 8 0;
-#X connect 5 0 17 0;
-#X connect 7 0 19 0;
-#X connect 27 0 25 0;
-#X connect 28 0 27 0;
+#X connect 5 0 28 0;
+#X connect 7 0 25 0;
+#X connect 20 0 18 0;
+#X connect 21 0 20 0;
