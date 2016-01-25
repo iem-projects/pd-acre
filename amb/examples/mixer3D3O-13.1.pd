@@ -1,4 +1,4 @@
-#N canvas 583 666 738 334 10;
+#N canvas 586 683 700 334 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -62,25 +62,23 @@ lib;
 #X obj 20 8 declare -path iemlib;
 #X restore 22 42 pd declares;
 #X text 16 66 patch should work in parent dir;
-#N canvas 1190 514 737 362 GUI 1;
+#N canvas 1193 531 725 404 GUI 1;
 #X obj 219 55 mxr/test/tones_ctl 1;
 #X obj 19 55 mxr/master/ctl;
 #X obj 119 55 mxr/mo/ctl;
-#X obj 451 72 tgl 15 0 /tt/monitor/send /tt/monitor/send TT 17 7 0
-10 -257985 -1 -1 0 1;
-#X obj 619 54 ds/ctl /set;
-#X obj 519 54 ds/ctl /cal;
-#X obj 342 204 tgl 15 0 /amb/player/A/play /amb/player/A/play play_A
+#X obj 529 54 ds/ctl /set;
+#X obj 429 54 ds/ctl /cal;
+#X obj 338 90 tgl 15 0 /amb/player/A/play /amb/player/A/play play_A
 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 342 229 bng 15 250 50 0 /amb/player/A/open /amb/player/A/open
+#X obj 338 115 bng 15 250 50 0 /amb/player/A/open /amb/player/A/open
 open 17 7 0 10 -262144 -1 -1;
 #X obj 19 255 amb/bus_ctl~ 3D 3 AMB1;
 #X obj 22 34 bng 15 250 50 0 /amb/initbang /amb/initbang REINIT 17
 7 0 10 -262144 -1 -1;
-#X text 345 181 player;
-#X text 333 39 testchannel;
+#X text 341 67 player;
+#X text 327 28 testchannel;
 #X obj 69 255 amb/outs_ctl BOXEN 14 out;
-#X obj 394 244 amb/spat_ctl ch1;
+#X obj 219 255 amb/spat_ctl ch1;
 #X restore 294 21 pd GUI;
 #X obj 297 79 mxr/test/tones~ 1;
 #X obj 11 287 mxr/master/master~;
@@ -90,7 +88,7 @@ open 17 7 0 10 -262144 -1 -1;
 #X text 10 225 --- Out Kanaele (DACs) und Monitor ---;
 #X text 18 114 --- Ambisonics Bus AMB1/Decoder ---;
 #X obj 16 138 amb/bus~ 3D 3 AMB1;
-#X text 15 246 13 Boxen + SUB;
+#X text 9 246 13 Boxen + SUB;
 #X obj 306 268 ds/storage_logic /cal;
 #X obj 478 77 mxr/test/tones_ds /set 1;
 #X text 339 51 --- TEST Channel with encoder ---;
@@ -102,11 +100,27 @@ open 17 7 0 10 -262144 -1 -1;
 #X obj 18 86 declare -path ../..;
 #X obj 11 268 amb/outs BOXEN 14 out;
 #X obj 306 291 amb/outs_ds BOXEN 14 out /cal;
-#X obj 171 297 throw~ /amb/out/3;
+#X obj 171 289 throw~ /amb/out/3;
 #X text 233 166 13 outs;
 #X obj 14 164 amb/decoder~ 3D 3 AMB1 out 13;
 #X obj 296 128 amb/spat~ ch1 3D 3 AMB1;
 #X obj 478 128 amb/spat_ds /set ch1;
+#N canvas 1034 513 450 300 TODO 0;
+#X text 10 37 - Distance from 0..1 (has to be discussed);
+#X text 12 65 - 3D-Reverb;
+#X text 11 51 - distance signal objects with first reflection simulation
+;
+#X text 11 95 - directional_loudness;
+#X text 12 79 - rotate \, mirror;
+#X text 12 110 - virtual microphones;
+#X text 13 125 - widening on sides;
+#X text 13 141 - B-Format encoder for various microphones;
+#X text 19 7 Some ideas for next semester;
+#X text 17 182 Controller;
+#X text 12 158 - Binaural rendering;
+#X text 27 202 Headtracker for binaural;
+#X text 27 220 Gyroskop for spat;
+#X restore 387 19 pd TODO;
 #X connect 5 0 8 0;
 #X connect 5 0 28 0;
 #X connect 7 0 25 0;
