@@ -55,8 +55,15 @@ The decoder matrix calculator is taken from the CUBEmixer and iemambi library.
 For better decoder matrixes use tools provided by other sources like Ambisonics Decoder Toolbox [ADT] by Aaron J. Heller 
 ( https://bitbucket.org/ambidecodertoolbox/adt.git )
 
-The inverse of the speaker matrix is calculated, but this can be singular. Especially for hemisphere arragement of speakers,
-use phantom speakers to fill the sphere. This would give better results.
+Workflow
+........
+
+1 Enter order and select the Dimensions
+
+Hints
+.....
+ The inverse of the speaker matrix is calculated, but this can be singular. Especially for hemisphere arragement of speakers, use phantom speakers to fill the sphere. 
+
 
 
 References
