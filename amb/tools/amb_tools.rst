@@ -58,7 +58,7 @@ For better decoder matrixes use tools provided by other sources like Ambisonics 
 Workflow
 ........
 
-1 Enter order and select the Dimensions
+see patch
 
 Hints
 .....
