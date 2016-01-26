@@ -1,4 +1,4 @@
-#N canvas 616 241 656 406 10;
+#N canvas 615 240 656 406 10;
 #X obj 418 126 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
 -1 -1;
 #X text 444 139 before save !;
@@ -98,12 +98,48 @@
 #X obj 475 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 54 260 s \$0-player;
-#N canvas 67 78 467 487 \$0-player 0;
+#N canvas 66 77 467 487 \$0-player 0;
+#X obj 10 5 r 1049-player;
+#X obj 200 5 s 1049-fromplayer;
+#X obj 10 30 readsf~ 16, f 32;
+#X obj 10 50 throw~ AMB1-1~;
+#X obj 20 70 throw~ AMB1-2~;
+#X obj 30 90 throw~ AMB1-3~;
+#X obj 40 110 throw~ AMB1-4~;
+#X obj 50 130 throw~ AMB1-5~;
+#X obj 60 150 throw~ AMB1-6~;
+#X obj 70 170 throw~ AMB1-7~;
+#X obj 80 190 throw~ AMB1-8~;
+#X obj 90 210 throw~ AMB1-9~;
+#X obj 100 230 throw~ AMB1-10~;
+#X obj 110 250 throw~ AMB1-11~;
+#X obj 120 270 throw~ AMB1-12~;
+#X obj 130 290 throw~ AMB1-13~;
+#X obj 140 310 throw~ AMB1-14~;
+#X obj 150 330 throw~ AMB1-15~;
+#X obj 160 350 throw~ AMB1-16~;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;
+#X connect 2 3 6 0;
+#X connect 2 4 7 0;
+#X connect 2 5 8 0;
+#X connect 2 6 9 0;
+#X connect 2 7 10 0;
+#X connect 2 8 11 0;
+#X connect 2 9 12 0;
+#X connect 2 10 13 0;
+#X connect 2 11 14 0;
+#X connect 2 12 15 0;
+#X connect 2 13 16 0;
+#X connect 2 14 17 0;
+#X connect 2 15 18 0;
+#X connect 2 16 1 0;
 #X restore 38 59 pd \$0-player;
 #X obj 174 119 openpanel;
 #X msg 174 141 set open \$1;
-#X msg 118 168 open /home/iem/tmp/Courville - The Well Tempered Chaos
-- ICSA2015 - ambix.wav;
+#X msg 118 168 open /media/iem/SONY_16GR/WDCM3 - 12 Channels.wav;
 #X obj 6 155 t b b;
 #X msg 6 177 1;
 #X obj 6 133 sel 1 0;
