@@ -4,7 +4,7 @@
 #X obj 29 34 inlet~;
 #X obj 30 117 outlet~;
 #X text 27 145 (c)algorythmics \, winfried ritsch;
-#X obj 48 73 r~ \$1/master/fade~;
+#X obj 48 73 r~ /master/fade~;
 #X text 29 10 master/gain~ <master id>;
 #X connect 0 0 3 0;
 #X connect 2 0 0 0;

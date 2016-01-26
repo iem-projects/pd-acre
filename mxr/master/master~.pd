@@ -15,14 +15,14 @@
 #X obj 16 138 dbtorms;
 #X obj 16 116 r \$1/master;
 #X obj 93 173 r \$1/mute;
-#X text 34 8 master/master~ <id>;
+#X text 34 8 master/master~ ;
 #X text 161 255 (c) GPL - acre \, ritsch;
 #X obj 258 191 s /mxr/load;
 #X obj 258 169 pack 0 0;
 #X obj 258 147 mxr/master/dsp;
 #X text 25 306 Note: only one master~ per patch is healthy (until now)
 ;
-#X obj 17 250 s~ \$1/master/fade~;
+#X obj 17 250 s~ /master/fade~;
 #X text 31 25 <id> .. master id;
 #X text 34 47 Note compatibility: if not used in master/gain~ then
 choose '0';
