@@ -1,4 +1,4 @@
-#N canvas 293 52 820 334 10;
+#N canvas 295 63 820 334 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -9,7 +9,7 @@
 #X declare -path iemlib;
 #X declare -path ../..;
 #X text 22 8 Example 3.Ordnung Ambisonics Mixer;
-#N canvas 183 356 966 440 init 0;
+#N canvas 184 297 966 440 init 0;
 #X msg 44 115 \; pd-GUI vis 1;
 #X obj 45 32 acre/initbang;
 #X obj 44 93 r second_init;
@@ -26,16 +26,14 @@
 lib;
 #X msg 217 139 \; /cal/program/load symbol amb/examples/mixer3D3O-13.1_cal.txt
 \; /cal/program/nr 0 \; /cal/program/recall bang, f 76;
-#X msg 179 220 \; /set/program/load symbol amb/examples/mixer3D3O-13.1.txt
+#X msg 192 238 \; /set/program/load symbol amb/examples/mixer3D3O-13.1.txt
 /set/program/recall bang;
 #X obj 649 273 openpanel;
 #X obj 668 250 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 133 378 /amb/dec/load symbol /home/winfried/repos/acre_wdc3/amb/examples/mixer3D3O-13.1.mtx
-;
-#X msg 135 318 \; /amb/dec/load symbol examples/mixer3D3O-13.1.mtx
-\;;
 #X msg 647 294 set \, add \, add /amb/dec/load symbol \$1;
+#X msg 135 318 \; /amb/dec/load symbol ../amb/examples/mixer3D3O-13.1_allrad.mtx
+\; \; /amb/dec/print bang, f 73;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
 #X connect 3 0 7 0;
@@ -44,9 +42,9 @@ lib;
 #X connect 7 0 12 0;
 #X connect 7 0 17 0;
 #X connect 7 1 6 0;
-#X connect 14 0 18 0;
+#X connect 14 0 16 0;
 #X connect 15 0 14 0;
-#X connect 18 0 17 0;
+#X connect 16 0 17 0;
 #X restore 23 22 pd init;
 #N canvas 570 242 303 290 declares 0;
 #X obj 18 58 declare -lib iemlib1;
@@ -62,7 +60,7 @@ lib;
 #X obj 20 8 declare -path iemlib;
 #X restore 22 42 pd declares;
 #X text 16 66 patch should work in parent dir;
-#N canvas 456 102 725 404 GUI 1;
+#N canvas 458 112 725 404 GUI 1;
 #X obj 219 55 mxr/test/tones_ctl 1;
 #X obj 19 55 mxr/master/ctl;
 #X obj 119 55 mxr/mo/ctl;
@@ -116,7 +114,7 @@ open 17 7 0 10 -262144 -1 -1;
 #X obj 14 164 amb/decoder~ 3D 3 AMB1 out 13;
 #X obj 296 133 amb/spat~ ch1 3D 3 AMB1;
 #X obj 478 128 amb/spat_ds /set ch1;
-#N canvas 1034 513 450 300 TODO 0;
+#N canvas 912 437 450 300 TODO 1;
 #X text 10 37 - Distance from 0..1 (has to be discussed);
 #X text 12 65 - 3D-Reverb;
 #X text 11 51 - distance signal objects with first reflection simulation
@@ -126,27 +124,14 @@ open 17 7 0 10 -262144 -1 -1;
 #X text 12 110 - virtual microphones;
 #X text 13 125 - widening on sides;
 #X text 13 141 - B-Format encoder for various microphones;
-#X text 19 7 Some ideas for next semester;
 #X text 17 182 Controller;
 #X text 12 158 - Binaural rendering;
 #X text 27 202 Headtracker for binaural;
 #X text 27 220 Gyroskop for spat;
+#X text 19 7 to complete toolbox for state of art functions:;
 #X restore 387 19 pd TODO;
-#X obj 553 173 env~;
-#X floatatom 553 195 5 0 0 0 - - -, f 5;
-#X obj 533 285 throw~ /amb/out/2;
-#X floatatom 568 226 5 0 0 0 - - -, f 5;
-#X msg 568 245 set /amb/out/\$1;
-#X obj 603 176 for++ 1 13 300;
-#X obj 640 141 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
 #X connect 5 0 8 0;
 #X connect 5 0 28 0;
 #X connect 7 0 25 0;
 #X connect 20 0 18 0;
 #X connect 21 0 20 0;
-#X connect 31 0 32 0;
-#X connect 34 0 35 0;
-#X connect 35 0 33 0;
-#X connect 36 0 34 0;
-#X connect 37 0 36 0;
