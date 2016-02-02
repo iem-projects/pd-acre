@@ -51,6 +51,8 @@ latency
 B Simple Decoder Matrix calculator
 ----------------------------------
 
+Note: Not working at the moment, please use allrad.
+
 The decoder matrix calculator is taken from the CUBEmixer and iemambi library.
 For better decoder matrixes use tools provided by other sources like Ambisonics Decoder Toolbox [ADT] by Aaron J. Heller 
 ( https://bitbucket.org/ambidecodertoolbox/adt.git )

@@ -1,4 +1,4 @@
-#N canvas 460 52 685 569 10;
+#N canvas 226 96 685 569 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -9,10 +9,10 @@
 #X declare -path iemlib;
 #X declare -path ../../;
 #X text 28 13 example Decoder matrix calc;
-#N canvas 372 576 842 400 init 0;
-#X msg 123 137 \; order 3 \; 3D 1 \; speaker 13 \; phantoms 5;
+#N canvas 373 337 842 400 init 0;
 #X obj 120 80 loadbang;
-#X connect 1 0 0 0;
+#X msg 123 137 \; order 2 \; 3D 1 \; speaker 13 \; phantoms 5;
+#X connect 0 0 1 0;
 #X restore 260 7 pd init;
 #N canvas 569 241 303 290 declares 0;
 #X obj 18 78 declare -lib iemlib1;
@@ -30,7 +30,7 @@
 #X restore 317 9 pd declares;
 #X obj 199 77 tgl 15 0 3D 3D 3D 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 111 76 nbx 3 14 -1e+37 1e+37 0 0 order order ORDER 0 -8 0 10
--262144 -1 -1 3 256;
+-262144 -1 -1 2 256;
 #X text 87 636 https://bitbucket.org/ambidecodertoolbox/adt.git;
 #X text 28 69 1.) Enter;
 #X text 196 93 else 2D;
@@ -128,7 +128,7 @@ bang \;;
 #X connect 25 0 14 0;
 #X connect 26 0 24 0;
 #X restore 295 60 pd decoder-generator;
-#N canvas 6 84 450 300 maxre 1;
+#N canvas 7 89 450 300 maxre 0;
 #X obj 63 131 amb/maxre;
 #X obj 64 155 pp ambi_weight;
 #X text 62 201 optimal weights;
@@ -241,7 +241,7 @@ understanding);
 #X text 23 255 Enter;
 #X obj 78 317 nbx 5 14 -1e+37 1e+37 0 0 phantoms phantoms phantoms
 0 -8 0 10 -262144 -1 -1 5 256;
-#N canvas 323 307 701 368 speaker-list 0;
+#N canvas 535 123 701 368 speaker-list 0;
 #X text 61 73 Example for 2D 8 speaker;
 #X msg 57 107 \; dc real_ls 1 0 \; dc real_ls 2 45 \; dc real_ls 3
 90 \; dc real_ls 4 135 \; dc real_ls 5 180 \; dc real_ls 6 225 \; dc
@@ -278,7 +278,7 @@ real_ls 7 270 \; dc real_ls 8 315;
 #X obj 190 319 tgl 15 0 vis_phantomlist vis_phantomlist phantomlist
 17 7 0 10 -262144 -1 -1 0 1;
 #X text 178 242 Edit;
-#N canvas 752 386 523 300 phantom-list 1;
+#N canvas 756 406 523 300 phantom-list 0;
 #X text 13 64 on 2D normally none;
 #X text 222 17 3D hemisphere;
 #X text 257 77 at least south pole;
@@ -314,4 +314,5 @@ and enjoy;
 #X text 19 133 and get;
 #X text 58 463 and see log at PD window for errors and matrix;
 #X text 57 475 on matrix non singular got to 2 and change values;
+#X text 245 37 IN Progress not working at the moment !!!;
 #X connect 8 0 9 0;
