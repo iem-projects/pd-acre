@@ -1,0 +1,54 @@
+#N canvas 248 199 868 417 10;
+#X obj 38 175 textfile;
+#X obj 38 199 list split 1;
+#X msg 59 136 rewind, f 7;
+#X obj 38 223 sel 3;
+#X obj 129 149 r \$0-maxre;
+#X msg 276 67 \; \$1-maxre clear \; \$1-maxre add 0 1 \; \$1-maxre
+add 1 1 0.57735 \; \$1-maxre add 2 1 0.774597 0.4 \; \$1-maxre add
+3 1 0.861136 0.612334 0.304747 \; \$1-maxre add 4 1 0.90618 0.731743
+0.501031 0.245735 \; \$1-maxre add 5 1 0.93247 0.80425 0.628251 0.422006
+0.205714 \; \$1-maxre add 6 1 0.949108 0.85121 0.713745 0.547079 0.363632
+0.17683 \; \$1-maxre add 7 1 0.96029 0.883236 0.773412 0.637298 0.482854
+0.318997 0.155022 \; \$1-maxre add 8 1 0.968161 0.906002 0.816486 0.703855
+0.573411 0.431234 0.283872 0.13798 \; \$1-maxre add 9 1 0.973907 0.922741
+0.848502 0.754077 0.643119 0.519888 0.389068 0.255559 0.124298 \; \$1-maxre
+add 10 1 0.978228 0.935394 0.872895 0.792762 0.697587 0.590427 0.474702
+0.354063 0.232278 0.113056 \; \$1-maxre add 11 1 0.981556 0.945179
+0.891872 0.823106 0.740766 0.647101 0.54465 0.436166 0.324549 0.212732
+0.103587 \;, f 81;
+#X obj 276 44 i \$0;
+#X obj 276 21 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 295 20 loadbang;
+#X obj 77 249 t b;
+#X obj 38 58 inlet;
+#X obj 38 82 t b b f;
+#X obj 38 297 list;
+#X obj 38 321 outlet;
+#X obj 28 362 liststorage;
+#X text 36 31 get maxre out of order;
+#X text 83 59 order;
+#X obj 79 277 s \$0-maxre;
+#X text 275 361 maxre for spheres is taken from algorithmus;
+#X text 356 18 apply or reciprocal apply spherical max_re weighting
+to suppress sidelobes according to Zotter \, Frank "All-Round Ambisonic
+Panning and Decoding";
+#X text 41 6 amb/maxre;
+#X text 28 385 from zexy: not documented so not used;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 12 1;
+#X connect 2 0 0 0;
+#X connect 3 0 12 0;
+#X connect 3 1 9 0;
+#X connect 4 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 17 0;
+#X connect 10 0 11 0;
+#X connect 11 0 0 0;
+#X connect 11 1 2 0;
+#X connect 11 2 3 1;
+#X connect 12 0 13 0;

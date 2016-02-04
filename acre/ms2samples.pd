@@ -1,17 +1,30 @@
-#N canvas 455 382 468 279 10;
-#X obj 83 106 inlet;
-#X obj 133 134 samplerate~;
-#X obj 133 156 * 0.001;
-#X obj 83 188 * 44.1;
-#X obj 83 236 outlet;
-#X text 82 65 Note: if samplerate changes during operation it only
+#N canvas 456 387 468 332 10;
+#X obj 23 106 inlet;
+#X obj 73 134 samplerate~;
+#X obj 73 156 * 0.001;
+#X obj 23 188 * 44.1;
+#X obj 23 236 outlet;
+#X text 22 65 Note: if samplerate changes during operation it only
 respected after a init bang;
-#X obj 133 106 initbang;
-#X text 80 23 ms2samples;
-#X text 78 44 calculates number of samples from time in ms;
-#X text 170 5 (c) GPL \, acre winfried ritsch;
+#X obj 73 106 initbang;
+#X text 20 23 ms2samples;
+#X text 18 44 calculates number of samples from time in ms;
+#X text 110 5 (c) GPL \, acre winfried ritsch;
+#X text 19 262 Note: Samplerate changes during operation it only respected
+after a init bang \, DSP on/off and audio-dialog;
+#X obj 231 97 r pd;
+#X obj 231 141 sel 1;
+#X obj 231 119 route dsp audio-dialog;
+#X obj 302 142 t b;
+#X text 176 189 Assumption: Normally samplerate changes only between
+DSP 0 and 1 \, even if settings can be changed without effect;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;
 #X connect 3 0 4 0;
 #X connect 6 0 1 0;
+#X connect 11 0 13 0;
+#X connect 12 0 1 0;
+#X connect 13 0 12 0;
+#X connect 13 1 14 0;
+#X connect 14 0 1 0;

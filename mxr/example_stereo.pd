@@ -1,10 +1,10 @@
-#N canvas 336 52 786 342 10;
+#N canvas 339 70 786 342 10;
 #X declare -path ../;
 #X declare -lib iemlib1;
 #X declare -lib iemlib2;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
-#N canvas 765 52 596 342 GUI 1;
+#N canvas 796 384 596 342 GUI 1;
 #X text 23 11 test main patches for out Mixer with 1 sub and 4 outs
 ;
 #X obj 410 58 ds/ctl /test;
@@ -13,7 +13,7 @@
 #X obj 6 60 master/stereo_ctl;
 #X text 44 38 Master and VU;
 #X restore 430 30 pd GUI;
-#N canvas 113 321 518 169 init 0;
+#N canvas 116 338 518 169 init 0;
 #X obj 45 32 loadbang;
 #X msg 45 54 \; /mxr/dsp 1 \; /mxr/fadetime 30 \;;
 #X msg 215 60 \; /test/program/load symbol test.txt \; /test/program/nr
@@ -30,7 +30,7 @@
 #X obj 20 253 throw~ /out/2~;
 #X obj 161 207 mxr/mo/master~;
 #X obj 21 204 mxr/test/tones~ 1;
-#X obj 202 237 master/stereo~;
+#X obj 203 231 master/stereo~;
 #X obj 183 69 master/stereo_ds /test;
 #X text 326 274 (c) GPL - acre \, ritsch;
 #X obj 19 115 declare -path ../;

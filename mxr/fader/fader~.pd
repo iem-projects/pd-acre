@@ -1,19 +1,24 @@
-#N canvas 585 385 450 300 10;
+#N canvas 588 402 450 300 10;
 #X obj 67 53 inlet~;
 #X obj 66 157 outlet~;
 #X obj 142 53 r \$1/vol;
 #X obj 157 81 r \$1/mute;
 #X obj 263 53 inlet;
 #X text 269 30 fadetime;
-#X obj 266 107 loadbang;
-#X obj 266 129 \$2;
-#X obj 266 151 sel 0;
-#X msg 266 173 50;
-#X text 268 85 if not used default;
+#X obj 263 163 loadbang;
+#X obj 263 185 \$2;
+#X obj 263 207 sel 0;
+#X msg 263 229 50;
+#X text 294 188 if not used default;
 #X text 67 14 fader~ <prefix> [fadetime];
-#X text 65 229 fader~ is dsp part of the fader with variable space
+#X text 65 248 fader~ is dsp part of the fader with variable space
 set using fadergain;
 #X obj 69 123 mxr/fader/gain~ \$2;
+#X text 308 50 overwrite with inlet;
+#X obj 264 98 r /mxr/fadetime;
+#X obj 264 119 s \$1/fadetime;
+#X obj 265 75 r \$1/fadetime;
+#X text 380 99 global;
 #X connect 0 0 13 0;
 #X connect 2 0 13 1;
 #X connect 3 0 13 2;
@@ -23,3 +28,5 @@ set using fadergain;
 #X connect 8 0 9 0;
 #X connect 9 0 13 3;
 #X connect 13 0 1 0;
+#X connect 15 0 16 0;
+#X connect 17 0 13 3;

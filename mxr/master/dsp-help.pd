@@ -1,0 +1,66 @@
+#N canvas 1035 566 755 434 10;
+#X declare -path ../..;
+#X obj 56 159 mxr/master/dsp;
+#X obj 70 49 declare -path ../..;
+#X floatatom 52 198 5 0 0 0 - - -, f 5;
+#X text 52 214 dsp in %;
+#X floatatom 146 193 5 0 0 0 - - -, f 5;
+#X text 146 209 peakdsp in %;
+#X obj 56 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 374 151 s /mxr/dsp/state/get;
+#X obj 374 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 341 181 r /mxr/dsp/state;
+#X obj 342 206 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 300 109 t b b b b;
+#X obj 303 227 i 0;
+#X msg 339 153 0;
+#X obj 362 332 print init some weird dsp;
+#X obj 297 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 71 710 372 144 weird-dsp 0;
+#X obj 10 30 throw~ nocatch;
+#X obj 10 10 catch~ music;
+#X obj 10 50 catch~ nocatch;
+#X connect 1 0 0 0;
+#X restore 323 410 pd weird-dsp;
+#X obj 322 388 s pd-weird-dsp;
+#X obj 322 297 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 345 298 should drop error if dsp is on;
+#X obj 50 256 r /mxr/dsp;
+#X obj 50 278 print mxr_dsp;
+#X text 318 76 no error \, temporarly switch off dsp;
+#X obj 303 257 s /mxr/dsp;
+#X text 376 104 get actual state;
+#X text 376 115 also switched by system;
+#X text 43 8 master/dsp-help;
+#X text 42 22 controls and tracks the dsp-state and cpu-usage;
+#X text 271 49 eg. for dynamic patching you could dsp previous state
+;
+#X text 40 370 (c) GPL - acre \, ritsch;
+#X text 72 123 manually switch dsp on/off;
+#X msg 322 353 clear \, obj 10 30 throw~ nocatch \, obj 10 10 catch~
+music \, connect 1 0 0 0 \, obj 10 50 catch~ nocatch;
+#X text 461 180 remember state \; -);
+#X text 374 230 (Note: can be achieved simpler \, but here for testing)
+;
+#X connect 0 0 2 0;
+#X connect 0 1 4 0;
+#X connect 6 0 0 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 12 1;
+#X connect 11 0 12 0;
+#X connect 11 1 18 0;
+#X connect 11 2 13 0;
+#X connect 11 3 8 0;
+#X connect 12 0 23 0;
+#X connect 13 0 23 0;
+#X connect 15 0 11 0;
+#X connect 18 0 31 0;
+#X connect 18 0 14 0;
+#X connect 20 0 21 0;
+#X connect 31 0 17 0;

@@ -4,5 +4,5 @@
 #X text 32 71 for backwards compatibility \, is now master~;
 #X text 32 48 deprecated;
 #X text 185 155 (c) GPL acre - winfried ritsch;
-#X obj 206 31 mxr/master/master~ \$1;
-#X text 32 17 mxr/master/fade~ <id>;
+#X obj 206 31 mxr/master/master~;
+#X text 32 17 mxr/master/fade~;
