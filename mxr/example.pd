@@ -1,4 +1,4 @@
-#N canvas 129 52 699 422 10;
+#N canvas 135 87 699 422 10;
 #X declare -path ../;
 #X declare -lib iemlib1;
 #X declare -lib iemlib2;
@@ -29,7 +29,7 @@
 #X obj 447 304 s A/vu;
 #X obj 522 284 env~;
 #X floatatom 522 306 5 0 0 0 - - -, f 5;
-#N canvas 183 394 860 308 out_mixer 0;
+#N canvas 186 411 860 308 out_mixer 1;
 #X obj 184 273 dac~ 1 2 3 4 5 6;
 #X text 518 68 --- data storage for mixer ---;
 #X obj 13 235 mxr/mo/master~;
@@ -43,7 +43,6 @@
 #X obj 524 175 mxr/out/sub_ds /test /out/2 /out/sub/1;
 #X obj 283 221 mxr/sub/master~ /out/sub/1;
 #X obj 522 244 mxr/sub/ds /test /out/sub/1;
-#X obj 11 55 mxr/master/master~ /out;
 #X text 215 65 --- signal routing ---;
 #X text 10 213 --- Monitoring Master ---;
 #X text 13 4 Example dsp patch for 4 outs \, Out 1 and 2 with subwoofer
@@ -58,6 +57,7 @@ functionality \, out 3-4 without sub and monitoring master;
 #X obj 228 162 mxr/out/ch~ /out/3;
 #X obj 250 191 mxr/out/ch~ /out/4;
 #X text 402 278 (c) GPL \, acre - winfried ritsch;
+#X obj 11 55 mxr/master/master~ 0;
 #X connect 2 0 0 0;
 #X connect 6 0 3 0;
 #X connect 7 0 0 0;
@@ -67,9 +67,9 @@ functionality \, out 3-4 without sub and monitoring master;
 #X connect 11 0 0 4;
 #X connect 11 0 0 5;
 #X connect 11 0 5 0;
-#X connect 23 0 4 0;
-#X connect 24 0 0 2;
-#X connect 25 0 0 3;
+#X connect 22 0 4 0;
+#X connect 23 0 0 2;
+#X connect 24 0 0 3;
 #X restore 186 205 pd out_mixer;
 #X text 28 188 --- MIXER Main Section with out channels ...;
 #X text 445 217 --- general fader unit ...;
@@ -127,7 +127,7 @@ into a second BUS Y with livecontrol;
 #X obj 72 309 throw~ /in/2~;
 #X text 236 88 --- data storage for testtones ---;
 #X text 504 388 (c) GPL - acre \, ritsch;
-#N canvas 310 52 777 558 GUI-EXAMPLE 0;
+#N canvas 514 421 777 558 GUI-EXAMPLE 1;
 #X obj 629 47 ds/ctl /test;
 #X text 261 -1 test main patches for out Mixer with 1 sub and 4 outs
 ;
@@ -135,9 +135,9 @@ into a second BUS Y with livecontrol;
 7 1 10 -257985 -1 -1 0 1;
 #X obj 331 398 tgl 15 0 /out/2/monitor/post /out/2/monitor/post pst
 1 7 1 10 -257985 -1 -1 0 1;
-#X obj 204 398 tgl 15 0 /out/1/monitor/pre /out/1/monitor/pre pre 1
+#X obj 211 398 tgl 15 0 /out/1/monitor/pre /out/1/monitor/pre pre 1
 7 1 10 -257985 -1 -1 0 1;
-#X obj 222 398 tgl 15 0 /out/1/monitor/post /out/1/monitor/post pst
+#X obj 229 398 tgl 15 0 /out/1/monitor/post /out/1/monitor/post pst
 1 7 1 10 -257985 -1 -1 0 1;
 #X text 25 -3 Mixer Main Section with Ctls;
 #X obj 415 47 mxr/mo/ctl;
