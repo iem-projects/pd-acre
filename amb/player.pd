@@ -1,8 +1,8 @@
-#N canvas 615 240 656 406 10;
-#X obj 418 126 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+#N canvas 616 245 601 337 10;
+#X obj 444 115 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
 -1 -1;
 #X text 444 139 before save !;
-#X obj 345 68 r /amb/encinit;
+#X obj 313 66 r /amb/encinit;
 #N canvas 823 557 788 523 contruct-playbus 0;
 #X msg 220 68 clear;
 #X obj 174 261 t f f b;
@@ -94,13 +94,13 @@
 #X connect 37 0 23 0;
 #X connect 38 0 6 0;
 #X connect 39 0 9 3;
-#X restore 292 143 pd contruct-playbus;
-#X obj 475 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X restore 299 120 pd contruct-playbus;
+#X obj 425 70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 54 260 s \$0-player;
-#N canvas 66 77 467 487 \$0-player 0;
-#X obj 10 5 r 1049-player;
-#X obj 200 5 s 1049-fromplayer;
+#X obj 30 226 s \$0-player;
+#N canvas 67 82 467 487 \$0-player 0;
+#X obj 10 5 r 1062-player;
+#X obj 200 5 s 1062-fromplayer;
 #X obj 10 30 readsf~ 16, f 32;
 #X obj 10 50 throw~ AMB1-1~;
 #X obj 20 70 throw~ AMB1-2~;
@@ -136,25 +136,26 @@
 #X connect 2 14 17 0;
 #X connect 2 15 18 0;
 #X connect 2 16 1 0;
-#X restore 38 59 pd \$0-player;
-#X obj 174 119 openpanel;
-#X msg 174 141 set open \$1;
-#X msg 118 168 open /media/iem/SONY_16GR/WDCM3 - 12 Channels.wav;
-#X obj 6 155 t b b;
-#X msg 6 177 1;
-#X obj 6 133 sel 1 0;
-#X msg 43 190 0;
-#X obj 6 111 r /amb/player/\$1/play;
-#X obj 177 97 r /amb/player/\$1/open;
-#X obj 230 214 r \$0-fromplayer;
-#X obj 231 239 s /amb/player/\$1/played;
-#X text 38 28 comment;
-#X text 26 8 amb/player~ <id> <channels> <bus ID>;
-#X obj 342 100 f \$2;
+#X restore 30 56 pd \$0-player;
+#X obj 118 153 openpanel;
+#X msg 118 175 set open \$1;
+#X msg 118 200 open /media/iem/SONY_16GR/WDCM3 - 12 Channels.wav;
+#X obj 30 126 t b b;
+#X msg 30 148 1;
+#X obj 30 104 sel 1 0;
+#X msg 67 161 0;
+#X obj 30 82 r /amb/player/\$1/play;
+#X obj 118 130 r /amb/player/\$1/open;
+#X obj 30 248 r \$0-fromplayer;
+#X obj 30 270 s /amb/player/\$1/played;
+#X text 39 5 amb/player~ <id> <channels> <bus ID>;
+#X obj 299 92 f \$2;
 #X obj 300 40 inlet channels;
+#X text 38 28 Note: first simple implementation...;
+#X text 34 303 comment;
 #X connect 0 0 3 1;
-#X connect 2 0 20 0;
-#X connect 4 0 20 0;
+#X connect 2 0 19 0;
+#X connect 4 0 19 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 9 0 5 0;
@@ -167,5 +168,5 @@
 #X connect 14 0 12 0;
 #X connect 15 0 7 0;
 #X connect 16 0 17 0;
-#X connect 20 0 3 0;
-#X connect 21 0 20 0;
+#X connect 19 0 3 0;
+#X connect 20 0 19 0;

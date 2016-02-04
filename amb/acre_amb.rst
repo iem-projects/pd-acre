@@ -11,7 +11,7 @@ Background
 ----------
 
 In Ambisonics 3D- or 2D-audiosignal are handled as an Ambisonics signal, which in fact is a multichannel audio-signal.
-With higher orders , better spatial resolutions are provided and more channels are used.
+With higher orders better spatial resolutions are provided and more Ambisonics channels are needed.
 The channel count is calculated by the formulas ``n=(order+1)²`` for 3D and ``n=2*order+1`` for 2D. 
 Therefore Ambisonics buses has to be used which are for example on 5th order 3D 36 channels.
 Until there is a snake functionality standard in Pd[snake]_ , we handle Ambisonics buses with abstraction and dynamic generated ``catch~/throw~`` and/or ``send~/receive~`` pairs to prevent excessive Pd cabling.
@@ -32,10 +32,32 @@ Notes
 
 - since simple dynamic patching is used, r~/s~ and catch~/throw~ pairs can be created in a wrong order which drops an error warning on the console.
 Since [savebang] is not implemented in Pd until now, we have to clear these abstractions before saving on development to reduce them a little bit.
-To prevent this a little bit more the initialization order is important, see example.
+To prevent this a little bit more the initialization order is important, see example, using own initbang order.
 
+
+Todo
+----
+
+ambisonics mixer::
+
+ - Distance from 0..1 (has to be discussed)
+ - distance signal objects with first reflection simulation
+ - directional loudness
+ - rotate, mirror
+ - widening
+ - virtual microphones
+
+processing::
+
+ - Binaural rendering
+ - Headtracker support for binaural
+ - 3D-Reverb
+ - B-Format encoder for various microphones from A-format
+
+
+References
+----------
 
 .. [snake] Pd-snake was an idea 2013 within a workshop with Miller Puckette at the IEM to extend Pd with multichannel signal connection, which is backwards compatible, but has not been implemented yet.
-
 
 .. [ACN] The Ambisonics Association, “Ambisonic Channels,” checked: 2011-09-09.  [Online].  Available: http://ambisonics.ch/standards/channels/
