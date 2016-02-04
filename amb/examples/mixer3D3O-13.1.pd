@@ -1,4 +1,4 @@
-#N canvas 299 83 664 334 10;
+#N canvas 301 93 664 334 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -8,7 +8,7 @@
 #X declare -lib iem_bin_ambi;
 #X declare -path iemlib;
 #X declare -path ../..;
-#N canvas 184 297 966 440 init 0;
+#N canvas 186 274 966 440 init 0;
 #X msg 44 115 \; pd-GUI vis 1;
 #X obj 45 32 acre/initbang;
 #X obj 44 93 r second_init;
@@ -16,9 +16,8 @@
 #X msg 45 54 \; /mxr/fadetime 30 \;;
 #X obj 264 47 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 248 77 amb/initbangs;
 #X obj 217 45 t b b;
-#X text 355 78 inits for dynmic patching;
+#X text 410 50 inits for dynamic patching;
 #X text 233 117 load a default calibration;
 #X text 481 116 (relative to ds/ lib );
 #X text 188 203 load settings for mixer and playback relativ to acre
@@ -31,19 +30,20 @@ lib;
 #X obj 668 250 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 647 294 set \, add \, add /amb/dec/load symbol \$1;
+#X obj 247 77 amb/initbangs;
 #X msg 135 318 \; /amb/dec/load symbol ../amb/examples/mixer3D3O-13.1_allrad.mtx
-\; \; /amb/dec/print bang, f 73;
+\; /amb/dec/print bang, f 88;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
-#X connect 3 0 7 0;
-#X connect 5 0 6 0;
-#X connect 7 0 13 0;
-#X connect 7 0 12 0;
-#X connect 7 0 17 0;
-#X connect 7 1 6 0;
-#X connect 14 0 16 0;
-#X connect 15 0 14 0;
-#X connect 16 0 17 0;
+#X connect 3 0 6 0;
+#X connect 5 0 16 0;
+#X connect 6 0 12 0;
+#X connect 6 0 11 0;
+#X connect 6 0 17 0;
+#X connect 6 1 16 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 17 0;
 #X restore 17 19 pd init;
 #N canvas 570 242 303 290 declares 0;
 #X obj 18 58 declare -lib iemlib1;
@@ -59,7 +59,7 @@ lib;
 #X obj 20 8 declare -path iemlib;
 #X restore 17 38 pd declares;
 #X text 16 66 patch should work in parent dir;
-#N canvas 462 206 598 403 GUI 1;
+#N canvas 464 216 598 403 GUI 1;
 #X obj 219 55 mxr/test/tones_ctl 1;
 #X obj 19 55 mxr/master/ctl;
 #X obj 119 55 mxr/mo/ctl;

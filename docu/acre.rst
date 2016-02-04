@@ -6,5 +6,7 @@
 
 .. include:: ../ds/acre_ds.rst
 .. include:: ../mxr/acre_mxr.rst
+.. include:: ../amb/acre_amb.rst
+.. include:: ../acre/acre_acre.rst
 
 .. (c) GPL. acre - winfried ritsch

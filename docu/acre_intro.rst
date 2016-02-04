@@ -4,7 +4,7 @@ Introduction
 ACRE is collection of PD-Patches, Externals and helping applications for algorithmic composition in an realtime computermusic environment. 
 It was dedicated to be integrated in open source projects at Atelier Algorythmics AA_ or IEM_ und now is published to be used by others.
 
-Modules can and should be and mostly used as submodules in projects.
+Modules can and should be and mostly used as sub-modules in projects.
 
 Background
 ----------
@@ -14,12 +14,12 @@ Starting with MIDI-Processing in the 80s and later with micro-controllers in the
 [PureData] has become a main base for most pieces done in this area.
 
 Within the development of singular applications and libraries for each artwork, each time a copy of such a library has been used for the further development. 
-With the art works "Maschinenhalle" [MH]_, "Heptapiano" and "Five Piano Metal Space" [Autopiano], ACRE has become a base library of this ideas, going onwards to be a GPL open source library.
+With the art works "Maschinenhalle" [MH]_, "Heptapiano" and "Five Piano Metal Space" [Autopiano], ACRE has become a base library of this ideas, going onward to be a GPL open source library.
 The problem of being a specialized library for some pieces is  still virulent and discussed. As an outcome of that only parts which are really common will be released with the sanction of the artist and programmers of these pieces.
 With the integration of parts of this library for [ICE] projection within the IEM, parts has been changed
 and forked in different other developments, but basic function stayed now in  an central repository the acre.
 
-First version was on private CVS then subversion repositories at algo.mur.at and now (May 2015) started to be pushed for public access to github.
+First version was on private CVS then subversion repositories at algo.mur.at and now (May 2015) started to be pushed for public access to github. After migration of all pd libraries of IEM,  http://git.iem.at/pd/acre is the choosen master.
 
 
 Structure of the Library
@@ -111,15 +111,21 @@ Each collection can be stored in files. See more in `ds/acre_ds.rst`
 Mixer - mxr
 """""""""""
 
-The Mixer module provides all functionalities for building individual mixer consoles from simple outputs to complex spatialization mixers within Pd.
+The Mixer module provides all functionality for building individual mixer consoles, from simple multichannel outputs to complex spatialization mixers within Pd.
 
 It can be used for programming a flexible audio output interface, a audio input processing with live amplification (if needed), including filter, dynamic effects, buses and includes a monitoring section. 
-
-Extension can be different spatialization like Ambisonics.
 
 The mixer module now combines the out, in, fx and other modules of older implementations in one module. 
 
 Depends: ds, acre
+
+Ambisonics -Ambisonics
+""""""""""""""""""""""
+
+The Ambisonics toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or Effects using iem_ambi.
+One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules.
+A special feature is patching multichannel signals as buses with arguments.
+
 
 Control Modules
 ^^^^^^^^^^^^^^^

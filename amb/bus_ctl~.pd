@@ -1,4 +1,4 @@
-#N canvas 688 109 674 300 10;
+#N canvas 688 114 674 300 10;
 #X text 86 24 (c) GPL \, acre - winfried ritsch;
 #N canvas 241 336 1043 387 contruct-outs 0;
 #X msg 152 67 clear;
@@ -160,7 +160,7 @@
 0;
 #X msg 134 193 \; pd-\$2-gui vis \$1;
 #X obj 134 171 pack 0 \$0;
-#X obj 109 116 tgl 25 0 empty empty V 8 13 0 14 -262130 -1 -1 1 1;
+#X obj 109 116 tgl 25 0 empty empty V 8 13 0 14 -262130 -1 -1 0 1;
 #N canvas 133 132 223 170 \$0-gui 0;
 #X restore 278 111 pd \$0-gui;
 #N canvas 213 647 935 88 \$0-dsp 0;

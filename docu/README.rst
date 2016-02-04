@@ -27,11 +27,11 @@ or local in your project or add a path to this directory with
 Documentation
 =============
 
-can be compiled within the docu folder searching for sub-Documents
-in the module folders for files matching ``acre_<module id>.rst``
-with ``docutils`` see RestructuredText_ .
+can be compiled within the ``docu`` folder with ``docutils`` , including sub-documents
+in the module folders using the name convention ``acre_<module id>.rst``
+(see RestructuredText_ ).
 
-Following sectioning is recommended::
+Section title hierarchy recommended::
 
     # with overline, for parts
     * with overline, for chapters
