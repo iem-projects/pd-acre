@@ -13,7 +13,7 @@ Algorithmic Composition Realtime Environment
 :Revision: see `docu/acre_title.rst`_
 :Master: https://git.iem.at/pd/acre
 
-.. _`docu/acre_title.rst`:  ../docu/acre_title.rst
+.. _`docu/acre_title.rst`:  docu/acre_title.rst
 
 "development version" means in this context:
   Structure and namespaces of this library will change if necessary, ignoring backwards compatibility unless Version "1.x"  is reached. Until the "stable" version 1 is reached, modules can change.
