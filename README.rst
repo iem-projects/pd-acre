@@ -50,6 +50,26 @@ is in docu_ directory and every module directory starting with acre_<module>.rst
 
 .. _docu: docu/
 
+Installation and usage
+----------------------
+
+Installation can be done with either:
+
+- download and unpack the directory acre in one
+
+- clone from git in one of your PD-paths: git clone https://git.iem.at/pd/acre
+
+- Use deken: search for acre download and install
+
+Best pratice to use it to set the stdpath to the lib first hierachy level, adding::
+
+ [declare -stdpath acre]
+ 
+should do it. Afterwards all objects are referenced by <module>/<object> eg::
+
+ [acre/initbang]
+ 
+
 History
 -------
 
