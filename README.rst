@@ -16,25 +16,27 @@ Algorithmic Composition Realtime Environment
 .. _`docu/acre_title.rst`:  docu/acre_title.rst
 
 "development version" means in this context:
-  Structure and namespaces of this library will change if necessary, ignoring backwards compatibility unless Version "1.x"  is reached. Until the "stable" version 1 is reached, modules can change.
+  Structure and namespaces of this library will change if necessary, ignoring backwards compatibility and module names can change unless the "stable" version 1 is reached.
   
-  Modules already used and tested in various projects and lectures will be added, so this lib can grow quite often in steps.
+  Modules already used and tested in various projects and lectures will be added over time, so this lib may grow quite often adding development versions of modules. A
+  After a year without change of a module (except bug fixes), it will become stable.
 
 Introduction
 ............
 
 ACRE is collection of Puredata_ Patches, Externals and example applications targeting algorithmic composition in an realtime computermusic environment. 
-It was dedicated to be integrated in open source projects at Atelier Algorythmics AA_ and IEM_ first hand and now is public to be useful for others.
+It was dedicated to be integrated in open source projects within Atelier Algorythmics AA_ and IEM_  and was made public to be useful for others.
 
-Modules of this library can and should be used as submodules in projects.
+Modules of this library can and should be used as submodules in projects. 
+Please contribute changes of you think they are needed.
 
 Mission
 ~~~~~~~
 
-An Algorithmic Composition Real-time Environment (ACRE) should be assembled to enable composers to generate compositions,  computermusic ensembles to share instruments, musicians build and extend their tools and media artists to include realtime computermusic projects in their projects.
-As artistic research environment this should evolve from within projects done at the IEM or elsewhere, especially within courses. 
+An Algorithmic Composition Real-time Environment (ACRE) should be assembled to enable composers to generate compositions,  computermusic ensembles to share instruments, musicians to build and extend their tools and media artists to include realtime computermusic in their projects.
+As artistic research environment this should evolve from within projects and courses, mostly done at the IEM_. 
 Therefore as an academic development strategy is used: 
-"develop during project phase and sharing valuable changes afterwards" ;-) 
+"develop during project phase and sharing valuable parts afterwards" ;-) 
 
 The "Algorithmic Composition Realtime Environment" aka ACRE is a library, 
 assembling and extending modules to implement pieces for robotic instruments and musicians in computer music realtime environments.
@@ -55,13 +57,15 @@ Installation and usage
 
 Installation can be done with either:
 
-- download and unpack the directory acre in one
+- download and unpack the directory acre in a Pd search path of your patch.
 
-- clone from git in one of your PD-paths: git clone https://git.iem.at/pd/acre
+- clone from git in one of your PD-paths::
 
-- Use deken: search for acre download and install
+  git clone https://git.iem.at/pd/acre
 
-Best pratice to use it to set the `-stdpath` to the base directory adding for example::
+- Use deken: search for 'acre', download and install.
+
+Best practice to use it to set the `-stdpath` to the base directory of acre adding for example::
 
  [declare -stdpath acre]
  
