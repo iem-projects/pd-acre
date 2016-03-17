@@ -61,14 +61,14 @@ Installation can be done with either:
 
 - Use deken: search for acre download and install
 
-Best pratice to use it to set the stdpath to the lib first hierachy level, adding::
+Best pratice to use it to set the `-stdpath` to the base directory adding for example::
 
  [declare -stdpath acre]
  
-should do it. Afterwards all objects are referenced by <module>/<object> eg::
+in the main patch. Then all objects can referenced by <module>/<object> eg::
 
  [acre/initbang]
- 
+
 
 History
 -------
