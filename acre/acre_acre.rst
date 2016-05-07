@@ -1,18 +1,20 @@
 acre - base abstractions and helpers
 ====================================
-common module objects of ACRE
------------------------------
+shared objects in ACRE
+----------------------
 
-This is library of common function as objects used in the different ACRE-modules and will be extended.
-Special care is taken not altering the functions in here already used in other modules. 
+This is library of objects as Puredata patches is a base library for the different ACRE-modules and will be extended, as they grows.
 
-For more documentation see ../docu/acre_title.rst
+Special care is taken not altering code of abstractions already used in other modules. 
 
-Functions
+debugf and reporting Functions
+------------------------------
+
+reporting
 ---------
-
 filename_shorten filename_split
   handling of filenames for relative paths and shorten for on GUI
+
 
 scope
  simple oscilloscope, dsp and controls not separated, no triggers
@@ -23,24 +25,15 @@ spectroscope.pd
 testtones~ testtones_ctl
   A test tones generator: noise, sine, saw generator, pulse played for better
   localization
-
-
-Helpers
--------
-
-tests, documentation and patches used by other abstraction in this module
-
-acre_acre.rst 
-   documentation of this module, this document
-
-main.pd
-  test and example patches for this library module
-
+  
 table_hanning
   hanning table, generated
  
 spectro_fft~.pd
   FFT for the spectroscope
+
+conversions and mappings
+------------------------
 
 fader2db db2fader fader2rms rms2fader fader_gain~ fader~
   used as for mapping of fader characteristics  instead linear dbtorms and using 
@@ -51,7 +44,20 @@ samples2ms ms2samples
 
 m2fakt fakt2m
  converts between midinote  interval (cents/100) an  factor of frequencies
-  
+
+ms2Hz Hz2ms
+ convert between frequency in Hertz and time in ms as wavelength, respect sample-rate and 0
+
+ 
+counting and indexing
+---------------------
+
+count_until
+ count until some number
+ 
+
+
+
 obsolete
 --------
 
@@ -59,9 +65,12 @@ This files will be removed or revised.
 
 ts ts_ctl
   testsamples in a sample library in data
+ 
+Helpers
+-------
 
-none
- none
+acre_acre.rst 
+   documentation of this module, this document
 
 Tests
 -----

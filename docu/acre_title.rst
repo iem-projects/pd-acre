@@ -32,3 +32,5 @@ more on these names in ./acre_intro.rst
 
 .. [IEM] Institut for Electronic Music and Acoustics, Art University Graz
          see http://iem.at/
+
+.. [Puredata] graphical computermusic programming language, see http://puredata.info
