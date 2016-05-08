@@ -1,7 +1,17 @@
-.. ../docu/acre_title.rst
+==========
+ACRE - mxr
+==========
+------------
+Mixer module
+------------
 
-mxr - Mixer module
-==================
+:Author: Winfried Ritsch
+:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
+:Copyright: winfried ritsch - IEM / algorythmics 2012+
+:Revision: see `../docu/acre_title.rst`_
+
+.. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
+
 
 The Mixer module provides all functionality for building individual mixer consoles from simple outputs to complex spatialization mixers within Pd.
 
@@ -168,3 +178,13 @@ Notes
 - mxr now is a merge of previous in, out and fx modules
 
 - spatial modules will be added within this mixer.
+
+additional docu
+---------------
+
+for an introduction see `../docu/acre_intro.rst`_ ,
+for more documentation explore docu_ .
+
+.. _docu: ../docu/
+
+.. _`../docu/acre_intro.rst`: acre_acre.rst

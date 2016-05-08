@@ -1,8 +1,19 @@
+==========
+ACRE - amb
+==========
+------------------
 Ambisonics Toolbox
-==================
+------------------
 
-Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or Effects using iem_ambi.
-One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules.
+:Author: Winfried Ritsch
+:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
+:Copyright: winfried ritsch - IEM / algorythmics 2012+
+:Revision: see `../docu/acre_title.rst`_
+
+.. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
+
+Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or effects using iem_ambi.
+One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules. Another to provide Multichannel operations and signaling.
 
 This module is based on the iem_ambi and some parts also on the iem_bin_ambi Pd-library, which is based on iemmatrix Pd-library.
 It also depends on the acre/acre and acre/mxr module of the acre library.
@@ -34,7 +45,6 @@ Notes
 Since [savebang] is not implemented in Pd until now, we have to clear these abstractions before saving on development to reduce them a little bit.
 To prevent this a little bit more the initialization order is important, see example, using own initbang order.
 
-
 Todo
 ----
 
@@ -54,6 +64,15 @@ processing::
  - 3D-Reverb
  - B-Format encoder for various microphones from A-format
 
+additional docu
+---------------
+
+for an introduction see `../docu/acre_intro.rst`_ ,
+for more documentation explore docu_ .
+
+.. _docu: ../docu/
+
+.. _`../docu/acre_intro.rst`: acre_acre.rst
 
 References
 ----------

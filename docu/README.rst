@@ -27,8 +27,7 @@ or local in your project or add a path to this directory with
 Documentation
 =============
 
-can be compiled within the ``docu`` folder with ``docutils`` , including sub-documents
-in the module folders using the name convention ``acre_<module id>.rst``
+can be compiled within the ``docu`` folder with ``docutils`` , including sub-documents in the module folders name ``readme.rst``
 (see RestructuredText_ ).
 
 Section title hierarchy recommended::

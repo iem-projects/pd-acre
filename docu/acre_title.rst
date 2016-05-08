@@ -7,7 +7,7 @@ Algorithmic Composition Realtime Environment
 
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
-:Revision: 0.67 development
+:Revision: 0.69 development
 :Copyright: Winfried Ritsch - IEM / algorythmics 2012+
 
 ACRE is collection of Puredata_ Patches, Externals and example applications targeting algorithmic composition in an realtime computermusic environment. 

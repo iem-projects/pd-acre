@@ -4,9 +4,9 @@
 
 .. include:: acre_intro.rst
 
-.. include:: ../ds/acre_ds.rst
-.. include:: ../mxr/acre_mxr.rst
-.. include:: ../amb/acre_amb.rst
-.. include:: ../acre/acre_acre.rst
+.. include:: ../ds/readme.rst
+.. include:: ../mxr/readme.rst
+.. include:: ../amb/readme.rst
+.. include:: ../acre/readme.rst
 
 .. (c) GPL. acre - winfried ritsch

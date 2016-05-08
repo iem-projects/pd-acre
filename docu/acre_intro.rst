@@ -1,17 +1,11 @@
 Introduction
 ============
 
-ACRE is collection of PD-Patches, Externals and helping applications for algorithmic composition in an realtime computermusic environment. 
-It was dedicated to be integrated in open source projects at Atelier Algorythmics AA_ or IEM_ und now is published to be used by others.
-
-Modules can and should be and mostly used as sub-modules in projects.
-
 Background
 ----------
 
-The development of real-time composition and signal processing tools, referring to the procedural thinking in computermusic compositions has been done since the beginning of Atelier Algorythmics [AA]_ .
-Starting with MIDI-Processing in the 80s and later with micro-controllers in the 90s, the deployment of Pure Data 
-[PureData] has become a main base for most pieces done in this area.
+The development of real-time composition and signal processing tools, referring to the procedural thinking in computermusic compositions has been done since the beginning of Atelier Algorythmics [AA]_ 1983.
+Starting with MIDI-Processing in the 80s and later with micro-controllers in the 90s, the deployment of Pure Data [PureData] has become a main base for most pieces done in this area.
 
 Within the development of singular applications and libraries for each artwork, each time a copy of such a library has been used for the further development. 
 With the art works "Maschinenhalle" [MH]_, "Heptapiano" and "Five Piano Metal Space" [Autopiano], ACRE has become a base library of this ideas, going onward to be a GPL open source library.
@@ -26,10 +20,9 @@ Structure of the Library
 ------------------------
 
 The library is divided in modules. 
-Each of these modules should have own test patches and no dependencies on others, except the some base modules. 
-This modules are included in the projects declaring the path to this library. Since shared within others projects all changes has to have upwards 
-compatibility in mind.
-Library objects which are abstractions as files with the extension .pd can be  "overwritten" with abstractions in an "overwrite path" declared before the acre module path. This can also be used for extending functionality within the ACRE library
+Each of these modules should have own test patches and no dependencies on others, except the base modules acre and ds. 
+This modules are included in the projects declaring the path to this library. Since shared within others projects all changes has to be done with upwards compatibility in mind.
+Library objects, which are abstractions files with the extension .pd, can be  "overwritten" with abstractions in an "overwrite path" declared before the acre module path. This can also be used for extending functionality within the ACRE library
 
 eg.:
  `declare -path local_acre:acre` for local overwrite of objects
@@ -69,13 +62,14 @@ data storages
   See more discussion on this subject in the data-storage module ds.
 
 documentation
-  In each module an extra documentation file should be placed as "acre_<modulename>.rst" and an example and test patch to test the module.
+  In each module an extra documentation file should be placed as ``readme.rst`` and an example and test patch to test the module.
+  Mostly the object description are in their object, just open them.
 
 Initialization
 ^^^^^^^^^^^^^^
 
-Each object should be initialized with default values inside the function patch using `loadbang`.
-Do not use delays or send/receives between `loadbang` and initialization.
+Each object should be initialized with default values inside the function patch using `acre/initbang`.
+Do not use delays or send/receives between `loadbang` oe `acre/initbang` and initialization.
 Also from acre-lib the `[initbang]` is provided, so all variables in the objects from acre can be reinitialized.
 
 The user application can use, for example his initialization routine started with a delay of 0 or more, mostly through loading parameters within the `ds-module`.
@@ -85,7 +79,7 @@ Overview of Modules
 
 Dependencies on externals are described in the module folders individually.
 
-All modules are  mostly depending on the base modules, e.g. `out` depends on `ds` module, which depends on externals like `zexy`.
+All modules are  mostly depending on the base modules, e.g. `mxr` depends on `ds` module, which depends on externals like `zexy`.
 
 Base Modules
 ^^^^^^^^^^^^
@@ -93,9 +87,9 @@ Base Modules
 Common abstractions - acre
 """"""""""""""""""""""""""
 
-The idea is to collect common abstraction often needed in the different modules, which to prevent redundancy.
-Every abstraction in the acre module should not depend on another acre modules.
-Since used by more modules, it so should not change very much in function and should be at least backward compatible. 
+The idea is to collect common abstraction often needed in the different modules to prevent redundancy.
+Every abstraction in the acre module should not depend on another acre module.
+Since used by more modules, care is taken in favor for backward compatible. 
 
 Note: Names should not collide if you use the acre prefix like: 
 `acre/split_filename` with abstraction in other directories.
@@ -199,15 +193,14 @@ visualization
 vi - optic signaling and conducting
 """""""""""""""""""""""""""""""""""
 
-Visualization of Messages in the OpenGL domain, especially over monitors for 
-musician and dancer. To be enhanced and reworked in near future for more general 
-usage.
+*unreleased, done for "maschinenhalle conductor views" series*
+
+Visualization of Messages in the OpenGL domain, especially over monitors for musician and dancer. To be enhanced and reworked in near future for more general usage.
 
 References and Footnotes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. [PureData] graphical computermusic programming language by Miller Puckette,
-              see http://puredata.info/
+.. [PureData] graphical computermusic programming language by Miller Puckette, see http://puredata.info/
 
 .. [OSC] Open Sound Control protocol, see http://opensoundcontrol.org/
 
@@ -217,7 +210,6 @@ References and Footnotes
 
 .. [Autopiano] Pieces with robot piano players 
    see http://algo.mur.at/projects/autoklavierspieler/performances/heptapiano
-
 
 .. [Scan] Project "Scan" see http://iaem.at/kurse/projekte/scan/
 

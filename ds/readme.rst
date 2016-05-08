@@ -1,10 +1,19 @@
-.. .. include:: ../docu/acre_title.rst
- 
-ds - Data Storage
-=================
+=========
+ACRE - ds
+=========
+-------------------
+Data Storage module
+-------------------
 
-A simple data storage library to store different sets of parameters as messages 
-in files for defined *domains*. 
+:Author: Winfried Ritsch
+:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
+:Copyright: winfried ritsch - IEM / algorythmics 2012+
+:Revision: see `../docu/acre_title.rst`_
+
+.. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
+
+ 
+A simple data storage library to store different sets of parameters as messages in files for defined *domains*. 
 The main target is a simple session management as data storage, within a Puredata project.
 
 Dependencies
@@ -97,5 +106,14 @@ Notes
 - 
     It would make me happy, if some native English speaker will edit this documentation and englishfy it.
 
-    
+additional docu
+---------------
+
+for an introduction see `../docu/acre_intro.rst`_ ,
+for more documentation explore docu_ .
+
+.. _docu: ../docu/
+
+.. _`../docu/acre_intro.rst`: acre_acre.rst
+
 (c) GPL, acre - algorythmics, IEM, winfried ritsch
