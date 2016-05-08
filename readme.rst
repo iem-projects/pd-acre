@@ -41,6 +41,29 @@ is in the docu_ directory and in every module directory named acre_<module>.rst
 
 .. _docu: docu/
 
+modules
+-------
+
+acre_
+ base module
+
+.. _acre: acre/
+
+ds_
+ data storage 
+
+.. _ds: ds/
+
+mxr_
+ general mixer functions
+
+.. _mxr: mxr/
+
+amb_
+ Ambisonics Toolbox
+
+.. _amb: amb/
+
 Installation and usage
 ----------------------
 
@@ -63,6 +86,8 @@ Afterwards all objects can referenced by <module>/<object> eg::
  [acre/initbang]
 
 
+ 
+ 
 History
 -------
 
