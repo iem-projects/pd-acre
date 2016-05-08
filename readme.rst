@@ -44,10 +44,10 @@ is in the docu_ directory and in every module directory named acre_<module>.rst
 modules
 -------
 
-acre_
+`basemodule acre`_
  base module
 
-.. _acre: acre/
+.. _`basemodule acre`: acre/
 
 ds_
  data storage 
@@ -85,9 +85,6 @@ Afterwards all objects can referenced by <module>/<object> eg::
 
  [acre/initbang]
 
-
- 
- 
 History
 -------
 
