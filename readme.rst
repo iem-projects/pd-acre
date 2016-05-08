@@ -37,7 +37,7 @@ Also it is an documentation of an accumulation on ideas and algorithms used in c
 Documentation
 -------------
 
-is in the docu_ directory and in every module directory named acre_<module>.rst
+is in the docu_ directory and in every module directory named ``readme.rst``
 
 .. _docu: docu/
 
@@ -47,22 +47,22 @@ modules
 `basemodule acre`_
  base module
 
-.. _`basemodule acre`: acre/
+.. _`basemodule acre`: acre/readme.rst
 
 ds_
  data storage 
 
-.. _ds: ds/
+.. _ds: ds/readme.rst
 
 mxr_
  general mixer functions
 
-.. _mxr: mxr/
+.. _mxr: mxr/readme.rst
 
 amb_
  Ambisonics Toolbox
 
-.. _amb: amb/
+.. _amb: amb/readme.rst
 
 Installation and usage
 ----------------------
