@@ -1,4 +1,4 @@
-#N canvas 888 255 450 480 10;
+#N canvas 889 260 450 480 10;
 #X text 117 10 channel_ctl <ch id>;
 #X obj 11 11 cnv 15 98 448 empty empty empty 2 7 0 10 -191407 -66577
 0;
