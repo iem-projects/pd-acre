@@ -1,7 +1,7 @@
-#N canvas 879 285 475 270 10;
+#N canvas 880 290 475 270 10;
 #X obj 11 11 cnv 30 98 198 empty empty \$1 2 8 0 12 -191407 -66577
 0;
-#X obj 41 62 vu 10 120 \$1/level empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 41 62 vu 10 120 \$1/vu empty -1 -8 0 10 -66577 -1 1 0;
 #X obj 19 56 vsl 15 128 0 127 0 0 \$1/vol \$1/vol empty 0 -9 0 10 -4032
 -1 -1 0 1;
 #X obj 19 188 nbx 3 14 -1e+37 1e+37 0 0 \$1/vol \$1/vol empty 0 -8
