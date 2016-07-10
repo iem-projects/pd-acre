@@ -121,6 +121,11 @@ One goal is to easily integrate Ambisonics encoder, decoder and processing for v
 A special feature is patching multichannel signals as buses with arguments.
 
 
+Waveguides
+""""""""""
+
+The simple waveguide library contains blocks to build phyical modeling instruments with waveguides, as also some example instruments.
+
 Control Modules
 ^^^^^^^^^^^^^^^
 

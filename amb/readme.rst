@@ -8,7 +8,8 @@ Ambisonics Toolbox
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Revision: see `../docu/acre_title.rst`_
+:Version: 0.71 development, mostly stable but clone could be used
+          for Pd Versions 0.47.1 instead of dynmic patching
 
 .. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
 

@@ -7,7 +7,7 @@ Algorithmic Composition Realtime Environment
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Revision: see `docu/acre_title.rst`_
+:Version: see `docu/acre_title.rst`_
 :Master: https://git.iem.at/pd/acre
 
 .. _`docu/acre_title.rst`:  docu/acre_title.rst
@@ -41,8 +41,8 @@ is in the docu_ directory and in every module directory named ``readme.rst``
 
 .. _docu: docu/
 
-modules
--------
+base modules
+------------
 
 `basemodule acre`_
  base module
@@ -59,10 +59,22 @@ mxr_
 
 .. _mxr: mxr/readme.rst
 
+Ambisonics
+----------
+
 amb_
  Ambisonics Toolbox
 
 .. _amb: amb/readme.rst
+
+synthesis
+---------
+
+wg_
+ Simple Waveguide Library
+
+.. _wg: wg/readme.rst
+
 
 Installation and usage
 ----------------------
@@ -97,6 +109,7 @@ History
 - Extended in the courses using Waveguide- and Tetraspeaker project.
 - Integrated parts of it into the [ICE] development 2010-
 - published for Ambisonics Mixer Tools development for Studios at IEM. 2015
+- published Waveguide library after editing for teaching purposes  IEM 2016
 
 References and Footnotes
 ------------------------

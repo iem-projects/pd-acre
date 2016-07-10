@@ -8,7 +8,7 @@ acre - base abstractions and helpers module
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Revision: see `../docu/acre_title.rst`_
+:Version: 1.0
 
 .. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
 
@@ -64,23 +64,19 @@ counting and indexing
 count_until
  count until some number
 
-obsolete
---------
+testing
+-------
 
-This files will be removed or revised.
+some test funcions.
 
 ts ts_ctl
   testsamples in a sample library in data
 
-  
-removed
--------
-
-fader2db db2fader fader2rms rms2fader fader_gain~ fader~
- moved to mxr module mxr/fader/<function>
-
 Helpers
 -------
+
+arg_default
+  helps handle default arguments for not given ones
 
 acre_acre.rst 
    documentation of this module, this document

@@ -8,7 +8,7 @@ Mixer module
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Revision: see `../docu/acre_title.rst`_
+:Version: 1.0
 
 .. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
 
