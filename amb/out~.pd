@@ -1,6 +1,6 @@
-#N canvas 269 476 518 264 10;
+#N canvas 271 484 518 264 10;
 #X obj 6 228 outlet~;
-#N canvas 392 809 327 132 init 0;
+#N canvas 394 871 327 132 init 1;
 #X obj 59 73 s \$1/vol;
 #X msg 59 50 100;
 #X obj 135 75 s \$1/del;
@@ -10,8 +10,7 @@
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
 #X connect 4 0 3 0;
-#X restore 153 9 pd init;
-#X obj 7 184 mxr/master/gain~;
+#X restore 203 10 pd init;
 #X obj 7 111 mxr/fader/fader~ \$1;
 #X text 5 247 (c) GPL - acre \, ritsch;
 #X obj 127 228 mxr/prvu/send~ \$1/vu;
@@ -22,14 +21,16 @@
 #X obj 280 118 min 100;
 #X text 4 40 Out Channel \, eg used for compensation of time and Amplitude
 and master-gain.;
-#X text 14 7 amb/out~ <id>;
 #X obj 8 83 catch~ \$1;
 #X obj 69 228 s~ \$1;
-#X connect 2 0 0 0;
-#X connect 2 0 5 0;
-#X connect 2 0 14 0;
-#X connect 3 0 7 0;
-#X connect 6 0 2 0;
-#X connect 9 0 10 0;
-#X connect 10 0 6 0;
-#X connect 13 0 3 0;
+#X obj 7 184 mxr/master/gain~ \$2;
+#X text 31 25 without master id id=0;
+#X text 14 7 amb/out~ <id> [master id];
+#X connect 2 0 6 0;
+#X connect 5 0 13 0;
+#X connect 8 0 9 0;
+#X connect 9 0 5 0;
+#X connect 11 0 2 0;
+#X connect 13 0 0 0;
+#X connect 13 0 4 0;
+#X connect 13 0 12 0;

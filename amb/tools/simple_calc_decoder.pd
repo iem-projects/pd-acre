@@ -1,4 +1,4 @@
-#N canvas 226 96 685 569 10;
+#N canvas 1214 108 685 569 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -30,11 +30,11 @@
 #X restore 317 9 pd declares;
 #X obj 199 77 tgl 15 0 3D 3D 3D 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 111 76 nbx 3 14 -1e+37 1e+37 0 0 order order ORDER 0 -8 0 10
--262144 -1 -1 2 256;
+-262144 -1 -1 1 256;
 #X text 87 636 https://bitbucket.org/ambidecodertoolbox/adt.git;
 #X text 28 69 1.) Enter;
 #X text 196 93 else 2D;
-#N canvas 703 464 336 265 ambisonics 0;
+#N canvas 704 495 336 265 ambisonics 1;
 #X obj 19 165 amb/order2chls;
 #X floatatom 19 187 5 0 0 0 - - -, f 5;
 #X msg 23 111 3D;
@@ -60,7 +60,7 @@
 #X text 31 286 3.) how Phantom channels;
 #X text 50 343 with 2D you normally do not need them;
 #X text 49 360 with 3D hemisphere at least one \, the south pole;
-#N canvas 303 161 554 459 calculation 0;
+#N canvas 304 165 554 459 calculation 0;
 #X obj 44 11 r calc;
 #X obj 43 66 t b b b;
 #X msg 43 248 \; dc begin_pseudo_inverse \; dc end_pseudo_inverse \;
@@ -69,7 +69,7 @@
 #X msg 66 173 \; get-maxre bang \; get-speaker bang \; get-phantoms
 bang \;;
 #X msg 83 106 \; generate_decoder bang;
-#N canvas 4 68 807 405 decoder-generator 0;
+#N canvas 459 83 807 405 decoder-generator 0;
 #X text 324 225 1.arg: <float> ambisonic order;
 #X text 339 243 (1 .. 5 in case of 3 dimensional);
 #X text 339 234 (1 .. 12 in case of 2 dimensional);
@@ -78,7 +78,6 @@ bang \;;
 ;
 #X text 324 277 4.arg: <float> number of virtual phantom_loudspeakers
 ;
-#X obj 54 59 r oder;
 #X obj 105 55 r 3D;
 #X obj 105 77 + 2;
 #X obj 239 54 r phantoms;
@@ -88,9 +87,9 @@ bang \;;
 #X msg 71 250 connect 0 0 1 0 \, connect 1 0 2 0;
 #X obj 73 150 t b l l l;
 #X obj 71 280 s pd-decoder-config;
-#N canvas 829 101 449 240 decoder-config 0;
+#N canvas 830 105 449 240 decoder-config 1;
 #X obj 10 10 r dc;
-#X obj 10 30 ambi_decode3 3 3 13 5;
+#X obj 10 30 ambi_decode3 1 3 5 5;
 #X obj 10 50 s dc-out;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -106,27 +105,28 @@ bang \;;
 #X obj 75 122 pack 3 3 13 5;
 #X msg 114 193 obj 10 30 ambi_decode3 \$1 \$2 \$3 \$4;
 #X obj 47 30 r generate_decoder;
-#X connect 6 0 16 0;
-#X connect 7 0 8 0;
+#X obj 54 59 r order;
+#X connect 6 0 7 0;
+#X connect 7 0 17 0;
 #X connect 8 0 18 0;
-#X connect 9 0 19 0;
-#X connect 10 0 17 0;
-#X connect 11 0 24 0;
-#X connect 12 0 14 0;
-#X connect 13 0 12 0;
-#X connect 13 1 22 0;
-#X connect 13 2 25 0;
-#X connect 13 3 21 0;
-#X connect 16 0 24 0;
-#X connect 17 0 24 2;
-#X connect 18 0 24 1;
-#X connect 19 0 24 3;
-#X connect 21 0 14 0;
-#X connect 22 0 14 0;
+#X connect 9 0 16 0;
+#X connect 10 0 23 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 12 1 21 0;
+#X connect 12 2 24 0;
+#X connect 12 3 20 0;
+#X connect 15 0 23 0;
+#X connect 16 0 23 2;
+#X connect 17 0 23 1;
+#X connect 18 0 23 3;
+#X connect 20 0 13 0;
+#X connect 21 0 13 0;
+#X connect 23 0 12 0;
+#X connect 23 0 22 0;
 #X connect 24 0 13 0;
-#X connect 24 0 23 0;
-#X connect 25 0 14 0;
-#X connect 26 0 24 0;
+#X connect 25 0 23 0;
+#X connect 26 0 15 0;
 #X restore 295 60 pd decoder-generator;
 #N canvas 7 89 450 300 maxre 0;
 #X obj 63 131 amb/maxre;
@@ -237,11 +237,11 @@ understanding);
 #X restore 164 438 pd calculation;
 #X text 30 183 2.)set speaker channel count;
 #X obj 80 258 nbx 5 14 -1e+37 1e+37 0 0 speaker speaker speaker 0 -8
-0 10 -262144 -1 -1 13 256;
+0 10 -262144 -1 -1 5 256;
 #X text 23 255 Enter;
 #X obj 78 317 nbx 5 14 -1e+37 1e+37 0 0 phantoms phantoms phantoms
 0 -8 0 10 -262144 -1 -1 5 256;
-#N canvas 535 123 701 368 speaker-list 0;
+#N canvas 942 224 701 368 speaker-list 1;
 #X text 61 73 Example for 2D 8 speaker;
 #X msg 57 107 \; dc real_ls 1 0 \; dc real_ls 2 45 \; dc real_ls 3
 90 \; dc real_ls 4 135 \; dc real_ls 5 180 \; dc real_ls 6 225 \; dc
@@ -263,7 +263,9 @@ real_ls 7 270 \; dc real_ls 8 315;
 180 \; dc real_ls 7 0 220 \; dc real_ls 8 0 270 \; dc real_ls 9 30
 40 \; dc real_ls 10 30 130 \; dc real_ls 11 30 230 \; dc real_ls 12
 30 320 \; dc real_ls 13 85 0 \;;
-#X connect 5 0 9 0;
+#X msg 24 272 \; dc real_ls 1 0 45 \; dc real_ls 2 0 135 \; dc real_ls
+3 0 225 \; dc real_ls 4 0 315 \; dc real_ls 5 90 0;
+#X connect 5 0 10 0;
 #X restore 270 253 pd speaker-list;
 #N canvas 1183 193 450 300 helps 0;
 #X obj 32 22 r vis_speakerlist;
@@ -274,11 +276,11 @@ real_ls 7 270 \; dc real_ls 8 315;
 #X connect 2 0 3 0;
 #X restore 406 7 pd helps;
 #X obj 180 258 tgl 15 0 vis_speakerlist vis_speakerlist speakerlist
-17 7 0 10 -262144 -1 -1 0 1;
+17 7 0 10 -262144 -1 -1 1 1;
 #X obj 190 319 tgl 15 0 vis_phantomlist vis_phantomlist phantomlist
-17 7 0 10 -262144 -1 -1 0 1;
+17 7 0 10 -262144 -1 -1 1 1;
 #X text 178 242 Edit;
-#N canvas 756 406 523 300 phantom-list 0;
+#N canvas 761 426 523 300 phantom-list 1;
 #X text 13 64 on 2D normally none;
 #X text 222 17 3D hemisphere;
 #X text 257 77 at least south pole;
@@ -288,7 +290,7 @@ real_ls 7 270 \; dc real_ls 8 315;
 #X text 238 135 help reduce loudness on horizent;
 #X msg 213 153 \; dc pht_ls 1 -90 0 \; dc pht_ls 2 -45 45 \; dc pht_ls
 3 -45 135 \; dc pht_ls 4 -45 225 \; dc pht_ls 5 -45 315 \;;
-#X connect 3 0 7 0;
+#X connect 3 0 5 0;
 #X restore 280 320 pd phantom-list;
 #X text 189 305 Edit;
 #X text 37 404 4.) Do calculation;

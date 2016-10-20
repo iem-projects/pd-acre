@@ -1,4 +1,4 @@
-#N canvas 699 674 450 283 10;
+#N canvas 701 682 450 283 10;
 #X obj 30 95 *~;
 #X text 49 51 apply a master_fade;
 #X obj 29 34 inlet~;

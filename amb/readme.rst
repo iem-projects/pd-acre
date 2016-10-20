@@ -84,6 +84,10 @@ processing::
  - 3D-Reverb
  - B-Format encoder for various microphones from A-format
 
+ 
+change names:
+ - all signal objects with ~ at end like player, outs
+ 
 additional docu
 ---------------
 

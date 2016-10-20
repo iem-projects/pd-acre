@@ -1,31 +1,55 @@
-#N canvas 1452 354 592 300 10;
+#N canvas 947 287 592 300 10;
 #X obj 101 101 cnv 15 98 98 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 103 118 nbx 3 14 -1e+37 1e+37 0 0 /amb/\$1/azimuth /amb/\$1/azimuth
-azimuth 0 -8 0 10 -262144 -1 -1 292 256;
-#X obj 103 147 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/elevation /amb/ch1/elevation
-elevation 0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 105 178 nbx 3 14 -1e+37 1e+37 0 0 /amb/ch1/dist /amb/ch1/dist
+azimuth 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 105 180 nbx 3 14 -1e+37 1e+37 0 0 /amb/\$1/dist /amb/\$1/dist
 dist 0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 265 96 metro 100;
-#X obj 320 68 r /mx/fadetime;
-#X obj 335 112 r /amb/\$1/azimuth;
-#X obj 265 141 f 0;
-#X obj 335 136 + 1;
-#X obj 264 197 s /amb/\$1/azimuth;
-#X obj 376 134 r /amb/\$1/azimuth/incr;
+#X obj 328 93 metro 100;
+#X obj 383 65 r /mx/fadetime;
+#X obj 398 109 r /amb/\$1/azimuth;
+#X obj 328 138 f 0;
+#X obj 398 133 + 1;
+#X obj 327 194 s /amb/\$1/azimuth;
+#X obj 439 131 r /amb/\$1/azimuth/incr;
 #X obj 155 116 tgl 15 0 /amb/\$1/azimuth/rotate /amb/\$1/azimuth/rotate
-rotx 17 7 0 10 -262144 -1 -1 1 1;
+rotx 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 160 148 nbx 3 14 -360 360 0 0 /amb/\$1/azimuth/incr /amb/\$1/azimuth/incr
-incx 0 -8 0 10 -262144 -1 -1 1 256;
-#X obj 264 42 r /amb/\$1/azimuth/rotate;
-#X obj 333 159 mod 360;
-#X connect 4 0 7 0;
-#X connect 5 0 4 1;
+incx 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 327 39 r /amb/\$1/azimuth/rotate;
+#X obj 396 156 mod 360;
+#X text 109 25 spat_ctl <channel ID> <type>;
+#X obj 215 100 loadbang;
+#X obj 215 122 symbol \$2;
+#X obj 213 170 route 2D;
+#X obj 213 192 t b;
+#X obj 253 191 t b;
+#X msg 233 242 pos 105 150;
+#X msg 214 217 pos 5 150;
+#X obj 103 138 cnv 15 50 25 empty /amb/\$1/elevation_no ----- 10 12
+0 10 -233017 -66577 0;
+#X obj 350 242 s /amb/\$1/elevation_no;
+#X obj 105 150 nbx 3 14 -1e+37 1e+37 0 0 /amb/\$1/elevation /amb/\$1/elevation
+elevation 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 295 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 214 147 \$1, f 2;
+#X connect 3 0 6 0;
+#X connect 4 0 3 1;
+#X connect 5 0 7 0;
 #X connect 6 0 8 0;
-#X connect 7 0 9 0;
-#X connect 8 0 14 0;
-#X connect 10 0 8 1;
-#X connect 13 0 4 0;
-#X connect 14 0 7 1;
+#X connect 7 0 13 0;
+#X connect 9 0 7 1;
+#X connect 12 0 3 0;
+#X connect 13 0 6 1;
+#X connect 15 0 16 0;
+#X connect 16 0 26 0;
+#X connect 17 0 18 0;
+#X connect 17 1 19 0;
+#X connect 18 0 21 0;
+#X connect 19 0 20 0;
+#X connect 20 0 24 0;
+#X connect 21 0 24 0;
+#X connect 25 0 16 0;
+#X connect 26 0 17 0;
 #X coords 0 -1 1 1 100 100 2 100 100;

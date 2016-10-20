@@ -1,6 +1,6 @@
-#N canvas 688 114 674 300 10;
+#N canvas 690 122 674 300 10;
 #X text 86 24 (c) GPL \, acre - winfried ritsch;
-#N canvas 241 336 1043 387 contruct-outs 0;
+#N canvas 242 340 1043 387 contruct-outs 0;
 #X msg 152 67 clear;
 #X obj 34 235 pack 10 1 s;
 #X obj 95 163 symbol \$3;
@@ -160,22 +160,22 @@
 0;
 #X msg 134 193 \; pd-\$2-gui vis \$1;
 #X obj 134 171 pack 0 \$0;
-#X obj 109 116 tgl 25 0 empty empty V 8 13 0 14 -262130 -1 -1 0 1;
-#N canvas 133 132 223 170 \$0-gui 0;
+#X obj 109 116 tgl 25 0 empty empty V 8 13 0 14 -262130 -1 -1 1 1;
+#N canvas 139 318 280 168 \$0-gui 0;
 #X restore 278 111 pd \$0-gui;
-#N canvas 213 647 935 88 \$0-dsp 0;
+#N canvas 216 659 935 88 \$0-dsp 0;
 #X restore 195 110 pd \$0-dsp;
 #X obj 278 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 298 184 rebuild;
 #X text 305 261 clear before save !;
-#X obj 276 212 amb/order2chls \$1 \$2;
 #X obj 374 181 r /amb/guiinit;
 #X text 93 58 amb/bus_ctl~ <type 2D|3D> <order> <Ambibus ID>;
-#X connect 3 0 13 0;
+#X obj 276 212 amb/order2chls \$1 \$2;
+#X connect 3 0 15 0;
 #X connect 6 0 5 0;
 #X connect 7 0 6 0;
 #X connect 10 0 1 1;
-#X connect 13 0 1 0;
-#X connect 14 0 13 0;
+#X connect 13 0 15 0;
+#X connect 15 0 1 0;
 #X coords 0 -1 1 1 50 50 2 100 100;
