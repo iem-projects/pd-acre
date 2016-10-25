@@ -1,10 +1,10 @@
-#N canvas 7 255 503 272 10;
+#N canvas 697 444 503 272 10;
 #X text 43 49 Storage for the master section;
 #X obj 21 175 ds/register_map \$1 /mxr/fadetime;
 #X obj 21 196 ds/register_map \$1 /mxr/dsp;
 #X text 10 114 NEVER STORE MAIN (until you know what you do) !;
-#X obj 22 130 ds/register_map \$1 \$2/mute;
-#X obj 28 91 # ds/register \$1 \$2/master;
 #X text 27 25 mxr/master_ds <domain> <master-id>;
 #X text 8 156 Global Parameters;
 #X text 274 230 (c) GPL - acre \, ritsch;
+#X obj 28 91 # ds/register \$1 /mxr/master/\$2/master;
+#X obj 22 130 ds/register_map \$1 /mxr/master/\$2/mute;

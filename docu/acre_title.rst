@@ -7,7 +7,7 @@ Algorithmic Composition Realtime Environment
 
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
-:Version: 1.0
+:Version: 1.01
 :Copyright: Winfried Ritsch - IEM / algorythmics 2012+
 
 ACRE is collection of Puredata_ Patches, Externals and example applications targeting algorithmic composition in an realtime computermusic environment. 
@@ -21,13 +21,14 @@ Pending modules:
 
 Note: Version of submodules now indepent from whole Version, since some can be still in development phase, but base modules now in release.
 
+Some new modules maybe "development version < 1.0"
+
 "development version" means in this context:
 -    Structure and namespaces of this library will change if necessary,
 -    ignoring backwards compatibility unless Version "1.x"  of the library and/or 
--    module is reached.
+     module is reached.
 -    Modules already used and tested in various previous projects will be added, 
--    so this lib may grow.
-
+     so this lib may grow.
 
 more on these names in ./acre_intro.rst
 

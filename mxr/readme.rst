@@ -40,7 +40,7 @@ For grouping the functions, they are separated in sub-folders, which will part o
 Out functions
 -------------
 
-A ``[mxr/master/fade~]`` is needed for out channels. 
+A ``[mxr/master/master~]`` is needed for out channels. 
 Also for DSP functionality  and global parameter like  fadetime,... (see examples for more details) are included.
 ``[mxr/out/sub~ <out id> <sub id>]`` are optional extensions for each out channel ``[mxr/out/ch~ <out id>]`` to implement simple crossovers and will need a ``[mxr/sub/master~ <sub id>]``
 

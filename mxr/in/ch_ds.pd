@@ -1,7 +1,7 @@
-#N canvas 635 421 348 258 10;
+#N canvas 1525 257 348 258 10;
 #X text 32 27 in/channel_ds <domain> <bus id>;
-#X obj 28 69 ds/register_map \$1 \$2/mute;
-#X obj 28 88 ds/register_map \$1 \$2/vol;
-#X obj 28 113 mxr/in/in_ds \$1 \$2;
-#X obj 28 151 mxr/eq/ds \$1 \$2;
-#X obj 28 132 mxr/limiter/ds \$1 \$2;
+#X obj 31 92 mxr/in/in_ds \$1 \$2;
+#X obj 31 130 mxr/eq/ds \$1 \$2;
+#X obj 31 111 mxr/limiter/ds \$1 \$2;
+#X obj 30 69 mxr/fader/fader_ds \$1 \$2;
+#X text 24 182 (c)GPL \, algorythmics \, winfried ritsch;

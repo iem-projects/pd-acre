@@ -1,10 +1,10 @@
-#N canvas 701 682 450 283 10;
+#N canvas 702 686 450 283 10;
 #X obj 30 95 *~;
 #X text 49 51 apply a master_fade;
 #X obj 29 34 inlet~;
 #X obj 30 117 outlet~;
 #X text 27 145 (c)algorythmics \, winfried ritsch;
-#X obj 48 73 r~ /master/fade~;
+#X obj 48 73 r~ /master/\$1/fade~;
 #X text 29 10 master/gain~ <master id>;
 #X connect 0 0 3 0;
 #X connect 2 0 0 0;
