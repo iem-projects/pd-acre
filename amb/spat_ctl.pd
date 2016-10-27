@@ -1,8 +1,8 @@
-#N canvas 949 295 592 300 10;
+#N canvas 950 292 592 300 10;
 #X obj 101 101 cnv 15 98 98 empty empty \$1 2 8 0 10 -233017 -66577
 0;
-#X obj 103 150 nbx 3 14 -1e+37 1e+37 0 0 /amb/\$1/azimuth /amb/\$1/azimuth
-azimuth 0 -8 0 10 -262144 -1 -1 -45 256;
+#X obj 103 150 nbx 4 14 -1e+37 1e+37 0 0 /amb/\$1/azimuth /amb/\$1/azimuth
+azimuth 0 -8 0 10 -262144 -1 -1 -135 256;
 #X obj 162 136 nbx 3 14 -1e+37 1e+37 0 0 /amb/\$1/dist /amb/\$1/dist
 dist 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 328 93 metro 100;
@@ -15,7 +15,7 @@ dist 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 182 155 tgl 15 0 /amb/\$1/azimuth/rotate /amb/\$1/azimuth/rotate
 empty 17 7 0 10 -228856 -1 -1 0 1;
 #X obj 163 182 nbx 3 14 -360 360 0 0 /amb/\$1/azimuth/incr /amb/\$1/azimuth/incr
-rotz 0 -8 0 10 -228856 -1 -1 2 256;
+rotz 0 -8 0 10 -228856 -1 -1 0 256;
 #X obj 327 39 r /amb/\$1/azimuth/rotate;
 #X obj 396 156 mod 360;
 #X text 109 25 spat_ctl <channel ID> <type>;
@@ -28,7 +28,7 @@ rotz 0 -8 0 10 -228856 -1 -1 2 256;
 0 10 -233017 -66577 0;
 #X obj 350 242 s /amb/\$1/elevation_no;
 #X obj 105 180 nbx 3 14 -1e+37 1e+37 0 0 /amb/\$1/elevation /amb/\$1/elevation
-elevation 0 -8 0 10 -262144 -1 -1 10 256;
+elevation 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 295 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 214 147 \$1, f 2;
