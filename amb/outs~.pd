@@ -1,5 +1,5 @@
-#N canvas 1422 144 494 314 10;
-#N canvas 1408 513 421 296 contruct-outs 0;
+#N canvas 1426 160 494 246 10;
+#N canvas 1409 517 421 296 contruct-outs 0;
 #X msg 160 90 clear;
 #X obj 81 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -41,47 +41,26 @@
 #X connect 16 0 18 1;
 #X connect 17 0 16 0;
 #X connect 18 0 5 1;
-#X restore 206 158 pd contruct-outs;
-#N canvas 78 512 241 521 \$0-dsp-outs 0;
-#X obj 10 20 amb/out~ SUB-1~;
-#X obj 10 40 amb/out~ SUB-2~;
+#X restore 34 169 pd contruct-outs;
+#N canvas 81 528 241 521 \$0-dsp-outs 0;
 #X restore 33 33 pd \$0-dsp-outs;
 #X obj 53 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 33 100 t b b b;
-#X obj 242 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 135 143 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 261 128 clear before save !;
+#X text 154 143 clear before save !;
 #X obj 33 61 r /amb/businit;
-#X obj 33 131 i \$2;
-#X obj 33 220 pack f s;
-#X obj 65 197 symbol \$3;
-#X obj 33 173 t f b;
 #X obj 174 86 max 1;
-#X obj 33 153 acre/count_until;
 #X text 71 83 reconstruct;
 #X obj 174 64 r \$1/channels;
 #X text 172 45 dyn set channel count;
-#X obj 174 109 t f f;
-#X text 149 202 REINIT created objects;
-#X msg 33 260 \; \$2/\$1/vol 100 \; \$2/\$1/del 0;
-#X text 142 269 now inside [amb/out~];
-#X text 33 243 Nothing to do until now;
 #X text 33 11 amb/outs~ <ID> <nr channels> <ID out receives> [out offset]
 ;
-#X text 146 288 (c) GPL - acre \, ritsch;
-#X connect 2 0 3 0;
-#X connect 3 0 7 0;
-#X connect 3 2 0 0;
-#X connect 4 0 0 1;
-#X connect 6 0 3 0;
-#X connect 7 0 12 0;
-#X connect 8 0 18 0;
-#X connect 9 0 8 1;
-#X connect 10 0 8 0;
-#X connect 10 1 9 0;
-#X connect 11 0 16 0;
-#X connect 12 0 10 0;
-#X connect 14 0 11 0;
-#X connect 16 0 7 0;
-#X connect 16 1 0 0;
+#X text 34 194 (c) GPL - acre \, ritsch;
+#X obj 33 100 t b;
+#X connect 2 0 12 0;
+#X connect 3 0 0 1;
+#X connect 5 0 12 0;
+#X connect 6 0 0 0;
+#X connect 8 0 6 0;
+#X connect 12 0 0 0;

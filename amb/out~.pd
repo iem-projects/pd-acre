@@ -1,6 +1,6 @@
-#N canvas 274 496 518 264 10;
+#N canvas 276 504 518 264 10;
 #X obj 6 228 outlet~;
-#N canvas 394 871 327 132 init 0;
+#N canvas 396 917 327 132 init 1;
 #X obj 59 73 s \$1/vol;
 #X msg 59 50 100;
 #X obj 135 75 s \$1/del;
