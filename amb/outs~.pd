@@ -1,4 +1,4 @@
-#N canvas 1426 160 494 246 10;
+#N canvas 1422 154 494 402 10;
 #N canvas 1409 517 421 296 contruct-outs 0;
 #X msg 160 90 clear;
 #X obj 81 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -41,14 +41,39 @@
 #X connect 16 0 18 1;
 #X connect 17 0 16 0;
 #X connect 18 0 5 1;
-#X restore 34 169 pd contruct-outs;
-#N canvas 81 528 241 521 \$0-dsp-outs 0;
+#X restore 65 163 pd contruct-outs;
+#N canvas 82 527 241 521 \$0-dsp-outs 0;
+#X obj 10 20 amb/out~ AMBI-1~;
+#X obj 10 40 amb/out~ AMBI-2~;
+#X obj 10 60 amb/out~ AMBI-3~;
+#X obj 10 80 amb/out~ AMBI-4~;
+#X obj 10 100 amb/out~ AMBI-5~;
+#X obj 10 120 amb/out~ AMBI-6~;
+#X obj 10 140 amb/out~ AMBI-7~;
+#X obj 10 160 amb/out~ AMBI-8~;
+#X obj 10 180 amb/out~ AMBI-9~;
+#X obj 10 200 amb/out~ AMBI-10~;
+#X obj 10 220 amb/out~ AMBI-11~;
+#X obj 10 240 amb/out~ AMBI-12~;
+#X obj 10 260 amb/out~ AMBI-13~;
+#X obj 10 280 amb/out~ AMBI-14~;
+#X obj 10 300 amb/out~ AMBI-15~;
+#X obj 10 320 amb/out~ AMBI-16~;
+#X obj 10 340 amb/out~ AMBI-17~;
+#X obj 10 360 amb/out~ AMBI-18~;
+#X obj 10 380 amb/out~ AMBI-19~;
+#X obj 10 400 amb/out~ AMBI-20~;
+#X obj 10 420 amb/out~ AMBI-21~;
+#X obj 10 440 amb/out~ AMBI-22~;
+#X obj 10 460 amb/out~ AMBI-23~;
+#X obj 10 480 amb/out~ AMBI-24~;
+#X obj 10 500 amb/out~ AMBI-25~;
 #X restore 33 33 pd \$0-dsp-outs;
 #X obj 53 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 135 143 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 166 137 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 154 143 clear before save !;
+#X text 185 137 clear before save !;
 #X obj 33 61 r /amb/businit;
 #X obj 174 86 max 1;
 #X text 71 83 reconstruct;
@@ -56,11 +81,25 @@
 #X text 172 45 dyn set channel count;
 #X text 33 11 amb/outs~ <ID> <nr channels> <ID out receives> [out offset]
 ;
-#X text 34 194 (c) GPL - acre \, ritsch;
-#X obj 33 100 t b;
+#X text 33 361 (c) GPL - acre \, ritsch;
+#X obj 33 100 t b b;
+#X obj 37 194 acre/count_until \$2;
+#X obj 9 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 41 279 pack 0 s;
+#X obj 39 219 t f b;
+#X msg 36 307 \; \$2-\$1~/vol 100 \; \$2-\$1~/del 0;
+#X obj 83 244 symbol \$3;
 #X connect 2 0 12 0;
 #X connect 3 0 0 1;
 #X connect 5 0 12 0;
 #X connect 6 0 0 0;
 #X connect 8 0 6 0;
-#X connect 12 0 0 0;
+#X connect 12 0 13 0;
+#X connect 12 1 0 0;
+#X connect 13 0 16 0;
+#X connect 14 0 13 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 16 1 18 0;
+#X connect 18 0 15 1;
