@@ -1,4 +1,4 @@
-#N canvas 807 241 450 383 10;
+#N canvas 807 240 450 383 10;
 #X text 53 52 Identify;
 #X obj 53 156 loadbang;
 #X obj 76 315 print;
@@ -10,7 +10,7 @@
 #X obj 53 344 outlet;
 #X obj 76 246 sel 0;
 #X text 119 342 (c) GPL - acre \, ritsch;
-#X text 32 17 acre/instance_one_test <object name> <\$0>;
+#X text 53 18 acre/instance_one_test <object name> <\$0>;
 #X obj 50 92 i \$2;
 #X obj 53 222 == \$2;
 #X msg 76 293 Error: Only one \$1 should exist (doubled warning) !

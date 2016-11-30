@@ -1,17 +1,17 @@
-#N canvas 339 70 786 342 10;
+#N canvas 507 69 786 342 10;
 #X declare -path ../;
 #X declare -lib iemlib1;
 #X declare -lib iemlib2;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
-#N canvas 796 384 596 342 GUI 1;
+#N canvas 462 479 596 289 GUI 1;
 #X text 23 11 test main patches for out Mixer with 1 sub and 4 outs
 ;
 #X obj 410 58 ds/ctl /test;
 #X obj 210 58 mxr/mo/ctl;
 #X obj 310 58 mxr/test/tones_ctl 1;
-#X obj 6 60 master/stereo_ctl;
 #X text 44 38 Master and VU;
+#X obj 10 58 mxr/master/stereo_ctl 0;
 #X restore 430 30 pd GUI;
 #N canvas 116 338 518 169 init 0;
 #X obj 45 32 loadbang;

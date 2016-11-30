@@ -1,4 +1,4 @@
-#N canvas 492 351 323 382 10;
+#N canvas 492 350 498 409 10;
 #X obj 29 266 tgl 15 0 empty empty outs 17 7 0 10 -262144 -1 -1 0 1
 ;
 #N canvas 1114 571 250 105 out-par-\$0 0;
@@ -22,8 +22,8 @@
 40 8 0 10 -4034 -1 -1 100 256;
 #X obj 118 190 nbx 3 14 -1e+37 1e+37 0 0 /out/2/vol /out/2/vol vol_2
 40 8 0 10 -4034 -1 -1 100 256;
-#X obj 10 10 mxr/master/ctl;
 #X text 183 25 mon;
+#X obj 10 10 mxr/master/ctl \$1;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X coords 0 -1 1 1 200 200 1 10 10;

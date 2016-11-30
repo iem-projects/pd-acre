@@ -14,7 +14,7 @@
 #X obj 10 10 acre/spectroscope mo;
 #X text 134 37 Dirty: GUI shouldnt have Signals;
 #X text 9 221 (c) GPL \, acre - winfried ritsch;
-#X obj 60 56 acre/scope_treshold;
+#X obj 60 56 acre/scope_threshold;
 #X connect 6 0 7 0;
 #X connect 6 0 10 0;
 #X coords 0 -1 1 1 100 200 2 10 10;

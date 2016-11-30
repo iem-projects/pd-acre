@@ -1,5 +1,5 @@
-#N canvas 401 136 561 341 10;
-#X obj 17 226 line~;
+#N canvas 401 135 561 341 10;
+#X obj 17 250 line~;
 #X obj 17 163 pack 0 50;
 #X obj 134 136 r /mxr/fadetime;
 #X msg 120 224 0 3;
@@ -24,7 +24,8 @@ choose '0';
 #X text 33 8 master/master~ <master id>;
 #X obj 93 173 r /mxr/master/\$1/mute;
 #X obj 16 116 r /mxr/master/\$1/master;
-#X obj 17 250 s~ /master/\$1/fade~;
+#X obj 17 274 s~ /master/\$1/fade~;
+#X text 155 226 comment;
 #X connect 0 0 17 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 1;

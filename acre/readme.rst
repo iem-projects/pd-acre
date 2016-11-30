@@ -4,18 +4,17 @@ ACRE - acre
 -------------------------------------------
 acre - base abstractions and helpers module
 -------------------------------------------
-
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: 1.0
+:Version: 1.0.1
 
 .. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
 
+This is the common base module for the different ACRE-modules.
 
-This module as library of objects as Puredata patches is a base library for the different ACRE-modules and will be extended over time...
-
-Special care is taken not altering code of abstractions already used in other modules. 
+Special care is taken not. altering the abstractions  herein, especially
+whan already used in other modules. 
 
 Most documentation is in example.pd and the objects themselves.
 
@@ -29,6 +28,9 @@ filename_shorten filename_split
 
 scope
  simple oscilloscope, dsp and controls not separated, no triggers
+
+scope_threshold
+ like scope with threshold
 
 spectroscope.pd
  simple Spectroscope,  dsp and controls not separated, no auto-gain

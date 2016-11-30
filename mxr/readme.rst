@@ -8,34 +8,36 @@ Mixer module
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: 1.0
+:Version: 1.0.1
 
 .. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
 
 
-The Mixer module provides all functionality for building individual mixer consoles from simple outputs to complex spatialization mixers within Pd.
+The Mixer module provides functionality for building individual mixer consoles from simple dac out control to complex spatialization mixers within Pd. It is one of the base modules needed for other acre modules.
 
-It can be used for programming a flexible audio output interface, a audio input processing with live amplification (if needed), including filter, dynamic effects, buses and includes a monitoring section. 
+It can be used for programming a flexible mixer interface with audio input processing and also live amplification, including filter, dynamic effects, buses and including a monitoring section. 
 
-Extension can be different spatialization functionality like Ambisonics.
-
-The mixer module now combines the out, in, fx and other modules of older implementations in one module. 
+Extension are done with additional modules, like the Ambisonics mixer module.
 
 Within this library basic audio mixer functionality  is provided, including the "traditional" master section with DSP control, out buses and sub-channels, channel-strips with some more specialized functions for inputs for pickups or others.
 
-To achieve this, some helper functions are included to be used by other modules.
-This library include base functions for fader and GUI's to be included in other modules of ACRE or moved to the acre-modules, where it depends from.
+The mixer module now combines the out, in, fx sections of older implementations in one module. 
+Also some helper functions are included to be used by other modules, especially base functions for fader and GUI's to be included in other modules of ACRE.
 
 Most functions are documented and explained in their patch.
 
 Structure
 ---------
 
-The master sections also provides the DSP functionality for the patch, like turning `dsp on/off` and showing CPU usage.
-Out functions are for collecting signals and prepare for output mostly to speakers including, crossover and equalization solution for multi-bus systems.
+The master sections also provides DSP control functionality for the patch, like turning `dsp on/off` and showing CPU usage.
+Out functions are for collecting signals and prepare the signal for output mostly to speakers including crossover and equalization solution for multi-bus systems.
 
-Parallel monitoring section is included as bypass for debugging the signal path.
-For grouping the functions, they are separated in sub-folders, which will part of the object name, so they must not be declared as search paths, since same names are used in different folders.
+A parallel monitoring section is included for debugging the signal path.
+Group of similar Functions  are separated in sub-folders, which will part of the object name, so they must not be declared as search paths, since same names are used in different folders.
+
+Since new version, the prefix of id names are mostly free, except for the master section, which begins with "/master/<id>" and global variables for the mixer like "/mxr/fadetime" or signals /mo/mono~.
+
+Signal names should end with "~".
 
 Out functions
 -------------

@@ -1,4 +1,4 @@
-#N canvas 764 71 450 300 10;
+#N canvas 764 69 450 300 10;
 #X text 110 5 (c) GPL \, acre winfried ritsch;
 #X text 18 41 samplerate;
 #X obj 77 185 samplerate~;
@@ -6,7 +6,7 @@
 #X obj 77 158 sel 1;
 #X obj 77 136 route dsp audio-dialog;
 #X obj 148 159 t b;
-#X text 72 81 outputs samplerate also on samplerate change !;
+#X text 21 78 outputs samplerate also on samplerate change !;
 #X obj 30 114 inlet;
 #X obj 76 213 outlet;
 #X obj 254 111 initbang;

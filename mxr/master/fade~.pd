@@ -1,8 +1,8 @@
-#N canvas 734 222 436 198 10;
+#N canvas 734 221 436 198 10;
 #X text 30 100 master generates the Mastervolume signal and MUTE functionality
 ;
 #X text 32 71 for backwards compatibility \, is now master~;
 #X text 32 48 deprecated;
 #X text 185 155 (c) GPL acre - winfried ritsch;
-#X obj 206 31 mxr/master/master~;
 #X text 32 17 mxr/master/fade~;
+#X obj 206 31 mxr/master/master~ \$1;
