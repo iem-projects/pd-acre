@@ -1,16 +1,16 @@
-#N canvas 961 637 688 303 10;
+#N canvas 450 184 688 303 10;
 #X declare -path ../;
 #X declare -lib iemlib1;
 #X declare -lib iemlib2;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
-#X obj 413 33 declare -path ../;
+#X obj 373 33 declare -path ../;
 #X obj 16 99 declare -lib iemlib1;
 #X obj 16 150 declare -lib iemlib2;
 #X obj 16 174 declare -lib zexy;
-#X obj 16 124 declare -stdpath iemlib;
+#X obj 18 125 declare -stdpath iemlib;
 #X text 12 76 inlcudes and libs needed;
-#N canvas 938 272 733 312 conversions 1;
+#N canvas 629 276 733 312 conversions 0;
 #X floatatom 28 160 5 0 0 0 - - -, f 5;
 #X floatatom 28 207 5 0 0 0 - - -, f 5;
 #X floatatom 28 251 5 0 0 0 - - -, f 5;
@@ -133,7 +133,7 @@
 #X connect 20 0 17 0;
 #X connect 23 0 21 0;
 #X restore 261 106 pd filenames;
-#N canvas 895 582 748 342 inits 0;
+#N canvas 453 289 548 323 inits 0;
 #X obj 40 40 acre/initbang;
 #X obj 40 70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -145,10 +145,11 @@
 #X floatatom 38 176 5 0 0 0 - - -, f 5;
 #X obj 211 152 acre/arg_default Hallo \$1;
 #X obj 211 174 print arg_default:;
-#X text 39 129 If argument is empty use default argument for optional
-args;
 #X text 39 6 Init acre library by hand or loadbang;
 #X obj 42 237 # acre/instance_once_test a \$0;
+#X text 39 129 If argument is empty use default value for optional
+args;
+#X text 39 270 (c) \, GPL - acre \, winfried ritsch;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 6 0;
@@ -196,8 +197,6 @@ are implemented;
 #X restore 261 213 pd testsampleplayer;
 #X text 17 11 ACRE acre - Examples and test of objects of the base
 module;
-#X text 16 34 since example should work also in parent directory here
-;
 #X text 331 81 general init functions for reinit;
 #X text 367 107 split \, shorten \, ...;
 #X text 370 131 commonly used conversions;
@@ -220,3 +219,7 @@ module;
 #X restore 259 161 pd misc;
 #X text 327 163 count_until \, ...;
 #X text 408 214 for providing test input;
+#X text 16 34 to get example work also in the parent directory:;
+#X text 11 202 get sure these library are loaded;
+#X text 11 218 see console;
+#X text 16 253 (c) GPL \, acre \, winfried ritsch \, 2010+;
