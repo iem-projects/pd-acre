@@ -1,18 +1,18 @@
-#N canvas 960 418 380 350 10;
-#X obj 11 11 cnv 30 98 198 empty empty MASTER 2 8 0 10 -191407 -66577
-0;
+#N canvas 961 449 380 350 10;
+#X obj 11 11 cnv 30 98 198 empty empty MASTER-\$1 2 8 0 10 -191407
+-66577 0;
 #X obj 13 192 nbx 3 14 -1e+37 1e+37 0 0 empty empty avg 0 -8 0 10 -228856
--1 -1 7 256;
+-1 -1 0 256;
 #X obj 13 165 nbx 3 14 -1e+37 1e+37 0 0 empty empty peak 0 -8 0 10
--228856 -1 -1 7 256;
+-228856 -1 -1 0 256;
 #X obj 72 37 vsl 35 128 0 127 0 0 \$0/master/fad \$0/master/fad -vol-
-0 -9 0 10 -258113 -1 -1 3900 1;
+0 -9 0 10 -258113 -1 -1 0 1;
 #X obj 72 168 nbx 3 14 -1e+37 1e+37 0 0 /mxr/master/\$1/master /mxr/master/\$1/master
-empty 0 -8 0 10 -258113 -1 -1 91 256;
+empty 0 -8 0 10 -258113 -1 -1 0 256;
 #X obj 13 31 tgl 30 0 \$1/mute \$1/mute MUTE 2 16 0 12 -258113 -1 -1
 0 1;
 #X obj 12 121 tgl 30 0 /mxr/dsp /mxr/dsp DSP 5 16 0 12 -4034 -1 -1
-1 1;
+0 1;
 #X obj 18 226 r /mxr/load;
 #X obj 18 253 unpack 0 0;
 #X obj 105 229 pack 0 \$0;
@@ -20,7 +20,7 @@ empty 0 -8 0 10 -258113 -1 -1 91 256;
 #X obj 19 8 cnv 30 98 198 empty empty master_parameter 0 8 0 10 -191407
 -66577 0;
 #X obj 22 99 nbx 4 14 -1e+37 1e+37 0 0 /mxr/fadetime /mxr/fadetime
-fadetime 0 -8 0 10 -262144 -1 -1 30 256;
+fadetime 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 19 27 acre/init_ctl;
 #X restore 105 287 pd \$0-master-par;
 #X msg 105 252 \; pd-\$2-master-par vis \$1;
@@ -45,6 +45,7 @@ fadetime 0 -8 0 10 -262144 -1 -1 30 256;
 #X obj 130 170 s /mxr/master/\$1/master;
 #X obj 131 100 s \$0/master/fad;
 #X obj 130 122 r \$0/master/fad;
+#X text 131 4 mx/master/ctl <master id>;
 #X connect 7 0 8 0;
 #X connect 8 0 1 0;
 #X connect 8 1 2 0;
