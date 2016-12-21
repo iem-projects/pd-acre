@@ -7,11 +7,8 @@ Algorithmic Composition Realtime Environment
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: see `docu/acre_title.rst`_
+:Version: 2.0-dev
 :Master: https://git.iem.at/pd/acre
-
-.. _`docu/acre_title.rst`:  docu/acre_title.rst
-
 
 Introduction
 ............
@@ -37,7 +34,7 @@ Also it is an documentation of an accumulation on ideas and algorithms used in c
 Documentation
 -------------
 
-is in the docu_ directory and in every module directory named ``readme.rst``
+is in the docu_ directory and in every module directory named ``readme.rst`` and ``<modulename>.rst`` 
 
 .. _docu: docu/
 
@@ -59,21 +56,8 @@ mxr_
 
 .. _mxr: mxr/readme.rst
 
-Ambisonics
-----------
 
-amb_
- Ambisonics Toolbox
-
-.. _amb: amb/readme.rst
-
-synthesis
----------
-
-wg_
- Simple Waveguide Library
-
-.. _wg: wg/readme.rst
+Further modules see ``acre-<modulename>`` at  https://git.iem.at/pd/acre-<modulename>.
 
 
 Installation and usage
@@ -85,7 +69,7 @@ Installation methods:
 
 - clone from git in one of your PD-paths::
 
-  git clone https://git.iem.at/pd/acre
+   git clone https://git.iem.at/pd/acre
 
 - Use deken: search for 'acre', download and install.
 
@@ -110,6 +94,7 @@ History
 - Integrated parts of it into the [ICE] development 2010-
 - published for Ambisonics Mixer Tools development for Studios at IEM. 2015
 - published Waveguide library after editing for teaching purposes  IEM 2016
+- splitted modules to seperate git repos for better development and distribution
 
 References and Footnotes
 ------------------------

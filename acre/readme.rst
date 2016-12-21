@@ -21,8 +21,6 @@ Most documentation is in example.pd and the objects themselves.
 debug and reporting Functions
 -----------------------------
 
-reporting
----------
 filename_shorten filename_split
   handling of filenames for relative paths and shorten for on GUI
 
