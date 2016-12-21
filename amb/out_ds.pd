@@ -1,6 +1,0 @@
-#N canvas 1298 271 450 203 10;
-#X obj 21 85 ds/register_map \$1 \$2/vol;
-#X text 132 165 (c) GPL - acre \, ritsch;
-#X obj 21 105 ds/register_map \$1 \$2/del;
-#X obj 20 127 ds/register_map \$1 \$2/mute;
-#X text 27 25 amb/out_ds <domain> <out-id>;

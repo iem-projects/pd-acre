@@ -1,7 +1,0 @@
-#N canvas 914 234 444 190 10;
-#X text 32 31 amb/encode_ds <domain> <ch id>;
-#X obj 41 89 ds/register_map \$1 /amb/\$2/azimuth;
-#X obj 39 116 ds/register_map \$1 /amb/\$2/elevation;
-#X obj 37 59 ds/register_map \$1 /amb/\$2/dist;
-#X text 308 111 only used on 3D;
-#X text 30 146 (c)GPL \, algorythmics \, winfried ritsch;
