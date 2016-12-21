@@ -57,8 +57,7 @@ mxr_
 .. _mxr: mxr/readme.rst
 
 
-Further modules see ``acre-<modulename>`` at  https://git.iem.at/pd/acre-<modulename>.
-
+Further modules see ``acre-<modulename>`` at  https://git.iem.at/pd/ .
 
 Installation and usage
 ----------------------
