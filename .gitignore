@@ -1,3 +1,7 @@
+# libs as own modules
+amb
+wg
+
 # Object files
 *.o
 *.ko
