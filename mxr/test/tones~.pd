@@ -1,6 +1,6 @@
-#N canvas 198 52 566 476 10;
+#N canvas 501 234 464 476 10;
 #X obj 57 261 mux~ . . .;
-#X obj 52 226 noise~;
+#X obj 27 172 noise~;
 #X obj 31 98 osc~ 220;
 #X obj 57 287 *~;
 #X obj 237 285 line~;
@@ -9,17 +9,16 @@
 #X obj 183 218 sel 0;
 #X obj 188 192 t f f;
 #X msg 183 240 1;
-#N canvas 2 52 450 300 init 0;
+#N canvas 573 362 450 300 init 1;
 #X obj 103 58 loadbang;
-#X obj 103 80 any \$1;
 #X obj 231 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 103 102 \; /out/testtones/\$1/pulse/on 0 \; /out/testtones/\$1/pulse/time
-500 \; /out/testtones/\$1/sel 0 \; /out/testtones/\$1/freq 220 \; /out/testtones/\$1/vol
-60;
-#X connect 0 0 1 0;
+#X msg 104 128 \; \$1/pulse/on 0 \; \$1/pulse/time 500 \; \$1/sel 0
+\; \$1/freq 220 \; \$1/vol 60;
+#X obj 104 106 list append \$1;
+#X connect 0 0 3 0;
 #X connect 1 0 3 0;
-#X connect 2 0 1 0;
+#X connect 3 0 2 0;
 #X restore 34 47 pd init;
 #X obj 57 330 *~;
 #X obj 105 370 line~;
@@ -32,26 +31,26 @@
 #X obj 112 120 -~ 0.5;
 #X obj 112 142 *~ 2;
 #X obj 233 63 switch~;
-#X obj 31 76 r /out/testtones/\$1/freq;
-#X obj 233 41 r /out/testtones/\$1/on;
-#X obj 190 170 r /out/testtones/\$1/pulse/on;
-#X obj 251 197 r /out/testtones/\$1/pulse/time;
-#X obj 287 310 r /out/testtones/\$1/mute;
-#X obj 106 305 r /out/testtones/\$1/vol;
-#X obj 15 199 r /out/testtones/\$1/sel;
 #X obj 105 327 dbtorms;
 #X obj 244 241 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 36 7 mxr/test/tones~ <id>;
-#X obj 74 395 mxr/prvu/send~ /out/testtones/\$1/level;
 #X text 154 427 (c) GPL \, acre - winfried ritsch;
+#X obj 233 41 r \$1/on;
+#X obj 190 170 r \$1/pulse/on;
+#X obj 31 76 r \$1/freq;
+#X obj 251 197 r \$1/pulse/time;
+#X obj 287 310 r \$1/mute;
+#X obj 106 305 r \$1/vol;
+#X obj 74 395 mxr/prvu/send~ \$1/level;
+#X obj 58 214 r \$1/sel;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 1;
 #X connect 3 0 11 0;
 #X connect 4 0 3 1;
 #X connect 5 0 4 0;
-#X connect 6 0 30 0;
+#X connect 6 0 23 0;
 #X connect 7 0 9 0;
 #X connect 8 0 7 0;
 #X connect 8 1 6 0;
@@ -67,13 +66,13 @@
 #X connect 18 0 19 0;
 #X connect 19 0 20 0;
 #X connect 20 0 0 2;
-#X connect 22 0 2 0;
-#X connect 22 0 18 0;
-#X connect 23 0 21 0;
-#X connect 24 0 8 0;
-#X connect 25 0 6 1;
-#X connect 26 0 16 0;
-#X connect 27 0 29 0;
-#X connect 28 0 0 0;
-#X connect 29 0 13 0;
-#X connect 30 0 5 0;
+#X connect 22 0 13 0;
+#X connect 23 0 5 0;
+#X connect 26 0 21 0;
+#X connect 27 0 8 0;
+#X connect 28 0 2 0;
+#X connect 28 0 18 0;
+#X connect 29 0 6 1;
+#X connect 30 0 16 0;
+#X connect 31 0 22 0;
+#X connect 33 0 0 0;

@@ -1,10 +1,12 @@
-#N canvas 755 352 450 300 10;
+#N canvas 756 356 450 300 10;
 #X text 38 6 mxr/test/tones_ds <domain <id>;
-#X obj 38 85 ds/register_map \$1 /out/testtones/\$2/freq;
-#X obj 42 201 ds/register_map \$1 /out/testtones/\$2/pulse/on;
-#X obj 46 227 ds/register_map \$1 /out/testtones/\$2/pulse/time;
-#X obj 40 112 ds/register_map \$1 /out/testtones/\$2/sel;
-#X obj 42 136 ds/register_map \$1 /out/testtones/\$2/mute;
-#X obj 42 166 ds/register_map \$1 /out/testtones/\$2/vol;
-#X text 32 52 "ds/register_map \$1 /out/testtones/\$2/on" save if not
-;
+#X obj 38 85 ds/register_map \$1 \$2/freq;
+#X obj 40 112 ds/register_map \$1 \$2/sel;
+#X obj 42 136 ds/register_map \$1 \$2/mute;
+#X obj 42 166 ds/register_map \$1 \$2/vol;
+#X obj 42 201 ds/register_map \$1 \$2/pulse/on;
+#X obj 46 227 ds/register_map \$1 \$2/pulse/time;
+#X obj 38 33 # ds/register_map \$1 \$2/on;
+#X text 34 52 should not be stored by default;
+#X text 230 35 copy to your patch an uncomment;
+#X text 40 254 (c) GPL \, acre winfried ritsch;

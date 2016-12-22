@@ -1,59 +1,19 @@
-#N canvas 961 449 380 350 10;
-#X obj 11 11 cnv 30 98 198 empty empty MASTER-\$1 2 8 0 10 -191407
--66577 0;
-#X obj 13 192 nbx 3 14 -1e+37 1e+37 0 0 empty empty avg 0 -8 0 10 -228856
--1 -1 0 256;
-#X obj 13 165 nbx 3 14 -1e+37 1e+37 0 0 empty empty peak 0 -8 0 10
--228856 -1 -1 0 256;
-#X obj 72 37 vsl 35 128 0 127 0 0 \$0/master/fad \$0/master/fad -vol-
-0 -9 0 10 -258113 -1 -1 0 1;
-#X obj 72 168 nbx 3 14 -1e+37 1e+37 0 0 /mxr/master/\$1/master /mxr/master/\$1/master
-empty 0 -8 0 10 -258113 -1 -1 0 256;
-#X obj 13 31 tgl 30 0 \$1/mute \$1/mute MUTE 2 16 0 12 -258113 -1 -1
-0 1;
-#X obj 12 121 tgl 30 0 /mxr/dsp /mxr/dsp DSP 5 16 0 12 -4034 -1 -1
-0 1;
-#X obj 18 226 r /mxr/load;
-#X obj 18 253 unpack 0 0;
-#X obj 105 229 pack 0 \$0;
-#N canvas 591 519 192 218 \$0-master-par 0;
-#X obj 19 8 cnv 30 98 198 empty empty master_parameter 0 8 0 10 -191407
--66577 0;
-#X obj 22 99 nbx 4 14 -1e+37 1e+37 0 0 /mxr/fadetime /mxr/fadetime
-fadetime 0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 19 27 acre/init_ctl;
-#X restore 105 287 pd \$0-master-par;
-#X msg 105 252 \; pd-\$2-master-par vis \$1;
-#X obj 54 191 tgl 15 0 empty empty extra 17 7 0 10 -262144 -1 -1 0
-1;
-#X msg 131 70 set \$1;
-#X text 41 74 -0dB;
-#X text 47 140 -40;
-#X text 47 95 - 5;
-#X text 47 52 + 5;
-#X text 47 42 +12;
-#X text 47 29 +22;
-#X text 47 110 -12;
-#X text 47 127 -24;
-#X text 61 158 0;
-#X obj 131 48 mxr/fader/db2;
-#X obj 130 147 mxr/fader/db;
-#X obj 12 87 bng 30 250 50 0 /mxr/reset_vu /mxr/reset_vu vu 8 15 0
-12 -228856 -1 -1;
+#N canvas 963 511 350 350 10;
+#X text 111 102 -0dB;
+#X text 117 168 -40;
+#X text 117 123 - 5;
+#X text 117 80 + 5;
+#X text 117 70 +12;
+#X text 117 57 +22;
+#X text 117 138 -12;
+#X text 117 155 -24;
+#X text 131 186 0;
 #X text 16 312 (c) GPL \, acre - winfried ritsch;
-#X obj 132 26 r /mxr/master/\$1/master;
-#X obj 130 170 s /mxr/master/\$1/master;
-#X obj 131 100 s \$0/master/fad;
-#X obj 130 122 r \$0/master/fad;
 #X text 131 4 mx/master/ctl <master id>;
-#X connect 7 0 8 0;
-#X connect 8 0 1 0;
-#X connect 8 1 2 0;
-#X connect 9 0 11 0;
-#X connect 12 0 9 0;
-#X connect 13 0 29 0;
-#X connect 23 0 13 0;
-#X connect 24 0 28 0;
-#X connect 27 0 23 0;
-#X connect 30 0 24 0;
+#X obj 60 10 mxr/master/vol_ctl \$1;
+#X text 13 233 Master VOL with id and general controls;
+#X obj 10 10 mxr/master/dsp_ctl;
+#X text 13 254 for backwards compatibility - deprecated;
+#X text 14 277 use mmxr/master/ctl_dsp once and mxr/master/vol_ctl
+<id> for each master, f 40;
 #X coords 0 -1 1 1 100 200 2 10 10;
