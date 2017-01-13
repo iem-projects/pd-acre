@@ -14,27 +14,26 @@ Introduction
 ............
 
 ACRE is collection of Puredata_ patches organized in modules with example applications targeting algorithmic composition in an realtime computermusic environment. 
-ACRE is used in open source projects within Atelier Algorythmics AA_ and IEM_  and was made public to be useful for others.
+ACRE is used in open source projects within Atelier Algorythmics AA_ and IEM_  and was made public, hopefully to be useful for others.
 
-Modules of this library can and should be used as sub-modules in projects. 
 
 Mission
 ~~~~~~~
 
-An Algorithmic Composition Real-time Environment (ACRE) using Puredata should be assembled to enable composers to generate compositions,  computermusic ensembles to share instruments, musicians to build and extend their tools and media artists to include realtime computermusic in their projects.
-As artistic research environment this should evolve from within projects and courses, mostly done at the IEM_. 
-Therefore the academic development strategy is used: 
+An Algorithmic Composition Real-time Environment (ACRE) using Puredata should be assembled, to enable composers to create compositions,  computermusic ensembles to share instruments, musicians to build and extend their tools and media artists to include realtime computermusic in their projects.
+As an artistic research environment ACRE should evolve from within projects and courses, mostly done at the IEM_.
+Therefore an academic development strategy is used: 
 "develop during project phase and publish and share valuable parts afterwards" ;-) 
 
 The "Algorithmic Composition Realtime Environment" aka ACRE is a library, 
 assembling and extending modules to implement pieces for robotic instruments and musicians in computer music realtime environments.
-This artistic research environment will also integrate algorithms for generation and analysis for parameter data-streams for robotic machinery and algorithmic compositions.
-Also it is an documentation of an accumulation on ideas and algorithms used in compositions and realizations of art installations at IEM and Atelier Algorythmics [AA]_ .
+This artistic research environment will also integrate algorithms for generation and analysis of data-streams for robotic machinery and algorithmic compositions.
+As an accumulation of ideas and algorithms used in compositions and realizations of art installations at IEM and Atelier Algorythmics [AA]_  it is also an documentation of this development process.
 
 Documentation
 -------------
 
-is in the docu_ directory and in every module directory named ``readme.rst`` and ``<modulename>.rst`` 
+goes in the docu_ directory and in every module directory named ``readme.rst`` and ``<modulename>.rst`` 
 
 .. _docu: docu/
 
@@ -42,17 +41,17 @@ base modules
 ------------
 
 `basemodule acre`_
- base module
+ base module for common used functions and transformations.
 
 .. _`basemodule acre`: acre/readme.rst
 
 ds_
- data storage 
+ data storage
 
 .. _ds: ds/readme.rst
 
 mxr_
- general mixer functions
+ general mixer and audio routing functions
 
 .. _mxr: mxr/readme.rst
 
@@ -72,13 +71,18 @@ Installation methods:
 
 - Use deken: search for 'acre', download and install.
 
-Best practice to use it to set the `-stdpath` or '-path' to the base directory of acre adding a declare object in the main patch::
+Best practice is to set the `-stdpath` or '-path' to the base directory of acre adding a declare object in the main patch::
 
  [declare -stdpath acre]
  
-Afterwards all objects can referenced by <module>/<object> eg::
+so objects can referenced by the namespace of the module: <module>/<object> eg::
 
  [acre/initbang]
+
+Modules from seperate packages like `acre-wg` should be placed within the basemodule, as
+module without àcre-`prefix eg.: `acre/wg` 
+
+For development, these module namespaces are ignored by git within .gitignore.
 
 History
 -------
@@ -94,6 +98,7 @@ History
 - published for Ambisonics Mixer Tools development for Studios at IEM. 2015
 - published Waveguide library after editing for teaching purposes  IEM 2016
 - splitted modules to seperate git repos for better development and distribution
+- Enhanced Ambisonics tools in acre-amb
 
 References and Footnotes
 ------------------------
