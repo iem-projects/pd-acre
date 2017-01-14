@@ -1,10 +1,10 @@
-#N canvas 703 137 565 296 10;
+#N canvas 704 141 565 296 10;
 #X obj 72 187 list;
 #X obj 24 37 r par_get;
 #X obj 72 217 s par_stored;
 #X obj 66 143 route \$1 bang;
 #X obj 100 111 list prepend \$1 \$1\$2;
-#X text 52 0 ds/register_nmap <domain> <subname>;
+#X text 26 5 ds/register_nmap <domain> <subname>;
 #X text 153 80 second arg: name of parameter (within the storage domain)
 ;
 #X obj 100 82 r \$1\$2;

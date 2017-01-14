@@ -11,19 +11,15 @@ Algorithmic Composition Realtime Environment
 :Copyright: Winfried Ritsch - IEM / algorythmics 2012+
 
 ACRE is collection of Puredata_ Patches, Externals and example applications targeting algorithmic composition in an realtime computermusic environment. 
-It was dedicated to be integrated in open source projects at Atelier Algorythmics AA_ and IEM_ first hand and now is public to be useful for others.
+ACRE is used in open source projects within Atelier Algorythmics AA_ and IEM_ and was made public to be useful for others.
 
-Note: Version of submodules now indepent from whole Version, since some can be still in development phase.
-
-Some new modules maybe "development version < 1.0"
+Note: Version of submodules are now independent from version of base modules.
 
 "development version" means in this context:
-- structure and namespaces of this library will change if necessary
-- ignoring backwards compatibility unless Version "1.x"  of the library and/or 
+- structure and namespaces of the library will change if necessary
+- ignoring backwards compatibility unless Version "1.x,2.x, ..."  of the library and/or 
 module is reached.
-- Modules already used and tested in various previous projects will be added, 
-so this lib may grow.
-
+- modules already used and tested in various previous projects will be added in extra packages.
 
 Introduction
 ============
@@ -31,16 +27,16 @@ Introduction
 Background
 ----------
 
-The development of real-time composition and signal processing tools, referring to the procedural thinking in computermusic compositions has been done since the beginning of Atelier Algorythmics [AA]_ 1983.
-Starting with MIDI-Processing in the 80s and later with micro-controllers in the 90s, the deployment of Pure Data [PureData] has become a main base for most pieces done in this area.
+The development of real-time composition and signal processing tools, referring to the procedural thinking in computermusic compositions has been practiced since the beginning of Atelier Algorythmics [AA]_ 1983.
+Starting with MIDI-Processing in the 80s and later with micro-controllers in the 90s, the deployment of Pure Data [PureData] as first adapter has become a main base for most pieces.
 
 Within the development of singular applications and libraries for each artwork, each time a copy of such a library has been used for the further development. 
 With the art works "Maschinenhalle" [MH]_, "Heptapiano" and "Five Piano Metal Space" [Autopiano], ACRE has become a base library of this ideas, going onward to be a GPL open source library.
-The problem of being a specialized library for some pieces is  still virulent and discussed. As an outcome of that only parts which are really common will be released with the sanction of the artist and programmers of these pieces.
-With the integration of parts of this library for [ICE] projection within the IEM, parts has been changed
-and forked in different other developments, but basic function stayed now in  an central repository the acre.
+The problem of being a specialized library for some pieces is  still virulent and discussed. As an outcome of that only parts which are really more universal will be released with the sanction of the artists and programmers of these pieces.
+With the integration of parts of this library for [ICE] project within the IEM, parts has been changed and forked in different other developments, but basic function are implemented now in  the acre repository. Special functions are now split in other modules.
 
-First version was on private CVS then subversion repositories at algo.mur.at and now (May 2015) started to be pushed for public access to github. After migration of all pd libraries of IEM,  http://git.iem.at/pd/acre is the choosen master.
+A first version was on private CVS, afterwards subversion, repositories at algo.mur.at and now (May 2015) started to be pushed for public access to git.iem.at and github. 
+After a first migration within IEM,  http://git.iem.at/pd/acre is now the chosen master.
 
 
 Structure of the Library
@@ -48,7 +44,7 @@ Structure of the Library
 
 The library is divided in modules. 
 Each of these modules should have own test patches and no dependencies on others, except the base modules.
-This modules are included declaring the path to the acre library where they sit in.
+The modules can be used declaring the path to the acre library directory where the modules sit in.
 Since base modules are shared within other modules or projects, all changes has to be done with upwards-compatibility in mind.
 Library objects, which are abstractions files with the extension .pd, can be  "overwritten" with abstractions in an "overwrite path" declared before the acre module path.
 This method is also used for extending functionality within the ACRE library.
@@ -65,11 +61,12 @@ Path-names within acre should be short, since they will be used as namespace
 prefix on objects. 
 Mostly the same prefix is used in name definitions in send/receives names or tables, filenames and signals. 
 For example in the `mixer` module, aka `mxr`, the master section object is named `mxr/master~ <ID>` and the receive/send parameter for master-mute is `/mxr/master/<id>/mute`.  
+Since Version 2.0, the prefix for parameters within base modules has been dropped in favour for a more universal usage in complex projects.
 
 Abstractions which are objects as functions, should be divided in objects for the graphical user interface GUI, DSP processing (without GUI-objects) and data storage:
 
 functions
-  should be named within groups starting always with the same prefix and signalobject should end with a `~`.
+  should be named within groups starting always with the same prefix and signal processing objects should end with a `~`.
   
   e.g: `mxr/mo/send~.pd`, `mxr/mo/prepost~.pd`, ...
 
@@ -108,7 +105,7 @@ Overview of Modules
 
 Dependencies on externals are described in the module folders individually.
 
-All modules in the acre library are depending on the base modules: where `mxr` depends on `ds` and `acre` module but `ds` not on `mxr`.
+All modules in the acre library are depending on the base modules: wherein `mxr` depends on `ds` and `acre` module but `ds` not on `mxr`.
 
 Base Modules
 ^^^^^^^^^^^^
@@ -116,20 +113,20 @@ Base Modules
 Common abstractions - acre
 """"""""""""""""""""""""""
 
-The idea of this module is to collect common abstractions often used in the other modules to prevent redundancy and provide same behaviour.
-Every abstraction in the acre module should not depend on another acre module.
+The idea of this module is to collect abstractions often used in the other modules to prevent redundancy and provide a defined behavior.
+Every abstraction in the acre module should not depend on another acre modules.
 Since used by all other modules, special care is taken in favor for backward compatibility. 
 
-Note: Names should not collide if you use the acre prefix like: 
+Note: Names should be different including the acre prefix like: 
 `acre/split_filename` with abstraction in other directories.
 
 Data Storage - ds
 """""""""""""""""
 
-Data Storage is a Data Management library used for storing parameters or settings (send/receive pairs) in indexed sets in RAM and files, like it can be found on many audio-devices such especially synthesizers, mixers and effects.
+Data Storage is a data management library dedicated for storing parameters or settings (send/receive pairs) in indexed sets in memory and files like it can be found on many audio-devices such as synthesizers, mixers and effects.
 Settings are collections of messages, which can be send on numbered indexes. 
-Each collection can be stored in files. See more in `ds/acre_ds.rst`
-The module was historical used in the CUBEmixer since 2000, but is now independent from it, see docu there.
+Each collection can be stored in files. More information can be found in `ds/acre_ds.rst`
+This module was historical used in the CUBEmixer since 2000, but is now independent from it.
 
 
 Mixer - mxr
@@ -141,7 +138,7 @@ It can be used for programming a flexible audio output interface, a audio input 
 
 The mixer module combines the out, in, master and simple effects needed for a channel strip and out processing. 
 
-Depends: ds, acre
+Dependencies: ds, acre
 
 Ambisonics -Ambisonics
 """"""""""""""""""""""
@@ -209,8 +206,8 @@ synthesis
 
 *unreleased, planed for next project*
 
-gen - genrerators
-"""""""""""""""""
+gen - generators
+""""""""""""""""
 
 Generators like sample-player, sub generators, ....
 

@@ -14,7 +14,7 @@ Introduction
 ............
 
 ACRE is collection of Puredata_ patches organized in modules with example applications targeting algorithmic composition in an realtime computermusic environment. 
-ACRE is used in open source projects within Atelier Algorythmics AA_ and IEM_  and was made public, hopefully to be useful for others.
+ACRE is used in open source projects within Atelier Algorythmics AA_ and IEM_  and was made public to be useful for others.
 
 
 Mission

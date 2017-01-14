@@ -1,4 +1,4 @@
-#N canvas 870 206 498 599 10;
+#N canvas 94 107 498 599 10;
 #X obj 13 65 inlet~;
 #X obj 30 459 outlet~;
 #X obj 305 428 pvu~;
@@ -7,7 +7,7 @@
 #X text 141 238 high and low cut;
 #X text 132 268 eq (is controlled for bus);
 #X text 47 173 pre_gain before limiter !;
-#N canvas 1333 412 403 140 init 0;
+#N canvas 357 356 229 146 init 0;
 #X obj 16 17 loadbang;
 #X msg 16 38 0;
 #X obj 16 65 s \$1/mute;

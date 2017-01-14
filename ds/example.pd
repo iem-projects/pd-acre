@@ -1,4 +1,4 @@
-#N canvas 340 215 766 433 10;
+#N canvas 341 219 766 433 10;
 #X declare -path ../ -lib zexy -lib iemlib1;
 #X obj 454 339 r volume;
 #X obj 454 315 s volume;
@@ -24,11 +24,11 @@ bang;
 #X obj 28 81 ds/storage_logic /example;
 #X obj 296 73 ds/ctl /example;
 #X obj 32 245 register_raw /example volume;
-#X obj 31 155 register /example /chan/2/vol;
 #X text 434 392 (c) GPL \, acre winfried ritsch;
 #X text 443 24 --- INITs --;
 #X text 302 40 - GUI -;
 #X text 57 46 - In DSP Patch -;
+#X obj 31 155 register /example /chan/2/vol;
 #X connect 0 0 3 0;
 #X connect 2 0 1 0;
 #X connect 13 0 14 0;

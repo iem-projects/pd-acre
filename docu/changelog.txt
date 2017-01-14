@@ -1,3 +1,6 @@
+V 2.0-dev 
+ 2017:Major changes in namespace of variables, especially in the mxr module
+
 V 1.01
  2016, winfried ritsch: error in naming of subs in mixer, ambisonics libs buses are corrected
 
