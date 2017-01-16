@@ -97,8 +97,9 @@ History
 - Integrated parts of it into the [ICE] development 2010-
 - published for Ambisonics Mixer Tools development for Studios at IEM. 2015
 - published Waveguide library after editing for teaching purposes  IEM 2016
-- splitted modules to seperate git repos for better development and distribution
-- Enhanced Ambisonics tools in acre-amb
+- split modules amb and wg to separate git repos for better development and distribution
+- Enhanced mxr with better parameter naming scheme.
+- moved to 2.0 with split
 
 References and Footnotes
 ------------------------
