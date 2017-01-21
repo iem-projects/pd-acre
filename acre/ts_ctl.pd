@@ -1,4 +1,4 @@
-#N canvas 962 413 322 324 10;
+#N canvas 963 410 337 324 10;
 #X obj 11 11 cnv 30 98 198 empty empty test_\$1 0 8 0 12 -191407 -66577
 0;
 #X obj 16 28 tgl 15 0 /ts/\$1/on /ts/\$1/on ON 2 8 0 10 -260097 -1
@@ -33,8 +33,9 @@
 -1;
 #X msg 138 85 step;
 #X obj 27 233 r /ts/\$1/setnr;
-#X text 170 5 (c) GPL \, acre winfried ritsch;
-#X text 179 24 acre/ts_ctl <id>;
+#X text 11 287 (c) GPL \, acre winfried ritsch;
+#X text 117 5 acre/ts_ctl <id>;
+#X text 114 24 DEPRECATED: use mxr/test/ts_ctl;
 #X connect 5 0 13 0;
 #X connect 6 0 11 0;
 #X connect 7 0 14 0;

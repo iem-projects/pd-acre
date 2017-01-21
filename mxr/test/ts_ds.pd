@@ -1,0 +1,7 @@
+#N canvas 482 119 444 190 10;
+#X text 30 146 (c)GPL \, algorythmics \, winfried ritsch;
+#X obj 31 76 ds/register_map \$1 \$2/on;
+#X obj 31 95 ds/register_map \$1 \$2/vol;
+#X obj 31 115 ds/register_map \$1 \$2/loop;
+#X text 30 14 mxr/test/ts_ds <domain> <ch id>;
+#X text 28 40 comment;
