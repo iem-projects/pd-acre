@@ -67,7 +67,7 @@ Installation methods:
 
 - clone from git in one of your PD-paths::
 
-   git clone https://git.iem.at/pd/acre
+   https://git.iem.at/pd/acre
 
 - Use deken: search for 'acre', download and install.
 
@@ -82,7 +82,11 @@ so objects can referenced by the namespace of the module: <module>/<object> eg::
 Modules from seperate packages like `acre-wg` should be placed within the basemodule, as
 module without àcre-`prefix eg.: `acre/wg` 
 
-For development, these module namespaces are ignored by git within .gitignore.
+For development, these module namespaces are ignored by git within .gitignore , to integrate them
+execute within the acre module::
+
+    https://git.iem.at/pd/acre-amb -> amb
+    https://git.iem.at/pd/acre-wg -> wg
 
 History
 -------
