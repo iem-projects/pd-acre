@@ -58,6 +58,7 @@ mxr_
 
 Further modules see ``acre-<modulename>`` at  https://git.iem.at/pd/ .
 
+
 Installation and usage
 ----------------------
 
@@ -87,6 +88,11 @@ execute within the acre module::
 
     https://git.iem.at/pd/acre-amb -> amb
     https://git.iem.at/pd/acre-wg -> wg
+
+eg. cd to acre bas lib directory and do a::
+
+    git clone  https://git.iem.at/pd/acre-amb.git amb
+    git clone  https://git.iem.at/pd/acre-wg.git wg
 
 History
 -------
