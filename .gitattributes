@@ -1,2 +1,2 @@
 #pd files should be handled like binaries (binary is a macro for -text -diff)
-*.pd binary
+#*.pd binary
