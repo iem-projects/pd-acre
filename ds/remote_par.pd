@@ -1,0 +1,24 @@
+#N canvas 239 297 686 347 10;
+#X obj 35 68 r /ds/remote/\$2/on;
+#X text 27 28 turn on remote forn this;
+#X text 27 8 ds/remote_par <par name> [connection];
+#X obj 293 26 loadbang;
+#X text 12 278 (c) GPL \, acre winfried ritsch;
+#X obj 386 121 t b;
+#X msg 293 119 0;
+#X msg 386 142 1;
+#X text 299 50 if no connection is named it is disabled and default
+nname used \, so the parameter can be individual enabled by soft;
+#X obj 64 101 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 293 77 ../acre/arg_default _ds/REMOTE \$2;
+#X obj 293 97 route _ds/REMOTE;
+#X obj 293 163 s _ds/remote/\$2/on;
+#X connect 0 0 9 0;
+#X connect 3 0 10 0;
+#X connect 5 0 7 0;
+#X connect 6 0 12 0;
+#X connect 7 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 6 0;
+#X connect 11 1 5 0;

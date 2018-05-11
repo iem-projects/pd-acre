@@ -1,7 +1,7 @@
 #N canvas 470 159 523 349 10;
 #X obj 67 243 list;
-#X obj 67 99 r par_get;
-#X obj 67 276 s par_stored;
+#X obj 67 99 r _ds/par/get;
+#X obj 67 276 s _ds/par/collect;
 #X obj 67 123 route \$1 bang;
 #X obj 91 193 r \$2;
 #X text 75 67 second arg: name of parameter (within the storage domain)
@@ -11,6 +11,7 @@
 #X text 74 33 first arg is not prepended e.g. raw \, in the file. The
 domain is used to separete to different storages;
 #X text 171 241 (c) GPL \, acre winfried ritsch;
+#X obj 322 103 remote_par \$2 \$3;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;

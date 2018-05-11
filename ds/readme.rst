@@ -8,13 +8,14 @@ Data Storage module
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: 1.0.1
+:Version: 1.1a
 
 .. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
 
  
 A simple data storage library to store different sets of parameters as messages in files for defined *domains*. 
 The main target is a simple session management as data storage, within a Puredata project.
+Added also a remote functionality over OSC or other channels
 
 Dependencies
 ------------
@@ -29,7 +30,6 @@ For datastorage, send/receive names are used as `variables` names within Pd.
 the data of `variables` are messages. Variables are used to store *parameter* or *settings*.
 Parameter data are stored in indexed sets of messages in Pd memory and can be saved in and loaded from text files.
 An *index number* is used to switch between different sets of messages, also known as *scenes* and separated in the text file with ``#scene <nr>`` (see the listobject object of zexy for more information).
-
 
 Datastorage is similar to the storage functionality in hardware devices like synthesizers, mixing consoles, etc including the concept of edit buffer, program numbers and storage in files.
 
@@ -76,14 +76,37 @@ ctl.pd <domain>
 register.pd <domain> <parameter>
   registers a parameter for a domain, with domain prepended in the variable name and data storage.
 
+  e.g.: with the domain "/mxr" in storage file the parameter "/master" is named /mxr/master and send/received as "/mxr/master" 
+  
 register_map.pd <domain> <parameter>
   registers a parameter for a domain, without prepending the domain in the variable name, only in the data storage, separating the variable from domain-name with `::`.
+
+  e.g.: with the domain "/mxr" in storage file the parameter "/master" is named /mxr::/master and send/received as "/master"
 
 register_raw.pd <domain> <parameter>
   registers a parameter for a domain, without prepending the domain in the variable name and in the data storage.
 
+  e.g.: with the domain "/mxr" in storage file the parameter "/master" is named "/master" and send/received as "/master"
+  
+  
+remote concept
+..............
+
+New at version 1.1, for easier handling of remote control, eg. over OSC, the remote functionality was added.
+This can be used independently fron the ds but is integrated optionial in ds.
+
+remote_par <par> [connection name]
+    registers a paramter for remote control, optional for a connection ID
+    
+remote
+    collects all parameter send  to be transmitted and distributes alss parameter received. If a parameter is received it is not send 
+
+
+  
 internal helper functions
 .........................
+
+local send receive names are prefixed with _ds, they can be altered vanisch in future, so do not rely on them for your functionality.
 
 msg_pbank.pd
    the indexed msgfile object
@@ -94,18 +117,14 @@ msg_pbank.pd
 Notes 
 -----
 
-- 
-    This module is quite stable and used since several years in different projects
+-   This module is quite stable and used since several years in different projects
 
-- 
-    Will be enhanced with OSC functionality, where registered parameter are also send and received over OSC to synchronize Pd Patches in different Pd instances. 
+-   Will be enhanced with OSC functionality, where registered parameter are also send and received over OSC to synchronize Pd Patches in different Pd instances. 
     This was already implemented in some projects, but interface was not stable enough to released now, especially for backwards compatibility and should be implemented with a overloading ds module with ds_osc module.
 
-- 
-    This module was derived from the setting storage done in the CUBEMIXER (2001) project of the IEM and rewritten simplified as a module for later projects at Atelier Algorythmics, Maschinenhalle and courses at the IEM and later used for the ICE-Ensemble project as a base at the IEM. Some forks has been made and out of control, so be carefully with compatibility. 
+-   This module was derived from the setting storage done in the CUBEMIXER (2001) project of the IEM and rewritten simplified as a module for later projects at Atelier Algorythmics, Maschinenhalle and courses at the IEM and later used for the ICE-Ensemble project as a base at the IEM. Some forks has been made and out of control, so be carefully with compatibility. 
 
-- 
-    It would make me happy, if some native English speaker will edit this documentation and englishfy it.
+-   It would make me happy, if some native English speaker will edit this documentation and englishfy it.
 
 additional docu
 ---------------

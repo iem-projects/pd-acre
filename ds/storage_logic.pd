@@ -1,10 +1,10 @@
-#N canvas 248 57 678 659 10;
+#N canvas 833 58 678 659 10;
 #X obj 175 510 msg_pbank;
 #X msg 203 445 recall \$1;
 #X obj 175 549 list split 1;
 #X obj 175 572 t b s;
-#X obj 17 400 r par_stored;
-#X obj 17 356 s par_get;
+#X obj 17 400 r _ds/par/collect;
+#X obj 17 356 s _ds/par/get;
 #X obj 15 516 list prepend add 0;
 #X msg 139 409 list add \$1;
 #X obj 15 539 list trim;

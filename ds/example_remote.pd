@@ -1,0 +1,44 @@
+#N canvas 585 94 766 433 10;
+#X declare -path ../ -lib zexy -lib iemlib1;
+#X obj 454 339 r volume;
+#X obj 454 315 s volume;
+#X floatatom 454 295 5 0 0 0 - - -, f 5;
+#X floatatom 454 361 5 0 0 0 - - -, f 5;
+#X obj 304 304 nbx 5 14 -1e+37 1e+37 0 0 /example/chan/1/vol /example/chan/1/vol
+/example/chan/1/vol 0 -8 0 10 -204786 -1 -1 0 256;
+#X obj 302 395 nbx 5 14 -1e+37 1e+37 0 0 fadetime fadetime fadetime
+0 -8 0 10 -204786 -1 -1 0 256;
+#X obj 303 335 nbx 5 14 -1e+37 1e+37 0 0 /example/chan/2/vol /example/chan/2/vol
+/example/chan/2/vol 0 -8 0 10 -204786 -1 -1 0 256;
+#X obj 303 365 nbx 5 14 -1e+37 1e+37 0 0 mastervol mastervol mastervol
+0 -8 0 10 -261234 -1 -1 0 256;
+#X msg 446 117 \; /example/program/nr 0 \; /example/program/recall
+bang;
+#X msg 446 173 \; /example/program/recall 1;
+#X obj 445 50 loadbang;
+#X msg 444 76 \; /example/program/load symbol ./example.txt;
+#X obj 32 4 declare -path ../ -lib zexy -lib iemlib1;
+#X obj 28 81 ds/storage_logic /example;
+#X obj 296 73 ds/ctl /example;
+#X text 434 392 (c) GPL \, acre winfried ritsch;
+#X text 443 24 --- INITs --;
+#X text 302 40 - GUI -;
+#X text 57 46 - In DSP Patch -;
+#X text 338 6 Remote Patch to be synced with a master;
+#X obj 30 130 register /example /chan/1/vol CON1;
+#X obj 27 195 register_map /example mastervol CON2;
+#X obj 27 249 register_raw /example fadetime;
+#X text 27 111 Activate remote conn CON1;
+#X text 25 177 Activate remote conn CON2;
+#X text 26 228 Default connection is off;
+#X obj 31 155 register /example /chan/2/vol CON1;
+#X obj 30 344 register_raw /example volume;
+#X msg 31 281 \; /ds/remote/volume/on 1;
+#X msg 31 312 \; /ds/remote/volume/on 0;
+#X obj 31 378 ds/remote CON1;
+#X obj 29 399 ds/remote CON2;
+#X obj 429 230 remote_ctl CON1;
+#X obj 533 231 remote_ctl CON2;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 10 0 11 0;

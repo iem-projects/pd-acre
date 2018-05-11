@@ -1,7 +1,7 @@
 #N canvas 704 141 565 296 10;
 #X obj 72 187 list;
-#X obj 24 37 r par_get;
-#X obj 72 217 s par_stored;
+#X obj 24 37 r _ds/par/get;
+#X obj 72 217 s _ds/par/collect;
 #X obj 66 143 route \$1 bang;
 #X obj 100 111 list prepend \$1 \$1\$2;
 #X text 26 5 ds/register_nmap <domain> <subname>;
@@ -13,6 +13,7 @@ form the variable name to be stored.;
 #X text 154 33 first argument is the domain which is prepended to the
 second argument to form the variable name (send/receice name);
 #X text 172 219 (c) GPL \, acre winfried ritsch;
+#X obj 264 7 remote_par \$2 \$3;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;
