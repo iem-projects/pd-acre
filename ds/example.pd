@@ -1,19 +1,19 @@
 #N canvas 341 219 766 433 10;
 #X declare -path ../ -lib zexy -lib iemlib1;
-#X obj 454 339 r volume;
-#X obj 454 315 s volume;
-#X floatatom 454 295 5 0 0 0 - - -, f 5;
-#X floatatom 454 361 5 0 0 0 - - -, f 5;
+#X obj 446 348 r volume;
+#X obj 446 324 s volume;
+#X floatatom 446 304 5 0 0 0 - - -, f 5;
+#X floatatom 446 370 5 0 0 0 - - -, f 5;
 #X obj 30 130 register /example /chan/1/vol;
 #X obj 304 304 nbx 5 14 -1e+37 1e+37 0 0 /example/chan/1/vol /example/chan/1/vol
-/example/chan/1/vol 0 -8 0 10 -204786 -1 -1 10 256;
+/example/chan/1/vol 0 -8 0 10 -204786 -1 -1 19 256;
 #X obj 302 395 nbx 5 14 -1e+37 1e+37 0 0 fadetime fadetime fadetime
-0 -8 0 10 -204786 -1 -1 114 256;
+0 -8 0 10 -204786 -1 -1 100 256;
 #X obj 303 335 nbx 5 14 -1e+37 1e+37 0 0 /example/chan/2/vol /example/chan/2/vol
-/example/chan/2/vol 0 -8 0 10 -204786 -1 -1 20 256;
+/example/chan/2/vol 0 -8 0 10 -204786 -1 -1 32 256;
 #X obj 32 222 register_raw /example fadetime;
 #X obj 303 365 nbx 5 14 -1e+37 1e+37 0 0 mastervol mastervol mastervol
-0 -8 0 10 -261234 -1 -1 99 256;
+0 -8 0 10 -261234 -1 -1 80 256;
 #X obj 31 185 register_map /example mastervol;
 #X msg 446 117 \; /example/program/nr 0 \; /example/program/recall
 bang;
@@ -23,12 +23,15 @@ bang;
 #X obj 32 4 declare -path ../ -lib zexy -lib iemlib1;
 #X obj 28 81 ds/storage_logic /example;
 #X obj 296 73 ds/ctl /example;
-#X obj 32 245 register_raw /example volume;
-#X text 434 392 (c) GPL \, acre winfried ritsch;
+#X text 443 393 (c) GPL \, acre winfried ritsch;
 #X text 443 24 --- INITs --;
 #X text 302 40 - GUI -;
 #X text 57 46 - In DSP Patch -;
 #X obj 31 155 register /example /chan/2/vol;
+#X obj 32 245 register_raw /example volume;
+#X obj 145 300 r /example/chan/1/vol;
+#X obj 145 321 print x1;
 #X connect 0 0 3 0;
 #X connect 2 0 1 0;
 #X connect 13 0 14 0;
+#X connect 24 0 25 0;

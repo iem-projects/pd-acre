@@ -16,7 +16,7 @@ the file \, which stores together with second part \, separeted by
 #X text 172 219 (c) GPL \, acre winfried ritsch;
 #X text 74 4 ds/register_map <domain> <subname> [remote connection]
 ;
-#X obj 268 117 remote_par \$2 \$3;
+#X obj 268 117 remote/par \$2 \$3;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;

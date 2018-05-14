@@ -1,9 +1,9 @@
-#N canvas 25 58 766 674 10;
+#N canvas 268 58 766 674 10;
 #X declare -path ../.. -lib zexy -lib iemlib1;
 #X obj 22 166 nbx 5 14 -1e+37 1e+37 0 0 fadetime fadetime fadetime
-0 -8 0 10 -260097 -1 -1 0 256;
+0 -8 0 10 -260097 -1 -1 68 256;
 #X obj 533 177 nbx 5 14 -1e+37 1e+37 0 0 mastervol mastervol mastervol
-0 -8 0 10 -261234 -1 -1 38 256;
+0 -8 0 10 -261234 -1 -1 0 256;
 #X text 573 5 (c) GPL \, acre winfried ritsch;
 #X obj 246 610 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -30,7 +30,7 @@
 #X msg 15 277 \; /ds/remote/volume/on 1;
 #X msg 15 308 \; /ds/remote/volume/on 0;
 #X obj 23 131 nbx 5 14 -1e+37 1e+37 0 0 volume volume volume 0 -8 0
-10 -261682 -1 -1 0 256;
+10 -261682 -1 -1 58 256;
 #X obj 23 419 ds/remote/connection;
 #X obj 16 239 ds/remote/par volume;
 #X obj 235 264 ds/remote/par /chan/2/vol CON1;
@@ -69,7 +69,7 @@
 we try to use broadcast for testing \, so we can open the example patch
 twice and couple these with CON1, f 38;
 #X text 6 581 Note: No backchannel on UDP !;
-#X obj 511 600 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 511 600 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 529 525 distribute to others via broadcast;
 #X msg 512 542 disconnect \, connect localhost 3301;
@@ -89,6 +89,7 @@ commuication channel \, pd provides, f 32;
 #X text 25 20 Examples to use remote control of parameter: default
 connection or a connection name can be chosen. To test here UDP and
 TCP is implemented using FUDI protocol.;
+#X text 472 42 For testing open on two Pd instances;
 #X connect 4 0 5 0;
 #X connect 5 0 11 0;
 #X connect 6 0 42 0;

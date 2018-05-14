@@ -13,7 +13,7 @@ form the variable name to be stored.;
 #X text 154 33 first argument is the domain which is prepended to the
 second argument to form the variable name (send/receice name);
 #X text 172 219 (c) GPL \, acre winfried ritsch;
-#X obj 264 7 remote_par \$1\$2 \$3;
+#X obj 265 7 remote/par \$1\$2 \$3;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;
