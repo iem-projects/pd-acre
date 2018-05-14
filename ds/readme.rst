@@ -8,14 +8,13 @@ Data Storage module
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: 1.1a
+:Version: 1.1b
 
 .. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
-
  
 A simple data storage library to store different sets of parameters as messages in files for defined *domains*. 
 The main target is a simple session management as data storage, within a Puredata project.
-Added also a remote functionality over OSC or other channels
+Added also a remote functionality, to control patches over OSC or other channels with Version 1.1
 
 Dependencies
 ------------
@@ -27,16 +26,17 @@ Concept
 -------
 
 For datastorage, send/receive names are used as `variables` names within Pd.
-the data of `variables` are messages. Variables are used to store *parameter* or *settings*.
-Parameter data are stored in indexed sets of messages in Pd memory and can be saved in and loaded from text files.
+The data of these `variables` are messages.
+Variables are used to store *parameter* or *settings*.
+Parameter data are stored in indexed sets of messages in Pd memory and can be saved and loaded as text files.
 An *index number* is used to switch between different sets of messages, also known as *scenes* and separated in the text file with ``#scene <nr>`` (see the listobject object of zexy for more information).
 
-Datastorage is similar to the storage functionality in hardware devices like synthesizers, mixing consoles, etc including the concept of edit buffer, program numbers and storage in files.
+Datastorage is intended to behave similar to the storage functionality in hardware devices like synthesizers, mixing consoles, etc. including the concept of edit buffer, program numbers and storage in files.
 
-Each storage is associated with an *domain-name*, to operate parallel data storages within a Pd applications.
-With the concept of domains and domain-names different indexed parameter name-spaces can be handled in memory and within separate files.
+Each storage is associated with an *domain-name*, to operate parallel data storages within one or more Pd applications.
+With the concept of domains and domain-names different indexed parameter name-spaces can be handled in memory and organized in separate files.
 
-As a naming convention, the address naming used in Open Sound Control (OSC) or in unix file systems, is associated and also used all over the ACRE libraries: 
+For the name spaces, the address naming convention also used in Open Sound Control (OSC) or in unix file systems was targeted and will be used all over the ACRE libraries:
 The domain-name should be used as prefix for variable names in storage and files, (see also register-functions).
 
 For each domain a ``[ds/storage_logic]`` object is needed. 
@@ -57,6 +57,8 @@ Each slot index separates  a set, one message per line, prepended by the domain.
 ``save;`` saves the indexed parameter sets to a file popping up a file dialog and ``resave;`` saves on the file with the last used filename.
 
 The default filename is the domain name (without preceding /).
+
+An additional remote functionality is provided with the sub-library ``ds/remote`` within the ``ds`` library. 
 
 Note: send/receive names should not contain special characters and the "/" as separator for forming a OSC associated name and should be also legal in  OSC address names, needed for future extension as OSC connection.
 
@@ -95,15 +97,16 @@ remote concept
 New at version 1.1, for easier handling of remote control, eg. over OSC, the remote functionality was added.
 This can be used independently fron the ds but is integrated optionial in ds.
 
-remote_par <par> [connection name]
+remote/par <par> [connection name]
     registers a paramter for remote control, optional for a connection ID
     
-remote
-    collects all parameter send  to be transmitted and distributes alss parameter received. If a parameter is received it is not send 
-
+remote/connection, remote/ctl
+    collects all parameter send  to be transmitted and distributes also parameter received within a connection ``name``.
+    Default is the the ``_DEFAULT_`` connection if the connection name is omitted.
+    If a parameter is received it is not send out again for feedback protection.
 
   
-internal helper functions
+Internal helper functions
 .........................
 
 local send receive names are prefixed with _ds, they can be altered vanisch in future, so do not rely on them for your functionality.
@@ -118,9 +121,6 @@ Notes
 -----
 
 -   This module is quite stable and used since several years in different projects
-
--   Will be enhanced with OSC functionality, where registered parameter are also send and received over OSC to synchronize Pd Patches in different Pd instances. 
-    This was already implemented in some projects, but interface was not stable enough to released now, especially for backwards compatibility and should be implemented with a overloading ds module with ds_osc module.
 
 -   This module was derived from the setting storage done in the CUBEMIXER (2001) project of the IEM and rewritten simplified as a module for later projects at Atelier Algorythmics, Maschinenhalle and courses at the IEM and later used for the ICE-Ensemble project as a base at the IEM. Some forks has been made and out of control, so be carefully with compatibility. 
 
