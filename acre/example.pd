@@ -1,4 +1,4 @@
-#N canvas 238 431 688 303 10;
+#N canvas 420 389 688 303 10;
 #X declare -path ../;
 #X declare -lib iemlib1;
 #X declare -lib iemlib2;
@@ -167,7 +167,7 @@ args;
 #X connect 6 0 7 0;
 #X connect 8 0 9 0;
 #X restore 261 80 pd inits;
-#N canvas 725 488 379 271 debug 0;
+#N canvas 725 457 379 271 debug 0;
 #X obj 49 92 osc~ 220;
 #X msg 52 23 \; pd dsp 1;
 #X obj 178 142 spectroscope;
@@ -182,29 +182,6 @@ args;
 #X connect 3 0 2 0;
 #X connect 5 0 0 0;
 #X restore 261 189 pd debug;
-#N canvas 708 346 660 410 testsampleplayer 0;
-#X obj 166 170 s /ts/X/ctl;
-#X msg 168 147 filename symbol samples.txt;
-#X obj 526 80 acre/ts_ctl X;
-#X obj 184 202 acre/ts X;
-#X obj 184 224 env~;
-#X floatatom 184 246 5 0 0 0 - - -, f 5;
-#X text 85 44 Play samples from a text list;
-#X text 84 83 1.) make list of samplefile names with path;
-#X text 82 124 2.) load the file:;
-#X text 106 100 (Hint: eg. on a shell use `ls *.wav > samples.txt`)
-;
-#X text 87 275 3 control (see ctl);
-#X obj 194 328 s /ts/X/ctl;
-#X text 124 294 commands: float load next prev reload this print step
-filename;
-#X text 130 360 also receives with /ts/<id>/on \, /ts/<id>/volm /ts/<id>/loop
-are implemented;
-#X text 528 53 acre/ts_ctl <id>;
-#X connect 1 0 0 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X restore 261 213 pd testsampleplayer;
 #X text 17 11 ACRE acre - Examples and test of objects of the base
 module;
 #X text 331 81 general init functions for reinit;
@@ -228,8 +205,8 @@ module;
 #X connect 5 0 0 0;
 #X restore 259 161 pd misc;
 #X text 327 163 count_until \, ...;
-#X text 408 214 for providing test input;
 #X text 16 34 to get example work also in the parent directory:;
 #X text 11 202 get sure these library are loaded;
 #X text 11 218 see console;
 #X text 16 253 (c) GPL \, acre \, winfried ritsch \, 2010+;
+#X text 264 227 Note: acre/ts ... testsamples is now in mxr lib;

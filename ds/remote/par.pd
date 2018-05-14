@@ -1,0 +1,47 @@
+#N canvas 110 369 655 295 10;
+#X text 27 28 turn on remote forn this;
+#X text 27 8 ds/remote_par <par name> [connection];
+#X obj 293 26 loadbang;
+#X text 12 278 (c) GPL \, acre winfried ritsch;
+#X obj 386 121 t b;
+#X msg 293 119 0;
+#X msg 386 142 1;
+#X text 316 41 if no connection is named it is disabled and default
+nname used \, so the parameter can be individual enabled by soft;
+#X obj 100 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 37 149 list prepend \$1;
+#X obj 34 127 spigot;
+#X obj 32 91 r \$1;
+#X obj 37 170 list trim;
+#X obj 71 93 r /ds/remote/\$1/on;
+#X obj 293 172 s /ds/remote/\$1/on;
+#X obj 37 221 s;
+#X text 98 219 default: _ds/remote off;
+#X obj 447 174 s /ds/remote/\$1/on;
+#X obj 447 138 r /ds/remote/\$2/on;
+#X text 447 118 all on connection on \$2 in;
+#X msg 158 177 symbol _ds/remote/\$1;
+#X obj 244 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 293 97 route _DEFAULT_;
+#X obj 293 77 ../../acre/arg_default _DEFAULT_ \$2;
+#X obj 174 138 symbol;
+#X connect 2 0 23 0;
+#X connect 4 0 6 0;
+#X connect 5 0 14 0;
+#X connect 6 0 14 0;
+#X connect 9 0 12 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 15 0;
+#X connect 13 0 8 0;
+#X connect 13 0 10 1;
+#X connect 18 0 17 0;
+#X connect 20 0 15 1;
+#X connect 21 0 23 0;
+#X connect 22 0 5 0;
+#X connect 22 1 4 0;
+#X connect 23 0 22 0;
+#X connect 23 0 24 0;
+#X connect 24 0 20 0;

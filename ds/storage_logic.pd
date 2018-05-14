@@ -1,4 +1,4 @@
-#N canvas 833 58 678 659 10;
+#N canvas 299 58 678 659 10;
 #X obj 175 510 msg_pbank;
 #X msg 203 445 recall \$1;
 #X obj 175 549 list split 1;
