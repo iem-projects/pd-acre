@@ -1,0 +1,35 @@
+#N canvas 402 139 428 341 10;
+#X obj 17 250 line~;
+#X obj 17 163 pack 0 50;
+#X msg 120 224 0 3;
+#X obj 96 202 sel 0 1;
+#N canvas 650 436 450 166 init 0;
+#X obj 52 51 loadbang;
+#X obj 48 77 list append \$1;
+#X msg 48 104 \; /mxr/\$1/fadetime 50;
+#X text 172 114 default 50ms is 20Hz;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 342 18 pd init;
+#X obj 16 138 dbtorms;
+#X text 148 268 (c) GPL - acre \, ritsch;
+#X obj 93 173 r /mxr/master/\$1/mute;
+#X obj 16 116 r /mxr/master/\$1/master;
+#X obj 17 274 s~ /master/\$1/fade~;
+#X text 33 43 master/fader~ generates the Mastervolume signal and MUTE
+functionality;
+#X text 37 75 Note: DSP functionality now separated \, so this is preferred
+to master/master~;
+#X obj 134 136 r /mxr/\$1/fadetime;
+#X text 14 296 Note: only one master~ object with same id is healthy
+for one project (until now);
+#X text 34 8 master/vol~ <master id>;
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
+#X connect 5 0 1 0;
+#X connect 7 0 3 0;
+#X connect 8 0 5 0;
+#X connect 12 0 1 1;

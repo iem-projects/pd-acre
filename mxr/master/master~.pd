@@ -1,40 +1,17 @@
-#N canvas 402 139 561 341 10;
-#X obj 17 250 line~;
-#X obj 17 163 pack 0 50;
-#X obj 134 136 r /mxr/fadetime;
-#X msg 120 224 0 3;
-#X obj 96 202 sel 0 1;
-#X text 37 75 master generates the Mastervolume signal and MUTE functionality
-;
-#N canvas 650 436 450 300 init 0;
-#X obj 52 51 loadbang;
-#X msg 52 73 \; /mxr/fadetime 50;
-#X text 172 79 50ms is 20Hz \, as default;
-#X connect 0 0 1 0;
-#X restore 342 18 pd init;
-#X obj 16 138 dbtorms;
-#X text 161 255 (c) GPL - acre \, ritsch;
-#X obj 258 191 s /mxr/load;
-#X obj 258 169 pack 0 0;
-#X obj 258 147 mxr/master/dsp;
-#X text 34 47 Note compatibility: if not used in master/gain~ then
+#N canvas 402 139 561 310 10;
+#X obj 24 156 s /mxr/load;
+#X obj 24 134 pack 0 0;
+#X obj 24 112 mxr/master/dsp;
+#X text 19 221 Note compatibility: if not used in master/gain~ then
 choose '0';
 #X text 33 8 master/master~ <master id>;
-#X obj 93 173 r /mxr/master/\$1/mute;
-#X obj 16 116 r /mxr/master/\$1/master;
-#X obj 17 274 s~ /master/\$1/fade~;
-#X text 155 226 comment;
-#X text 25 306 Note: only one master~ object with same id is healthy
+#X text 17 193 Note: only one master~ object with same id is healthy
 for project (until now);
-#X connect 0 0 16 0;
+#X obj 30 73 mxr/master/vol~ \$1;
+#X text 30 39 master/vol~ generates the Mastervolume signal and provides
+MUTE functionality;
+#X text 18 249 Note deprecated: If you need more than one master then
+use mxr/master/dsp once and more msr/master/vol~ with <IDs>;
 #X connect 1 0 0 0;
-#X connect 2 0 1 1;
-#X connect 3 0 0 0;
-#X connect 4 0 1 0;
-#X connect 4 1 3 0;
-#X connect 7 0 1 0;
-#X connect 10 0 9 0;
-#X connect 11 0 10 0;
-#X connect 11 1 10 1;
-#X connect 14 0 4 0;
-#X connect 15 0 7 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
