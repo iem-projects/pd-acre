@@ -6,6 +6,17 @@
 #X text 27 145 (c)algorythmics \, winfried ritsch;
 #X obj 48 73 r~ /master/\$1/fade~;
 #X text 29 10 master/gain~ <master id>;
+#X obj 214 57 acre/arg_default 0 \$1;
+#X obj 214 33 acre/initbang;
+#X msg 241 100 set /master/\$1/fade~;
+#X obj 214 78 sel 0;
+#X msg 214 122 set /master/fade~;
 #X connect 0 0 3 0;
 #X connect 2 0 0 0;
 #X connect 5 0 0 1;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 11 0;
+#X connect 10 1 9 0;
+#X connect 11 0 5 0;
