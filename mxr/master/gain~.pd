@@ -10,7 +10,7 @@
 #X obj 214 33 acre/initbang;
 #X msg 241 100 set /master/\$1/fade~;
 #X obj 214 78 sel 0;
-#X msg 214 122 set /master/fade~;
+#X msg 214 122 set /master/0/fade~;
 #X connect 0 0 3 0;
 #X connect 2 0 0 0;
 #X connect 5 0 0 1;
