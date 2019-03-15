@@ -1,10 +1,10 @@
-#N canvas 982 494 380 267 10;
+#N canvas 982 521 380 267 10;
 #X obj 11 11 cnv 30 48 198 empty empty empty 2 7 0 8 -191407 -66577
 0;
 #X obj 15 194 nbx 3 14 -1e+37 1e+37 0 0 /mxr/master/\$1/master /mxr/master/\$1/master
 empty 0 -8 0 12 -258113 -1 -1 0 256;
-#X obj 15 11 tgl 40 0 \$1/mute \$1/mute MUTE 2 16 0 12 -258113 -1 -1
-0 1;
+#X obj 15 11 tgl 40 0 /mxr/master/\$1/mute /mxr/master/\$1/mute MUTE
+2 16 0 12 -258113 -1 -1 0 1;
 #X msg 131 70 set \$1;
 #X text 59 100 -0dB;
 #X text 65 166 -40;
