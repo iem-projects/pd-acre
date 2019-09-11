@@ -1,0 +1,6 @@
+#N canvas 1091 154 450 300 10;
+#X obj 35 79 ds/register_map \$1 \$2/gain;
+#X text 28 163 (c) GPL \, acre winfried ritsch;
+#X obj 36 131 ds/register_map \$1 \$2/on;
+#X text 32 24 Parameter for multichannel recorder;
+#X text 35 2 mxr/sf/recorder_ds <domain> <id>;
