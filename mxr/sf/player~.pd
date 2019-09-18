@@ -1,4 +1,4 @@
-#N canvas 153 315 558 494 10;
+#N canvas 190 529 601 494 10;
 #X obj 323 85 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144 -1
 -1;
 #X text 310 65 before save !;
@@ -98,7 +98,7 @@
 #X msg 414 470 add2 0;
 #X msg 397 490 add2 200;
 #X obj 70 319 + 6;
-#X msg 384 521 obj 10 90 multiline~ 0 200;
+#X msg 384 521 obj 10 90 multiline~ 0 0 0 0 0 200;
 #X obj 363 359 t f b b f f;
 #X obj 443 403 + 60;
 #X obj 443 382 * 20;
@@ -122,15 +122,15 @@
 #X obj 476 129 pack \$0 20;
 #X msg 476 154 obj 10 \$2 r \$1-player;
 #X msg 432 430 set obj 10 90 multiline~;
-#X msg 373 336 obj 10 60 readsf~ 1 \, f 3;
+#X msg 373 336 obj 10 60 readsf~ 5 \, f 15;
 #X msg 407 310 set obj 10 60 readsf~ \$1 \, addcomma \, add2 f \$2
 ;
 #X msg 355 563 connect 0 0 4 0 \, connect 4 \$1 1 0 \, connect 2 0
 5 \$1;
-#X msg 37 438 connect 5 \$1 \$2 0 \, connect 4 \$1 5 \$1 \, connect
-5 \$1 3 0;
 #X msg 399 180 obj 300 60 s \$1-to \, obj 300 10 r \$1-gain \, obj
 \$2 \$2 throw~ \$1-ch1;
+#X msg 37 437 connect 5 \$1 \$2 0 \, connect 4 \$1 5 \$1 \, connect
+4 \$1 3 0;
 #X connect 0 0 40 0;
 #X connect 1 0 10 0;
 #X connect 1 1 8 2;
@@ -138,7 +138,7 @@
 #X connect 2 0 4 0;
 #X connect 2 1 24 0;
 #X connect 3 0 6 0;
-#X connect 4 0 52 0;
+#X connect 4 0 53 0;
 #X connect 5 0 13 0;
 #X connect 6 0 5 0;
 #X connect 6 1 35 0;
@@ -187,7 +187,7 @@
 #X connect 35 4 34 0;
 #X connect 36 0 41 1;
 #X connect 37 0 8 0;
-#X connect 41 0 53 0;
+#X connect 41 0 52 0;
 #X connect 42 0 38 0;
 #X connect 43 0 44 0;
 #X connect 45 0 8 1;
@@ -197,8 +197,8 @@
 #X connect 49 0 39 0;
 #X connect 50 0 49 0;
 #X connect 51 0 39 0;
-#X connect 52 0 38 0;
-#X connect 53 0 39 0;
+#X connect 52 0 39 0;
+#X connect 53 0 38 0;
 #X restore 254 109 pd contruct-player;
 #X obj 30 323 s \$0-player;
 #X obj 30 82 r \$1/play;
@@ -215,7 +215,6 @@
 #X obj 266 170 r \$1/from;
 #X obj 356 160 loadbang;
 #X obj 356 183 samplerate~;
-#X floatatom 408 234 9 0 0 0 - - -;
 #X obj 428 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 265 218 t b f;
@@ -224,11 +223,13 @@
 #X obj 266 193 * 44100;
 #X msg 117 267 open test.wav 0;
 #X msg 306 134 set open test.wav 0;
+#X text 188 337 --- Monitoring ---;
+#X obj 499 414 mxr/mo/send~ \$1;
 #X connect 0 0 31 1;
-#X connect 0 0 54 0;
+#X connect 0 0 53 0;
 #X connect 2 0 5 0;
 #X connect 3 0 21 0;
-#X connect 3 1 53 0;
+#X connect 3 1 52 0;
 #X connect 4 0 3 0;
 #X connect 4 1 22 0;
 #X connect 5 0 31 0;
@@ -239,6 +240,7 @@
 #X connect 11 0 12 0;
 #X connect 13 0 6 0;
 #X connect 18 0 11 0;
+#X connect 18 0 55 0;
 #X connect 21 0 32 0;
 #X connect 22 0 32 0;
 #X connect 23 0 15 0;
@@ -255,17 +257,16 @@
 #X connect 39 0 35 0;
 #X connect 40 0 38 1;
 #X connect 41 0 42 0;
-#X connect 42 0 53 0;
+#X connect 42 0 52 0;
 #X connect 43 0 41 1;
-#X connect 44 0 52 0;
+#X connect 44 0 51 0;
 #X connect 45 0 46 0;
-#X connect 46 0 51 0;
-#X connect 48 0 46 0;
-#X connect 49 0 41 0;
-#X connect 49 1 41 1;
-#X connect 49 1 50 0;
-#X connect 51 0 47 0;
-#X connect 51 0 52 1;
-#X connect 52 0 49 0;
-#X connect 53 0 32 0;
-#X connect 54 0 53 0;
+#X connect 46 0 50 0;
+#X connect 47 0 46 0;
+#X connect 48 0 41 0;
+#X connect 48 1 41 1;
+#X connect 48 1 49 0;
+#X connect 50 0 51 1;
+#X connect 51 0 48 0;
+#X connect 52 0 32 0;
+#X connect 53 0 52 0;

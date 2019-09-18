@@ -1,10 +1,10 @@
-#N canvas 945 366 408 248 10;
+#N canvas 527 760 408 248 10;
 #X obj 11 11 cnv 15 98 198 empty empty \$1 2 10 0 12 -204786 -66577
 0;
 #X obj 52 14 tgl 15 0 \$1/on \$1/on ON 3 7 0 8 -4034 -1 -1 1 1;
 #X obj 13 103 cnv 2 40 2 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 16 60 vsl 30 131 0 130 0 0 \$1/fad \$1/fad empty 1 140 0 8 -262144
--1 -1 8600 1;
+-1 -1 8500 1;
 #X obj 136 77 mxr/fader/db2;
 #X obj 136 163 mxr/fader/db;
 #X msg 136 99 set \$1;
@@ -14,17 +14,21 @@
 #X obj 138 50 r \$1/gain;
 #X obj 136 183 s \$1/gain;
 #X obj 16 194 nbx 3 14 -1e+37 1e+37 0 0 \$1/gain \$1/gain empty 0 -8
-0 10 -262144 -1 -1 100.333 256;
+0 10 -262144 -1 -1 100.167 256;
 #X obj 16 28 tgl 30 0 \$1/play \$1/play play 1 15 0 12 -260097 -1 -1
-0 1;
+1 1;
 #X obj 66 191 bng 15 250 50 0 empty empty open 17 7 0 10 -4032 -1 -1
 ;
 #X obj 66 222 s \$1/open;
 #X obj 84 25 tgl 15 0 \$1/loop \$1/loop loop -2 -7 0 10 -228856 -1
--1 0 1;
+-1 1 1;
 #X text 122 16 mxr/sf/player_ctl <ID>;
 #X obj 51 44 nbx 5 14 -1e+37 1e+37 0 0 \$1/from \$1/from from 0 -8
-0 10 -262144 -1 -1 7000 256;
+0 10 -262144 -1 -1 0 256;
+#X obj 92 71 tgl 15 0 \$1/monitor/send \$1/monitor/send mo 2 7 0 8
+-257985 -1 -1 0 1;
+#X obj 283 97 tgl 15 0 \$1/monitor/post \$1/monitor/post pst 0 7 0
+8 -257985 -1 -1 0 1;
 #X connect 4 0 6 0;
 #X connect 5 0 11 0;
 #X connect 6 0 7 0;

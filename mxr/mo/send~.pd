@@ -1,4 +1,4 @@
-#N canvas 698 519 368 212 10;
+#N canvas 698 609 368 212 10;
 #X obj 52 84 inlet~;
 #X obj 105 119 switch~;
 #X obj 51 151 throw~ /mo/mono~;
@@ -6,8 +6,12 @@
 #X text 49 44 send signals to monitoring;
 #X text 184 151 (c) GPL - acre \, ritsch;
 #X text 49 15 mxr/mo/send~ <prefix id>;
-#X obj 103 85 r \$1/mo/send;
+#X obj 223 87 r \$1/mo/send;
+#X obj 105 86 r \$1/monitor/send;
+#X text 225 70 deprecated;
 #X connect 0 0 3 0;
 #X connect 3 0 2 0;
 #X connect 7 0 3 1;
 #X connect 7 0 1 0;
+#X connect 8 0 1 0;
+#X connect 8 0 3 1;
