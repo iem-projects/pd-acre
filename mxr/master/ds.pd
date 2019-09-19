@@ -1,5 +1,6 @@
-#N canvas 697 444 503 159 10;
+#N canvas 982 434 503 159 10;
 #X text 43 49 Storage for the master section;
 #X text 27 25 mxr/master_ds <domain> <master-id>;
 #X text 205 74 (c) GPL - acre \, ritsch;
 #X obj 42 72 mxr/master/vol_ds \$1 \$2;
+#X obj 40 98 mxr/master/dsp_ds \$1;
