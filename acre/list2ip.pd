@@ -1,0 +1,17 @@
+#N canvas 509 706 453 156 10;
+#X obj 44 32 inlet;
+#X obj 44 110 outlet;
+#X text 45 15 convert a symbol as IP to a list;
+#X msg 44 89 symbol \$1.\$2.\$3.\$4;
+#X obj 44 62 pack \$1 \$2 \$3 \$4;
+#X text 48 -1 acre/list2ip [IP1] [ip2] [ip3] [ip4];
+#X obj 85 31 inlet;
+#X obj 124 33 inlet;
+#X obj 165 34 inlet;
+#X text 153 63 for list use first inlet only (Pd > 0.48);
+#X connect 0 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 6 0 4 1;
+#X connect 7 0 4 2;
+#X connect 8 0 4 3;

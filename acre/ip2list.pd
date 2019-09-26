@@ -1,0 +1,13 @@
+#N canvas 970 487 404 205 10;
+#X obj 42 50 inlet;
+#X obj 43 108 s2l .;
+#X obj 43 129 outlet;
+#X text 44 27 convert a symbol as IP to a list;
+#X text 122 106 needs zexy;
+#X obj 43 81 symbol \$1;
+#X text 107 54 bang for stored value (default);
+#X text 104 127 (c) GPL-V3.0 winfried ritsch;
+#X text 43 5 acre/ip2list [ip];
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 5 0 1 0;
