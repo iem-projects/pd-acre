@@ -1,8 +1,7 @@
-#N canvas 389 61 450 300 10;
+#N canvas 389 91 363 215 10;
 #X obj 35 79 ds/register_map \$1 \$2/gain;
 #X text 28 163 (c) GPL \, acre winfried ritsch;
 #X obj 36 131 ds/register_map \$1 \$2/on;
 #X text 35 2 mxr/sf/player_ds <domain> <id>;
 #X text 32 24 Parameter for multichannel player;
-#X obj 302 220;
-#X obj 38 103 ds/register_map \$1 \$2/loop;
+#X obj 36 103 ds/register_map \$1 \$2/loop;
