@@ -1,0 +1,4 @@
+#N canvas 497 300 450 136 12;
+#X text 32 13 ip_port <domain> <id>;
+#X obj 38 59 ds/register_map \$1 \$2/ip;
+#X obj 34 89 ds/register_map \$1 \$2/portnr;
