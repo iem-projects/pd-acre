@@ -7,7 +7,7 @@ Algorithmic Composition Realtime Environment
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: 2.0-rc3
+:Version: 2.0-rc4
 :Master: https://git.iem.at/pd/acre
 
 Introduction
