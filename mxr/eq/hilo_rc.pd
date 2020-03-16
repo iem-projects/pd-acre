@@ -1,0 +1,8 @@
+#N canvas 391 380 450 300 10;
+#X obj 35 36 rc/register \$1 \$2/eq/highcut/on;
+#X obj 35 58 rc/register \$1 \$2/eq/highcut/freq;
+#X obj 35 90 rc/register \$1 \$2/eq/lowcut/on;
+#X obj 35 112 rc/register \$1 \$2/eq/lowcut/freq;
+#X text 36 137 Note: /eq/hilo is not used since part of eq (inconsistent
+naming);
+#X text 39 10 mxr/eq/hilo_rc <connection> <prefix>;

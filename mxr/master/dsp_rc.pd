@@ -1,0 +1,6 @@
+#N canvas 704 765 462 203 10;
+#X text 46 94 (c) GPL - acre \, ritsch;
+#X obj 50 76 ds/register_map \$1 /mxr/dsp;
+#X text 43 49 Storage for the masters DSP section;
+#X text 27 25 mxr/master/dsp_rc <connection>;
+#X obj 44 135 rc/register \$1 /mxr/dsp/load;

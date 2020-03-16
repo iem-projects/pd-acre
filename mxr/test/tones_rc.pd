@@ -1,0 +1,13 @@
+#N canvas 691 632 450 300 10;
+#X text 38 6 mxr/test/tones_ds <domain <id>;
+#X text 34 52 should not be stored by default;
+#X text 230 35 copy to your patch an uncomment;
+#X text 28 272 (c) GPL \, acre winfried ritsch;
+#X obj 38 33 rc/register \$1 \$2/on;
+#X obj 38 85 rc/register \$1 \$2/freq;
+#X obj 40 112 rc/register \$1 \$2/sel;
+#X obj 42 136 rc/register \$1 \$2/mute;
+#X obj 42 166 rc/register \$1 \$2/vol;
+#X obj 40 196 rc/register \$1 \$2/pulse/on;
+#X obj 39 218 rc/register \$1 \$2/pulse/time;
+#X obj 40 242 rc/register \$1 \$2/level;

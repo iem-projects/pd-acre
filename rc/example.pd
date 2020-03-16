@@ -30,11 +30,11 @@
 #X obj 23 131 nbx 5 14 -1e+37 1e+37 0 0 volume volume volume 0 -8 0
 10 -261682 -1 -1 0 256;
 #X obj 23 419 rc/connection;
-#X obj 16 239 rc/par volume;
-#X obj 235 264 rc/par /chan/2/vol CON1;
-#X obj 473 252 rc/par mastervol CON2;
-#X obj 16 218 rc/par fadetime;
-#X obj 235 241 rc/par /chan/1/vol CON1;
+#X obj 16 239 rc/register volume;
+#X obj 235 264 rc/register /chan/2/vol CON1;
+#X obj 473 252 rc/register mastervol CON2;
+#X obj 16 218 rc/register fadetime;
+#X obj 235 241 rc/register /chan/1/vol CON1;
 #X text 26 400 default remote connection;
 #X msg 561 327 listen 0;
 #X msg 477 329 listen 3301;

@@ -1,0 +1,5 @@
+#N canvas 1695 448 490 179 10;
+#X text 80 106 (c)GPL \, algorythmics \, winfried ritsch;
+#X text 78 30 mxr/fader/fader_rc <connection> <id>;
+#X obj 74 59 rc/register \$1 \$2/mute;
+#X obj 74 78 rc/register \$1 \$2/vol;

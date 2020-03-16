@@ -1,0 +1,5 @@
+#N canvas 610 534 403 233 10;
+#X obj 30 63 rc/register \$1 \$2/eq/bypass;
+#X obj 30 91 hilo_rc \$1 \$2;
+#X obj 31 121 para_rc \$1 \$2;
+#X text 32 31 mxr/eq/rc <connection> <ch|eq id>;

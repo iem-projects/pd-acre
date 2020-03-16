@@ -1,3 +1,3 @@
-#N canvas 564 431 401 146 10;
-#X text 61 22 in_ds <input id> <storage domain>;
+#N canvas 564 461 401 146 10;
 #X obj 66 45 ds/register_map \$1 \$2/limiter/limit;
+#X text 61 22 mxr/limiter/ds <input id> <storage domain>;

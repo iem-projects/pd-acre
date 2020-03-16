@@ -1,0 +1,8 @@
+#N canvas 697 504 432 180 10;
+#X text 27 45 Storage for the master section;
+#X text 29 87 NEVER STORE MAIN (until you know what you do) !;
+#X text 251 143 (c) GPL - acre \, ritsch;
+#X text 27 25 mxr/master/vol_rc <connection> <master-id>;
+#X obj 29 68 # rc/register \$1 /mxr/master/\$2/master;
+#X obj 29 121 rc/register \$1 /mxr/master/\$2/mute;
+#X obj 30 143 rc/register \$1 /mxr/\$1/fadetime;

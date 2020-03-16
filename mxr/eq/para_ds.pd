@@ -9,6 +9,6 @@
 #X obj 36 203 ds/register_map \$1 \$2/eq/mid1/gain;
 #X obj 36 228 ds/register_map \$1 \$2/eq/high/freq;
 #X obj 37 247 ds/register_map \$1 \$2/eq/high/gain;
-#X text 37 8 in/eq_para_ds <domain> <prefix>;
+#X text 37 8 eq/para_ds <domain> <prefix>;
 #X text 37 267 Note: /hilo is not used since part of eq (inconsistent
 naming);

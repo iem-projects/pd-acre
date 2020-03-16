@@ -1,0 +1,8 @@
+#N canvas 797 830 503 202 10;
+#X text 205 74 (c) GPL - acre \, ritsch;
+#X obj 42 72 mxr/master/vol_rc \$1 \$2;
+#X text 27 25 mxr/master/rc <domain> <master-id>;
+#X obj 40 98 mxr/master/dsp_rc \$1;
+#X text 43 49 remote control for the master section;
+#X obj 41 125 rc/register \$1 /acre/init;
+#X obj 42 147 rc/register \$1 /mxr/reset_vu;
