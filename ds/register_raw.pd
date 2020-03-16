@@ -11,7 +11,6 @@
 #X text 74 33 first arg is not prepended e.g. raw \, in the file. The
 domain is used to separete to different storages;
 #X text 171 241 (c) GPL \, acre winfried ritsch;
-#X obj 322 103 remote/par \$2 \$3;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;
