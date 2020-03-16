@@ -1,4 +1,4 @@
-#N canvas 864 261 414 345 10;
+#N canvas 225 658 792 375 10;
 #X obj 9 240 *~;
 #X obj 162 251 line~;
 #X obj 162 128 r /mo/vol;
@@ -20,6 +20,10 @@
 #X obj 17 190 mxr/prvu/send /mo/level;
 #X text 184 271 (c) GPL - acre \, ritsch;
 #X obj 11 297 acre/instance_once_test /mo/master \$0;
+#X obj 177 71 spectro~ mo;
+#X obj 178 48 r~ /mo/mono~;
+#X obj 277 46 r~ /mo/mono~;
+#X obj 277 69 scope~ mo;
 #X connect 0 0 3 0;
 #X connect 1 0 0 1;
 #X connect 2 0 4 0;
@@ -35,3 +39,5 @@
 #X connect 12 0 18 0;
 #X connect 13 0 12 0;
 #X connect 17 0 7 1;
+#X connect 22 0 21 0;
+#X connect 23 0 24 0;

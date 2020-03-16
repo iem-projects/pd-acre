@@ -1,13 +1,13 @@
-#N canvas 94 107 498 599 10;
+#N canvas 1083 416 498 599 10;
 #X obj 13 65 inlet~;
 #X obj 30 459 outlet~;
-#X obj 305 428 pvu~;
+#X obj 314 409 pvu~;
 #X obj 314 457 pack;
 #X obj 338 166 pvu~;
 #X text 141 238 high and low cut;
 #X text 132 268 eq (is controlled for bus);
 #X text 47 173 pre_gain before limiter !;
-#N canvas 357 356 229 146 init 0;
+#N canvas 357 386 229 146 init 0;
 #X obj 16 17 loadbang;
 #X msg 16 38 0;
 #X obj 16 65 s \$1/mute;
@@ -41,8 +41,9 @@
 #X obj 77 431 line~;
 #X obj 30 432 *~;
 #X obj 78 410 mxr/fader/muteswitch \$1;
+#X obj 314 432 change;
 #X connect 0 0 16 0;
-#X connect 2 0 3 0;
+#X connect 2 0 35 0;
 #X connect 3 0 23 0;
 #X connect 4 0 3 1;
 #X connect 17 0 4 0;
@@ -61,3 +62,4 @@
 #X connect 33 0 22 1;
 #X connect 34 0 32 0;
 #X connect 34 1 15 0;
+#X connect 35 0 3 0;

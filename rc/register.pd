@@ -1,4 +1,4 @@
-#N canvas 746 578 411 265 10;
+#N canvas 746 578 504 295 10;
 #X text 85 226 (c) GPL \, acre winfried ritsch;
 #X obj 34 172 list trim;
 #X obj 34 199 s;
@@ -10,7 +10,7 @@
 #X obj 34 127 spigot 0;
 #X text 27 28 register remote for this parameter;
 #X text 30 47 default: off \, you have to turn it on;
-#X obj 32 91 r \$2;
+#X obj 34 91 r \$2;
 #X obj 34 151 list prepend \$2;
 #X obj 79 93 r \$1/on;
 #X connect 1 0 2 0;

@@ -1,0 +1,10 @@
+#N canvas 974 373 450 300 12;
+#X text 42 17 ds/rc <connection> <domain>;
+#X obj 43 61 rc/register \$1 \$2/program/store;
+#X obj 41 85 rc/register \$1 \$2/program/nr;
+#X obj 43 112 rc/register \$1 \$2/program/recall;
+#X obj 41 154 rc/register \$1 \$2/program/next;
+#X obj 41 180 rc/register \$1 \$2/program/prev;
+#X obj 38 232 # rc/register \$1 \$2/program/save;
+#X obj 39 256 # rc/register \$1 \$2/program/load;
+#X text 36 208 remote file dialog does not open locally !!!!;

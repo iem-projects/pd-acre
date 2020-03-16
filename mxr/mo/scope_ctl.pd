@@ -1,0 +1,48 @@
+#N canvas 939 112 681 359 10;
+#X obj 101 101 cnv 15 48 98 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X msg 207 173 const 0;
+#X obj 205 75 loadbang;
+#X obj 207 109 t b b b;
+#X obj 128 174 tgl 15 0 empty empty view -1 -4 0 10 -262144 -1 -1 1
+1;
+#X text 288 86 draw notes in table;
+#X msg 280 179 resize 512 \, bounds 0 1 512 -1;
+#X msg 282 123 xticks 512 64 128 \, xlabel -1.05 0 128 256 384 512
+\, yticks 1 0.1 2 \, ylabel -10 0 -0.2 0.2 -0.4 0.4 0.6 -0.6 0.8 -0.8
+0 1 -1;
+#X obj 107 148 tgl 15 0 /scope/\$1/auto /scope/\$1/auto auto 1 -4 0
+10 -262144 -1 -1 1 1;
+#X obj 128 145 bng 15 250 50 0 empty empty C 4 7 0 10 -262144 -1 -1
+;
+#X msg 111 74 80;
+#X msg 142 75 1;
+#X text 105 292 (c) GPL \, acre - winfried ritsch;
+#X obj 104 176 tgl 15 0 /scope/\$1/on /scope/\$1/on on 1 -4 0 10 -262144
+-1 -1 1 1;
+#X obj 109 127 nbx 3 14 0 999 0 0 /scope/\$1/tresh /scope/\$1/tresh
+t -7 7 0 10 -262144 -1 -1 53 256;
+#X obj 109 106 nbx 3 14 0 999 0 0 /scope/\$1/gain /scope/\$1/gain G
+-7 7 0 10 -262144 -1 -1 100 256;
+#X obj 100 220 list append \$1;
+#X obj 270 238 r /scope/\$1/curve;
+#X obj 293 211 table /scope/\$1;
+#X obj 207 211 s /scope/\$1;
+#X msg 97 244 \; pd-/scope/\$2 vis \$1;
+#X obj 270 261 array set /scope/\$1;
+#X text 208 26 mxr/mo/scope_ctl <id>;
+#X connect 1 0 19 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 7 0;
+#X connect 3 1 11 0;
+#X connect 3 1 10 0;
+#X connect 3 2 6 0;
+#X connect 4 0 16 0;
+#X connect 6 0 19 0;
+#X connect 7 0 19 0;
+#X connect 9 0 1 0;
+#X connect 11 0 8 0;
+#X connect 16 0 20 0;
+#X connect 17 0 21 0;
+#X coords 0 -1 1 1 50 100 2 100 100;
