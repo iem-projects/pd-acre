@@ -1,4 +1,4 @@
-#N canvas 691 632 450 300 10;
+#N canvas 165 685 521 300 10;
 #X text 38 6 mxr/test/tones_ds <domain <id>;
 #X text 28 272 (c) GPL \, acre winfried ritsch;
 #X obj 39 31 rc/register \$1 mo/vol;
@@ -10,7 +10,7 @@
 #X obj 221 171 rc/register \$1 /scope/mo/gain;
 #X obj 222 190 rc/register \$1 /scope/mo/tresh;
 #X obj 224 212 rc/register \$1 /scope/mo/auto;
-#X obj 222 236 rc/register \$1 /scope/mo/curve;
 #X obj 226 45 rc/register \$1 /spectro/mo/gain;
 #X obj 225 67 rc/register \$1 /spectro/mo/reset;
+#X obj 222 236 rc/register \$1 /scope/mo/curve;
 #X obj 225 91 rc/register \$1 /spectro/mo/curve;

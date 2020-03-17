@@ -1,4 +1,4 @@
-#N canvas 900 521 918 339 12;
+#N canvas 532 61 1074 339 10;
 #X msg 193 113 const 0;
 #X obj 187 7 loadbang;
 #X obj 187 30 t b b b;
@@ -28,7 +28,8 @@
 #X obj 507 156 r spectro/\$1/on;
 #X obj 507 181 metro 250;
 #X obj 507 206 array get \$0-spec;
-#X obj 507 232 s /spectro/\$1/curve;
+#X obj 508 272 s /spectro/\$1/curve;
+#X obj 507 242 rc/split_in_blocks 64;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
@@ -49,4 +50,5 @@
 #X connect 22 0 3 0;
 #X connect 23 0 24 0;
 #X connect 24 0 25 0;
-#X connect 25 0 26 0;
+#X connect 25 0 27 0;
+#X connect 27 0 26 0;

@@ -1,4 +1,4 @@
-#N canvas 1702 136 718 459 10;
+#N canvas 1605 219 762 459 10;
 #X msg 233 145 const 0;
 #X obj 233 30 loadbang;
 #X obj 233 52 t b b b;
@@ -36,7 +36,7 @@ yticks 1 0.1 2 \, ylabel -10 0 -0.2 0.2 -0.4 0.4 0.6 -0.6 0.8 -0.8
 #X text 261 3 mxr/mo/scope~ <id>;
 #X obj 488 257 r /scope/\$1/on;
 #X obj 488 280 metro 250;
-#X obj 488 332 s /scope/\$1/curve;
+#X obj 487 366 s /scope/\$1/curve;
 #X obj 487 304 array get \$0-scope;
 #X obj 140 407 r /scope/\$1/auto;
 #X obj 103 108 list append \$1;
@@ -45,6 +45,7 @@ yticks 1 0.1 2 \, ylabel -10 0 -0.2 0.2 -0.4 0.4 0.6 -0.6 0.8 -0.8
 -1;
 #X msg 106 131 \; /scope/\$1/auto 1 \; /scope/\$1/tresh 50 \; /scope/\$1/gain
 100;
+#X obj 487 334 rc/split_in_blocks 64;
 #X connect 0 0 15 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
@@ -78,9 +79,10 @@ yticks 1 0.1 2 \, ylabel -10 0 -0.2 0.2 -0.4 0.4 0.6 -0.6 0.8 -0.8
 #X connect 30 0 11 0;
 #X connect 32 0 33 0;
 #X connect 33 0 35 0;
-#X connect 35 0 34 0;
+#X connect 35 0 41 0;
 #X connect 36 0 27 1;
 #X connect 37 0 40 0;
 #X connect 38 0 20 0;
 #X connect 39 0 2 0;
+#X connect 41 0 34 0;
 #X coords 0 459 1 458 50 100 0;

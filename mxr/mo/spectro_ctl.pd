@@ -1,4 +1,4 @@
-#N canvas 1091 318 811 318 10;
+#N canvas 1091 318 811 345 10;
 #X obj 101 101 cnv 15 98 48 empty empty spec 2 10 0 14 -204786 -66577
 0;
 #X msg 187 61 const 0;
@@ -27,10 +27,13 @@ size 0 -8 0 10 -262144 -1 -1 256 256;
 #X obj 48 236 table /spectro/\$1/specview;
 #X msg 48 189 \; pd-/spectro/\$2/specview vis \$1;
 #X obj 48 165 list append \$1;
-#X obj 540 196 r /spectro/\$1/curve;
-#X obj 540 219 array set /spectro/\$1/specview;
+#X obj 466 180 r /spectro/\$1/curve;
+#X obj 466 231 array set /spectro/\$1/specview;
 #X obj 151 102 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
 -1 -1;
+#X text 462 159 get curves in blocks;
+#X obj 466 206 rc/unsplit_in_blocks;
+#X text 460 257 make rc compat for limited block size;
 #X connect 1 0 12 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
@@ -43,6 +46,8 @@ size 0 -8 0 10 -262144 -1 -1 256 256;
 #X connect 14 0 15 0;
 #X connect 16 0 3 0;
 #X connect 19 0 18 0;
-#X connect 20 0 21 0;
+#X connect 20 0 24 0;
 #X connect 22 0 1 0;
+#X connect 24 0 21 0;
+#X connect 24 1 21 1;
 #X coords 0 -1 1 1 100 50 2 100 100;
