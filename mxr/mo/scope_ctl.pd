@@ -12,7 +12,7 @@
 \, yticks 1 0.1 2 \, ylabel -10 0 -0.2 0.2 -0.4 0.4 0.6 -0.6 0.8 -0.8
 0 1 -1;
 #X obj 107 148 tgl 15 0 /scope/\$1/auto /scope/\$1/auto auto 1 -4 0
-10 -262144 -1 -1 1 1;
+10 -262144 -1 -1 0 1;
 #X obj 128 145 bng 15 250 50 0 empty empty C 4 7 0 10 -262144 -1 -1
 ;
 #X msg 111 74 80;
@@ -21,7 +21,7 @@
 #X obj 104 176 tgl 15 0 /scope/\$1/on /scope/\$1/on on 1 -4 0 10 -262144
 -1 -1 0 1;
 #X obj 109 127 nbx 3 14 0 999 0 0 /scope/\$1/tresh /scope/\$1/tresh
-t -7 7 0 10 -262144 -1 -1 50 256;
+t -7 7 0 10 -262144 -1 -1 45 256;
 #X obj 109 106 nbx 3 14 0 999 0 0 /scope/\$1/gain /scope/\$1/gain G
 -7 7 0 10 -262144 -1 -1 100 256;
 #X obj 100 220 list append \$1;
@@ -31,8 +31,8 @@ t -7 7 0 10 -262144 -1 -1 50 256;
 #X msg 97 244 \; pd-/scope/\$2 vis \$1;
 #X obj 302 300 array set /scope/\$1;
 #X text 208 26 mxr/mo/scope_ctl <id>;
-#X obj 300 272 rc/unsplit_in_blocks;
-#X text 432 271 make rc compat for limited block size;
+#X obj 300 272 acre/unsplit_in_blocks;
+#X text 345 255 make rc compatible for limited block size;
 #X connect 1 0 19 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;

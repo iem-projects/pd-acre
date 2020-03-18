@@ -1,10 +1,11 @@
-#N canvas 1525 347 348 258 10;
+#N canvas 1525 407 340 334 10;
 #X obj 31 92 mxr/in/in_rc \$1 \$2;
 #X obj 31 130 mxr/eq/rc \$1 \$2;
 #X obj 31 111 mxr/limiter/rc \$1 \$2;
 #X obj 30 69 mxr/fader/fader_rc \$1 \$2;
-#X text 24 232 (c)GPL \, algorythmics \, winfried ritsch;
+#X text 30 258 (c)GPL \, algorythmics \, winfried ritsch;
 #X text 32 27 mxr/in/ch_rc <connection> <bus id>;
 #X text 34 158 views;
 #X obj 32 202 rc/register \$1 \$2/monitor/pre;
 #X obj 33 181 rc/register \$1 \$2/meter;
+#X obj 32 226 rc/register \$1 \$2/monitor/post;

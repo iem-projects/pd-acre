@@ -1,4 +1,4 @@
-#N canvas 1605 219 762 459 10;
+#N canvas 777 470 762 459 10;
 #X msg 233 145 const 0;
 #X obj 233 30 loadbang;
 #X obj 233 52 t b b b;
@@ -45,7 +45,7 @@ yticks 1 0.1 2 \, ylabel -10 0 -0.2 0.2 -0.4 0.4 0.6 -0.6 0.8 -0.8
 -1;
 #X msg 106 131 \; /scope/\$1/auto 1 \; /scope/\$1/tresh 50 \; /scope/\$1/gain
 100;
-#X obj 487 334 rc/split_in_blocks 64;
+#X obj 487 334 acre/split_in_blocks 128;
 #X connect 0 0 15 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;

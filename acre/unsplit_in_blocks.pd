@@ -3,13 +3,13 @@
 #X obj 13 89 t b f;
 #X obj 13 120 list;
 #X obj 10 19 inlet;
-#X text 80 24 unsplit_in_blocks;
 #X obj 13 161 outlet;
 #X obj 88 159 outlet;
 #X text 21 191 to [array set];
+#X text 55 17 acre/unsplit_in_blocks;
 #X connect 0 0 1 0;
 #X connect 0 1 2 1;
 #X connect 1 0 2 0;
-#X connect 1 1 6 0;
-#X connect 2 0 5 0;
+#X connect 1 1 5 0;
+#X connect 2 0 4 0;
 #X connect 3 0 0 0;

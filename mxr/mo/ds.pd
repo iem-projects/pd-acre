@@ -1,0 +1,9 @@
+#N canvas 1379 109 308 256 10;
+#X text 35 207 (c) GPL - acre \, ritsch;
+#X text 27 25 mxr/mo/ds <domain>;
+#X text 37 55 Storage for the monitor section;
+#X obj 39 138 ds/register_map \$1 /mo/del;
+#X obj 37 113 ds/register_map \$1 /mo/vol;
+#X obj 36 85 ds/register_map \$1 /mo/mute;
+#X obj 37 164 mxr/mo/spectro_ds \$1 mo;
+#X obj 39 185 mxr/mo/scope_ds \$1 mo;

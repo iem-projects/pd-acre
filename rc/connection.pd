@@ -1,8 +1,8 @@
-#N canvas 901 453 607 550 10;
+#N canvas 1880 185 607 550 10;
 #X obj 52 322 r _ds/remote/\$1;
 #X obj 50 432 spigot 0;
 #X text 49 307 collect messages;
-#X obj 50 461 outlet;
+#X obj 50 511 outlet;
 #X text 228 12 collect distribute messages;
 #X obj 58 52 inlet;
 #X msg 93 137 0;
@@ -43,6 +43,13 @@
 #X obj 154 406 r \$1/on;
 #X obj 148 438 r \$1/v/out;
 #X obj 373 272 s \$1/v/rate;
+#X obj 304 438 list append \$1/resend;
+#X msg 304 459 \$1;
+#X obj 304 386 r \$1/update;
+#X text 476 369 trick to not close out;
+#X obj 439 371 del 1;
+#X obj 439 394 s \$1/up;
+#X obj 439 348 r \$1/resend;
 #X connect 0 0 27 0;
 #X connect 1 0 3 0;
 #X connect 1 0 14 0;
@@ -86,3 +93,8 @@
 #X connect 40 0 21 0;
 #X connect 41 0 1 1;
 #X connect 42 0 14 1;
+#X connect 44 0 45 0;
+#X connect 45 0 1 0;
+#X connect 46 0 44 0;
+#X connect 48 0 49 0;
+#X connect 50 0 48 0;

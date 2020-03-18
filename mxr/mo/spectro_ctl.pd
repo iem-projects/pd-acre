@@ -1,10 +1,10 @@
-#N canvas 1091 318 811 345 10;
+#N canvas 1091 318 679 345 10;
 #X obj 101 101 cnv 15 98 48 empty empty spec 2 10 0 14 -204786 -66577
 0;
 #X msg 187 61 const 0;
 #X obj 187 7 loadbang;
 #X obj 187 30 t b b b;
-#X obj 102 130 tgl 15 0 spectro/\$1/on spectro/\$1/on on 1 -4 0 10
+#X obj 102 130 tgl 15 0 /spectro/\$1/on /spectro/\$1/on on 1 -4 0 10
 -262144 -1 -1 0 1;
 #X obj 126 129 tgl 15 0 empty empty view -1 -4 0 10 -262144 -1 -1 0
 1;
@@ -14,12 +14,12 @@
 0.6 0.7 0.8 0.9 1;
 #X text 286 5 (c) GPL \, acre winfried ritsch;
 #X obj 160 130 nbx 3 14 0 999 0 0 /spectro/\$1/gain /spectro/\$1/gain
-gain 0 -8 0 10 -262144 -1 -1 53 256;
+gain 0 -8 0 10 -262144 -1 -1 97 256;
 #X obj 33 119 nbx 3 14 4 512 1 0 /spectro/\$1/size /spectro/\$1/size
 size 0 -8 0 10 -262144 -1 -1 256 256;
-#X obj 299 165 r /spectro/\$1/size;
-#X obj 278 220 s /spectro/\$1/specview;
-#X msg 286 191 resize \$1 \, bounds 0 1 \$1 0;
+#X obj 256 160 r /spectro/\$1/size;
+#X obj 248 210 s /spectro/\$1/specview;
+#X msg 256 181 resize \$1 \, bounds 0 1 \$1 0;
 #X obj 261 31 list append \$1;
 #X msg 261 54 \; /spectro/\$1/size 256 \; /spectro/\$1/gain 53;
 #X obj 262 8 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -27,13 +27,14 @@ size 0 -8 0 10 -262144 -1 -1 256 256;
 #X obj 48 236 table /spectro/\$1/specview;
 #X msg 48 189 \; pd-/spectro/\$2/specview vis \$1;
 #X obj 48 165 list append \$1;
-#X obj 466 180 r /spectro/\$1/curve;
-#X obj 466 231 array set /spectro/\$1/specview;
-#X obj 151 102 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
--1 -1;
-#X text 462 159 get curves in blocks;
-#X obj 466 206 rc/unsplit_in_blocks;
-#X text 460 257 make rc compat for limited block size;
+#X obj 426 180 r /spectro/\$1/curve;
+#X obj 426 231 array set /spectro/\$1/specview;
+#X obj 151 102 bng 15 250 50 0 /spectro/\$1/reset /spectro/\$1/reset
+reset 17 7 0 10 -262144 -1 -1;
+#X text 422 159 get curves in blocks;
+#X text 420 257 make rc compat for limited block size;
+#X obj 56 28 r /spectro/\$1/reset;
+#X obj 426 206 acre/unsplit_in_blocks;
 #X connect 1 0 12 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
@@ -46,8 +47,8 @@ size 0 -8 0 10 -262144 -1 -1 256 256;
 #X connect 14 0 15 0;
 #X connect 16 0 3 0;
 #X connect 19 0 18 0;
-#X connect 20 0 24 0;
-#X connect 22 0 1 0;
-#X connect 24 0 21 0;
-#X connect 24 1 21 1;
+#X connect 20 0 26 0;
+#X connect 25 0 1 0;
+#X connect 26 0 21 0;
+#X connect 26 1 21 1;
 #X coords 0 -1 1 1 100 50 2 100 100;

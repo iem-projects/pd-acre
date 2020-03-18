@@ -1,0 +1,6 @@
+#N canvas 1379 79 503 176 10;
+#X text 30 130 (c) GPL - acre \, ritsch;
+#X text 26 49 Storage for the monitor section;
+#X obj 31 92 ds/register_map \$1 /spectro/\$2/gain;
+#X text 27 25 mxr/mo/spectro_ds <domain> <id>;
+#X obj 32 70 # ds/register_map \$1 /spectro/\$2/on;
