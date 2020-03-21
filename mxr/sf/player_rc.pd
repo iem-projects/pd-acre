@@ -1,0 +1,10 @@
+#N canvas 389 151 363 215 10;
+#X text 32 196 (c) GPL \, acre winfried ritsch;
+#X obj 35 79 rc/register \$1 \$2/gain;
+#X obj 36 103 rc/register \$1 \$2/loop;
+#X obj 34 147 rc/register \$1 \$2/on;
+#X text 35 2 mxr/sf/player_rc <connection> <id>;
+#X text 32 24 remotes for multichannel player;
+#X obj 36 52 rc/register \$1 \$2/play;
+#X obj 36 172 rc/register \$1 \$2/vu;
+#X obj 37 125 rc/register \$1 \$2/from;
