@@ -1,9 +1,9 @@
-#N canvas 265 88 444 421 10;
+#N canvas 265 88 674 421 10;
 #X obj 101 101 cnv 15 98 198 empty empty \$1 20 12 0 14 -233017 -66577
 0;
 #X obj 136 135 bng 15 250 50 0 \$1/program/store \$1/program/store
 store 17 7 0 10 -258113 -1 -1;
-#X obj 115 184 bng 30 250 50 0 \$1/program/recall \$1/program/recall
+#X obj 115 184 bng 30 250 50 0 \$0/program/recall/s \$0/program/recall/r
 recall 32 23 0 10 -4034 -1 -1;
 #X obj 115 168 nbx 3 16 -1e+37 1e+37 0 0 \$1/program/nr \$1/program/nr
 nr 0 -8 0 14 -261682 -1 -1 0 256;
@@ -26,14 +26,14 @@ nr 0 -8 0 14 -261682 -1 -1 0 256;
 #X obj 219 231 r \$1/filename;
 #X text 219 214 for panels dir;
 #N canvas 43 352 444 383 tools 0;
-#X floatatom 32 209 5 0 0 0 - - -, f 5;
+#X floatatom 32 209 5 0 0 0 - - -;
 #X obj 25 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 39 235 t b f;
 #X text 28 87 fill with actual parameter;
 #X obj 50 188 for++ 1 99 10;
-#X floatatom 79 106 5 0 0 0 from - -, f 5;
-#X floatatom 135 106 5 0 0 0 to - -, f 5;
+#X floatatom 79 106 5 0 0 0 from - -;
+#X floatatom 135 106 5 0 0 0 to - -;
 #X obj 50 164 f 1;
 #X obj 27 43 route fill;
 #X obj 81 65 unpack 0 0;
@@ -43,7 +43,7 @@ nr 0 -8 0 14 -261682 -1 -1 0 256;
 #X obj 34 285 s \$1/program/store;
 #X msg 86 166 0;
 #X obj 25 120 t b b;
-#X floatatom 223 175 5 0 0 0 - - -, f 5;
+#X floatatom 223 175 5 0 0 0 - - -;
 #X obj 238 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 236 81 1;
@@ -86,6 +86,16 @@ nr 0 -8 0 14 -261682 -1 -1 0 256;
 #X obj 105 225 bng 15 250 50 0 \$1/program/prev \$1/program/prev prev
 17 7 0 10 -262144 -1 -1;
 #X text 85 394 (c) GPL \, acre winfried ritsch;
+#X obj 448 53 r \$1/program/recall;
+#X obj 448 106 route bang;
+#X obj 418 229 s \$1/program/recall;
+#X obj 450 133 s \$0/program/recall/r;
+#X obj 418 178 r \$0/program/recall/s;
+#X obj 448 76 spigot 1;
+#X obj 418 201 t b b b;
+#X msg 470 201 0;
+#X msg 389 202 1;
+#X text 409 22 recall can also be a number \, filter;
 #X connect 4 0 11 0;
 #X connect 5 0 12 0;
 #X connect 7 0 14 0;
@@ -98,4 +108,13 @@ nr 0 -8 0 14 -261682 -1 -1 0 256;
 #X connect 13 0 14 0;
 #X connect 16 0 10 0;
 #X connect 20 0 18 0;
+#X connect 24 0 29 0;
+#X connect 25 0 27 0;
+#X connect 28 0 30 0;
+#X connect 29 0 25 0;
+#X connect 30 0 32 0;
+#X connect 30 1 26 0;
+#X connect 30 2 31 0;
+#X connect 31 0 29 1;
+#X connect 32 0 29 1;
 #X coords 0 -1 1 1 100 200 2 100 100;
