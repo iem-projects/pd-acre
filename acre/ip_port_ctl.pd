@@ -1,20 +1,17 @@
-#N canvas 1027 681 450 182 12;
+#N canvas 907 623 450 182 12;
 #X obj 101 101 cnv 15 198 48 empty empty \$1 2 8 0 10 -233017 -66577
 0;
 #X symbolatom 119 130 15 0 0 2 IP_to_send - #1/ip;
 #X obj 230 133 nbx 5 14 -1e+37 1e+37 0 0 \$1/port \$1/port portnr 0
--8 0 12 -262144 -1 -1 0 256;
+-8 0 12 -262144 -1 -1 9999 256;
 #X msg 309 90 set \$1;
-#X obj 281 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262130
--1 -1;
 #X obj 102 130 bng 18 250 50 0 empty empty empty 17 7 0 12 -262144
 -1 -1;
 #X obj 309 67 route symbol;
 #X text 96 28 ip_port_ctl <id>;
 #X obj 309 41 r \$1/ip;
 #X connect 3 0 1 0;
-#X connect 5 0 1 0;
-#X connect 6 0 3 0;
-#X connect 6 1 4 0;
-#X connect 8 0 6 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 0;
+#X connect 7 0 5 0;
 #X coords 0 -1 1 1 200 50 2 100 100;
