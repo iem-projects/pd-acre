@@ -60,7 +60,7 @@
 #X floatatom 214 33 5 0 0 0 - - -;
 #X obj 255 29 r \$1/channels;
 #X text 30 5 mxr/sf/player~ <id> <channels> <send sound ID>;
-#N canvas 893 149 703 746 \$0-player 1;
+#N canvas 893 149 703 746 \$0-player 0;
 #X restore 30 56 pd \$0-player;
 #X obj 120 132 openpanel;
 #N canvas 1407 201 788 669 contruct-player 0;
@@ -89,7 +89,7 @@
 #X msg 414 470 add2 0;
 #X msg 397 490 add2 200;
 #X obj 70 319 + 6;
-#X msg 384 521 obj 10 90 multiline~ 200;
+#X msg 384 521 obj 10 90 multiline~ 0 200;
 #X obj 363 359 t f b b f f;
 #X obj 443 403 + 60;
 #X obj 443 382 * 20;

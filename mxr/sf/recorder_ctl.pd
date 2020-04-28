@@ -17,14 +17,15 @@
 0 10 -262144 -1 -1 0 256;
 #X obj 69 16 tgl 30 0 \$1/rec \$1/rex rec 1 15 0 12 -258113 -1 -1 0
 1;
-#X obj 66 191 bng 15 250 50 0 empty empty open 17 7 0 10 -4032 -1 -1
-;
-#X obj 66 222 s \$1/open;
+#X obj 66 191 bng 15 250 50 0 \$0-open \$0-open open 17 7 0 10 -4032
+-1 -1;
 #X text 122 16 mxr/sf/recorder_ctl <ID>;
+#X obj 266 222 s \$1/open;
+#X obj 266 196 r \$0-open;
 #X connect 4 0 6 0;
 #X connect 5 0 11 0;
 #X connect 6 0 7 0;
 #X connect 8 0 5 0;
 #X connect 10 0 4 0;
-#X connect 14 0 15 0;
+#X connect 17 0 16 0;
 #X coords 0 -1 1 1 100 200 2 10 10;

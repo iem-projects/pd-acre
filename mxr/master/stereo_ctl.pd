@@ -19,14 +19,15 @@
 #X obj 10 10 mxr/master/ctl \$1;
 #X text 227 25 mxr/master/stereo_ctl <master id>;
 #X text 233 63 shortcut for simple stereomixer;
-#X obj 176 217 tgl 15 0 empty empty extra 17 7 0 10 -262144 -1 -1 0
-1;
-#N canvas 1115 602 250 105 out-par-\$0 0;
+#N canvas 1115 692 250 105 out-par-\$0 0;
 #X text 40 5 extra pars if needed;
-#X restore 74 324 pd out-par-\$0;
-#X obj 85 255 pack 0 \$0;
-#X msg 74 281 \; pd-out-par-\$2 vis \$1;
+#X restore 116 293 pd out-par-\$0;
 #X text 233 124 (c) GPL \, acre \, winfried ritsch;
-#X connect 13 0 15 0;
-#X connect 15 0 16 0;
+#X obj 52 241 tgl 15 0 \$0-vis \$0-vis extra 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 55 271 r \$0-vis;
+#X msg 55 294 vis \$1;
+#X obj 55 317 s pd-out-par-\$0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
 #X coords 0 -1 1 1 200 200 1 10 10;
