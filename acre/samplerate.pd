@@ -5,10 +5,10 @@
 #X obj 77 114 r pd;
 #X obj 77 158 sel 1;
 #X obj 77 136 route dsp audio-dialog;
-#X obj 148 159 t b;
+#X obj 141 159 t b;
 #X text 21 78 outputs samplerate also on samplerate change !;
 #X obj 30 114 inlet;
-#X obj 76 213 outlet;
+#X obj 77 213 outlet;
 #X obj 254 111 initbang;
 #X connect 2 0 9 0;
 #X connect 3 0 5 0;

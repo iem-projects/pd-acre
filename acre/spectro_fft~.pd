@@ -1,7 +1,7 @@
-#N canvas 165 541 328 310 10;
+#N canvas 561 468 328 310 10;
 #X obj 70 154 *~;
-#X obj 36 67 *~;
-#X obj 37 4 inlet~;
+#X obj 37 67 *~;
+#X obj 38 4 inlet~;
 #X obj 38 116 rfft~;
 #X obj 37 154 *~;
 #X obj 37 178 +~;

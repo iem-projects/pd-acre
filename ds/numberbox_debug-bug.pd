@@ -9,15 +9,15 @@
 #X obj 120 122 s vol;
 #X obj 178 207 r vol;
 #X obj 182 144 s vol;
-#X floatatom 257 103 5 0 0 0 - - -, f 5;
+#X floatatom 257 103 5 0 0 0 - - -;
 #X obj 257 123 s vol;
 #X obj 73 117 s vol;
 #X msg 72 94 10;
 #X obj 266 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 270 222 route float;
-#X obj 244 260 print x3;
-#X obj 325 269 print x4;
+#X obj 266 212 route float;
+#X obj 266 240 print x3;
+#X obj 329 240 print x4;
 #X obj 266 186 r vol;
 #X msg 329 94 list 13;
 #X obj 329 119 route float;

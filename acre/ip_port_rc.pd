@@ -1,4 +1,4 @@
 #N canvas 410 513 450 126 10;
 #X text 43 25 acre/ip_port_rc <connection> <id>;
-#X obj 41 47 rc/register \$1 \$2/ip;
+#X obj 40 49 rc/register \$1 \$2/ip;
 #X obj 40 70 rc/register \$1 \$2/port;

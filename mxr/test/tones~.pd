@@ -9,7 +9,7 @@
 #X obj 183 218 sel 0;
 #X obj 188 192 t f f;
 #X msg 183 240 1;
-#N canvas 573 362 450 300 init 1;
+#N canvas 573 362 450 300 init 0;
 #X obj 103 58 loadbang;
 #X obj 231 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -19,7 +19,7 @@
 #X connect 0 0 3 0;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
-#X restore 34 47 pd init;
+#X restore 34 27 pd init;
 #X obj 57 330 *~;
 #X obj 105 370 line~;
 #X obj 105 349 pack 0 100;
@@ -38,12 +38,13 @@
 #X text 154 427 (c) GPL \, acre - winfried ritsch;
 #X obj 233 41 r \$1/on;
 #X obj 190 170 r \$1/pulse/on;
-#X obj 31 76 r \$1/freq;
+#X obj 31 56 r \$1/freq;
 #X obj 251 197 r \$1/pulse/time;
 #X obj 287 310 r \$1/mute;
 #X obj 106 305 r \$1/vol;
 #X obj 74 395 mxr/prvu/send~ \$1/level;
 #X obj 58 214 r \$1/sel;
+#X obj 31 77 t a a;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 1;
@@ -70,9 +71,10 @@
 #X connect 23 0 5 0;
 #X connect 26 0 21 0;
 #X connect 27 0 8 0;
-#X connect 28 0 2 0;
-#X connect 28 0 18 0;
+#X connect 28 0 34 0;
 #X connect 29 0 6 1;
 #X connect 30 0 16 0;
 #X connect 31 0 22 0;
 #X connect 33 0 0 0;
+#X connect 34 0 2 0;
+#X connect 34 1 18 0;
