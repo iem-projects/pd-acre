@@ -1,0 +1,30 @@
+#N canvas 733 384 720 289 10;
+#X obj 101 101 cnv 15 98 48 empty \$0/label list 2 8 0 10 -233017 -66577
+0;
+#X symbolatom 104 131 15 0 0 2 IP #0-ip #1/ip;
+#X obj 143 117 nbx 5 12 -1e+37 1e+37 0 0 \$1/port \$1/port port -24
+6 0 10 -262144 -1 -1 0 256;
+#X msg 274 105 set \$1;
+#X obj 274 82 route symbol;
+#X obj 274 56 r \$1/ip;
+#X text 96 28 ip_port_ctl <id> [label];
+#X obj 18 67 acre/arg_default \$1 \$2;
+#X obj 16 39 loadbang;
+#X obj 16 132 s \$0/label;
+#X msg 16 110 label \$1;
+#X obj 17 89 symbol;
+#X obj 274 130 s \$0-ip;
+#X obj 185 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 168 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 3 0 12 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 7 0 11 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 13 0 2 0;
+#X connect 14 0 7 0;
+#X coords 0 -1 1 1 100 50 2 100 100;

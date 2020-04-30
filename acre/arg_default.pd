@@ -1,4 +1,4 @@
-#N canvas 748 355 535 292 10;
+#N canvas 941 448 535 292 10;
 #X obj 35 112 sel 0;
 #X obj 35 227 outlet;
 #X obj 35 40 inlet;
@@ -15,7 +15,7 @@
 #X text 237 56 Note: Trick to get 0 as arg below does not work as abstraction
 , f 29;
 #X connect 0 0 6 0;
-#X connect 0 1 1 0;
+#X connect 0 1 7 0;
 #X connect 2 0 8 0;
 #X connect 6 0 7 0;
 #X connect 7 0 1 0;
