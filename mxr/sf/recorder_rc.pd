@@ -1,0 +1,12 @@
+#N canvas 864 583 450 300 10;
+#X text 31 264 (c) GPL \, acre winfried ritsch;
+#X text 32 24 Parameter for multichannel recorder;
+#X obj 35 49 rc/register \$1 \$2/gain;
+#X obj 36 71 rc/register \$1 \$2/on;
+#X text 35 2 mxr/sf/recorder_rc <remote> <id>;
+#X obj 27 134 rc/register \$1 \$2/vu;
+#X text 27 189 does not work since filepannel opens remotely. not local
+;
+#X obj 30 205 # rc/register \$1 \$2/open;
+#X obj 34 93 rc/register \$1 \$2/channels;
+#X obj 27 156 rc/register \$1 \$2/rec;
