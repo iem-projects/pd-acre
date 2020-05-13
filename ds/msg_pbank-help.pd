@@ -1,0 +1,38 @@
+#N canvas 802 273 450 428 12;
+#X declare -lib zexy;
+#X text 26 21 [msg_pbank] - scene-based storage system;
+#X obj 64 406 declare -lib zexy;
+#X obj 194 221 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 194 246 openpanel;
+#X msg 194 283 read \$1;
+#X obj 44 336 msg_pbank 20;
+#X obj 274 221 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X obj 274 246 savepanel;
+#X msg 274 283 write \$1;
+#X msg 44 55 add 0 msg2 data1 data2 \, add 0 msg2 foo bar;
+#X obj 44 150 t a;
+#X msg 54 85 add 1 msg 1 2 3;
+#X msg 64 115 add 2 jodl 2 2;
+#X obj 194 308 t a;
+#X msg 140 173 recall \$1;
+#X obj 140 153 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 137 361 print info;
+#X obj 44 361 print data;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 13 0;
+#X connect 5 0 17 0;
+#X connect 5 1 16 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 13 0;
+#X connect 9 0 10 0;
+#X connect 10 0 5 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 13 0 5 0;
+#X connect 14 0 5 0;
+#X connect 15 0 14 0;
