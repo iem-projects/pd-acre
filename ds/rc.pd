@@ -1,4 +1,4 @@
-#N canvas 494 346 450 300 12;
+#N canvas 1332 61 686 389 12;
 #X text 42 17 ds/rc <connection> <domain>;
 #X obj 41 50 rc/register \$1 \$2/program/store;
 #X obj 41 75 rc/register \$1 \$2/program/nr;
@@ -6,5 +6,16 @@
 #X obj 41 144 rc/register \$1 \$2/program/next;
 #X obj 41 169 rc/register \$1 \$2/program/prev;
 #X text 36 208 remote file dialog does not open locally !!!!;
-#X obj 41 232 rc/register \$1 \$2/program/save;
-#X obj 41 257 rc/register \$1 \$2/program/load;
+#X obj 374 243 r \$2/program/save;
+#X obj 374 268 route bang;
+#X obj 374 307 rc/register_send \$1 \$2/program/save;
+#X obj 41 328 rc/register_send \$1 \$2/program/load;
+#X obj 41 257 route bang;
+#X text 160 260 only send resave and reload;
+#X obj 41 232 r \$2/program/load;
+#X text 158 280 (no remote file dialogs !!!!);
+#X text 162 303 but still locally ones !!!;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 11 0 10 0;
+#X connect 13 0 11 0;

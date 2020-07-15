@@ -1,4 +1,4 @@
-#N canvas 265 88 674 421 10;
+#N canvas 1029 163 674 500 10;
 #X obj 101 101 cnv 15 98 198 empty empty \$1 20 12 0 14 -233017 -66577
 0;
 #X obj 136 135 bng 15 250 50 0 \$1/program/store \$1/program/store
@@ -12,17 +12,17 @@ nr 0 -8 0 14 -261682 -1 -1 0 256;
 #X obj 103 275 bng 15 250 50 0 \$0-load \$0-load load 17 7 0 10 -13381
 -1 -1;
 #X text 105 118 -- STORAGE --;
-#X obj 315 387 savepanel;
+#X obj 315 417 savepanel;
 #X obj 147 276 bng 15 250 50 0 \$0-reload \$0-reload reload 17 7 0
 10 -13381 -1 -1;
-#X obj 471 389 openpanel;
+#X obj 471 419 openpanel;
 #X obj 420 283 route bang;
 #X obj 315 364 symbol;
 #X obj 471 363 symbol;
 #X obj 146 254 bng 15 250 50 0 \$0-resave \$0-resave resave 17 7 0
 10 -163905 -1 -1;
-#X obj 315 411 s \$1/program/save;
-#X obj 471 410 s \$1/program/load;
+#X obj 315 441 s \$1/program/save;
+#X obj 471 440 s \$1/program/load;
 #X obj 420 261 r \$1/filename;
 #X text 419 244 for panels dir;
 #N canvas 43 352 444 383 tools 0;
@@ -102,11 +102,14 @@ nr 0 -8 0 14 -261682 -1 -1 0 256;
 #X obj 534 389 r \$0-reload;
 #X obj 313 119 t f;
 #X obj 477 306 t a a;
+#X obj 315 390 spigot 1;
+#X obj 469 393 spigot 1;
+#X obj 548 356 r \$1/dialog/on;
 #X connect 7 0 14 0;
 #X connect 9 0 15 0;
 #X connect 10 1 39 0;
-#X connect 11 0 7 0;
-#X connect 12 0 9 0;
+#X connect 11 0 40 0;
+#X connect 12 0 41 0;
 #X connect 16 0 10 0;
 #X connect 20 0 18 0;
 #X connect 24 0 29 0;
@@ -125,4 +128,8 @@ nr 0 -8 0 14 -261682 -1 -1 0 256;
 #X connect 38 0 29 1;
 #X connect 39 0 11 1;
 #X connect 39 1 12 1;
+#X connect 40 0 7 0;
+#X connect 41 0 9 0;
+#X connect 42 0 41 1;
+#X connect 42 0 40 1;
 #X coords 0 -1 1 1 100 200 2 100 100;
