@@ -1,0 +1,36 @@
+#N canvas 1163 495 393 310 10;
+#X text 87 279 (c) GPL \, acre winfried ritsch;
+#X obj 23 225 list trim;
+#X obj 23 286 s;
+#X msg 160 230 symbol _ds/remote/\$1;
+#X obj 160 207 symbol;
+#X obj 219 152 loadbang;
+#X obj 219 175 list append \$1;
+#X obj 23 180 spigot 0;
+#X text 183 106 default: off \, you have to turn it on;
+#X obj 23 204 list prepend \$2;
+#X obj 81 146 r \$1/on;
+#X obj 42 253 list;
+#X obj 131 146 r \$1/up;
+#X obj 111 92 inlet;
+#X obj 110 119 route set;
+#X obj 22 115 inlet;
+#X text 17 8 rc/register_send <connection> <parameter>;
+#X text 17 28 register remote for this parameter for sending (not receiving)
+;
+#X text 18 67 if you want to filter message before sending use inlet
+1;
+#X connect 1 0 2 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 9 0;
+#X connect 9 0 1 0;
+#X connect 9 0 11 1;
+#X connect 10 0 7 1;
+#X connect 11 0 2 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 9 1;
+#X connect 15 0 7 0;
