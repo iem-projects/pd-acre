@@ -13,14 +13,14 @@ Algorithmic Composition Realtime Environment
 Introduction
 ............
 
-ACRE is collection of Puredata_ patches organized in modules with example applications targeting algorithmic composition in an realtime computermusic environment. 
+ACRE is collection of PureData_ patches organized in modules with example applications targeting algorithmic composition in an realtime computermusic environment. 
 ACRE is used in open source projects within Atelier Algorythmics AA_ and IEM_  and was made public to be useful for others.
 
 
 Mission
 ~~~~~~~
 
-An Algorithmic Composition Real-time Environment (ACRE) using Puredata should be assembled, to enable composers to create compositions,  computermusic ensembles to share instruments, musicians to build and extend their tools and media artists to include realtime computermusic in their projects.
+An Algorithmic Composition Real-time Environment (ACRE) using *Pure Data* should be assembled, to enable composers to create compositions,  computermusic ensembles to share instruments, musicians to build and extend their tools and media artists to include realtime computermusic in their projects.
 As an artistic research environment ACRE should evolve from within projects and courses, mostly done at the IEM_.
 Therefore an academic development strategy is used: 
 "develop during project phase and publish and share valuable parts afterwards" ;-) 
@@ -108,7 +108,7 @@ History
 - Extended in the courses using Waveguide- and Tetraspeaker project.
 - Integrated parts of it into the [ICE] development 2010-
 - published for Ambisonics Mixer Tools development for Studios at IEM. 2015
-- published Waveguide library after editing for teaching purposes  IEM 2016
+- published Waveguide library after editing for teaching purposes. IEM 2016
 - split modules amb and wg to separate git repos for better development and distribution
 - Enhanced mxr with better parameter naming scheme.
 - moved to 2.0 with split
@@ -118,7 +118,7 @@ References and Footnotes
 
 .. [ACRE] Algorithmic Composition Realtime Environment 
 
-.. [Puredata] graphical computermusic programming language by Miller Puckette 
+.. [PureData] graphical computermusic programming language by Miller Puckette 
    see http://puredata.info/, http://msp.ucsd.edu/
 
 .. [OSC] Open Sound Control protocoll see (http://opensoundcontrol.org/)
