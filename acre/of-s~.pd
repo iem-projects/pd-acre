@@ -1,0 +1,9 @@
+#N canvas 2780 802 450 161 12;
+#X obj 38 32 inlet~;
+#X obj 37 92 outlet~;
+#X obj 37 62 s~ \$1;
+#X text 31 116 (c) GPL \, acre winfried ritsch;
+#X text 90 59 Important so that offset with blocksize can be forced
+;
+#X text 97 32 order forced s~;
+#X connect 0 0 2 0;

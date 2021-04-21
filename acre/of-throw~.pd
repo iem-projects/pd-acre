@@ -1,0 +1,7 @@
+#N canvas 2780 802 450 163 12;
+#X obj 38 32 inlet~;
+#X obj 37 92 outlet~;
+#X text 112 35 order forced catch~;
+#X obj 37 62 throw~ \$1;
+#X text 40 125 (c) GPL \, acre winfried ritsch;
+#X connect 0 0 3 0;
