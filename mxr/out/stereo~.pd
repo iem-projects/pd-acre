@@ -1,0 +1,14 @@
+#N canvas 1849 100 487 232 10;
+#X obj 33 114 outlet~;
+#X obj 201 114 outlet~;
+#X text 20 170 (c) GPL \, acre - winfried ritsch;
+#X obj 23 89 mxr/out/ch~ \$1/L \$2;
+#X obj 191 88 mxr/out/ch~ \$1/R \$2;
+#X text 24 10 mxr/out/stereo~ <id> [master id];
+#X obj 23 139 mxr/mo/send~ \$1/L;
+#X obj 191 139 mxr/mo/send~ \$1/R;
+#X text 24 32 simple stereo out with monitoring and master;
+#X connect 3 0 0 0;
+#X connect 3 0 6 0;
+#X connect 4 0 1 0;
+#X connect 4 0 7 0;
