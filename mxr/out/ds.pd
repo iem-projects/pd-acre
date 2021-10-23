@@ -1,8 +1,8 @@
 #N canvas 145 195 657 222 10;
-#X obj 22 115 ds/register_map \$1 \$2/vol;
-#X obj 22 135 ds/register_map \$1 \$2/mute;
 #X text 117 160 (c) GPL - acre \, ritsch;
 #X text 27 25 mxr/out/ds <domain> <out-id>;
 #X text 43 49 Storage for the out channel mxr/out/ch~ <out-id>;
 #X text 25 75 NOTE: obsolete \, here for backwards compatibility \,
 use mxr/out/ch_ds instead, f 79;
+#X obj 22 135 ds/register_map \$1 \$2/mute;
+#X obj 22 115 ds/register_map \$1 \$2/vol;
