@@ -12,8 +12,8 @@
 #X text 131 4 mx/master/ctl <master id>;
 #X obj 60 10 mxr/master/vol_ctl \$1;
 #X text 13 233 Master VOL with id and general controls;
-#X obj 10 10 mxr/master/dsp_ctl;
 #X text 13 254 for backwards compatibility - deprecated;
 #X text 14 277 use mmxr/master/ctl_dsp once and mxr/master/vol_ctl
 <id> for each master, f 40;
+#X obj 10 10 mxr/master/dsp_ctl \$1;
 #X coords 0 -1 1 1 100 200 2 10 10;
