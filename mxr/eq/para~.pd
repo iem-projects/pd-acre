@@ -1,4 +1,4 @@
-#N canvas 1303 454 435 510 10;
+#N canvas 640 119 435 510 10;
 #X obj 10 14 inlet~;
 #X obj 11 421 outlet~;
 #X obj 11 155 hml_shelf~ 0 100 0 4000 0 300;

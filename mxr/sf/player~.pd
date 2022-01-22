@@ -89,7 +89,7 @@
 #X msg 414 470 add2 0;
 #X msg 397 490 add2 200;
 #X obj 70 319 + 6;
-#X msg 384 521 obj 10 90 multiline~ 200;
+#X msg 384 521 obj 10 90 multiline~ 0 200;
 #X obj 363 359 t f b b f f;
 #X obj 443 403 + 60;
 #X obj 443 382 * 20;
@@ -112,7 +112,7 @@
 #X obj 476 129 pack \$0 20;
 #X msg 476 154 obj 10 \$2 r \$1-player;
 #X msg 432 430 set obj 10 90 multiline~;
-#X msg 373 336 obj 10 60 readsf~ 0 \, f 40;
+#X msg 373 336 obj 10 60 readsf~ 1 \, f 40;
 #X msg 407 310 set obj 10 60 readsf~ \$1 \, addcomma \, add2 f \$2
 ;
 #X msg 355 563 connect 0 0 4 0 \, connect 4 \$1 1 0 \, connect 2 0
