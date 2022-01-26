@@ -1,14 +1,14 @@
-#N canvas 1257 565 599 439 10;
-#X obj 401 100 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
--1 -1;
+#N canvas 1257 533 599 439 10;
+#X obj 401 100 bng 15 250 50 0 empty empty clear 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X text 356 89 before save !;
-#X obj 425 70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 425 70 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 30 126 t b b;
 #X obj 30 104 sel 1 0;
 #X obj 299 92 f \$2;
-#X obj 119 131 route bang symbol, f 21;
-#X msg 118 175 set open \$1 \, bang;
+#X obj 118 105 route bang symbol, f 21;
+#X msg 119 202 set open \$1 \, bang;
 #X text 250 173 bang for preload;
 #X text 39 385 (c) GPL \, acre - winfried ritsch;
 #X obj 389 218 switch~;
@@ -49,7 +49,7 @@
 #X obj 457 216 s \$0-gain;
 #X obj 479 312 prvu~;
 #X obj 479 334 s \$1/vu;
-#X obj 118 106 r \$1/open;
+#X obj 117 80 r \$1/open;
 #N canvas 1224 551 325 188 init 0;
 #X obj 33 48 loadbang;
 #X obj 30 100 s \$1/open;
@@ -94,10 +94,10 @@
 #X obj 357 597 s pd-\$0-recorder;
 #X obj 37 469 s pd-\$0-recorder;
 #X obj 220 88 s pd-\$0-recorder;
-#X msg 373 336 obj 10 90 writesf~ 0 \, f 0;
+#X msg 373 336 obj 10 150 writesf~ 3 \, f 9;
 #X msg 173 411 obj \$1 \$2 r~ \$4-\$3~;
 #X msg 37 438 connect \$2 0 5 \$1 \, connect 5 \$1 4 \$1;
-#X msg 384 521 obj 10 60 multiline~ 200;
+#X msg 384 521 obj 10 120 multiline~ 0 0 0 200;
 #X msg 355 563 connect 0 0 4 0 \, connect 2 0 5 \$1 \, connect 5 0
 3 0;
 #X obj 363 359 t f b b f f;
@@ -196,12 +196,15 @@
 #X obj 30 226 s \$0-recorder;
 #X obj 30 248 r \$0-to;
 #X text 77 252 does not work;
-#X obj 118 153 savepanel;
-#X msg 118 200 open /tmp/rec.wav;
+#X obj 118 127 savepanel;
+#X msg 119 227 open /home/algo/schallaktionen/pd/sounds/rec/rec-1.wav
+;
 #X text 30 5 mxr/sf/recorder~ <id> <channels> <receives ID>;
 #X obj 406 37 loadbang;
-#X floatatom 251 55 5 0 0 0 - - -;
+#X floatatom 251 55 5 0 0 0 - - - 0;
 #X obj 300 40 r \$1/channels;
+#X obj 119 151 s \$1/filename;
+#X obj 121 173 r \$1/filename;
 #X connect 0 0 24 1;
 #X connect 2 0 5 0;
 #X connect 3 0 26 0;
@@ -210,7 +213,7 @@
 #X connect 4 1 27 0;
 #X connect 5 0 24 0;
 #X connect 6 0 31 0;
-#X connect 6 1 7 0;
+#X connect 6 1 37 0;
 #X connect 7 0 32 0;
 #X connect 11 0 10 0;
 #X connect 11 1 12 0;
@@ -221,8 +224,9 @@
 #X connect 26 0 28 0;
 #X connect 27 0 28 0;
 #X connect 29 0 17 0;
-#X connect 31 0 7 0;
+#X connect 31 0 37 0;
 #X connect 32 0 28 0;
 #X connect 34 0 5 0;
 #X connect 35 0 5 0;
 #X connect 36 0 5 0;
+#X connect 38 0 7 0;

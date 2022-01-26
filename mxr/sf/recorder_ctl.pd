@@ -1,24 +1,27 @@
 #N canvas 1140 80 448 278 10;
-#X obj 11 11 cnv 15 98 198 empty empty \$1 2 10 0 12 -261234 -66577
+#X obj 11 11 cnv 15 98 198 empty empty \$1 2 10 0 12 #fcc4c4 #404040
 0;
-#X obj 16 38 tgl 15 0 \$1/on \$1/on ON 0 -6 0 8 -4034 -1 -1 0 1;
-#X obj 13 103 cnv 2 40 2 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 16 60 vsl 30 131 0 130 0 0 \$1/fad \$1/fad empty 1 140 0 8 -262144
--1 -1 0 1;
+#X obj 16 38 tgl 15 0 \$1/on \$1/on ON 0 -6 0 8 #00fc04 #000000 #000000
+0 1;
+#X obj 13 103 cnv 2 40 2 empty empty empty 20 12 0 14 #000000 #404040
+0;
+#X obj 16 60 vsl 30 131 0 130 0 0 \$1/fad \$1/fad empty 1 140 0 8 #fcfcfc
+#000000 #000000 0 1;
 #X obj 136 77 mxr/fader/db2;
 #X obj 136 163 mxr/fader/db;
 #X msg 136 99 set \$1;
 #X obj 136 121 s \$1/fad;
 #X obj 137 144 r \$1/fad;
-#X obj 67 66 vu 15 120 \$1/vu empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 67 66 vu 15 120 \$1/vu empty -1 -8 0 10 #404040 #000000 1 0
+;
 #X obj 138 50 r \$1/gain;
 #X obj 136 183 s \$1/gain;
 #X obj 16 194 nbx 3 14 -1e+37 1e+37 0 0 \$1/gain \$1/gain empty 0 -8
-0 10 -262144 -1 -1 0 256;
-#X obj 69 16 tgl 30 0 \$1/rec \$1/rex rec 1 15 0 12 -258113 -1 -1 0
-1;
-#X obj 66 191 bng 15 250 50 0 \$0-open \$0-open open 17 7 0 10 -4032
--1 -1;
+0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 69 16 tgl 30 0 \$1/rec \$1/rec rec 1 15 0 12 #fc0400 #000000
+#000000 0 1;
+#X obj 66 191 bng 15 250 50 0 \$0-open \$0-open open 17 7 0 10 #00f8fc
+#000000 #000000;
 #X text 122 16 mxr/sf/recorder_ctl <ID>;
 #X obj 266 222 s \$1/open;
 #X obj 266 196 r \$0-open;
