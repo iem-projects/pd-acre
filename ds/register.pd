@@ -1,21 +1,23 @@
-#N canvas 153 83 565 296 10;
+#N canvas 2070 179 565 296 10;
 #X obj 66 187 list;
 #X obj 66 37 r _ds/par/get;
 #X obj 66 217 s _ds/par/collect;
 #X obj 66 143 route \$1 bang;
 #X obj 87 111 list prepend \$1 \$1\$2;
-#X text 26 5 ds/register_nmap <domain> <subname>;
 #X text 153 80 second arg: name of parameter (within the storage domain)
 ;
 #X obj 87 82 r \$1\$2;
 #X text 127 176 same as register_map \, but prepending the domain to
 form the variable name to be stored.;
-#X text 154 33 first argument is the domain which is prepended to the
-second argument to form the variable name (send/receice name);
 #X text 172 219 (c) GPL \, acre winfried ritsch;
+#X floatatom 294 136 5 0 0 0 - - - 0;
+#X text 27 4 ds/register <domain> <subname>;
+#X text 154 33 first argument is the domain which is prefixed to the
+second argument to form the variable name (= send/receice name);
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;
 #X connect 3 1 0 0;
 #X connect 4 0 0 1;
-#X connect 7 0 4 0;
+#X connect 6 0 4 0;
+#X connect 6 0 9 0;

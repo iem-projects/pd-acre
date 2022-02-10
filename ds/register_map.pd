@@ -1,4 +1,4 @@
-#N canvas 331 61 601 333 10;
+#N canvas 1875 423 601 333 10;
 #X obj 67 248 list;
 #X obj 67 117 r _ds/par/get;
 #X obj 67 272 s _ds/par/collect;
@@ -7,19 +7,17 @@
 #X text 74 80 second arg: name of parameter (within the storage domain)
 ;
 #X obj 168 138 s \$2;
-#X text 71 23 first arg is the prepended part of receiver only for
-the file \, which stores together with second part \, separeted by
-'::' in the file and is used without domain as sender and receiver
-;
 #X obj 168 117 r \$1::\$2;
 #X obj 101 188 list prepend \$1 \$1::\$2;
 #X text 172 219 (c) GPL \, acre winfried ritsch;
-#X text 74 4 ds/register_map <domain> <subname> [remote connection]
-;
+#X text 77 25 first argument is the prefixed part of the address in
+the file \, which together with the second argument \, the receiver
+name in the patch is separated by '::'.;
+#X text 74 4 ds/register_map <domain> <send receiver name>;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;
 #X connect 3 1 0 0;
-#X connect 4 0 9 0;
-#X connect 8 0 6 0;
-#X connect 9 0 0 1;
+#X connect 4 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 0 1;
