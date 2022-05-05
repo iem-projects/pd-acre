@@ -4,4 +4,4 @@
 #X obj 31 111 mxr/limiter/ds \$1 \$2;
 #X obj 30 69 mxr/fader/fader_ds \$1 \$2;
 #X text 24 182 (c)GPL \, algorythmics \, winfried ritsch;
-#X text 32 27 mxr/in/ch_ds <domain> <bus id>;
+#X text 32 27 mxr/in/ch_ds <domain> <id>;
