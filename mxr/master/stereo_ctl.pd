@@ -1,32 +1,25 @@
-#N canvas 2097 353 485 409 10;
-#X obj 11 11 cnv 15 99 198 empty empty \$2 45 7 0 12 -233017 -66577
-0;
-#X obj 37 46 vu 15 120 /out/2/vu R_2 -1 -8 0 8 -66577 -1 1 0;
-#X obj 88 42 tgl 15 0 /out/1/mo/send /out/1/mo/send 1 4 8 0 12 -257985
--1 -1 0 1;
-#X obj 19 46 vu 15 120 /out/1/vu L_1 -1 -8 0 8 -66577 -1 0 0;
-#X obj 88 61 tgl 15 0 /out/2/mo/send /out/2/mo/send 2 4 8 0 12 -257985
--1 -1 0 1;
-#X obj 18 15 tgl 15 0 /out/1/mute /out/1/mute M 5 8 0 10 -258113 -1
--1 0 1;
-#X obj 38 15 tgl 15 0 /out/2/mute /out/2/mute M 5 8 0 10 -258113 -1
--1 0 1;
-#X obj 18 172 nbx 3 14 -1e+37 1e+37 0 0 /out/1/vol /out/1/vol vol_1
-40 8 0 10 -4034 -1 -1 100 256;
-#X obj 19 190 nbx 3 14 -1e+37 1e+37 0 0 /out/2/vol /out/2/vol vol_2
-40 8 0 10 -4034 -1 -1 100 256;
-#X text 84 25 mon;
-#X text 234 63 shortcut for simple stereomixer;
+#N canvas 77 369 485 409 10;
+#X obj 11 11 cnv 15 198 198 empty empty empty 45 7 0 12 #e0e0e0 #404040 0;
+#X obj 137 46 vu 15 120 /out/2/vu R_2 -1 -8 0 8 #404040 #000000 1 0;
+#X obj 188 42 tgl 15 0 /out/1/mo/send /out/1/mo/send 1 4 8 0 12 #f8fc00 #000000 #000000 0 1;
+#X obj 119 46 vu 15 120 /out/1/vu L_1 -1 -8 0 8 #404040 #000000 0 0;
+#X obj 188 61 tgl 15 0 /out/2/mo/send /out/2/mo/send 2 4 8 0 12 #f8fc00 #000000 #000000 0 1;
+#X obj 118 15 tgl 15 0 /out/1/mute /out/1/mute M 5 8 0 10 #fc0400 #000000 #000000 0 1;
+#X obj 138 15 tgl 15 0 /out/2/mute /out/2/mute M 5 8 0 10 #fc0400 #000000 #000000 0 1;
+#X obj 118 172 nbx 3 14 -1e+37 1e+37 0 0 /out/1/vol /out/1/vol vol_1 40 8 0 10 #00fc04 #000000 #000000 0 256;
+#X obj 119 190 nbx 3 14 -1e+37 1e+37 0 0 /out/2/vol /out/2/vol vol_2 40 8 0 10 #00fc04 #000000 #000000 0 256;
+#X text 184 25 mon;
+#X text 280 67 shortcut for simple stereomixer;
 #N canvas 1115 692 250 105 out-par-\$0 0;
 #X text 40 5 extra pars if needed;
 #X restore 117 293 pd out-par-\$0;
-#X text 234 124 (c) GPL \, acre \, winfried ritsch;
-#X obj 53 241 tgl 15 0 \$0-vis \$0-vis extra 17 7 0 10 -262144 -1 -1
-0 1;
+#X text 280 128 (c) GPL \, acre \, winfried ritsch;
+#X obj 53 241 tgl 15 0 \$0-vis \$0-vis extra 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 56 271 r \$0-vis;
 #X msg 56 294 vis \$1;
 #X obj 56 317 s pd-out-par-\$0;
-#X text 228 25 mxr/master/stereo_ctl <id> [label];
+#X text 274 29 mxr/master/stereo_ctl <id> [label];
+#X obj 10 10 mxr/master/ctl \$1;
 #X connect 14 0 15 0;
 #X connect 15 0 16 0;
-#X coords 0 -1 1 1 100 200 2 10 10;
+#X coords 0 -1 1 1 200 200 2 10 10;
